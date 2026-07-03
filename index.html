@@ -492,6 +492,174 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); font-weight: 800; }
   }
 }
 
+
+
+/* === FIX CARRUSEL + VISOR GRANDE DE GALERÍA === */
+.gallery-carousel .gallery-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.gallery-item[hidden] {
+  display: none !important;
+}
+.gallery-item {
+  cursor: zoom-in;
+}
+.gallery-item:focus-visible {
+  outline: 3px solid rgba(255, 63, 159, .78);
+  outline-offset: 4px;
+}
+
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 250;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(16px, 4vw, 48px);
+  background: rgba(5, 3, 13, .88);
+  backdrop-filter: blur(18px);
+}
+.gallery-lightbox.open {
+  display: flex;
+}
+body.lightbox-open {
+  overflow: hidden;
+}
+.gallery-lightbox-panel {
+  position: relative;
+  width: min(1120px, 100%);
+  max-height: calc(100vh - 48px);
+  display: grid;
+  gap: 18px;
+  padding: clamp(14px, 2.2vw, 24px);
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, .16);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(109, 90, 230, .26), transparent 44%),
+    radial-gradient(circle at 100% 0%, rgba(224, 49, 131, .22), transparent 44%),
+    rgba(18, 13, 34, .82);
+  box-shadow: 0 28px 95px rgba(0,0,0,.58);
+}
+.gallery-lightbox-image-wrap {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: min(72vh, 680px);
+  border-radius: 22px;
+  overflow: hidden;
+  background: rgba(0,0,0,.24);
+}
+.gallery-lightbox-image {
+  width: 100%;
+  max-height: min(72vh, 680px);
+  object-fit: contain;
+  border-radius: 18px;
+}
+.gallery-lightbox-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+  color: var(--text);
+}
+.gallery-lightbox-caption p {
+  color: var(--muted);
+  margin-top: 4px;
+}
+.gallery-lightbox-counter {
+  flex-shrink: 0;
+  color: #ffd4ed;
+  font-weight: 900;
+  letter-spacing: .08em;
+  font-size: .9rem;
+}
+.gallery-lightbox-btn {
+  position: absolute;
+  z-index: 4;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.20);
+  background: rgba(13,10,27,.72);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 18px 50px rgba(0,0,0,.35);
+  transition: .22s ease;
+}
+.gallery-lightbox-btn:hover,
+.gallery-lightbox-btn:focus-visible {
+  background: rgba(224,49,131,.34);
+  border-color: rgba(224,49,131,.58);
+  transform: scale(1.06);
+}
+.gallery-lightbox-btn svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.gallery-lightbox-prev {
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.gallery-lightbox-prev:hover,
+.gallery-lightbox-prev:focus-visible {
+  transform: translateY(-50%) scale(1.06);
+}
+.gallery-lightbox-next {
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.gallery-lightbox-next:hover,
+.gallery-lightbox-next:focus-visible {
+  transform: translateY(-50%) scale(1.06);
+}
+.gallery-lightbox-close {
+  top: 18px;
+  right: 18px;
+}
+
+@media (max-width: 768px) {
+  .gallery-carousel .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  .gallery-lightbox {
+    padding: 10px;
+  }
+  .gallery-lightbox-panel {
+    width: 100%;
+    max-height: calc(100vh - 20px);
+    padding: 12px;
+    border-radius: 22px;
+  }
+  .gallery-lightbox-image-wrap {
+    min-height: 68vh;
+    border-radius: 18px;
+  }
+  .gallery-lightbox-image {
+    max-height: 68vh;
+  }
+  .gallery-lightbox-caption {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .gallery-lightbox-btn {
+    width: 44px;
+    height: 44px;
+  }
+  .gallery-lightbox-prev { left: 10px; }
+  .gallery-lightbox-next { right: 10px; }
+  .gallery-lightbox-close { top: 10px; right: 10px; }
+}
+
 </style>
 </head>
 <body>
@@ -794,12 +962,31 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
   revealElements.forEach(el => revealObserver.observe(el));
 
-  // === GALERÍA CON FLECHAS: muestra 3 fotos en desktop y 1 en móvil ===
+  // === GALERÍA CON FLECHAS + VISOR GRANDE ===
   const galleryCards = Array.from(document.querySelectorAll('[data-gallery-card]'));
   const galleryGrid = document.getElementById('galleryCarousel');
   const galleryPrev = document.querySelector('.gallery-arrow-left');
   const galleryNext = document.querySelector('.gallery-arrow-right');
+  const gallerySwipeArea = document.querySelector('.gallery-carousel');
   let galleryIndex = 0;
+  let galleryTransitionTimer;
+
+  const galleryData = galleryCards.map((card) => {
+    const img = card.querySelector('img');
+    const title = card.querySelector('.gallery-caption h3')?.textContent?.trim() || '';
+    const text = card.querySelector('.gallery-caption p')?.textContent?.trim() || '';
+    return {
+      src: img?.getAttribute('src') || '',
+      alt: img?.getAttribute('alt') || title || 'Foto de la galería',
+      title,
+      text
+    };
+  });
+
+  function normalizeGalleryIndex(index) {
+    if (!galleryCards.length) return 0;
+    return (index + galleryCards.length) % galleryCards.length;
+  }
 
   function galleryVisibleCount() {
     return window.matchMedia('(max-width: 768px)').matches ? 1 : 3;
@@ -811,16 +998,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     galleryCards.forEach((card, i) => {
       const offset = (i - galleryIndex + galleryCards.length) % galleryCards.length;
-      card.hidden = offset >= visibleCount;
+      const isVisible = offset < visibleCount;
+      card.hidden = !isVisible;
+      card.style.order = isVisible ? String(offset) : '';
+      card.setAttribute('aria-hidden', isVisible ? 'false' : 'true');
     });
   }
 
-  let galleryTransitionTimer;
-
   function moveGallery(step) {
     if (!galleryCards.length) return;
-
-    galleryIndex = (galleryIndex + step + galleryCards.length) % galleryCards.length;
+    galleryIndex = normalizeGalleryIndex(galleryIndex + step);
 
     if (galleryGrid) {
       galleryGrid.classList.add('is-changing');
@@ -833,6 +1020,13 @@ document.addEventListener('DOMContentLoaded', () => {
     renderGallery();
   }
 
+  galleryCards.forEach((card, index) => {
+    card.dataset.galleryIndex = String(index);
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('aria-label', `Ampliar foto: ${galleryData[index]?.title || 'galería'}`);
+  });
+
   if (galleryPrev && galleryNext) {
     galleryPrev.addEventListener('click', () => moveGallery(-1));
     galleryNext.addEventListener('click', () => moveGallery(1));
@@ -840,48 +1034,174 @@ document.addEventListener('DOMContentLoaded', () => {
     renderGallery();
   }
 
-  // Soporte táctil para móviles: swipe horizontal en la galería
-  const gallerySwipeArea = document.querySelector('.gallery-carousel');
+  // Swipe horizontal en el carrusel pequeño, útil en celular y trackpad táctil.
   let swipeStartX = null;
   let swipeStartY = null;
   let swipeStartTime = 0;
 
-  if (gallerySwipeArea) {
-    gallerySwipeArea.addEventListener('touchstart', (event) => {
-      if (!event.touches || event.touches.length !== 1) return;
-      const touch = event.touches[0];
-      swipeStartX = touch.clientX;
-      swipeStartY = touch.clientY;
-      swipeStartTime = Date.now();
-    }, { passive: true });
-
-    gallerySwipeArea.addEventListener('touchend', (event) => {
-      if (swipeStartX === null || swipeStartY === null) return;
-      if (!event.changedTouches || event.changedTouches.length === 0) return;
-
-      const touch = event.changedTouches[0];
-      const diffX = touch.clientX - swipeStartX;
-      const diffY = touch.clientY - swipeStartY;
-      const elapsed = Date.now() - swipeStartTime;
-      const minSwipeDistance = 45;
-      const maxSwipeTime = 900;
-      const isHorizontalSwipe = Math.abs(diffX) > minSwipeDistance && Math.abs(diffX) > Math.abs(diffY) * 1.25;
-
-      if (isHorizontalSwipe && elapsed < maxSwipeTime) {
-        moveGallery(diffX < 0 ? 1 : -1);
-      }
-
-      swipeStartX = null;
-      swipeStartY = null;
-      swipeStartTime = 0;
-    }, { passive: true });
-
-    gallerySwipeArea.addEventListener('touchcancel', () => {
-      swipeStartX = null;
-      swipeStartY = null;
-      swipeStartTime = 0;
-    }, { passive: true });
+  function resetSwipe() {
+    swipeStartX = null;
+    swipeStartY = null;
+    swipeStartTime = 0;
   }
+
+  function startSwipe(event) {
+    if (!event.touches || event.touches.length !== 1) return;
+    const touch = event.touches[0];
+    swipeStartX = touch.clientX;
+    swipeStartY = touch.clientY;
+    swipeStartTime = Date.now();
+  }
+
+  function endSwipe(event, onLeft, onRight) {
+    if (swipeStartX === null || swipeStartY === null) return;
+    if (!event.changedTouches || event.changedTouches.length === 0) return;
+
+    const touch = event.changedTouches[0];
+    const diffX = touch.clientX - swipeStartX;
+    const diffY = touch.clientY - swipeStartY;
+    const elapsed = Date.now() - swipeStartTime;
+    const minSwipeDistance = 45;
+    const maxSwipeTime = 900;
+    const isHorizontalSwipe = Math.abs(diffX) > minSwipeDistance && Math.abs(diffX) > Math.abs(diffY) * 1.25;
+
+    if (isHorizontalSwipe && elapsed < maxSwipeTime) {
+      diffX < 0 ? onLeft() : onRight();
+    }
+
+    resetSwipe();
+  }
+
+  if (gallerySwipeArea) {
+    gallerySwipeArea.addEventListener('touchstart', startSwipe, { passive: true });
+    gallerySwipeArea.addEventListener('touchend', (event) => endSwipe(event, () => moveGallery(1), () => moveGallery(-1)), { passive: true });
+    gallerySwipeArea.addEventListener('touchcancel', resetSwipe, { passive: true });
+  }
+
+  // Visor grande: al pinchar una foto se abre en grande y se puede recorrer con flechas, teclado o swipe.
+  let lightbox = null;
+  let lightboxImage = null;
+  let lightboxTitle = null;
+  let lightboxText = null;
+  let lightboxCounter = null;
+  let lightboxIndex = 0;
+  let previousFocus = null;
+
+  function createLightbox() {
+    if (lightbox || !galleryCards.length) return;
+
+    lightbox = document.createElement('div');
+    lightbox.className = 'gallery-lightbox';
+    lightbox.setAttribute('role', 'dialog');
+    lightbox.setAttribute('aria-modal', 'true');
+    lightbox.setAttribute('aria-hidden', 'true');
+    lightbox.setAttribute('aria-label', 'Visor ampliado de galería');
+
+    lightbox.innerHTML = `
+      <div class="gallery-lightbox-panel" role="document">
+        <button class="gallery-lightbox-btn gallery-lightbox-close" type="button" aria-label="Cerrar foto ampliada">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+        <div class="gallery-lightbox-image-wrap">
+          <button class="gallery-lightbox-btn gallery-lightbox-prev" type="button" aria-label="Foto anterior">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <img class="gallery-lightbox-image" alt="" />
+          <button class="gallery-lightbox-btn gallery-lightbox-next" type="button" aria-label="Foto siguiente">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+        <div class="gallery-lightbox-caption">
+          <div>
+            <h3></h3>
+            <p></p>
+          </div>
+          <span class="gallery-lightbox-counter"></span>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(lightbox);
+
+    lightboxImage = lightbox.querySelector('.gallery-lightbox-image');
+    lightboxTitle = lightbox.querySelector('.gallery-lightbox-caption h3');
+    lightboxText = lightbox.querySelector('.gallery-lightbox-caption p');
+    lightboxCounter = lightbox.querySelector('.gallery-lightbox-counter');
+
+    lightbox.querySelector('.gallery-lightbox-close').addEventListener('click', closeLightbox);
+    lightbox.querySelector('.gallery-lightbox-prev').addEventListener('click', () => moveLightbox(-1));
+    lightbox.querySelector('.gallery-lightbox-next').addEventListener('click', () => moveLightbox(1));
+
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) closeLightbox();
+    });
+
+    lightbox.addEventListener('touchstart', startSwipe, { passive: true });
+    lightbox.addEventListener('touchend', (event) => endSwipe(event, () => moveLightbox(1), () => moveLightbox(-1)), { passive: true });
+    lightbox.addEventListener('touchcancel', resetSwipe, { passive: true });
+  }
+
+  function updateLightbox() {
+    const item = galleryData[lightboxIndex];
+    if (!item || !lightboxImage) return;
+
+    lightboxImage.src = item.src;
+    lightboxImage.alt = item.alt;
+    lightboxTitle.textContent = item.title;
+    lightboxText.textContent = item.text;
+    lightboxCounter.textContent = `${lightboxIndex + 1} / ${galleryData.length}`;
+  }
+
+  function openLightbox(index) {
+    createLightbox();
+    if (!lightbox) return;
+
+    previousFocus = document.activeElement;
+    lightboxIndex = normalizeGalleryIndex(index);
+    updateLightbox();
+
+    document.body.classList.add('lightbox-open');
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    lightbox.querySelector('.gallery-lightbox-close').focus();
+  }
+
+  function closeLightbox() {
+    if (!lightbox) return;
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('lightbox-open');
+
+    if (previousFocus && typeof previousFocus.focus === 'function') {
+      previousFocus.focus();
+    }
+  }
+
+  function moveLightbox(step) {
+    lightboxIndex = normalizeGalleryIndex(lightboxIndex + step);
+    updateLightbox();
+  }
+
+  galleryCards.forEach((card) => {
+    card.addEventListener('click', () => {
+      openLightbox(Number(card.dataset.galleryIndex));
+    });
+
+    card.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openLightbox(Number(card.dataset.galleryIndex));
+      }
+    });
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (!lightbox || !lightbox.classList.contains('open')) return;
+
+    if (event.key === 'Escape') closeLightbox();
+    if (event.key === 'ArrowRight') moveLightbox(1);
+    if (event.key === 'ArrowLeft') moveLightbox(-1);
+  });
 
 });
 </script>
