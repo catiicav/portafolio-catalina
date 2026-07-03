@@ -433,6 +433,74 @@ body.lightbox-open { overflow: hidden; }
   }
 }
 
+
+
+/* === AJUSTE DE ESPACIADOS ENTRE PROYECTOS, GALERÍA Y CONTACTO === */
+#proyectos.screen,
+#galeria.screen,
+#contacto.screen {
+  min-height: auto !important;
+}
+
+#proyectos.screen {
+  padding-bottom: clamp(56px, 6vw, 86px) !important;
+}
+
+#galeria.screen {
+  padding-top: clamp(56px, 6vw, 86px) !important;
+  padding-bottom: clamp(56px, 6vw, 86px) !important;
+}
+
+#contacto.screen {
+  padding-top: clamp(56px, 6vw, 86px) !important;
+}
+
+#galeria h2 {
+  margin-bottom: 28px !important;
+}
+
+#contacto .screen-inner.grid-2 {
+  align-items: start !important;
+  gap: clamp(28px, 4vw, 56px) !important;
+}
+
+#contacto .lead {
+  margin-bottom: 24px !important;
+}
+
+@media (max-width: 768px) {
+  #proyectos.screen {
+    padding-bottom: 42px !important;
+  }
+
+  #galeria.screen {
+    padding-top: 42px !important;
+    padding-bottom: 42px !important;
+  }
+
+  #contacto.screen {
+    padding-top: 42px !important;
+    padding-bottom: 36px !important;
+  }
+
+  #galeria h2 {
+    margin-bottom: 24px !important;
+  }
+
+  #contacto .screen-inner.grid-2 {
+    gap: 18px !important;
+  }
+
+  #contacto .lead {
+    margin: 16px 0 18px !important;
+  }
+
+  #contacto .contact-line {
+    padding: 16px !important;
+    margin-bottom: 12px !important;
+  }
+}
+
 </style>
 </head>
 <body>
