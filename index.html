@@ -466,54 +466,57 @@ body.lightbox-open { overflow: hidden; }
 .gallery-lightbox-close { top: 18px; right: 18px; }
 
 
-/* === FIX MÓVIL GALERÍA: 1 foto visible + flechas === */
-@media (max-width: 768px) {
-  .gallery-carousel {
-    width: 100% !important;
-    max-width: 100% !important;
-    touch-action: pan-y !important;
-    user-select: none !important;
-  }
+/* === FIX MÓVIL: sin espacio lateral y sin romper scroll vertical === */
+html {
+  width: 100%;
+  overflow-x: hidden;
+}
 
-  .gallery-carousel .gallery-grid,
-  .gallery-carousel-grid {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-  }
+body {
+  width: 100%;
+  overflow-x: clip;
+}
 
-  .gallery-carousel .gallery-item {
-    width: 100% !important;
-    height: 260px !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    order: 0 !important;
-  }
-
-  .gallery-carousel .gallery-item[hidden] {
-    display: none !important;
-  }
-
-  .gallery-arrow {
-    display: grid !important;
-    width: 46px !important;
-    height: 46px !important;
-    top: 50% !important;
-    background: rgba(13, 10, 27, .78) !important;
-  }
-
-  .gallery-arrow-left { left: 10px !important; }
-  .gallery-arrow-right { right: 10px !important; }
-
-  .gallery-caption {
-    bottom: 18px !important;
-    left: 20px !important;
-    right: 20px !important;
+@supports not (overflow-x: clip) {
+  body {
+    overflow-x: hidden;
   }
 }
 
+@media (max-width: 768px) {
+  .screen-inner {
+    width: calc(100% - 32px) !important;
+    max-width: 100% !important;
+    margin-inline: auto !important;
+  }
+
+  .screen,
+  .topbar,
+  .mobile-menu,
+  .nav {
+    max-width: 100% !important;
+  }
+
+  .panel,
+  .card,
+  .photo-box,
+  .story-panel,
+  .story-step,
+  .gallery-carousel,
+  .gallery-carousel-grid,
+  .gallery-grid,
+  .contact-line {
+    max-width: 100% !important;
+  }
+
+  .gallery-arrow-left {
+    left: 8px !important;
+  }
+
+  .gallery-arrow-right {
+    right: 8px !important;
+  }
+}
 
 
 /* === AJUSTE DE ESPACIADOS ENTRE PROYECTOS, GALERÍA Y CONTACTO === */
