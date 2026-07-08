@@ -797,26 +797,58 @@ body {
   .story-step { min-height: auto; padding: 16px; }
 }
 
-/* === FIX OVERFLOW MÓVIL: elimina espacio lateral === */
-html,
+/* === FIX MÓVIL DEFINITIVO: sin salto lateral y sin trabar scroll vertical === */
+/* No pongas overflow en cada sección/contenedor: en móviles eso puede crear
+   mini-scrolls internos y hacer que el desplazamiento vertical se sienta trabado. */
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-padding-top: calc(var(--navh) + 14px);
+}
+
 body {
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden !important;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: visible;
+  position: relative;
+}
+
+main,
+.screen,
+.screen-inner {
+  overflow: visible !important;
 }
 
 @media (max-width: 768px) {
-  * {
-    max-width: 100%;
+  :root {
+    --shell: calc(100% - 32px);
   }
 
+  html,
   body {
-    position: relative;
     overflow-x: hidden !important;
+    overflow-y: auto !important;
+    touch-action: pan-y;
   }
 
-  .screen,
-  .screen-inner,
+  .screen {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+    align-items: flex-start;
+  }
+
+  .screen-inner {
+    width: var(--shell) !important;
+    max-width: var(--shell) !important;
+    margin-inline: auto !important;
+    overflow: visible !important;
+  }
+
   .historia-layout,
   .story-panel,
   .story-steps,
@@ -829,27 +861,31 @@ body {
   .gallery-carousel-grid,
   .gallery-grid,
   .contact-line {
-    width: 100% !important;
+    min-width: 0 !important;
     max-width: 100% !important;
-    overflow-x: hidden !important;
+    overflow: visible !important;
   }
 
-  .screen-inner {
-    width: calc(100vw - 32px) !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+  .panel,
+  .card,
+  .photo-box {
+    max-width: 100% !important;
+    overflow-wrap: anywhere;
+  }
+
+  img,
+  video,
+  canvas,
+  svg {
+    max-width: 100% !important;
   }
 
   .topbar,
   .nav,
   .mobile-menu {
-    max-width: 100vw !important;
-    overflow-x: hidden !important;
-  }
-
-  .story-panel {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: clip !important;
   }
 
   .gallery-arrow-left {
@@ -860,14 +896,12 @@ body {
     right: 8px !important;
   }
 
-  .photo-box,
-  .panel,
-  .card {
-    max-width: 100% !important;
+  .gallery-carousel {
+    touch-action: pan-y !important;
   }
 
-  img {
-    max-width: 100% !important;
+  body.lightbox-open {
+    overflow: hidden !important;
   }
 }
 
@@ -1073,7 +1107,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', () => {
     const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    progressBar.style.width = (winScroll / height) * 100 + "%";
+    progressBar.style.width = height > 0 ? (winScroll / height) * 100 + "%" : "0%";
   });
 
   // === NAVEGACIÓN Y MENÚ MÓVIL ===
@@ -1094,7 +1128,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const targetId = btn.getAttribute('data-go');
       const targetSection = document.getElementById(targetId);
       if (!targetSection) return;
-      targetSection.scrollIntoView({ behavior: 'smooth' });
+      const navHeight = document.querySelector('.topbar')?.offsetHeight || 0;
+      const targetTop = targetSection.getBoundingClientRect().top + window.pageYOffset - navHeight - 10;
+      window.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
       
       if(mobileMenu.classList.contains('open')) {
         mobileToggle.setAttribute('aria-expanded', 'false');
