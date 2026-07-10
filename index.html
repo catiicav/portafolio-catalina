@@ -982,6 +982,945 @@ main,
 .historia-texto {
   margin-top: 0;
 }
+
+/* === AJUSTES DE CONTENIDO FINAL === */
+#investigacion h2 {
+  font-size: clamp(2.25rem, 4.5vw, 4rem);
+  line-height: 1.08;
+  max-width: 1040px;
+}
+
+.project-result {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,.09);
+}
+
+.project-result .case-label:first-child {
+  margin-top: 0;
+}
+
+.path-grid,
+.belief-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 34px;
+}
+
+.path-card,
+.belief-card {
+  min-height: 210px;
+}
+
+.path-card h3,
+.belief-card h3 {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 1024px) {
+  .path-grid,
+  .belief-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  #investigacion h2 {
+    font-size: clamp(2rem, 8.4vw, 2.8rem);
+  }
+}
+
+
+/* === V8: JERARQUÍA Y RITMO VISUAL === */
+section[id] { scroll-margin-top: calc(var(--navh) + 14px); }
+
+.content-screen {
+  min-height: auto;
+  padding-top: clamp(88px, 8vw, 118px);
+  padding-bottom: clamp(70px, 7vw, 104px);
+}
+
+.compact-section {
+  padding-top: clamp(70px, 6vw, 94px);
+  padding-bottom: clamp(70px, 6vw, 94px);
+}
+
+.section-heading {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(320px, .65fr);
+  align-items: end;
+  gap: 40px;
+  margin-bottom: 38px;
+}
+
+.section-heading .lead {
+  justify-self: end;
+  max-width: 600px;
+}
+
+/* Navegación más limpia */
+.navlinks {
+  gap: 2px;
+  padding: 5px;
+}
+.navlinks button {
+  padding: 8px 14px;
+  font-size: .86rem;
+}
+
+/* Tarjetas */
+.card {
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(255,255,255,.035), transparent 42%);
+}
+.card > * { position: relative; z-index: 1; }
+
+/* Proyectos */
+.project-grid-modern {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.project-featured {
+  grid-column: 1 / -1;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(109,90,230,.18), transparent 42%),
+    radial-gradient(circle at 100% 0%, rgba(216,59,140,.14), transparent 44%),
+    rgba(255,255,255,.035);
+}
+
+.project-topline {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.project-header h3 {
+  font-size: clamp(1.35rem, 2vw, 1.72rem);
+}
+
+.eyebrow {
+  display: block;
+  margin-bottom: 2px;
+  color: #d7c9e9;
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.status-pill {
+  flex-shrink: 0;
+  padding: 7px 12px;
+  border-radius: 999px;
+  color: #ffd4ed;
+  background: rgba(216,59,140,.12);
+  border: 1px solid rgba(216,59,140,.24);
+  font-size: .75rem;
+  font-weight: 900;
+}
+
+.project-intro {
+  color: #fff;
+  font-size: 1.03rem;
+  line-height: 1.55;
+  margin-bottom: 22px;
+}
+
+.project-points {
+  display: grid;
+  gap: 12px;
+}
+
+.project-featured .project-points {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.project-point {
+  padding: 17px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.035);
+  border: 1px solid rgba(255,255,255,.075);
+}
+
+.project-point .case-label {
+  display: block;
+  margin: 0 0 7px;
+}
+
+.project-point p {
+  color: var(--muted);
+  line-height: 1.52;
+}
+
+.metric-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 9px;
+  margin: 0 0 18px;
+}
+
+.metric-row div {
+  padding: 13px 10px;
+  text-align: center;
+  border-radius: 14px;
+  background: rgba(109,90,230,.10);
+  border: 1px solid rgba(255,255,255,.075);
+}
+
+.metric-row strong {
+  display: block;
+  color: #fff;
+  font-size: 1.12rem;
+  line-height: 1.1;
+}
+
+.metric-row span {
+  display: block;
+  margin-top: 5px;
+  color: var(--soft);
+  font-size: .72rem;
+}
+
+/* Investigación */
+.research-section {
+  background:
+    radial-gradient(circle at 16% 26%, rgba(109,90,230,.12), transparent 32%),
+    radial-gradient(circle at 86% 72%, rgba(216,59,140,.10), transparent 34%);
+}
+
+.research-question-panel {
+  padding: clamp(28px, 5vw, 62px);
+  border-radius: 30px;
+  background:
+    linear-gradient(135deg, rgba(109,90,230,.13), rgba(216,59,140,.08)),
+    rgba(255,255,255,.025);
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 28px 90px rgba(0,0,0,.20);
+}
+
+#investigacion .research-question-panel h2 {
+  max-width: 1040px;
+  font-size: clamp(2.2rem, 4.1vw, 3.9rem);
+  line-height: 1.07;
+  text-wrap: balance;
+}
+
+.research-summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
+  margin-top: 28px;
+  padding-top: 26px;
+  border-top: 1px solid rgba(255,255,255,.10);
+}
+
+.research-summary p {
+  color: var(--muted);
+  font-size: 1.04rem;
+  line-height: 1.7;
+}
+
+.research-flow-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.research-step {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.035);
+  border: 1px solid rgba(255,255,255,.085);
+}
+
+.research-step > span {
+  color: #ffd4ed;
+  font-size: .76rem;
+  font-weight: 950;
+  letter-spacing: .08em;
+}
+
+.research-step h3 {
+  margin-bottom: 4px;
+  font-size: 1.05rem;
+}
+
+.research-step p {
+  color: var(--muted);
+  font-size: .92rem;
+  line-height: 1.45;
+}
+
+/* Sección de principios */
+.belief-section {
+  background: linear-gradient(180deg, transparent, rgba(109,90,230,.045), transparent);
+}
+
+.belief-card {
+  min-height: 190px;
+  padding-top: 28px;
+}
+
+.belief-card h3 {
+  color: #ffd4ed;
+}
+
+/* Mejor cierre */
+#contacto .grid-2,
+#contacto.screen-inner.grid-2 {
+  align-items: start;
+}
+
+/* Movimiento más cómodo para quienes lo reducen */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .section-heading {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .section-heading .lead { justify-self: start; }
+  .project-featured .project-points {
+    grid-template-columns: 1fr;
+  }
+  .research-flow-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .content-screen,
+  .compact-section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .project-grid-modern {
+    grid-template-columns: 1fr;
+  }
+
+  .project-featured {
+    grid-column: auto;
+  }
+
+  .project-topline {
+    display: block;
+  }
+
+  .status-pill {
+    display: inline-flex;
+    margin: -4px 0 18px 72px;
+  }
+
+  .project-point {
+    padding: 15px;
+  }
+
+  .research-question-panel {
+    padding: 24px 20px;
+    border-radius: 24px;
+  }
+
+  #investigacion .research-question-panel h2 {
+    font-size: clamp(2rem, 8.3vw, 2.75rem);
+    line-height: 1.08;
+  }
+
+  .research-summary {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 22px;
+    padding-top: 20px;
+  }
+
+  .research-flow-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .metric-row {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .metric-row strong {
+    font-size: 1rem;
+  }
+
+  .metric-row span {
+    font-size: .65rem;
+  }
+}
+
+
+/* === AJUSTES FINALES DE CONTENIDO === */
+.project-title-one-line {
+  max-width: none !important;
+  white-space: nowrap;
+  font-size: clamp(2.8rem, 5.4vw, 5.2rem);
+}
+.story-steps-three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.project-point .case-label { color: #ffd4ed; }
+.metric-row span { line-height: 1.25; }
+@media (max-width: 1024px) {
+  .project-title-one-line { white-space: normal; }
+  .story-steps-three { grid-template-columns: 1fr; }
+}
+
+
+/* === V10: MENOS CUADROS, MÁS AIRE === */
+
+/* Mantener solo las tarjetas principales de cada proyecto.
+   Los bloques internos pasan a ser contenido abierto con divisores. */
+.project-points {
+  gap: 0 !important;
+}
+
+.project-point {
+  padding: 18px 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-top: 1px solid rgba(255,255,255,.10) !important;
+}
+
+.project-point:first-child {
+  border-top: 0 !important;
+  padding-top: 4px !important;
+}
+
+.project-featured .project-points {
+  gap: 0 !important;
+}
+
+.project-featured .project-point {
+  padding: 18px 22px !important;
+  border-top: 0 !important;
+  border-left: 1px solid rgba(255,255,255,.10) !important;
+}
+
+.project-featured .project-point:first-child {
+  border-left: 0 !important;
+}
+
+/* Métricas: menos aspecto de tarjeta. */
+.metric-row {
+  border-top: 1px solid rgba(255,255,255,.10);
+  border-bottom: 1px solid rgba(255,255,255,.10);
+  gap: 0 !important;
+}
+
+.metric-row div {
+  padding: 16px 10px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  border-left: 1px solid rgba(255,255,255,.10) !important;
+}
+
+.metric-row div:first-child {
+  border-left: 0 !important;
+}
+
+/* Historia: conservar un solo contenedor y quitar las mini-tarjetas. */
+.story-panel {
+  background:
+    linear-gradient(135deg, rgba(109,90,230,.09), rgba(216,59,140,.055)),
+    rgba(255,255,255,.018) !important;
+}
+
+.story-step {
+  min-height: auto !important;
+  padding: 10px 22px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  gap: 8px !important;
+  border-left: 1px solid rgba(255,255,255,.11) !important;
+}
+
+.story-step:first-child {
+  border-left: 0 !important;
+}
+
+/* Investigación: quitar las cuatro cajas inferiores. */
+.research-flow-grid {
+  gap: 0 !important;
+  border-top: 1px solid rgba(255,255,255,.10);
+  border-bottom: 1px solid rgba(255,255,255,.10);
+}
+
+.research-step {
+  padding: 20px 18px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  border-left: 1px solid rgba(255,255,255,.10) !important;
+}
+
+.research-step:first-child {
+  border-left: 0 !important;
+}
+
+/* Por qué este camino: menos tarjetas flotantes. */
+.path-grid {
+  gap: 0 !important;
+  border-top: 1px solid rgba(255,255,255,.10);
+  border-bottom: 1px solid rgba(255,255,255,.10);
+}
+
+.path-card {
+  min-height: auto !important;
+  padding: 26px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border-left: 1px solid rgba(255,255,255,.10) !important;
+}
+
+.path-card:first-child {
+  border-left: 0 !important;
+}
+
+.path-card::before {
+  display: none !important;
+}
+
+/* Chips más livianos. */
+.chip {
+  background: transparent !important;
+  border-color: rgba(255,255,255,.14) !important;
+}
+
+/* Contacto: líneas más simples. */
+.contact-line {
+  background: transparent !important;
+  border: 0 !important;
+  border-bottom: 1px solid rgba(255,255,255,.11) !important;
+  border-radius: 0 !important;
+  padding-inline: 0 !important;
+}
+
+.contact-line:hover {
+  background: transparent !important;
+  border-color: rgba(255,63,159,.42) !important;
+  transform: translateX(4px);
+}
+
+/* Móvil: divisores horizontales en lugar de verticales. */
+@media (max-width: 1024px) {
+  .project-featured .project-point,
+  .story-step,
+  .research-step,
+  .path-card {
+    border-left: 0 !important;
+    border-top: 1px solid rgba(255,255,255,.10) !important;
+  }
+
+  .project-featured .project-point:first-child,
+  .story-step:first-child,
+  .research-step:first-child,
+  .path-card:first-child {
+    border-top: 0 !important;
+  }
+
+  .project-featured .project-point {
+    padding-inline: 0 !important;
+  }
+}
+
+
+/* === V11: AJUSTES SOLICITADOS === */
+
+/* 1. Historia: mayor legibilidad en "Lo que creo" */
+.story-step b {
+  font-size: 1.16rem !important;
+  line-height: 1.25 !important;
+}
+
+.story-step span {
+  font-size: 1.05rem !important;
+  line-height: 1.5 !important;
+}
+
+/* 2. Investigación: eliminar el gran cuadro semitransparente */
+.research-question-panel {
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.research-summary {
+  margin-top: 30px !important;
+  padding-top: 26px !important;
+}
+
+/* 3. Por qué este camino: restaurar tarjetas semitransparentes */
+.path-grid {
+  gap: 18px !important;
+  border: 0 !important;
+}
+
+.path-card {
+  min-height: 210px !important;
+  padding: 26px !important;
+  border-radius: var(--radius-card) !important;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(109,90,230,.12), transparent 52%),
+    rgba(255,255,255,.035) !important;
+  border: 1px solid rgba(255,255,255,.09) !important;
+  box-shadow: 0 16px 36px rgba(0,0,0,.12) !important;
+}
+
+.path-card:first-child {
+  border-left: 1px solid rgba(255,255,255,.09) !important;
+}
+
+.path-card::before {
+  display: block !important;
+}
+
+/* 4. Contacto: restaurar cuadros semitransparentes */
+.contact-line {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  padding: 20px !important;
+  margin-bottom: 16px !important;
+  border-radius: var(--radius-card) !important;
+  background: rgba(255,255,255,.035) !important;
+  border: 1px solid rgba(255,255,255,.09) !important;
+  transition: transform .25s ease, background .25s ease, border-color .25s ease !important;
+}
+
+.contact-line:hover {
+  transform: translateY(-2px) !important;
+  background: rgba(255,255,255,.065) !important;
+  border-color: rgba(255,63,159,.36) !important;
+}
+
+/* Navegación: acomodar un botón adicional sin saturar */
+.navlinks button {
+  padding: 8px 12px !important;
+  font-size: .83rem !important;
+}
+
+@media (max-width: 1024px) {
+  .path-card,
+  .path-card:first-child {
+    border: 1px solid rgba(255,255,255,.09) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .story-step b {
+    font-size: 1.12rem !important;
+  }
+
+  .story-step span {
+    font-size: 1rem !important;
+  }
+
+  .research-summary {
+    margin-top: 24px !important;
+    padding-top: 20px !important;
+  }
+
+  .contact-line {
+    padding: 16px !important;
+    margin-bottom: 12px !important;
+  }
+}
+
+
+/* === V12: INVESTIGACIÓN MÁS LIMPIA Y ATRACTIVA === */
+.research-redesign {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 14% 18%, rgba(109,90,230,.14), transparent 30%),
+    radial-gradient(circle at 88% 74%, rgba(216,59,140,.11), transparent 32%);
+}
+
+.research-redesign::before {
+  content: "";
+  position: absolute;
+  inset: 10% auto auto 7%;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: rgba(109,90,230,.08);
+  filter: blur(48px);
+  pointer-events: none;
+}
+
+.research-intro {
+  position: relative;
+  padding: clamp(28px, 4vw, 48px);
+  border-radius: 28px;
+  background:
+    linear-gradient(135deg, rgba(109,90,230,.10), rgba(216,59,140,.055)),
+    rgba(255,255,255,.018);
+  border: 1px solid rgba(255,255,255,.09);
+  box-shadow: 0 24px 70px rgba(0,0,0,.16);
+}
+
+.research-title-wrap {
+  max-width: 1080px;
+}
+
+#investigacion .research-title-wrap h2 {
+  font-size: clamp(2.25rem, 4.25vw, 4.2rem);
+  line-height: 1.06;
+  text-wrap: balance;
+}
+
+.research-copy {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(22px, 3vw, 38px);
+  margin-top: 30px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,.10);
+}
+
+.research-copy p {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.72;
+}
+
+.research-route {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.research-route-card {
+  position: relative;
+  min-height: 172px;
+  padding: 22px 20px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.028);
+  border: 1px solid rgba(255,255,255,.075);
+  transition: transform .25s ease, border-color .25s ease, background .25s ease;
+}
+
+.research-route-card:hover {
+  transform: translateY(-3px);
+  background: rgba(255,255,255,.045);
+  border-color: rgba(216,59,140,.28);
+}
+
+.research-route-number {
+  display: inline-flex;
+  margin-bottom: 22px;
+  color: #ffd4ed;
+  font-size: .76rem;
+  font-weight: 950;
+  letter-spacing: .12em;
+}
+
+.research-route-card h3 {
+  margin-bottom: 8px;
+  font-size: 1.12rem;
+}
+
+.research-route-card p {
+  color: var(--muted);
+  font-size: .94rem;
+  line-height: 1.5;
+}
+
+/* Pequeño ritmo visual entre las cuatro etapas */
+.research-route-card:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  top: 50%;
+  right: -11px;
+  transform: translateY(-50%);
+  z-index: 2;
+  color: rgba(255,255,255,.32);
+  font-weight: 900;
+}
+
+@media (max-width: 1024px) {
+  .research-route {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .research-route-card:nth-child(2)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .research-intro {
+    padding: 24px 20px;
+    border-radius: 22px;
+  }
+
+  #investigacion .research-title-wrap h2 {
+    font-size: clamp(2rem, 8.4vw, 2.85rem);
+  }
+
+  .research-copy {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 22px;
+    padding-top: 20px;
+  }
+
+  .research-route {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .research-route-card {
+    min-height: auto;
+  }
+
+  .research-route-card::after {
+    display: none !important;
+  }
+}
+
+
+/* === V14: MENOS TEXTO Y INVESTIGACIÓN SIN CUADRO GRANDE === */
+.research-intro {
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.research-copy {
+  margin-top: 24px !important;
+  padding-top: 22px !important;
+}
+
+/* Ajuste general de lectura */
+.section-heading .lead,
+.project-intro,
+.research-copy p,
+.path-card p,
+#contacto .lead,
+.historia-copy .lead {
+  line-height: 1.58 !important;
+}
+
+
+/* === V16: INVESTIGACIÓN CON FORMATO AMPLIO === */
+.research-reference {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 10% 18%, rgba(109,90,230,.18), transparent 34%),
+    radial-gradient(circle at 88% 72%, rgba(216,59,140,.15), transparent 34%);
+}
+
+.research-reference .screen-inner {
+  position: relative;
+}
+
+.research-reference-title {
+  max-width: 1120px;
+  margin-top: 18px;
+  font-size: clamp(3rem, 6vw, 6rem);
+  line-height: 1.03;
+  letter-spacing: -0.055em;
+  text-wrap: balance;
+}
+
+.research-reference-copy {
+  max-width: 1180px;
+  margin-top: 34px;
+  display: grid;
+  gap: 22px;
+}
+
+.research-reference-copy p {
+  max-width: 1120px;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 1.75vw, 1.32rem);
+  line-height: 1.72;
+}
+
+.research-reference .research-route {
+  margin-top: 34px;
+}
+
+@media (max-width: 768px) {
+  .research-reference-title {
+    font-size: clamp(2.45rem, 10.5vw, 3.8rem);
+    line-height: 1.05;
+  }
+
+  .research-reference-title br {
+    display: none;
+  }
+
+  .research-reference-copy {
+    margin-top: 24px;
+    gap: 16px;
+  }
+
+  .research-reference-copy p {
+    font-size: 1rem;
+    line-height: 1.62;
+  }
+}
+
+.research-route-number {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+
+  border-radius: 16px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(109, 90, 230, 0.20),
+      rgba(216, 59, 140, 0.10)
+    ),
+    rgba(255, 255, 255, 0.025);
+
+  border: 1px solid rgba(255, 157, 204, 0.26);
+
+  color: #ff9dcc;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+
 </style>
 </head>
 <body>
@@ -997,6 +1936,7 @@ main,
       <button data-go="historia">Historia</button>
       <button data-go="proyectos">Proyectos</button>
       <button data-go="investigacion">Investigación</button>
+      <button data-go="camino">Mi enfoque</button>
       <button data-go="ieee">IEEE RAS</button>
       <button data-go="galeria">Galería</button>
     </div>
@@ -1012,6 +1952,7 @@ main,
     <button data-go="historia">Historia</button>
     <button data-go="proyectos">Proyectos</button>
     <button data-go="investigacion">Investigación</button>
+    <button data-go="camino">Mi enfoque</button>
     <button data-go="ieee">IEEE RAS</button>
     <button data-go="galeria">Galería</button>
     <button data-go="contacto">Contacto</button>
@@ -1027,8 +1968,8 @@ main,
         <div>
           <div class="tag reveal">Ingeniería · Robótica · IA · Salud</div>
           <h1 class="reveal">Uniendo la <span class="grad">ingeniería y la medicina.</span></h1>
-          <p class="hero-kicker reveal delay-1">Construyendo una formación para comprender y mejorar la salud de las personas.</p>
-          <p class="lead reveal delay-1" style="margin-top: 18px;">Estudiante de Ingeniería Civil Eléctrica en la Universidad de Chile, interesada en robótica, inteligencia computacional aplicada a la salud y telemedicina.</p>
+          <p class="hero-kicker reveal delay-1">Formándome para comprender y mejorar la salud de las personas.</p>
+          <p class="lead reveal delay-1" style="margin-top: 18px;">Estudiante de Ingeniería Civil Eléctrica en la Universidad de Chile, con interés en robótica e inteligencia computacional aplicadas a salud.</p>
           <div class="socials reveal delay-2">
             <a href="https://www.linkedin.com/in/catalina-castro-vargas" target="_blank" aria-label="Perfil de LinkedIn">In</a>
             <a href="mailto:catalina.castro.2@ug.uchile.cl" aria-label="Enviar correo electrónico">@</a>
@@ -1052,91 +1993,271 @@ main,
       <div class="historia-copy">
         <div class="tag reveal">Mi historia</div>
         <h2 class="reveal"><span class="grad">Cuidar la vida</span>, no solo la enfermedad.</h2>
+        
+        
         <p class="lead reveal delay-1 historia-texto">
-          Al vivir de cerca la enfermedad, desarrollé un sentimiento de impotencia. Sentí que la carga emocional que trae cualquier enfermedad es muy grande, no solo para la persona que la vive, sino también para quienes la acompañan.
+          Al vivir de cerca la enfermedad, desarrollé un sentimiento de impotencia. Comprendí que no afecta solo el cuerpo, sino también la salud mental, la autonomía y la capacidad de proyectar sueños y metas.
         </p>
         <p class="lead reveal delay-1 historia-texto">
-          Me gustaría ayudar en ese proceso: acompañar, cuidar y detectar tempranamente, para que las personas puedan tener menos carga y una mejor calidad de vida.
+          Quiero ayudar en ese proceso: acompañar, cuidar y detectar tempranamente para disminuir esa carga y ayudar a que las personas puedan vivir mejor.
         </p>
         <p class="lead reveal delay-1 historia-cierre">
-          Creo firmemente que la ingeniería no consiste solo en desarrollar tecnología, sino también en usar el conocimiento para <b>ayudar a las personas a superar barreras y ampliar sus posibilidades.</b>
+          Creo que la ingeniería también puede ayudar, creando nuevas herramientas y ampliando lo que hoy es posible hacer en salud.
         </p>
+
+
       </div>
 
-      <div class="story-panel reveal delay-2" aria-label="Resumen de mi historia">
-        <div class="story-panel-title">En una línea</div>
-        <div class="story-steps">
-          <div class="story-step"><b>Me mueve</b><span>Desarrollar proyectos con impacto social.</span></div>
-          <div class="story-step"><b>Descubrí</b><span>Que la ingeniería también puede ampliar las posibilidades de la medicina.</span></div>
-          <div class="story-step"><b>Voy hacia</b><span>Una formación en robótica e inteligencia computacional aplicadas a salud.</span></div>
-          <div class="story-step"><b>Quiero investigar</b><span>Detección temprana, acompañamiento y mayor autonomía para pacientes y cuidadores.</span></div>
+      <div class="story-panel reveal delay-2" aria-label="Lo que creo">
+        <div class="story-panel-title">Lo que creo</div>
+        <div class="story-steps story-steps-three">
+          <div class="story-step"><b>Detectar antes</b><span>Puede cambiar completamente la vida de una persona.</span></div>
+          <div class="story-step"><b>Disminuir la carga</b><span>La tecnología debe hacer más llevadera la vida con una enfermedad.</span></div>
+          <div class="story-step"><b>Ampliar posibilidades</b><span>La ingeniería alcanza su mayor valor cuando ayuda a superar barreras.</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="screen" id="proyectos" data-title="Proyectos">
+  
+  <section class="screen content-screen" id="proyectos" data-title="Proyectos">
     <div class="screen-inner">
-      <div class="tag reveal">Proyectos e iniciativas</div>
-      <h2 class="reveal" style="max-width: 860px; margin-bottom: 20px;">Aprendizaje <span class="grad">aplicado.</span></h2>
-      <p class="lead reveal delay-1" style="margin-bottom: 40px; max-width: 880px;">Proyectos en desarrollo o etapa de prototipo que muestran cómo he empezado a conectar ingeniería, propósito y trabajo en equipo.</p>
-      <div class="grid-2">
-        <article class="card project project-case reveal delay-1">
-          <div class="project-header"><span class="mini-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span><div><span class="muted" style="font-size: 0.8rem; text-transform: uppercase; font-weight: bold; letter-spacing: 1px;">Robótica aplicada</span><h3 style="font-size: 1.5rem;">RAS PrintBot</h3></div></div>
-          <p><b>Proyecto en desarrollo junto a IEEE RAS UChile, integrando plataforma web, APIs y brazo robótico Dobot Magician.</b></p>
-          <span class="case-label">El desafío</span><p class="case-text">Integrar un brazo robótico a un flujo real de impresión 3D.</p>
-          <span class="case-label">Lo que construimos</span><p class="case-text">Flujo STL → GCode → plataforma web → comunicación con Dobot.</p>
-          <span class="case-label">Mi aporte</span><p class="case-text">Coordinar avances, ordenar el trabajo técnico y documentar el proceso.</p>
-          <!-- <span class="case-label">Lo que aprendí</span><p class="case-text">Integrar hardware, software y personas suele ser el desafío más complejo de un proyecto.</p> -->
-          <div class="chips"><span class="chip">Dobot</span><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">GCode</span><span class="chip">APIs</span></div>
+      <div class="section-heading">
+        <div>
+          <div class="tag reveal">Proyectos e iniciativas</div>
+          <h2 class="reveal project-title-one-line">Aprender <span class="grad">construyendo.</span></h2>
+        </div>
+      </div>
+
+      <div class="project-grid-modern">
+        <article class="card project project-case project-featured reveal delay-1">
+          <div class="project-topline">
+            <div class="project-header">
+              <span class="mini-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                  <line x1="8" y1="21" x2="16" y2="21"/>
+                  <line x1="12" y1="17" x2="12" y2="21"/>
+                </svg>
+              </span>
+              <div>
+                <span class="eyebrow">Robótica aplicada · En desarrollo</span>
+                <h3>RAS PrintBot</h3>
+              </div>
+            </div>
+            <span class="status-pill">Proyecto principal</span>
+          </div>
+
+          <p class="project-intro">
+            Desarrollo de un flujo robótico para automatizar tareas de manufactura aditiva junto a IEEE RAS UChile.
+          </p>
+
+          <div class="project-points">
+            <div class="project-point">
+              <span class="case-label">Qué construimos</span>
+              <p>Definimos el flujo STL → GCode, desarrollamos un prototipo web en Flask y validamos movimientos básicos del Dobot.</p>
+            </div>
+            <div class="project-point">
+              <span class="case-label">Lo que aprendí durante el proceso</span>
+              <p>Aprendí el flujo básico de impresión 3D, la importancia de documentar y cómo integrar distintas herramientas en un sistema robótico.</p>
+            </div>
+            <div class="project-point">
+              <span class="case-label">Próximo paso</span>
+              <p>Pasar desde la investigación, documentación y desarrollo web hacia la validación de la fase de impresión.</p>
+            </div>
+          </div>
+
+          <div class="chips">
+            <span class="chip">Dobot</span><span class="chip">Python</span>
+            <span class="chip">Flask</span><span class="chip">GCode</span>
+            <span class="chip">Cura</span>
+          </div>
         </article>
+
+        <article class="card project project-case reveal delay-1">
+          <div class="project-header">
+            <span class="mini-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 3h10v4H7zM5 7h14v14H5z"/>
+                <path d="M9 11h6M12 8v6"/>
+              </svg>
+            </span>
+            <div>
+              <span class="eyebrow">Salud y prototipado</span>
+              <h3>Pastillero inteligente</h3>
+            </div>
+          </div>
+
+          <p class="project-intro">
+            Exploración de un sistema de apoyo a la adherencia de tratamientos farmacológicos.
+          </p>
+
+          <div class="project-points">
+            <div class="project-point">
+              <span class="case-label">Resultado</span>
+              <p>El prototipo dispensó la cantidad correcta en el horario programado e integró alertas básicas.</p>
+            </div>
+            <div class="project-point">
+              <span class="case-label">Lo que aprendí</span>
+              <p>Aprendí que una idea debe adaptarse a restricciones físicas reales. El diseño se orientó a un solo tipo, forma y tamaño de pastilla.</p>
+            </div>
+            <div class="project-point">
+              <span class="case-label">Lo que cambiaría</span>
+              <p>Rediseñaría el mecanismo de salida para evitar atascos y mejorar la confiabilidad antes de incorporar distintos medicamentos.</p>
+            </div>
+          </div>
+
+          <div class="chips">
+            <span class="chip">Arduino</span><span class="chip">Sensores</span>
+            <span class="chip">Impresión 3D</span><span class="chip">PMV</span>
+          </div>
+        </article>
+
         <article class="card project project-case reveal delay-2">
-          <div class="project-header"><span class="mini-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span><div><span class="muted" style="font-size: 0.8rem; text-transform: uppercase; font-weight: bold; letter-spacing: 1px;">Salud y prototipos</span><h3 style="font-size: 1.5rem;">Dosificador y Pulso LDR</h3></div></div>
-          <p><b>Prototipos desarrollados desde el interés por aplicar electrónica a cuidados cotidianos y medición biométrica simple.</b></p>
-          <span class="case-label">El desafío</span><p class="case-text">Explorar cómo la electrónica puede apoyar tareas de salud del día a día.</p>
-          <span class="case-label">Lo que construí</span><p class="case-text">Un dosificador de medicamentos y un medidor de pulso basado en LED/LDR.</p>
-          <span class="case-label">Mi aporte</span><p class="case-text">Diseño, pruebas de sensores, alarmas y lógica electrónica.</p>
-          <!-- <span class="case-label">Lo que aprendí</span><p class="case-text">Diseñar para personas implica pensar tanto en la experiencia de uso como en el circuito.</p> -->
-          <div class="chips"><span class="chip">Salud</span><span class="chip">LTspice</span><span class="chip">UA741</span><span class="chip">LDR</span><span class="chip">Hardware</span></div>
+          <div class="project-header">
+            <span class="mini-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+              </svg>
+            </span>
+            <div>
+              <span class="eyebrow">Circuitos y señales</span>
+              <h3>Medidor de pulso</h3>
+            </div>
+          </div>
+
+          <p class="project-intro">
+            Primer acercamiento al funcionamiento de sensores ópticos utilizados en dispositivos biomédicos.
+          </p>
+
+          <div class="metric-row" aria-label="Resultados del medidor de pulso">
+            <div><strong>68,8 BPM</strong><span>Pulso equivalente a una persona en reposo</span></div>
+            <div><strong>10,63 Vpp</strong><span>Señal obtenida</span></div>
+            <div><strong>2,8 %</strong><span>Error de frecuencia</span></div>
+          </div>
+
+          <div class="project-points">
+            <div class="project-point">
+              <span class="case-label">Resultado</span>
+              <p>Se obtuvo una señal limpia y cercana a la esperada, coherente con la teoría y la simulación.</p>
+            </div>
+            <div class="project-point">
+              <span class="case-label">Lo que descubrí</span>
+              <p>Aprendí sobre fotopletismografía (PPG), cómo una variación de luz puede transformarse en una señal eléctrica y, además, descubrí la rPPG, una técnica que permite estimar el pulso de manera remota.</p>
+            </div>
+            <div class="project-point">
+              <span class="case-label">Cómo seguiría evolucionando</span>
+              <p>El siguiente paso sería medir un pulso real e incorporar acondicionamiento de señal para mejorar la estabilidad.</p>
+            </div>
+          </div>
+
+          <div class="chips">
+            <span class="chip">LTspice</span><span class="chip">UA741</span>
+            <span class="chip">LDR</span><span class="chip">PPG</span>
+          </div>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="screen" id="investigacion" data-title="Investigación">
+
+  
+  
+  
+  
+  <section class="screen content-screen research-section research-reference" id="investigacion" data-title="Investigación">
     <div class="screen-inner">
       <div class="tag reveal">Lo que quiero investigar</div>
-      <h2 class="reveal" style="max-width: 980px;">Detección temprana con <span class="grad">sistemas inteligentes.</span></h2>
-      <p class="lead reveal delay-1" style="margin-top: 22px; max-width: 930px;">Me interesa investigar cómo la robótica y la inteligencia computacional pueden detectar cambios tempranos en la salud a partir de señales humanas como voz, rostro, movimiento, sueño, conducta o señales fisiológicas.</p>
-      <p class="lead reveal delay-1" style="margin-top: 16px; max-width: 930px;">Mi foco es usar esa información para apoyar seguimiento remoto, decisiones clínicas e intervenciones oportunas, ayudando a que una enfermedad sea más manejable y permita conservar mayor autonomía y calidad de vida.</p>
 
-      <div class="research-grid">
-        <article class="card research-card reveal delay-1"><span class="mini-icon">01</span><div><h3>Problema</h3><p class="muted">El deterioro muchas veces se detecta cuando ya es evidente.</p></div></article>
-        <article class="card research-card reveal delay-1"><span class="mini-icon">02</span><div><h3>Herramientas</h3><p class="muted">Robótica, inteligencia computacional, monitoreo de salud y telemedicina.</p></div></article>
-        <article class="card research-card reveal delay-2"><span class="mini-icon">03</span><div><h3>Aplicaciones</h3><p class="muted">Salud mental, enfermedades crónicas, deterioro cognitivo y cuidado cotidiano.</p></div></article>
-        <article class="card research-card reveal delay-2"><span class="mini-icon">04</span><div><h3>Impacto</h3><p class="muted">Detectar antes, intervenir y apoyar una vida más autónoma.</p></div></article>
+      <h2 class="reveal research-reference-title">
+        ¿Cómo detectar <span class="grad">cambios tempranos</span><br>
+        antes de que sean evidentes?
+      </h2>
+
+      <div class="research-reference-copy reveal delay-1">
+        <p>
+          Me interesa estudiar cómo la robótica y la inteligencia computacional pueden modelar el estado habitual de una persona a partir de señales como voz, rostro, movimiento, sueño, conducta y variables fisiológicas.
+        </p>
+
+        <p>
+          Mi foco es usar esa información para apoyar el seguimiento remoto, las decisiones clínicas y las intervenciones oportunas, ayudando a que una enfermedad sea más manejable y permita conservar mayor autonomía y calidad de vida.
+        </p>
+      </div>
+
+      <div class="research-route" aria-label="Proceso de investigación">
+        <article class="research-route-card reveal delay-1">
+          <span class="research-route-number">01</span>
+          <h3>Observar</h3>
+          <p>Reconocer el estado habitual de cada persona.</p>
+        </article>
+
+        <article class="research-route-card reveal delay-1">
+          <span class="research-route-number">02</span>
+          <h3>Detectar</h3>
+          <p>Identificar cambios pequeños y persistentes.</p>
+        </article>
+
+        <article class="research-route-card reveal delay-2">
+          <span class="research-route-number">03</span>
+          <h3>Interpretar</h3>
+          <p>Relacionarlos con posibles señales de deterioro.</p>
+        </article>
+
+        <article class="research-route-card reveal delay-2">
+          <span class="research-route-number">04</span>
+          <h3>Intervenir</h3>
+          <p>Apoyar decisiones y acciones oportunas.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="screen" id="ieee" data-title="IEEE RAS">
+
+
+
+
+
+  <section class="screen content-screen compact-section" id="camino" data-title="Mi enfoque">
+    <div class="screen-inner">
+      <div class="tag reveal">Por qué este camino</div>
+      <h2 class="reveal" style="max-width:900px;">Del código a la <span class="grad">vida real.</span></h2>
+
+      <div class="path-grid">
+        <article class="card path-card reveal delay-1">
+          <h3>Por qué robótica</h3>
+          <p class="muted">Me gusta porque convierte código y electrónica en algo que puede moverse e interactuar con el mundo real.</p>
+        </article>
+
+        <article class="card path-card reveal delay-1">
+          <h3>Por qué inteligencia computacional</h3>
+          <p class="muted">Me interesa por sus aplicaciones en medicina: imágenes médicas, señales biomédicas, detección temprana y monitoreo remoto.</p>
+        </article>
+
+        <article class="card path-card reveal delay-2">
+          <h3>Qué me mueve</h3>
+          <p class="muted">Quiero que mi trabajo ayude a las personas, especialmente a quienes más lo necesitan.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+<section class="screen content-screen" id="ieee" data-title="IEEE RAS">
     <div class="screen-inner grid-2">
       <div>
         <div class="tag reveal">IEEE RAS UChile</div>
         <h2 class="reveal"><span class="grad">Robotics and Automation Society</span> UChile.</span></h2>
-        <p class="lead reveal delay-1" style="margin: 24px 0 18px;">En IEEE RAS UChile comprendí que no hay que saberlo todo para empezar. También se puede empezar desde cero, solo hay que atreverse a dar el primer paso y crecer junto a tu equipo.</p>
-        <p class="lead reveal delay-1" style="margin-bottom: 24px;">Esta comunidad me ha dado confianza, liderazgo y experiencia para transformar ideas en actividades, proyectos y espacios de aprendizaje en robótica.</p>
+        <p class="lead reveal delay-1" style="margin: 24px 0 18px;">En IEEE RAS UChile aprendí que no hay que saberlo todo para empezar: basta con dar el primer paso y crecer junto al equipo.</p>
+        <p class="lead reveal delay-1" style="margin-bottom: 24px;">Esta comunidad me ha dado confianza, liderazgo y experiencia para transformar ideas en proyectos y espacios de aprendizaje.</p>
         <div class="current-grid reveal delay-2" style="grid-template-columns: repeat(2, 1fr);"><div class="current-item"><b>Actualmente</b><span class="muted">Chair IEEE RAS UChile.</span></div><div class="current-item"><b>Próximo objetivo</b><span class="muted">Investigación en robótica e IA aplicadas a salud.</span></div></div>
       </div>
       <div class="photo-box panel reveal"><img loading="lazy" src="img/actividad_ieee_ras_uchile.webp" alt="Actividad IEEE RAS UChile" /></div>
     </div>
   </section>
 
-<section class="screen" id="galeria" data-title="Galería">
+<section class="screen content-screen" id="galeria" data-title="Galería">
     <div class="screen-inner">
       <div class="tag reveal">Galería</div>
       <h2 class="reveal" style="margin-bottom: 18px;">Momentos y <span class="grad">comunidad.</span></h2>
-      <p class="lead reveal delay-1" style="margin-bottom: 34px;">Experiencias que han ido formando la ingeniera que quiero llegar a ser.</p>
+      <p class="lead reveal delay-1" style="margin-bottom: 34px;">Experiencias que han ido formando mi camino en ingeniería.</p>
       <div class="gallery-carousel reveal delay-1" aria-label="Galería de momentos y comunidad">
         <button class="gallery-arrow gallery-arrow-left" type="button" aria-label="Ver fotos anteriores"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
         <div class="gallery-grid gallery-carousel-grid" id="galleryCarousel">
@@ -1157,13 +2278,19 @@ main,
 
   
 
-  <section class="screen" id="contacto" data-title="Contacto">
+  <section class="screen content-screen" id="contacto" data-title="Contacto">
     <div class="screen-inner grid-2">
       <div>
         <div class="tag reveal">Contacto</div>
         <h2 class="reveal">Dentro de unos <span class="grad">años más.</span></h2>
-        <p class="lead reveal delay-1" style="margin: 20px 0 18px;">No sé exactamente en qué estaré trabajando. Pero sí tengo claro el problema al que quiero dedicar mi carrera.</p>
-        <p class="lead reveal delay-1" style="margin-bottom: 34px;">Contribuir a que una enfermedad no impida vivir una vida digna y significativa. Si compartimos ese propósito, escríbeme.</p>
+        
+        <p class="lead reveal delay-1" style="margin: 20px 0 18px;">
+          No sé exactamente en qué proyecto estaré dentro de unos años, pero sí tengo claro el problema al que quiero dedicar mi carrera.
+        </p>
+        <p class="lead reveal delay-1" style="margin-bottom: 34px;">
+          Quiero aportar a un laboratorio multidisciplinario donde ingeniería y salud trabajen juntas para que una enfermedad no impida vivir una vida digna y significativa. Si compartimos ese propósito, conversemos.
+        </p>
+
       </div>
       <div class="reveal delay-2">
         <a class="contact-line" href="mailto:catalina.castro.2@ug.uchile.cl" aria-label="Enviar correo"><span class="mini-icon" aria-hidden="true">@</span><div><b>Email</b><span>catalina.castro.2@ug.uchile.cl</span></div></a>
