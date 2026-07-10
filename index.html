@@ -1921,6 +1921,316 @@ section[id] { scroll-margin-top: calc(var(--navh) + 14px); }
 }
 
 
+
+/* === V17: MI ENFOQUE MÁS DESARROLLADO === */
+.focus-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 8% 20%, rgba(109,90,230,.13), transparent 32%),
+    radial-gradient(circle at 92% 76%, rgba(216,59,140,.10), transparent 34%);
+}
+
+.focus-heading {
+  display: grid;
+  grid-template-columns: minmax(0, .95fr) minmax(320px, .65fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: end;
+  margin-bottom: 34px;
+}
+
+.focus-heading h2 {
+  max-width: 760px;
+}
+
+.focus-intro {
+  max-width: 580px;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 1.6vw, 1.22rem);
+  line-height: 1.68;
+}
+
+.focus-layout {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 18px;
+}
+
+.focus-card {
+  position: relative;
+  min-height: 250px;
+  padding: clamp(24px, 3vw, 34px);
+  border-radius: 22px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 18px;
+  align-items: start;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(109,90,230,.14), transparent 52%),
+    rgba(255,255,255,.035);
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: 0 18px 46px rgba(0,0,0,.15);
+  transition: transform .28s ease, border-color .28s ease, background .28s ease;
+}
+
+.focus-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(216,59,140,.30);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(109,90,230,.19), transparent 52%),
+    rgba(255,255,255,.05);
+}
+
+.focus-card-main {
+  grid-row: span 2;
+  min-height: 518px;
+  align-content: center;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(109,90,230,.22), transparent 48%),
+    radial-gradient(circle at 100% 100%, rgba(216,59,140,.14), transparent 48%),
+    rgba(255,255,255,.04);
+}
+
+.focus-number {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  color: rgba(255,255,255,.18);
+  font-size: 2.2rem;
+  font-weight: 950;
+  letter-spacing: -.04em;
+}
+
+.focus-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 17px;
+  display: grid;
+  place-items: center;
+  color: #ff9dcc;
+  background:
+    linear-gradient(135deg, rgba(109,90,230,.22), rgba(216,59,140,.12)),
+    rgba(255,255,255,.025);
+  border: 1px solid rgba(255,157,204,.24);
+}
+
+.focus-icon svg {
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.focus-label {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: #ffd4ed;
+  font-size: .76rem;
+  font-weight: 900;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.focus-card h3 {
+  max-width: 520px;
+  margin-bottom: 12px;
+  font-size: clamp(1.35rem, 2vw, 1.85rem);
+  line-height: 1.18;
+}
+
+.focus-card p {
+  max-width: 570px;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.62;
+}
+
+.focus-closing {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.focus-closing span {
+  width: 54px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--violet), var(--pink));
+}
+
+.focus-closing p {
+  color: #ffd4ed;
+  font-weight: 800;
+  letter-spacing: .01em;
+}
+
+@media (max-width: 1024px) {
+  .focus-heading {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .focus-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .focus-card-main {
+    grid-row: auto;
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .focus-card,
+  .focus-card-main {
+    min-height: auto;
+    grid-template-columns: 52px 1fr;
+    padding: 22px 18px;
+  }
+
+  .focus-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 15px;
+  }
+
+  .focus-number {
+    top: 14px;
+    right: 16px;
+    font-size: 1.7rem;
+  }
+
+  .focus-closing {
+    align-items: flex-start;
+  }
+
+  .focus-closing span {
+    margin-top: 12px;
+    width: 36px;
+    flex-shrink: 0;
+  }
+}
+
+
+/* === V18: TARJETAS DE MI ENFOQUE CON ALTURA UNIFORME === */
+.focus-layout {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  align-items: stretch !important;
+}
+
+.focus-card,
+.focus-card-main {
+  grid-row: auto !important;
+  min-height: 330px !important;
+  height: 100% !important;
+  align-content: start !important;
+}
+
+.focus-card-main {
+  background:
+    radial-gradient(circle at 0% 0%, rgba(109,90,230,.18), transparent 52%),
+    rgba(255,255,255,.035) !important;
+}
+
+.focus-card h3 {
+  min-height: 4.6rem;
+}
+
+@media (max-width: 1024px) {
+  .focus-layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  .focus-card,
+  .focus-card-main {
+    min-height: auto !important;
+  }
+
+  .focus-card h3 {
+    min-height: auto;
+  }
+}
+
+
+/* === V19: AJUSTES DE MI ENFOQUE === */
+
+/* Título principal en una sola línea en escritorio */
+.focus-heading {
+  grid-template-columns: 1fr !important;
+  gap: 18px !important;
+}
+
+.focus-heading h2 {
+  max-width: none !important;
+  white-space: nowrap;
+  font-size: clamp(2.9rem, 5.1vw, 5.1rem) !important;
+}
+
+/* Bajada extendida bajo el título */
+.focus-intro {
+  max-width: 1040px !important;
+  font-size: clamp(1.05rem, 1.45vw, 1.2rem) !important;
+  line-height: 1.65 !important;
+}
+
+/* Evitar choque entre etiqueta y numeración */
+.focus-card {
+  padding-top: 34px !important;
+}
+
+.focus-label {
+  max-width: calc(100% - 56px);
+  font-size: .7rem !important;
+  letter-spacing: .10em !important;
+  line-height: 1.25 !important;
+}
+
+.focus-number {
+  top: 18px !important;
+  right: 18px !important;
+  font-size: 1.95rem !important;
+}
+
+/* Títulos internos más pequeños */
+.focus-card h3 {
+  font-size: clamp(1.15rem, 1.55vw, 1.5rem) !important;
+  line-height: 1.18 !important;
+  min-height: 3.5rem !important;
+  max-width: 100% !important;
+}
+
+/* Mejor espacio interno */
+.focus-card p {
+  font-size: .96rem !important;
+  line-height: 1.58 !important;
+}
+
+@media (max-width: 1200px) {
+  .focus-heading h2 {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 768px) {
+  .focus-heading h2 {
+    white-space: normal;
+    font-size: clamp(2.35rem, 10vw, 3.5rem) !important;
+  }
+
+  .focus-card h3 {
+    min-height: auto !important;
+    font-size: 1.2rem !important;
+  }
+
+  .focus-label {
+    max-width: calc(100% - 46px);
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1968,7 +2278,7 @@ section[id] { scroll-margin-top: calc(var(--navh) + 14px); }
         <div>
           <div class="tag reveal">Ingeniería · Robótica · IA · Salud</div>
           <h1 class="reveal">Uniendo la <span class="grad">ingeniería y la medicina.</span></h1>
-          <p class="hero-kicker reveal delay-1">Formándome para comprender y mejorar la salud de las personas.</p>
+          <p class="hero-kicker reveal delay-1">Formándome para crear tecnología con impacto en salud.</p>
           <p class="lead reveal delay-1" style="margin-top: 18px;">Estudiante de Ingeniería Civil Eléctrica en la Universidad de Chile, con interés en robótica e inteligencia computacional aplicadas a salud.</p>
           <div class="socials reveal delay-2">
             <a href="https://www.linkedin.com/in/catalina-castro-vargas" target="_blank" aria-label="Perfil de LinkedIn">In</a>
@@ -2217,29 +2527,84 @@ section[id] { scroll-margin-top: calc(var(--navh) + 14px); }
 
 
 
-  <section class="screen content-screen compact-section" id="camino" data-title="Mi enfoque">
+  
+  <section class="screen content-screen compact-section focus-section" id="camino" data-title="Mi enfoque">
     <div class="screen-inner">
-      <div class="tag reveal">Por qué este camino</div>
-      <h2 class="reveal" style="max-width:900px;">Del código a la <span class="grad">vida real.</span></h2>
+      <div class="focus-heading">
+        <div>
+          <div class="tag reveal">Por qué este camino</div>
+          <h2 class="reveal">
+            Del código a la <span class="grad">vida real.</span>
+          </h2>
+        </div>
 
-      <div class="path-grid">
-        <article class="card path-card reveal delay-1">
-          <h3>Por qué robótica</h3>
-          <p class="muted">Me gusta porque convierte código y electrónica en algo que puede moverse e interactuar con el mundo real.</p>
+        <p class="focus-intro reveal delay-1">
+          Elegí estas áreas porque me permiten transformar información en sistemas capaces de observar, interpretar y actuar frente a problemas reales.
+        </p>
+      </div>
+
+      <div class="focus-layout">
+        <article class="focus-card focus-card-main reveal delay-1">
+          <span class="focus-number">01</span>
+          <div class="focus-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M8 4h8M12 4v4M7 8h10a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-5a3 3 0 0 1 3-3Z"/>
+              <circle cx="9" cy="13" r="1"/>
+              <circle cx="15" cy="13" r="1"/>
+              <path d="M9 16h6"/>
+            </svg>
+          </div>
+          <div>
+            <span class="focus-label">Robótica</span>
+            <h3>Convertir ideas en sistemas que actúan</h3>
+            <p>
+              Me gusta porque integra código, electrónica, sensores y control para crear sistemas que pueden moverse, interactuar y responder en el mundo real.
+            </p>
+          </div>
         </article>
 
-        <article class="card path-card reveal delay-1">
-          <h3>Por qué inteligencia computacional</h3>
-          <p class="muted">Me interesa por sus aplicaciones en medicina: imágenes médicas, señales biomédicas, detección temprana y monitoreo remoto.</p>
+        <article class="focus-card reveal delay-1">
+          <span class="focus-number">02</span>
+          <div class="focus-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 5h16v14H4z"/>
+              <path d="M7 15l3-3 2 2 3-4 2 3"/>
+              <circle cx="8" cy="9" r="1"/>
+            </svg>
+          </div>
+          <div>
+            <span class="focus-label">Inteligencia computacional</span>
+            <h3>Encontrar patrones que no siempre son visibles</h3>
+            <p>
+              Me interesa por sus aplicaciones en medicina, como imágenes médicas, señales biomédicas, detección temprana y monitoreo remoto.
+            </p>
+          </div>
         </article>
 
-        <article class="card path-card reveal delay-2">
-          <h3>Qué me mueve</h3>
-          <p class="muted">Quiero que mi trabajo ayude a las personas, especialmente a quienes más lo necesitan.</p>
+        <article class="focus-card reveal delay-2">
+          <span class="focus-number">03</span>
+          <div class="focus-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10Z"/>
+            </svg>
+          </div>
+          <div>
+            <span class="focus-label">Propósito</span>
+            <h3>Usar la tecnología para disminuir una carga real</h3>
+            <p>
+              Quiero que mi trabajo ayude a las personas, especialmente a quienes enfrentan una enfermedad con menos apoyo y mayores barreras.
+            </p>
+          </div>
         </article>
+      </div>
+
+      <div class="focus-closing reveal delay-2">
+        <span></span>
+        <p>Tecnología que observa, interpreta y actúa con propósito.</p>
       </div>
     </div>
   </section>
+
 <section class="screen content-screen" id="ieee" data-title="IEEE RAS">
     <div class="screen-inner grid-2">
       <div>
