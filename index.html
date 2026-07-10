@@ -2231,6 +2231,18 @@ section[id] { scroll-margin-top: calc(var(--navh) + 14px); }
   }
 }
 
+/* Escritorio */
+.focus-heading h2 br {
+  display: none;
+}
+
+/* Móvil */
+@media (max-width: 768px) {
+  .focus-heading h2 br {
+    display: block;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -2533,9 +2545,10 @@ section[id] { scroll-margin-top: calc(var(--navh) + 14px); }
       <div class="focus-heading">
         <div>
           <div class="tag reveal">Por qué este camino</div>
-          <h2 class="reveal">
-            Del código a la <span class="grad">vida real.</span>
-          </h2>
+<h2 class="reveal">
+  Del código a la<br>
+  <span class="grad">vida real.</span>
+</h2>
         </div>
 
         <p class="focus-intro reveal delay-1">
