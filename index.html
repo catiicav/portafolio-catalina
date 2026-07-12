@@ -3731,6 +3731,347 @@ body.hero-actions-visible #inicio .socials {
     bottom: -1% !important;
   }
 }
+
+
+/* =========================================================
+   CONTACTO REDISEÑADO · PROFESIONAL + FEMENINO
+   ========================================================= */
+#contacto.contact-redesign {
+  position: relative;
+  isolation: isolate;
+  min-height: auto !important;
+  overflow: hidden;
+  padding-top: clamp(88px, 8vw, 116px) !important;
+  padding-bottom: clamp(88px, 8vw, 118px) !important;
+  background:
+    radial-gradient(circle at 10% 86%, rgba(228, 214, 249, .48) 0, rgba(228, 214, 249, .19) 24%, transparent 43%),
+    radial-gradient(circle at 88% 44%, rgba(247, 217, 233, .48) 0, rgba(247, 217, 233, .18) 27%, transparent 48%),
+    linear-gradient(120deg, #fffefe 0%, #fdfbff 49%, #fffafd 100%);
+}
+
+#contacto.contact-redesign::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  width: clamp(500px, 47vw, 760px);
+  aspect-ratio: 1.12;
+  right: -6%;
+  top: 8%;
+  border-radius: 46% 54% 63% 37% / 41% 48% 52% 59%;
+  background:
+    radial-gradient(circle at 26% 24%, rgba(226, 210, 248, .64), transparent 42%),
+    radial-gradient(circle at 74% 70%, rgba(247, 211, 231, .62), transparent 46%),
+    rgba(244, 236, 252, .38);
+  filter: blur(.2px);
+  opacity: .88;
+  transform: rotate(-6deg);
+}
+
+#contacto.contact-redesign::after {
+  content: "";
+  position: absolute;
+  z-index: -3;
+  left: -12%;
+  bottom: -23%;
+  width: clamp(360px, 38vw, 610px);
+  aspect-ratio: 1.1;
+  border-radius: 54% 46% 37% 63% / 48% 37% 63% 52%;
+  background: linear-gradient(145deg, rgba(236, 221, 252, .70), rgba(251, 224, 239, .56));
+  opacity: .62;
+  transform: rotate(11deg);
+}
+
+.contact-shell {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, .92fr) minmax(520px, 1.08fr);
+  gap: clamp(60px, 7vw, 108px);
+  align-items: center;
+}
+
+.contact-copy {
+  max-width: 650px;
+}
+
+#contacto .contact-tag {
+  margin-bottom: 28px;
+}
+
+.contact-title {
+  max-width: 660px;
+  font-size: clamp(3.9rem, 6.1vw, 6.6rem) !important;
+  line-height: .91 !important;
+  letter-spacing: -.052em !important;
+  text-wrap: balance;
+}
+
+.contact-title .contact-gradient {
+  display: block;
+  color: transparent;
+  background: linear-gradient(120deg, #7d63cc 2%, #a36ac8 46%, #d16caa 96%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.contact-divider {
+  display: grid;
+  grid-template-columns: minmax(46px, 1fr) auto minmax(46px, 1fr);
+  align-items: center;
+  gap: 17px;
+  width: min(480px, 100%);
+  margin: 31px 0 31px;
+  color: #9a70cf;
+}
+
+.contact-divider::before,
+.contact-divider::after {
+  content: "";
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(145, 108, 203, .38));
+}
+.contact-divider::after {
+  background: linear-gradient(90deg, rgba(145, 108, 203, .38), transparent);
+}
+.contact-divider svg {
+  width: 27px;
+  height: 27px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contact-text {
+  display: grid;
+  gap: 23px;
+  max-width: 650px;
+}
+.contact-text p {
+  margin: 0;
+  color: #47435f;
+  font-size: clamp(1rem, 1.35vw, 1.17rem);
+  line-height: 1.72;
+}
+.contact-text strong {
+  color: #745eb2;
+  font-weight: 700;
+}
+
+.contact-links-wrap {
+  position: relative;
+  display: grid;
+  gap: 17px;
+}
+
+.contact-links-wrap::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -52px -58px -52px -44px;
+  border-radius: 48% 52% 44% 56% / 42% 50% 50% 58%;
+  background: linear-gradient(145deg, rgba(239, 229, 252, .66), rgba(251, 229, 242, .60));
+  opacity: .72;
+  transform: rotate(-3deg);
+}
+
+.contact-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 78px minmax(0, 1fr) 36px;
+  align-items: center;
+  gap: 20px;
+  min-height: 124px;
+  padding: 21px 24px 21px 22px;
+  border: 1px solid rgba(221, 211, 232, .9);
+  border-radius: 25px;
+  background: rgba(255,255,255,.91);
+  box-shadow: 0 18px 46px rgba(72, 54, 94, .085);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  overflow: hidden;
+}
+.contact-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(130deg, rgba(241, 234, 252, .42), transparent 39%);
+}
+.contact-card:hover,
+.contact-card:focus-visible {
+  transform: translateX(6px);
+  border-color: rgba(176, 145, 213, .62);
+  box-shadow: 0 22px 56px rgba(72, 54, 94, .13);
+  outline: none;
+}
+.contact-card > * { position: relative; z-index: 1; }
+
+.contact-card-icon {
+  width: 72px;
+  height: 72px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #7f61c2;
+  background:
+    radial-gradient(circle at 30% 24%, rgba(255,255,255,.96), transparent 42%),
+    linear-gradient(145deg, rgba(232, 220, 250, .78), rgba(248, 230, 242, .62));
+  border: 1px solid rgba(213, 199, 232, .85);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.92);
+}
+.contact-card-icon svg {
+  width: 32px;
+  height: 32px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.contact-card-icon.text-icon {
+  font-size: 1.05rem;
+  font-weight: 850;
+  letter-spacing: -.02em;
+}
+
+.contact-card-copy b {
+  display: block;
+  margin-bottom: 4px;
+  color: #211d43;
+  font-size: 1.16rem;
+  line-height: 1.25;
+}
+.contact-card-copy span {
+  display: block;
+  color: #766f87;
+  font-size: .97rem;
+  line-height: 1.42;
+  overflow-wrap: anywhere;
+}
+
+.contact-card-arrow {
+  display: grid;
+  place-items: center;
+  color: #8e64d2;
+  transition: transform .22s ease;
+}
+.contact-card:hover .contact-card-arrow,
+.contact-card:focus-visible .contact-card-arrow {
+  transform: translateX(4px);
+}
+.contact-card-arrow svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contact-dots {
+  position: absolute;
+  left: 42%;
+  top: 4%;
+  width: 150px;
+  height: 120px;
+  opacity: .56;
+  background-image: radial-gradient(circle, rgba(139, 101, 204, .66) 2px, transparent 2.5px);
+  background-size: 18px 18px;
+  mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+}
+
+.contact-branch {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  color: #9d77d2;
+  opacity: .7;
+}
+.contact-branch svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.contact-branch-right {
+  width: 170px;
+  height: 330px;
+  right: -8px;
+  top: 5%;
+  transform: rotate(-4deg);
+}
+.contact-branch-left {
+  width: 155px;
+  height: 250px;
+  left: -18px;
+  bottom: -4%;
+  transform: rotate(-10deg) scaleX(-1);
+}
+
+@media (max-width: 1120px) {
+  .contact-shell {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+  .contact-copy { max-width: 780px; }
+  .contact-links-wrap { max-width: 760px; width: 100%; }
+  .contact-dots { left: auto; right: 5%; top: 12%; }
+}
+
+@media (max-width: 820px) {
+  #contacto.contact-redesign {
+    padding-top: 72px !important;
+    padding-bottom: 76px !important;
+  }
+  #contacto.contact-redesign::before {
+    width: 520px;
+    right: -54%;
+    top: 42%;
+    opacity: .54;
+  }
+  .contact-shell { gap: 44px; }
+  .contact-title {
+    font-size: clamp(3.35rem, 15vw, 5rem) !important;
+    line-height: .94 !important;
+  }
+  .contact-divider { margin: 25px 0 26px; }
+  .contact-links-wrap { gap: 13px; }
+  .contact-links-wrap::before { inset: -26px -18px; }
+  .contact-card {
+    grid-template-columns: 60px minmax(0, 1fr) 27px;
+    gap: 14px;
+    min-height: 98px;
+    padding: 16px 16px 16px 15px;
+    border-radius: 21px;
+  }
+  .contact-card-icon {
+    width: 58px;
+    height: 58px;
+  }
+  .contact-card-icon svg { width: 27px; height: 27px; }
+  .contact-card-copy b { font-size: 1.03rem; }
+  .contact-card-copy span { font-size: .86rem; }
+  .contact-branch-right { width: 110px; height: 225px; right: -25px; top: 39%; opacity: .44; }
+  .contact-branch-left { width: 105px; height: 175px; left: -28px; bottom: -1%; opacity: .44; }
+  .contact-dots { width: 105px; height: 90px; right: 1%; top: 4%; background-size: 15px 15px; }
+}
+
+@media (max-width: 480px) {
+  .contact-card {
+    grid-template-columns: 54px minmax(0, 1fr) 22px;
+    gap: 12px;
+  }
+  .contact-card-icon { width: 52px; height: 52px; }
+  .contact-card-arrow svg { width: 22px; height: 22px; }
+}
+
 </style>
 
 </head>
@@ -4302,25 +4643,81 @@ body.hero-actions-visible #inicio .socials {
 
   
 
-  <section class="screen content-screen" id="contacto" data-title="Contacto">
-    <div class="screen-inner grid-2">
-      <div>
-        <div class="tag reveal">Contacto</div>
-        <h2 class="reveal">Dentro de unos <span class="grad">años más.</span></h2>
-        
-        <p class="lead reveal delay-1" style="margin: 20px 0 18px;">
-          No sé exactamente en qué proyecto estaré dentro de unos años, pero sí tengo claro el problema al que quiero dedicar mi carrera.
-        </p>
-        <p class="lead reveal delay-1" style="margin-bottom: 34px;">
-          Quiero aportar a un laboratorio multidisciplinario donde ingeniería y salud trabajen juntas para que una enfermedad no impida vivir una vida digna y significativa. Si compartimos ese propósito, conversemos.
-        </p>
+  <section class="screen content-screen contact-redesign" id="contacto" data-title="Contacto">
+    <div class="contact-dots" aria-hidden="true"></div>
 
+    <span class="contact-branch contact-branch-right" aria-hidden="true">
+      <svg viewBox="0 0 130 290">
+        <path d="M24 278C58 221 80 161 81 84C81 53 88 28 104 10"/>
+        <path d="M67 181C49 174 37 159 31 138C50 140 65 154 67 181Z"/>
+        <path d="M78 135C95 125 111 106 114 84C95 87 82 105 78 135Z"/>
+        <path d="M80 91C63 80 53 64 52 45C70 50 80 68 80 91Z"/>
+        <path d="M88 56C104 48 113 35 116 19C101 22 91 36 88 56Z"/>
+        <path d="M55 217C35 213 19 203 8 185C29 184 47 197 55 217Z"/>
+        <path d="M68 173C85 165 101 150 107 130C87 132 74 149 68 173Z"/>
+      </svg>
+    </span>
+
+    <span class="contact-branch contact-branch-left" aria-hidden="true">
+      <svg viewBox="0 0 130 250">
+        <path d="M21 239C54 192 70 139 72 76C73 48 82 25 101 8"/>
+        <path d="M60 167C42 160 31 148 27 130C44 131 57 143 60 167Z"/>
+        <path d="M70 127C86 117 98 101 101 82C84 84 74 100 70 127Z"/>
+        <path d="M71 85C57 76 48 63 48 47C62 51 71 67 71 85Z"/>
+        <path d="M49 201C33 198 18 188 9 173C27 172 43 184 49 201Z"/>
+      </svg>
+    </span>
+
+    <div class="screen-inner contact-shell">
+      <div class="contact-copy">
+        <div class="tag contact-tag reveal">Contacto</div>
+        <h2 class="contact-title reveal">
+          Dentro de unos
+          <span class="contact-gradient">años más.</span>
+        </h2>
+
+        <div class="contact-divider reveal delay-1" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 21S4.8 16.8 4.8 10.8A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.2 3.2C19.2 16.8 12 21 12 21Z"/></svg>
+        </div>
+
+        <div class="contact-text reveal delay-1">
+          <p>
+            No sé exactamente en qué proyecto estaré dentro de unos años, pero sí tengo claro <strong>el problema al que quiero dedicar mi carrera.</strong>
+          </p>
+          <p>
+            Quiero aportar a un laboratorio multidisciplinario donde ingeniería y salud trabajen juntas para que una enfermedad no impida vivir una vida digna y significativa. Si compartimos ese propósito, conversemos.
+          </p>
+        </div>
       </div>
-      <div class="reveal delay-2">
-        <a class="contact-line" href="mailto:catalina.castro.2@ug.uchile.cl" aria-label="Enviar correo"><span class="mini-icon" aria-hidden="true">@</span><div><b>Email</b><span>catalina.castro.2@ug.uchile.cl</span></div></a>
-        <a class="contact-line" href="https://www.linkedin.com/in/catalina-castro-vargas" target="_blank" aria-label="Perfil de LinkedIn"><span class="mini-icon" aria-hidden="true">In</span><div><b>LinkedIn</b><span>Conectemos en LinkedIn</span></div></a>
-        <a class="contact-line" href="https://drive.google.com/drive/folders/1I4UVtk9JRBWTctJrGvdwNJyrfj7cjeie?usp=drive_link" target="_blank" aria-label="Abrir portafolio en Google Drive"><span class="mini-icon" aria-hidden="true">★</span><div><b>Portafolio</b><span>Certificados, reconocimientos e informes</span></div></a>
-        <a class="contact-line" href="CV_Catalina_Castro_Vargas (4).pdf" target="_blank" aria-label="Descargar Currículum"><span class="mini-icon" aria-hidden="true">CV</span><div><b>Currículum</b><span>Descargar PDF</span></div></a>
+
+      <div class="contact-links-wrap reveal delay-2" aria-label="Formas de contacto">
+        <a class="contact-card" href="mailto:catalina.castro.2@ug.uchile.cl" aria-label="Enviar correo a Catalina">
+          <span class="contact-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+          </span>
+          <span class="contact-card-copy"><b>Email</b><span>catalina.castro.2@ug.uchile.cl</span></span>
+          <span class="contact-card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span>
+        </a>
+
+        <a class="contact-card" href="https://www.linkedin.com/in/catalina-castro-vargas" target="_blank" rel="noopener" aria-label="Abrir perfil de LinkedIn">
+          <span class="contact-card-icon text-icon" aria-hidden="true">in</span>
+          <span class="contact-card-copy"><b>LinkedIn</b><span>Conectemos en LinkedIn</span></span>
+          <span class="contact-card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span>
+        </a>
+
+        <a class="contact-card" href="https://drive.google.com/drive/folders/1I4UVtk9JRBWTctJrGvdwNJyrfj7cjeie?usp=drive_link" target="_blank" rel="noopener" aria-label="Abrir portafolio en Google Drive">
+          <span class="contact-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9L12 3Z"/></svg>
+          </span>
+          <span class="contact-card-copy"><b>Portafolio</b><span>Certificados, reconocimientos e informes</span></span>
+          <span class="contact-card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span>
+        </a>
+
+        <a class="contact-card" href="CV_Catalina_Castro_Vargas (4).pdf" target="_blank" rel="noopener" aria-label="Abrir currículum en PDF">
+          <span class="contact-card-icon text-icon" aria-hidden="true">CV</span>
+          <span class="contact-card-copy"><b>Currículum</b><span>Descargar PDF</span></span>
+          <span class="contact-card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span>
+        </a>
       </div>
     </div>
   </section>
