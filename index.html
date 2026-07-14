@@ -8423,6 +8423,433 @@ body.project-detail-open { overflow: hidden !important; }
 }
 </style>
 
+
+<style>
+/* =========================================================
+   IEEE RAS UCHILE · UNA PUERTA A LA ROBÓTICA
+   Rediseño editorial profesional, femenino y más personal
+   ========================================================= */
+#ieee.ieee-door-section {
+  position: relative;
+  min-height: auto;
+  padding: clamp(62px, 5.5vw, 86px) 0 clamp(72px, 6vw, 96px) !important;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 7% 18%, rgba(230, 217, 249, .48), transparent 24rem),
+    radial-gradient(circle at 94% 66%, rgba(247, 218, 235, .38), transparent 29rem),
+    linear-gradient(180deg, #fff 0%, #fffdfd 68%, #fff9fc 100%);
+}
+#ieee.ieee-door-section::before {
+  content: "" !important;
+  position: absolute;
+  z-index: 0;
+  width: 430px;
+  height: 430px;
+  left: -230px;
+  bottom: -265px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(224, 210, 245, .25);
+  pointer-events: none;
+}
+#ieee.ieee-door-section::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  width: 150px;
+  height: 108px;
+  right: 5%;
+  top: 4.5%;
+  opacity: .34;
+  background-image: radial-gradient(circle, #9b7bd3 1.35px, transparent 1.6px);
+  background-size: 14px 14px;
+  pointer-events: none;
+}
+.ieee-door-shell { position: relative; z-index: 1; }
+.ieee-door-hero {
+  display: grid;
+  grid-template-columns: minmax(0, .94fr) minmax(490px, 1.06fr);
+  gap: clamp(46px, 5.6vw, 82px);
+  align-items: center;
+}
+.ieee-door-copy { max-width: 650px; }
+.ieee-door-kicker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 11px;
+  color: #795fc0;
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+.ieee-door-kicker::before {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: linear-gradient(90deg, #8063cf, #c879aa);
+}
+.ieee-door-overline {
+  margin: 0 0 16px;
+  color: #91889f;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .085em;
+  text-transform: uppercase;
+}
+.ieee-door-title {
+  max-width: 720px;
+  margin: 0;
+  color: #29264f;
+  font-size: clamp(3.65rem, 4.85vw, 5.65rem);
+  line-height: .92;
+  letter-spacing: -.045em;
+}
+.ieee-door-title-gradient {
+  color: transparent;
+  background: linear-gradient(115deg, #7a61c8 0%, #9e6fcb 48%, #c46fa3 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-style: italic;
+  font-weight: 500;
+}
+.ieee-door-divider {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: 175px;
+  margin: 23px 0 20px;
+  color: #bd75ad;
+}
+.ieee-door-divider span { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, #d7b5dc); }
+.ieee-door-divider span:last-child { background: linear-gradient(90deg, #d7b5dc, transparent); }
+.ieee-door-divider svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.65; }
+.ieee-door-about {
+  display: grid;
+  grid-template-columns: 104px 1fr;
+  gap: 18px;
+  align-items: start;
+  max-width: 620px;
+  padding: 0 0 18px;
+  border-bottom: 1px solid rgba(129, 99, 188, .17);
+}
+.ieee-door-about span {
+  padding-top: 2px;
+  color: #8064c2;
+  font-size: .71rem;
+  font-weight: 850;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.ieee-door-about p {
+  color: #696278;
+  font-size: .9rem;
+  line-height: 1.64;
+}
+.ieee-door-message {
+  position: relative;
+  margin: 20px 0 0;
+  padding: 19px 24px 20px 27px;
+  overflow: hidden;
+  border-left: 2px solid #a176cf;
+  border-radius: 0 22px 22px 0;
+  background: linear-gradient(105deg, rgba(241, 234, 252, .74), rgba(255, 247, 251, .60));
+}
+.ieee-door-message::after {
+  content: "“";
+  position: absolute;
+  right: 17px;
+  top: -14px;
+  color: rgba(139, 103, 195, .10);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 7rem;
+  line-height: 1;
+}
+.ieee-door-message p,
+.ieee-door-message strong { position: relative; z-index: 1; }
+.ieee-door-message p {
+  max-width: 555px;
+  color: #4f4967;
+  font-size: .98rem;
+  line-height: 1.68;
+}
+.ieee-door-message strong {
+  display: block;
+  margin-top: 9px;
+  color: #7557ae;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.17rem;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.ieee-door-figure {
+  position: relative;
+  min-height: 485px;
+  margin: 0;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  isolation: isolate;
+}
+.ieee-door-photo-blob {
+  position: absolute;
+  z-index: -2;
+  width: 93%;
+  height: 78%;
+  top: 7%;
+  right: -2%;
+  border-radius: 51% 49% 59% 41% / 48% 43% 57% 52%;
+  background: linear-gradient(145deg, rgba(231,220,249,.72), rgba(246,221,237,.56));
+  transform: rotate(5deg);
+}
+.ieee-door-photo-halo {
+  position: absolute;
+  z-index: -3;
+  width: 76%;
+  aspect-ratio: 1;
+  right: 3%;
+  top: 5%;
+  border: 1px solid rgba(142, 110, 197, .17);
+  border-radius: 46% 54% 51% 49% / 55% 43% 57% 45%;
+  transform: rotate(-7deg);
+}
+.ieee-door-photo-frame {
+  position: relative;
+  width: min(94%, 660px);
+  aspect-ratio: 1.36;
+  padding: 8px;
+  overflow: hidden;
+  background: rgba(255,255,255,.96);
+  border: 1px solid rgba(219,207,232,.9);
+  border-radius: 29% 17% 28% 18% / 20% 27% 18% 29%;
+  box-shadow: 0 25px 60px rgba(63, 46, 88, .13);
+}
+.ieee-door-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 48%;
+  border-radius: inherit;
+  filter: saturate(1.08) contrast(1.03) brightness(1.01);
+}
+.ieee-door-figure figcaption {
+  width: min(89%, 650px);
+  margin-top: 14px;
+  padding-left: 15px;
+  border-left: 2px solid #ad76c0;
+}
+.ieee-door-figure figcaption span { color: #443d64; font-size: .82rem; font-weight: 800; }
+.ieee-door-figure figcaption p { margin-top: 2px; color: #8a8198; font-size: .78rem; }
+.ieee-door-branch {
+  position: absolute;
+  z-index: 3;
+  right: -2%;
+  bottom: 3%;
+  width: clamp(88px, 9vw, 126px);
+  overflow: visible;
+  opacity: .52;
+}
+.ieee-door-branch path { fill: none; stroke: #9c79d6; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.ieee-door-branch ellipse { fill: #9c79d6; }
+
+.ieee-door-contributions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: clamp(32px, 3.5vw, 48px);
+  border-top: 1px solid rgba(132, 101, 176, .18);
+  border-bottom: 1px solid rgba(132, 101, 176, .18);
+}
+.ieee-door-contribution {
+  position: relative;
+  min-height: 165px;
+  padding: 25px clamp(22px, 2.6vw, 36px) 24px;
+  border-left: 1px solid rgba(132, 101, 176, .16);
+}
+.ieee-door-contribution:first-child { padding-left: 0; border-left: 0; }
+.ieee-door-contribution:last-child { padding-right: 0; }
+.ieee-door-contribution-top {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 12px;
+}
+.ieee-door-contribution-icon {
+  display: grid;
+  place-items: center;
+  width: 45px;
+  height: 45px;
+  flex: 0 0 auto;
+  color: #8164c9;
+  background: linear-gradient(145deg, #f2ecfc, #fff7fb);
+  border: 1px solid #e2d8ed;
+  border-radius: 50%;
+}
+.ieee-door-contribution-icon svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.65; stroke-linecap: round; stroke-linejoin: round; }
+.ieee-door-contribution small {
+  color: #8164c2;
+  font-size: .67rem;
+  font-weight: 850;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+.ieee-door-contribution h3 {
+  margin: 0 0 8px;
+  color: #302b59;
+  font-size: 1.08rem;
+}
+.ieee-door-contribution p {
+  max-width: 360px;
+  color: #746e83;
+  font-size: .88rem;
+  line-height: 1.58;
+}
+
+.ieee-door-journey {
+  margin-top: clamp(30px, 3.3vw, 46px);
+  padding: clamp(25px, 2.8vw, 36px) clamp(24px, 3.1vw, 42px) 28px;
+  border: 1px solid rgba(132, 101, 176, .14);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 92% 12%, rgba(228, 214, 248, .48), transparent 13rem),
+    linear-gradient(115deg, rgba(249,246,253,.90), rgba(255,250,253,.86));
+  box-shadow: 0 16px 42px rgba(71, 51, 98, .055);
+}
+.ieee-door-journey-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 22px;
+}
+.ieee-door-journey-head span {
+  color: #7358b3;
+  font-size: .75rem;
+  font-weight: 850;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+.ieee-door-journey-head p {
+  color: #8a8298;
+  font-size: .82rem;
+}
+.ieee-door-line {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 42px;
+}
+.ieee-door-line::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 12px;
+  height: 1px;
+  background: linear-gradient(90deg, #9c7ad2, #b790d0 50%, #c985b3);
+}
+.ieee-door-milestone {
+  position: relative;
+  padding-top: 35px;
+}
+.ieee-door-milestone::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 5px;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  background: #9a73ce;
+  box-shadow: 0 0 0 1px rgba(126, 91, 183, .25), 0 5px 12px rgba(79, 54, 112, .10);
+}
+.ieee-door-milestone.current::before {
+  width: 17px;
+  height: 17px;
+  top: 3px;
+  background: linear-gradient(135deg, #8264cf, #c473a7);
+}
+.ieee-door-year-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.ieee-door-year-row strong {
+  color: #8f64bd;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.52rem;
+  line-height: 1;
+}
+.ieee-door-current {
+  display: inline-flex;
+  padding: 4px 8px;
+  color: #8b5c98;
+  background: #faedf5;
+  border: 1px solid #efd8e7;
+  border-radius: 999px;
+  font-size: .61rem;
+  font-weight: 850;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.ieee-door-milestone h3 {
+  margin: 7px 0 3px;
+  color: #302b59;
+  font-size: 1rem;
+}
+.ieee-door-milestone p {
+  max-width: 300px;
+  color: #746e83;
+  font-size: .82rem;
+  line-height: 1.45;
+}
+.ieee-door-milestone-award {
+  color: #6d5b86 !important;
+  font-style: italic;
+}
+
+@media (max-width: 1100px) {
+  .ieee-door-hero { grid-template-columns: 1fr; gap: 38px; }
+  .ieee-door-copy { max-width: 800px; }
+  .ieee-door-figure { min-height: 470px; }
+  .ieee-door-photo-frame { width: min(92%, 760px); }
+  .ieee-door-contributions { grid-template-columns: 1fr; }
+  .ieee-door-contribution,
+  .ieee-door-contribution:first-child,
+  .ieee-door-contribution:last-child {
+    min-height: auto;
+    padding: 22px 0;
+    border-left: 0;
+    border-top: 1px solid rgba(132, 101, 176, .14);
+  }
+  .ieee-door-contribution:first-child { border-top: 0; }
+}
+@media (max-width: 760px) {
+  #ieee.ieee-door-section { padding-top: 68px !important; padding-bottom: 72px !important; }
+  #ieee.ieee-door-section::after { display: none; }
+  .ieee-door-title { font-size: clamp(3rem, 14vw, 4.45rem); line-height: .94; }
+  .ieee-door-overline { font-size: .66rem; }
+  .ieee-door-about { grid-template-columns: 1fr; gap: 7px; }
+  .ieee-door-message { padding: 18px 19px 19px 21px; }
+  .ieee-door-figure { min-height: 350px; }
+  .ieee-door-photo-frame { width: 100%; aspect-ratio: 1.12; padding: 6px; border-radius: 26% 15% 25% 17% / 18% 24% 17% 26%; }
+  .ieee-door-figure figcaption { width: 94%; }
+  .ieee-door-branch { width: 76px; right: -3%; bottom: 4%; }
+  .ieee-door-journey { padding: 23px 20px 25px; border-radius: 22px; }
+  .ieee-door-journey-head { display: block; margin-bottom: 24px; }
+  .ieee-door-journey-head p { margin-top: 5px; }
+  .ieee-door-line { grid-template-columns: 1fr; gap: 24px; padding-left: 30px; }
+  .ieee-door-line::before { left: 8px; right: auto; top: 0; bottom: 0; width: 1px; height: auto; background: linear-gradient(180deg, #9c7ad2, #b790d0 50%, #c985b3); }
+  .ieee-door-milestone { padding-top: 0; }
+  .ieee-door-milestone::before { top: 4px; left: -29px; }
+  .ieee-door-milestone.current::before { top: 2px; left: -31px; }
+}
+</style>
+
 </head>
 <body>
 <div class="progress-bar" id="progressBar"></div>
@@ -8755,46 +9182,43 @@ body.project-detail-open { overflow: hidden !important; }
 </div>
 </div>
 </section>
-<section class="screen content-screen ieee-story-section" data-title="IEEE RAS" id="ieee">
-<div class="screen-inner ieee-story-shell">
-<div class="ieee-story-top">
-<div class="ieee-story-copy">
-<div class="ieee-story-kicker reveal">IEEE RAS UChile</div>
-<p class="ieee-story-overline reveal">Robotics and Automation Society · Universidad de Chile</p>
-<h2 class="ieee-story-title reveal">
-<span class="ieee-story-title-gradient">Robótica, comunidad</span><br/>
+
+<section class="screen content-screen ieee-door-section" data-title="IEEE RAS" id="ieee">
+<div class="screen-inner ieee-door-shell">
+<div class="ieee-door-hero">
+<div class="ieee-door-copy">
+<div class="ieee-door-kicker reveal">IEEE RAS UChile</div>
+<p class="ieee-door-overline reveal">Robotics and Automation Society · Universidad de Chile</p>
+<h2 class="ieee-door-title reveal">
+<span class="ieee-door-title-gradient">Robótica, comunidad</span><br/>
 y liderazgo.
 </h2>
-<div aria-hidden="true" class="ieee-story-divider reveal delay-1">
+<div aria-hidden="true" class="ieee-door-divider reveal delay-1">
 <span></span>
 <svg viewbox="0 0 24 24"><path d="M12 20.5S4.5 16.1 4.5 10.2A4.1 4.1 0 0 1 12 7.8a4.1 4.1 0 0 1 7.5 2.4c0 5.9-7.5 10.3-7.5 10.3Z"></path></svg>
 <span></span>
 </div>
-<p class="ieee-story-intro reveal delay-1">
-En IEEE RAS UChile encontré un espacio para aprender haciendo, crecer junto a otras personas y transformar ideas en proyectos y experiencias reales.
-</p>
-<div class="ieee-story-role reveal delay-2">
-<span aria-hidden="true" class="ieee-story-role-icon">
-<svg viewbox="0 0 24 24"><circle cx="8" cy="8" r="3"></circle><circle cx="16" cy="8" r="3"></circle><path d="M2.8 19c.4-3.7 2.4-5.6 5.2-5.6s4.8 1.9 5.2 5.6M11.2 19c.3-3 2-4.6 4.8-4.6 2.7 0 4.5 1.6 4.8 4.6"></path></svg>
-</span>
-<div>
-<small>Actualmente</small>
-<strong>Presidenta (Chair) de IEEE RAS UChile</strong>
+<div class="ieee-door-about reveal delay-1">
+<span>¿Qué es IEEE?</span>
+<p>IEEE es una organización profesional internacional que reúne a personas de ingeniería y tecnología para compartir conocimiento, formar comunidades y promover el desarrollo tecnológico. Dentro de ella, RAS es la sociedad dedicada a la robótica y la automatización.</p>
 </div>
-</div>
+<blockquote class="ieee-door-message reveal delay-2">
+<p>Lo que más me llevo de RAS es descubrir que no necesitas saberlo todo para entrar al mundo de la robótica. Siempre existe un comienzo, y RAS puede abrir esa puerta para aprender desde cero.</p>
+<strong>Todo parte cuando te atreves a hacer eso que alguna vez dudaste en intentar.</strong>
+</blockquote>
 </div>
 
-<figure class="ieee-story-figure reveal delay-1">
-<div aria-hidden="true" class="ieee-story-photo-blob"></div>
-<div aria-hidden="true" class="ieee-story-photo-dots"></div>
-<div class="ieee-story-photo-frame">
+<figure class="ieee-door-figure reveal delay-1">
+<div aria-hidden="true" class="ieee-door-photo-blob"></div>
+<div aria-hidden="true" class="ieee-door-photo-halo"></div>
+<div class="ieee-door-photo-frame">
 <img alt="Equipo de IEEE RAS UChile durante una actividad de robótica" loading="lazy" src="img/actividad_ieee_ras_uchile.webp"/>
 </div>
 <figcaption>
 <span>Equipo IEEE RAS UChile</span>
-<p>Comunidad, divulgación y aprendizaje en robótica.</p>
+<p>Una comunidad para comenzar, aprender haciendo y crecer en robótica.</p>
 </figcaption>
-<svg aria-hidden="true" class="ieee-story-branch" viewbox="0 0 150 310">
+<svg aria-hidden="true" class="ieee-door-branch" viewbox="0 0 150 310">
 <path d="M20 292C58 237 66 174 73 109C77 72 93 39 124 16"></path>
 <path d="M64 184C46 173 34 157 27 137"></path><ellipse cx="24" cy="127" rx="9" ry="21" transform="rotate(-31 24 127)"></ellipse>
 <path d="M71 139C93 127 108 109 117 84"></path><ellipse cx="120" cy="75" rx="9" ry="22" transform="rotate(30 120 75)"></ellipse>
@@ -8805,35 +9229,65 @@ En IEEE RAS UChile encontré un espacio para aprender haciendo, crecer junto a o
 </figure>
 </div>
 
-<div class="ieee-story-pillars reveal delay-1">
-<article class="ieee-story-pillar">
-<span aria-hidden="true" class="ieee-story-pillar-icon">
-<svg viewbox="0 0 24 24"><path d="M12 3v18M5 8h14M7 8v5M17 8v5M4 21h16"></path><circle cx="7" cy="15" r="2"></circle><circle cx="17" cy="15" r="2"></circle></svg>
+<div aria-label="Aportes en IEEE RAS UChile" class="ieee-door-contributions reveal delay-1">
+<article class="ieee-door-contribution">
+<div class="ieee-door-contribution-top">
+<span aria-hidden="true" class="ieee-door-contribution-icon">
+<svg viewbox="0 0 24 24"><path d="M4 19c.4-3.6 2.4-5.4 5.2-5.4s4.7 1.8 5.1 5.4"></path><circle cx="9.2" cy="8.3" r="3.1"></circle><path d="M15.8 5.5h4.2v4.2M20 5.5l-5.2 5.2"></path></svg>
 </span>
-<div><small>01 · Liderar</small><h3>Hacer crecer al equipo</h3><p>Coordinar actividades, organizar el trabajo y abrir espacios para que nuevos integrantes puedan participar.</p></div>
+<small>01 · Abrir la puerta</small>
+</div>
+<h3>Crear espacios para comenzar</h3>
+<p>Acompañar a quienes quieren acercarse a la robótica, aprender desde cero y atreverse a participar.</p>
 </article>
-<article class="ieee-story-pillar">
-<span aria-hidden="true" class="ieee-story-pillar-icon">
+<article class="ieee-door-contribution">
+<div class="ieee-door-contribution-top">
+<span aria-hidden="true" class="ieee-door-contribution-icon">
 <svg viewbox="0 0 24 24"><rect x="4" y="6" width="16" height="12" rx="2"></rect><path d="M8 6V3h8v3M8 18v3M16 18v3M9 11h6M12 8v6"></path></svg>
 </span>
-<div><small>02 · Construir</small><h3>Convertir ideas en proyectos</h3><p>Impulsar iniciativas de robótica, manufactura aditiva y tecnología aplicada con aprendizaje técnico real.</p></div>
+<small>02 · Construir</small>
+</div>
+<h3>Aprender haciendo</h3>
+<p>Impulsar iniciativas con aprendizaje técnico real.</p>
 </article>
-<article class="ieee-story-pillar">
-<span aria-hidden="true" class="ieee-story-pillar-icon">
+<article class="ieee-door-contribution">
+<div class="ieee-door-contribution-top">
+<span aria-hidden="true" class="ieee-door-contribution-icon">
 <svg viewbox="0 0 24 24"><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="7" r="3"></circle><circle cx="18" cy="17" r="3"></circle><path d="m8.7 10.7 6.6-2.5M8.7 13.3l6.6 2.5"></path></svg>
 </span>
-<div><small>03 · Conectar</small><h3>Crear comunidad</h3><p>Vincular estudiantes, laboratorios y comunidades mediante talleres, encuentros y divulgación tecnológica.</p></div>
+<small>03 · Conectar</small>
+</div>
+<h3>Crear comunidad</h3>
+<p>Vincular estudiantes mediante talleres, encuentros y divulgación tecnológica.</p>
 </article>
 </div>
 
-<div class="ieee-story-timeline reveal delay-2" aria-label="Trayectoria en IEEE RAS UChile">
-<div class="ieee-story-timeline-label">Mi trayectoria</div>
-<div class="ieee-story-milestone"><strong>2025</strong><span>Vicepresidenta de IEEE RAS UChile</span></div>
-<div class="ieee-story-milestone"><strong>2025</strong><span>IEEE Robotics &amp; Automation Dedication Award</span></div>
-<div class="ieee-story-milestone"><strong>2026</strong><span>Presidenta (Chair) de IEEE RAS UChile</span></div>
+<div class="ieee-door-journey reveal delay-2" aria-label="Trayectoria en IEEE RAS UChile">
+<div class="ieee-door-journey-head">
+<span>Mi recorrido en RAS</span>
+<p>De comenzar a participar a liderar la comunidad.</p>
+</div>
+<div class="ieee-door-line">
+<article class="ieee-door-milestone">
+<div class="ieee-door-year-row"><strong>2025</strong></div>
+<h3>Vicepresidenta</h3>
+<p>IEEE RAS UChile</p>
+</article>
+<article class="ieee-door-milestone">
+<div class="ieee-door-year-row"><strong>2025</strong></div>
+<h3>Reconocimiento IEEE</h3>
+<p class="ieee-door-milestone-award">IEEE Robotics &amp; Automation Dedication Award</p>
+</article>
+<article class="ieee-door-milestone current">
+<div class="ieee-door-year-row"><strong>2026</strong><span class="ieee-door-current">Actualidad</span></div>
+<h3>Presidenta (Chair)</h3>
+<p>IEEE RAS UChile</p>
+</article>
+</div>
 </div>
 </div>
 </section>
+
 <section class="screen content-screen gallery-redesign" data-title="Galería" id="galeria">
 <div class="screen-inner">
 <div class="gallery-heading">
