@@ -6812,7 +6812,6 @@ body.hero-actions-visible #inicio .socials {
   }
 }
 </style>
-
 <style id="refinamiento-final-secciones-2026">
 /* =========================================================
    REFINAMIENTO FINAL · HISTORIA, PROYECTOS, INVESTIGACIÓN Y ENFOQUE
@@ -6907,7 +6906,6 @@ body.hero-actions-visible #inicio .socials {
   #camino .focus-number{top:25px!important}
 }
 </style>
-
 <style id="correccion-historia-proyectos-2026-07-14">
 /* =========================================================
    CORRECCIÓN FINAL · HISTORIA + ORDEN DE PROYECTOS
@@ -7061,8 +7059,6 @@ body.hero-actions-visible #inicio .socials {
   }
 }
 </style>
-
-
 <style id="ajustes-finales-historia-proyectos-correo-2026-07-14">
 /* HISTORIA: la leyenda respira y se separa visualmente del retrato. */
 
@@ -7105,8 +7101,6 @@ body.hero-actions-visible #inicio .socials {
   }
 }
 </style>
-
-
 <style id="ajuste-leyenda-filtros-y-detalles-2026-07-14">
 /* HISTORIA — la leyenda se lee como un elemento editorial independiente. */
 
@@ -7297,8 +7291,6 @@ body.project-detail-open { overflow: hidden !important; }
   }
 }
 </style>
-
-
 <style id="ajuste-historia-y-proyectos-filtrados-final-2026-07-14">
 /* =========================================================
    HISTORIA · RETRATO CENTRADO + LEYENDA FUERA DE LA SOMBRA
@@ -7431,8 +7423,6 @@ body.project-detail-open { overflow: hidden !important; }
   }
 }
 </style>
-
-
 <style id="equilibrio-tipografico-investigacion-enfoque-2026-07-14">
 /* =========================================================
    EQUILIBRIO FINAL · INVESTIGACIÓN + MI ENFOQUE
@@ -7813,8 +7803,6 @@ body.project-detail-open { overflow: hidden !important; }
   }
 }
 </style>
-
-
 <style id="refinamiento-enfoque-ieee-2026-07-14">
 /* =========================================================
    MI ENFOQUE · composición limpia y sin superposiciones
@@ -8154,8 +8142,6 @@ body.project-detail-open { overflow: hidden !important; }
   }
 }
 </style>
-
-
 <style>
 /* =========================================================
    IEEE RAS UCHILE · ROBÓTICA, COMUNIDAD Y LIDERAZGO
@@ -8422,8 +8408,1452 @@ body.project-detail-open { overflow: hidden !important; }
   .ieee-story-milestone { border-left: 0; border-top: 1px solid rgba(132,101,176,.14); }
 }
 </style>
+<style>
+/* =========================================================
+   IEEE RAS UCHILE · UNA PUERTA A LA ROBÓTICA
+   Rediseño editorial profesional, femenino y más personal
+   ========================================================= */
+#ieee.ieee-door-section {
+  position: relative;
+  min-height: auto;
+  padding: clamp(62px, 5.5vw, 86px) 0 clamp(72px, 6vw, 96px) !important;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 7% 18%, rgba(230, 217, 249, .48), transparent 24rem),
+    radial-gradient(circle at 94% 66%, rgba(247, 218, 235, .38), transparent 29rem),
+    linear-gradient(180deg, #fff 0%, #fffdfd 68%, #fff9fc 100%);
+}
+#ieee.ieee-door-section::before {
+  content: "" !important;
+  position: absolute;
+  z-index: 0;
+  width: 430px;
+  height: 430px;
+  left: -230px;
+  bottom: -265px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(224, 210, 245, .25);
+  pointer-events: none;
+}
+#ieee.ieee-door-section::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  width: 150px;
+  height: 108px;
+  right: 5%;
+  top: 4.5%;
+  opacity: .34;
+  background-image: radial-gradient(circle, #9b7bd3 1.35px, transparent 1.6px);
+  background-size: 14px 14px;
+  pointer-events: none;
+}
+.ieee-door-shell { position: relative; z-index: 1; }
+.ieee-door-hero {
+  display: grid;
+  grid-template-columns: minmax(0, .94fr) minmax(490px, 1.06fr);
+  gap: clamp(46px, 5.6vw, 82px);
+  align-items: center;
+}
+.ieee-door-copy { max-width: 650px; }
+.ieee-door-kicker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 11px;
+  color: #795fc0;
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+.ieee-door-kicker::before {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: linear-gradient(90deg, #8063cf, #c879aa);
+}
+.ieee-door-overline {
+  margin: 0 0 16px;
+  color: #91889f;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .085em;
+  text-transform: uppercase;
+}
+.ieee-door-title {
+  max-width: 720px;
+  margin: 0;
+  color: #29264f;
+  font-size: clamp(3.65rem, 4.85vw, 5.65rem);
+  line-height: .92;
+  letter-spacing: -.045em;
+}
+.ieee-door-title-gradient {
+  color: transparent;
+  background: linear-gradient(115deg, #7a61c8 0%, #9e6fcb 48%, #c46fa3 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-style: italic;
+  font-weight: 500;
+}
+.ieee-door-divider {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: 175px;
+  margin: 23px 0 20px;
+  color: #bd75ad;
+}
+.ieee-door-divider span { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, #d7b5dc); }
+.ieee-door-divider span:last-child { background: linear-gradient(90deg, #d7b5dc, transparent); }
+.ieee-door-divider svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.65; }
+.ieee-door-about {
+  display: grid;
+  grid-template-columns: 104px 1fr;
+  gap: 18px;
+  align-items: start;
+  max-width: 620px;
+  padding: 0 0 18px;
+  border-bottom: 1px solid rgba(129, 99, 188, .17);
+}
+.ieee-door-about span {
+  padding-top: 2px;
+  color: #8064c2;
+  font-size: .71rem;
+  font-weight: 850;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.ieee-door-about p {
+  color: #696278;
+  font-size: .9rem;
+  line-height: 1.64;
+}
+.ieee-door-message {
+  position: relative;
+  margin: 20px 0 0;
+  padding: 19px 24px 20px 27px;
+  overflow: hidden;
+  border-left: 2px solid #a176cf;
+  border-radius: 0 22px 22px 0;
+  background: linear-gradient(105deg, rgba(241, 234, 252, .74), rgba(255, 247, 251, .60));
+}
+.ieee-door-message::after {
+  content: "“";
+  position: absolute;
+  right: 17px;
+  top: -14px;
+  color: rgba(139, 103, 195, .10);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 7rem;
+  line-height: 1;
+}
+.ieee-door-message p,
+.ieee-door-message strong { position: relative; z-index: 1; }
+.ieee-door-message p {
+  max-width: 555px;
+  color: #4f4967;
+  font-size: .98rem;
+  line-height: 1.68;
+}
+.ieee-door-message strong {
+  display: block;
+  margin-top: 9px;
+  color: #7557ae;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.17rem;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.35;
+}
 
+.ieee-door-figure {
+  position: relative;
+  min-height: 485px;
+  margin: 0;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  isolation: isolate;
+}
+.ieee-door-photo-blob {
+  position: absolute;
+  z-index: -2;
+  width: 93%;
+  height: 78%;
+  top: 7%;
+  right: -2%;
+  border-radius: 51% 49% 59% 41% / 48% 43% 57% 52%;
+  background: linear-gradient(145deg, rgba(231,220,249,.72), rgba(246,221,237,.56));
+  transform: rotate(5deg);
+}
+.ieee-door-photo-halo {
+  position: absolute;
+  z-index: -3;
+  width: 76%;
+  aspect-ratio: 1;
+  right: 3%;
+  top: 5%;
+  border: 1px solid rgba(142, 110, 197, .17);
+  border-radius: 46% 54% 51% 49% / 55% 43% 57% 45%;
+  transform: rotate(-7deg);
+}
+.ieee-door-photo-frame {
+  position: relative;
+  width: min(94%, 660px);
+  aspect-ratio: 1.36;
+  padding: 8px;
+  overflow: hidden;
+  background: rgba(255,255,255,.96);
+  border: 1px solid rgba(219,207,232,.9);
+  border-radius: 29% 17% 28% 18% / 20% 27% 18% 29%;
+  box-shadow: 0 25px 60px rgba(63, 46, 88, .13);
+}
+.ieee-door-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 48%;
+  border-radius: inherit;
+  filter: saturate(1.08) contrast(1.03) brightness(1.01);
+}
+.ieee-door-figure figcaption {
+  width: min(89%, 650px);
+  margin-top: 14px;
+  padding-left: 15px;
+  border-left: 2px solid #ad76c0;
+}
+.ieee-door-figure figcaption span { color: #443d64; font-size: .82rem; font-weight: 800; }
+.ieee-door-figure figcaption p { margin-top: 2px; color: #8a8198; font-size: .78rem; }
+.ieee-door-branch {
+  position: absolute;
+  z-index: 3;
+  right: -2%;
+  bottom: 3%;
+  width: clamp(88px, 9vw, 126px);
+  overflow: visible;
+  opacity: .52;
+}
+.ieee-door-branch path { fill: none; stroke: #9c79d6; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.ieee-door-branch ellipse { fill: #9c79d6; }
 
+.ieee-door-contributions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: clamp(32px, 3.5vw, 48px);
+  border-top: 1px solid rgba(132, 101, 176, .18);
+  border-bottom: 1px solid rgba(132, 101, 176, .18);
+}
+.ieee-door-contribution {
+  position: relative;
+  min-height: 165px;
+  padding: 25px clamp(22px, 2.6vw, 36px) 24px;
+  border-left: 1px solid rgba(132, 101, 176, .16);
+}
+.ieee-door-contribution:first-child { padding-left: 0; border-left: 0; }
+.ieee-door-contribution:last-child { padding-right: 0; }
+.ieee-door-contribution-top {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 12px;
+}
+.ieee-door-contribution-icon {
+  display: grid;
+  place-items: center;
+  width: 45px;
+  height: 45px;
+  flex: 0 0 auto;
+  color: #8164c9;
+  background: linear-gradient(145deg, #f2ecfc, #fff7fb);
+  border: 1px solid #e2d8ed;
+  border-radius: 50%;
+}
+.ieee-door-contribution-icon svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.65; stroke-linecap: round; stroke-linejoin: round; }
+.ieee-door-contribution small {
+  color: #8164c2;
+  font-size: .67rem;
+  font-weight: 850;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+.ieee-door-contribution h3 {
+  margin: 0 0 8px;
+  color: #302b59;
+  font-size: 1.08rem;
+}
+.ieee-door-contribution p {
+  max-width: 360px;
+  color: #746e83;
+  font-size: .88rem;
+  line-height: 1.58;
+}
+
+.ieee-door-journey {
+  margin-top: clamp(30px, 3.3vw, 46px);
+  padding: clamp(25px, 2.8vw, 36px) clamp(24px, 3.1vw, 42px) 28px;
+  border: 1px solid rgba(132, 101, 176, .14);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 92% 12%, rgba(228, 214, 248, .48), transparent 13rem),
+    linear-gradient(115deg, rgba(249,246,253,.90), rgba(255,250,253,.86));
+  box-shadow: 0 16px 42px rgba(71, 51, 98, .055);
+}
+.ieee-door-journey-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 22px;
+}
+.ieee-door-journey-head span {
+  color: #7358b3;
+  font-size: .75rem;
+  font-weight: 850;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+.ieee-door-journey-head p {
+  color: #8a8298;
+  font-size: .82rem;
+}
+.ieee-door-line {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 42px;
+}
+.ieee-door-line::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 12px;
+  height: 1px;
+  background: linear-gradient(90deg, #9c7ad2, #b790d0 50%, #c985b3);
+}
+.ieee-door-milestone {
+  position: relative;
+  padding-top: 35px;
+}
+.ieee-door-milestone::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 5px;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  background: #9a73ce;
+  box-shadow: 0 0 0 1px rgba(126, 91, 183, .25), 0 5px 12px rgba(79, 54, 112, .10);
+}
+.ieee-door-milestone.current::before {
+  width: 17px;
+  height: 17px;
+  top: 3px;
+  background: linear-gradient(135deg, #8264cf, #c473a7);
+}
+.ieee-door-year-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.ieee-door-year-row strong {
+  color: #8f64bd;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.52rem;
+  line-height: 1;
+}
+.ieee-door-current {
+  display: inline-flex;
+  padding: 4px 8px;
+  color: #8b5c98;
+  background: #faedf5;
+  border: 1px solid #efd8e7;
+  border-radius: 999px;
+  font-size: .61rem;
+  font-weight: 850;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.ieee-door-milestone h3 {
+  margin: 7px 0 3px;
+  color: #302b59;
+  font-size: 1rem;
+}
+.ieee-door-milestone p {
+  max-width: 300px;
+  color: #746e83;
+  font-size: .82rem;
+  line-height: 1.45;
+}
+.ieee-door-milestone-award {
+  color: #6d5b86 !important;
+  font-style: italic;
+}
+
+@media (max-width: 1100px) {
+  .ieee-door-hero { grid-template-columns: 1fr; gap: 38px; }
+  .ieee-door-copy { max-width: 800px; }
+  .ieee-door-figure { min-height: 470px; }
+  .ieee-door-photo-frame { width: min(92%, 760px); }
+  .ieee-door-contributions { grid-template-columns: 1fr; }
+  .ieee-door-contribution,
+  .ieee-door-contribution:first-child,
+  .ieee-door-contribution:last-child {
+    min-height: auto;
+    padding: 22px 0;
+    border-left: 0;
+    border-top: 1px solid rgba(132, 101, 176, .14);
+  }
+  .ieee-door-contribution:first-child { border-top: 0; }
+}
+@media (max-width: 760px) {
+  #ieee.ieee-door-section { padding-top: 68px !important; padding-bottom: 72px !important; }
+  #ieee.ieee-door-section::after { display: none; }
+  .ieee-door-title { font-size: clamp(3rem, 14vw, 4.45rem); line-height: .94; }
+  .ieee-door-overline { font-size: .66rem; }
+  .ieee-door-about { grid-template-columns: 1fr; gap: 7px; }
+  .ieee-door-message { padding: 18px 19px 19px 21px; }
+  .ieee-door-figure { min-height: 350px; }
+  .ieee-door-photo-frame { width: 100%; aspect-ratio: 1.12; padding: 6px; border-radius: 26% 15% 25% 17% / 18% 24% 17% 26%; }
+  .ieee-door-figure figcaption { width: 94%; }
+  .ieee-door-branch { width: 76px; right: -3%; bottom: 4%; }
+  .ieee-door-journey { padding: 23px 20px 25px; border-radius: 22px; }
+  .ieee-door-journey-head { display: block; margin-bottom: 24px; }
+  .ieee-door-journey-head p { margin-top: 5px; }
+  .ieee-door-line { grid-template-columns: 1fr; gap: 24px; padding-left: 30px; }
+  .ieee-door-line::before { left: 8px; right: auto; top: 0; bottom: 0; width: 1px; height: auto; background: linear-gradient(180deg, #9c7ad2, #b790d0 50%, #c985b3); }
+  .ieee-door-milestone { padding-top: 0; }
+  .ieee-door-milestone::before { top: 4px; left: -29px; }
+  .ieee-door-milestone.current::before { top: 2px; left: -31px; }
+}
+</style>
+<style>
+/* =========================================================
+   IEEE RAS UCHILE · COMPOSICIÓN ORGÁNICA FINAL
+   Profesional, femenina y en continuidad con el portafolio
+   ========================================================= */
+#ieee.ieee-luminous-section {
+  position: relative;
+  min-height: auto;
+  padding: clamp(68px, 5.6vw, 92px) 0 clamp(76px, 6vw, 104px) !important;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 80% 18%, rgba(225, 211, 247, .30), transparent 23rem),
+    radial-gradient(circle at 8% 76%, rgba(246, 216, 234, .24), transparent 25rem),
+    linear-gradient(180deg, #fff 0%, #fffdfd 69%, #fff9fc 100%);
+}
+#ieee.ieee-luminous-section::before {
+  content: "" !important;
+  position: absolute;
+  z-index: -2;
+  width: 360px;
+  height: 360px;
+  left: -190px;
+  top: 118px;
+  border: 0 !important;
+  border-radius: 48% 52% 60% 40% / 52% 43% 57% 48%;
+  background: linear-gradient(145deg, rgba(231, 219, 249, .45), rgba(250, 230, 241, .24));
+  transform: rotate(-11deg);
+  pointer-events: none;
+}
+#ieee.ieee-luminous-section::after {
+  content: "" !important;
+  position: absolute;
+  z-index: -1;
+  width: 126px;
+  height: 92px;
+  right: 6.5%;
+  top: 38px;
+  border: 0 !important;
+  opacity: .32;
+  background-image: radial-gradient(circle, #9b7bd3 1.35px, transparent 1.65px);
+  background-size: 14px 14px;
+  pointer-events: none;
+}
+.ieee-luminous-shell { position: relative; z-index: 1; }
+
+/* Encabezado */
+.ieee-luminous-hero {
+  display: grid;
+  grid-template-columns: minmax(0, .95fr) minmax(500px, 1.05fr);
+  gap: clamp(48px, 5.4vw, 82px);
+  align-items: center;
+}
+.ieee-luminous-copy { max-width: 660px; }
+.ieee-luminous-kicker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 19px;
+  color: #785dc0;
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+.ieee-luminous-kicker::before {
+  content: "";
+  width: 33px;
+  height: 1px;
+  background: linear-gradient(90deg, #8063cf, #c879aa);
+}
+.ieee-luminous-title {
+  max-width: 700px;
+  margin: 0;
+  color: #29264f;
+  font-size: clamp(3.75rem, 4.9vw, 5.7rem);
+  line-height: .93;
+  letter-spacing: -.046em;
+}
+.ieee-luminous-title em {
+  color: transparent;
+  background: linear-gradient(115deg, #7b61c9 0%, #9d70cd 48%, #c56fa4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-style: italic;
+  font-weight: 500;
+}
+.ieee-luminous-divider {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: 182px;
+  margin: 24px 0 21px;
+  color: #bd75ad;
+}
+.ieee-luminous-divider span { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, #d7b5dc); }
+.ieee-luminous-divider span:last-child { background: linear-gradient(90deg, #d7b5dc, transparent); }
+.ieee-luminous-divider svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.65; }
+.ieee-luminous-intro {
+  display: grid;
+  gap: 13px;
+  max-width: 625px;
+}
+.ieee-luminous-intro p {
+  color: #5e5871;
+  font-size: .94rem;
+  line-height: 1.65;
+}
+.ieee-luminous-belief {
+  position: relative;
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  gap: 15px;
+  align-items: start;
+  max-width: 620px;
+  margin-top: 22px;
+  padding: 3px 0 4px 18px;
+  border-left: 3px solid #a879d5;
+}
+.ieee-luminous-belief-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  color: #8062c8;
+  background: linear-gradient(145deg, #f3edfc, #fff6fb);
+  border: 1px solid #e3d8ed;
+  border-radius: 50%;
+}
+.ieee-luminous-belief-icon svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.ieee-luminous-belief p {
+  color: #49435f;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.11rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+.ieee-luminous-belief span {
+  display: block;
+  margin-top: 7px;
+  color: #8261c7;
+  font-family: "Manrope", sans-serif;
+  font-size: .87rem;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+/* Fotografía */
+.ieee-luminous-figure {
+  position: relative;
+  min-height: 505px;
+  margin: 0;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  isolation: isolate;
+}
+.ieee-luminous-photo-blob {
+  position: absolute;
+  z-index: -2;
+  width: 93%;
+  height: 78%;
+  top: 7%;
+  right: -1%;
+  border-radius: 51% 49% 59% 41% / 48% 43% 57% 52%;
+  background: linear-gradient(145deg, rgba(231,220,249,.72), rgba(246,221,237,.56));
+  transform: rotate(5deg);
+}
+.ieee-luminous-photo-halo {
+  position: absolute;
+  z-index: -3;
+  width: 79%;
+  aspect-ratio: 1;
+  right: 3%;
+  top: 2%;
+  border: 1px solid rgba(142, 110, 197, .17);
+  border-radius: 46% 54% 51% 49% / 55% 43% 57% 45%;
+  transform: rotate(-7deg);
+}
+.ieee-luminous-photo-frame {
+  position: relative;
+  width: min(95%, 690px);
+  aspect-ratio: 1.37;
+  padding: 8px;
+  overflow: hidden;
+  background: rgba(255,255,255,.97);
+  border: 1px solid rgba(219,207,232,.9);
+  border-radius: 29% 17% 28% 18% / 20% 27% 18% 29%;
+  box-shadow: 0 25px 60px rgba(63, 46, 88, .13);
+}
+.ieee-luminous-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 48%;
+  border-radius: inherit;
+  filter: saturate(1.08) contrast(1.03) brightness(1.01);
+}
+.ieee-luminous-caption {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 13px;
+  align-items: center;
+  width: min(90%, 665px);
+  margin-top: 16px;
+}
+.ieee-luminous-caption-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  color: #8264ca;
+  background: linear-gradient(145deg, #f3edfc, #fff6fb);
+  border: 1px solid #e3d8ed;
+  border-radius: 50%;
+}
+.ieee-luminous-caption-icon svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.ieee-luminous-caption strong { display: block; color: #3e385d; font-size: .83rem; }
+.ieee-luminous-caption p { margin-top: 2px; color: #898195; font-size: .77rem; line-height: 1.45; }
+.ieee-luminous-branch {
+  position: absolute;
+  z-index: 3;
+  right: -2%;
+  bottom: 2%;
+  width: clamp(88px, 9vw, 128px);
+  overflow: visible;
+  opacity: .51;
+}
+.ieee-luminous-branch path { fill: none; stroke: #9c79d6; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.ieee-luminous-branch ellipse { fill: #9c79d6; }
+
+/* Aportes: piezas editoriales sueltas, no tabla */
+.ieee-luminous-contributions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(28px, 4vw, 64px);
+  margin-top: clamp(38px, 4.3vw, 58px);
+  padding: 0 10px;
+}
+.ieee-luminous-contribution {
+  position: relative;
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 18px;
+  align-items: start;
+  min-width: 0;
+}
+.ieee-luminous-contribution:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: calc(clamp(28px, 4vw, 64px) / -2);
+  top: 15px;
+  bottom: 12px;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(133,102,183,.20), transparent);
+}
+.ieee-luminous-contribution-icon {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  color: #8264ca;
+  background: linear-gradient(145deg, #f2ecfc, #fff7fb);
+  border: 1px solid #e1d6ec;
+  border-radius: 50%;
+  box-shadow: 0 10px 24px rgba(72, 52, 100, .06);
+}
+.ieee-luminous-contribution-icon svg { width: 27px; height: 27px; fill: none; stroke: currentColor; stroke-width: 1.65; stroke-linecap: round; stroke-linejoin: round; }
+.ieee-luminous-contribution small {
+  display: block;
+  margin: 2px 0 7px;
+  color: #8062c5;
+  font-size: .66rem;
+  font-weight: 850;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+.ieee-luminous-contribution h3 {
+  margin: 0 0 8px;
+  color: #302b59;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.33rem;
+  font-weight: 700;
+  line-height: 1.18;
+}
+.ieee-luminous-contribution p {
+  max-width: 330px;
+  color: #716a80;
+  font-size: .86rem;
+  line-height: 1.58;
+}
+
+/* Recorrido orgánico: línea curva, hitos y mucho aire */
+.ieee-luminous-journey {
+  position: relative;
+  margin-top: clamp(38px, 4.2vw, 58px);
+  min-height: 188px;
+  padding: 25px 54px 28px;
+  overflow: hidden;
+  border: 1px solid rgba(135, 103, 183, .11);
+  border-radius: 36px;
+  background:
+    radial-gradient(circle at 14% 50%, rgba(235, 222, 251, .54), transparent 15rem),
+    radial-gradient(circle at 88% 35%, rgba(248, 224, 238, .52), transparent 17rem),
+    linear-gradient(110deg, rgba(249,246,253,.92), rgba(255,250,253,.91));
+  box-shadow: 0 17px 45px rgba(72, 50, 100, .055);
+}
+.ieee-luminous-journey::before,
+.ieee-luminous-journey::after {
+  content: "";
+  position: absolute;
+  width: 104px;
+  height: 78px;
+  opacity: .48;
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+}
+.ieee-luminous-journey::before {
+  left: 18px;
+  bottom: 13px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 90'%3E%3Cg fill='none' stroke='%239778D3' stroke-width='1.8' stroke-linecap='round'%3E%3Cpath d='M5 77C32 66 51 48 66 14'/%3E%3Cpath d='M42 55C28 55 19 48 13 38M53 42C68 39 79 31 87 20M30 64C20 67 13 65 7 59'/%3E%3C/g%3E%3C/svg%3E");
+}
+.ieee-luminous-journey::after {
+  right: 17px;
+  bottom: 9px;
+  transform: scaleX(-1);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 90'%3E%3Cg fill='none' stroke='%239778D3' stroke-width='1.8' stroke-linecap='round'%3E%3Cpath d='M5 77C32 66 51 48 66 14'/%3E%3Cpath d='M42 55C28 55 19 48 13 38M53 42C68 39 79 31 87 20M30 64C20 67 13 65 7 59'/%3E%3C/g%3E%3C/svg%3E");
+}
+.ieee-luminous-wave {
+  position: absolute;
+  left: 78px;
+  right: 78px;
+  top: 55px;
+  width: calc(100% - 156px);
+  height: 66px;
+  overflow: visible;
+  opacity: .95;
+}
+.ieee-luminous-wave path {
+  fill: none;
+  stroke: url(#ieeeWaveGradient);
+  stroke-width: 1.55;
+  stroke-linecap: round;
+}
+.ieee-luminous-milestones {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 36px;
+}
+.ieee-luminous-milestone {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 14px;
+  align-items: center;
+  min-width: 0;
+}
+.ieee-luminous-milestone:nth-child(2) { transform: translateY(12px); }
+.ieee-luminous-milestone:nth-child(3) { transform: translateY(-2px); }
+.ieee-luminous-milestone-icon {
+  display: grid;
+  place-items: center;
+  width: 62px;
+  height: 62px;
+  color: #8465cb;
+  background: rgba(255,255,255,.94);
+  border: 1px solid #e2d7ed;
+  border-radius: 50%;
+  box-shadow: 0 11px 26px rgba(69, 49, 95, .08);
+}
+.ieee-luminous-milestone-icon svg { width: 28px; height: 28px; fill: none; stroke: currentColor; stroke-width: 1.65; stroke-linecap: round; stroke-linejoin: round; }
+.ieee-luminous-year-row { display: flex; align-items: center; gap: 8px; }
+.ieee-luminous-year-row strong {
+  color: #8e63bd;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.38rem;
+  line-height: 1;
+}
+.ieee-luminous-current {
+  display: inline-flex;
+  padding: 4px 8px;
+  color: #8c6099;
+  background: rgba(250,237,245,.88);
+  border: 1px solid #efd8e7;
+  border-radius: 999px;
+  font-size: .58rem;
+  font-weight: 850;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+.ieee-luminous-milestone h3 {
+  margin: 5px 0 2px;
+  color: #302b59;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.25rem;
+  line-height: 1.1;
+}
+.ieee-luminous-milestone p {
+  max-width: 270px;
+  color: #756e83;
+  font-size: .78rem;
+  line-height: 1.42;
+}
+.ieee-luminous-award { color: #6f5c88 !important; font-style: italic; }
+
+@media (max-width: 1120px) {
+  .ieee-luminous-hero { grid-template-columns: 1fr; gap: 40px; }
+  .ieee-luminous-copy { max-width: 810px; }
+  .ieee-luminous-figure { min-height: 470px; }
+  .ieee-luminous-photo-frame { width: min(93%, 780px); }
+  .ieee-luminous-contributions { gap: 30px; }
+  .ieee-luminous-contribution:not(:last-child)::after { right: -15px; }
+  .ieee-luminous-journey { padding-inline: 32px; }
+  .ieee-luminous-wave { left: 54px; right: 54px; width: calc(100% - 108px); }
+}
+@media (max-width: 850px) {
+  .ieee-luminous-contributions { grid-template-columns: 1fr; gap: 0; padding: 0; }
+  .ieee-luminous-contribution {
+    padding: 22px 0;
+    border-top: 1px solid rgba(132, 101, 176, .14);
+  }
+  .ieee-luminous-contribution:first-child { border-top: 0; }
+  .ieee-luminous-contribution:not(:last-child)::after { display: none; }
+  .ieee-luminous-journey { padding: 26px 26px 30px; }
+  .ieee-luminous-wave { display: none; }
+  .ieee-luminous-milestones { grid-template-columns: 1fr; gap: 23px; }
+  .ieee-luminous-milestone,
+  .ieee-luminous-milestone:nth-child(2),
+  .ieee-luminous-milestone:nth-child(3) { transform: none; }
+}
+@media (max-width: 620px) {
+  #ieee.ieee-luminous-section { padding-top: 66px !important; padding-bottom: 72px !important; }
+  #ieee.ieee-luminous-section::after { display: none; }
+  .ieee-luminous-title { font-size: clamp(3rem, 14vw, 4.45rem); line-height: .95; }
+  .ieee-luminous-belief { grid-template-columns: 40px 1fr; padding-left: 14px; }
+  .ieee-luminous-belief-icon { width: 38px; height: 38px; }
+  .ieee-luminous-figure { min-height: 355px; }
+  .ieee-luminous-photo-frame {
+    width: 100%;
+    aspect-ratio: 1.11;
+    padding: 6px;
+    border-radius: 26% 15% 25% 17% / 18% 24% 17% 26%;
+  }
+  .ieee-luminous-caption { width: 94%; grid-template-columns: 38px 1fr; }
+  .ieee-luminous-caption-icon { width: 38px; height: 38px; }
+  .ieee-luminous-branch { width: 76px; right: -3%; bottom: 5%; }
+  .ieee-luminous-contribution { grid-template-columns: 50px 1fr; gap: 14px; }
+  .ieee-luminous-contribution-icon { width: 48px; height: 48px; }
+  .ieee-luminous-journey { border-radius: 25px; padding: 25px 20px 29px; }
+  .ieee-luminous-journey::before,
+  .ieee-luminous-journey::after { opacity: .25; }
+  .ieee-luminous-milestone { grid-template-columns: 54px 1fr; gap: 13px; }
+  .ieee-luminous-milestone-icon { width: 52px; height: 52px; }
+}
+
+</style>
+<style>
+/* =========================================================
+   GALERÍA · REDISEÑO COMPACTO, EDITORIAL Y FEMENINO
+   Mantiene tres imágenes visibles y hace que el contenido
+   completo entre en una sola composición de escritorio.
+   ========================================================= */
+#galeria.gallery-redesign {
+  min-height: calc(100vh - var(--navh));
+  padding: clamp(34px, 4.4vw, 54px) 0 clamp(26px, 3.2vw, 40px) !important;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 38% 34% at 92% 9%, rgba(224,211,247,.40), transparent 72%),
+    radial-gradient(ellipse 28% 24% at 5% 96%, rgba(247,219,235,.34), transparent 75%),
+    linear-gradient(180deg,#fff 0%,#fffdfd 100%) !important;
+}
+#galeria.gallery-redesign::before {
+  top: -86px !important;
+  right: -7% !important;
+  width: min(40vw, 590px) !important;
+  height: 290px !important;
+  opacity: .50 !important;
+  filter: blur(.2px) !important;
+}
+#galeria.gallery-redesign::after {
+  left: -145px !important;
+  bottom: -205px !important;
+  width: 400px !important;
+  height: 290px !important;
+  opacity: .55 !important;
+}
+.gallery-redesign .screen-inner {
+  width: min(1320px, calc(100% - 96px)) !important;
+}
+
+/* Encabezado horizontal: título e introducción comparten altura. */
+.gallery-redesign .gallery-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(330px, .72fr);
+  grid-template-areas:
+    "tag intro"
+    "title intro"
+    "divider intro";
+  column-gap: clamp(48px, 6vw, 92px);
+  row-gap: 0;
+  align-items: end;
+  max-width: none !important;
+}
+.gallery-redesign .gallery-heading .tag {
+  grid-area: tag;
+  margin: 0 0 14px !important;
+}
+.gallery-redesign .gallery-title {
+  grid-area: title;
+  max-width: 760px !important;
+  font-size: clamp(3.55rem, 4.65vw, 5.15rem) !important;
+  line-height: .84 !important;
+  letter-spacing: -.052em !important;
+}
+.gallery-redesign .gallery-title .grad {
+  margin-top: .09em !important;
+}
+.gallery-redesign .gallery-heart-divider {
+  grid-area: divider;
+  width: min(380px, 82%) !important;
+  margin: 21px 0 0 !important;
+}
+.gallery-redesign .gallery-intro {
+  grid-area: intro;
+  align-self: end;
+  max-width: 440px !important;
+  margin: 0 0 4px !important;
+  padding: 18px 0 18px 24px;
+  border-left: 1px solid rgba(130,103,207,.28);
+  color: #57516f !important;
+  font-size: clamp(.96rem, 1.12vw, 1.08rem) !important;
+  line-height: 1.62 !important;
+}
+
+/* Decoración secundaria, fuera del texto y de las tarjetas. */
+.gallery-redesign .gallery-decoration-dots {
+  top: 0 !important;
+  right: 72px !important;
+  width: 104px !important;
+  height: 82px !important;
+  opacity: .31 !important;
+  background-size: 17px 17px !important;
+}
+.gallery-redesign .gallery-decoration-branch {
+  top: -16px !important;
+  right: -42px !important;
+  width: 170px !important;
+  height: 205px !important;
+  opacity: .44 !important;
+}
+
+/* Tarjetas más bajas: fotografía protagonista y texto completo dentro. */
+.gallery-redesign .gallery-carousel {
+  margin-top: clamp(22px, 2.6vw, 32px) !important;
+  padding-bottom: 30px !important;
+}
+.gallery-redesign .gallery-grid,
+.gallery-redesign .gallery-carousel .gallery-grid {
+  gap: clamp(18px, 1.8vw, 24px) !important;
+}
+.gallery-redesign .gallery-item {
+  height: 348px !important;
+  border-radius: 24px !important;
+  border-color: rgba(219,207,233,.84) !important;
+  background: rgba(255,255,255,.96) !important;
+  box-shadow: 0 15px 38px rgba(67,50,96,.085) !important;
+}
+.gallery-redesign .gallery-item:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 21px 50px rgba(67,50,96,.125) !important;
+}
+.gallery-redesign .gallery-media {
+  flex: 0 0 218px !important;
+}
+.gallery-redesign .gallery-item img {
+  object-position: center 42%;
+}
+.gallery-redesign .gallery-caption {
+  min-height: 130px;
+  padding: 23px 21px 17px !important;
+  justify-content: flex-start;
+}
+.gallery-redesign .gallery-icon-badge {
+  top: -23px !important;
+  left: 19px !important;
+  width: 47px !important;
+  height: 47px !important;
+  box-shadow: 0 8px 20px rgba(68,48,92,.10) !important;
+}
+.gallery-redesign .gallery-icon-badge svg {
+  width: 23px !important;
+  height: 23px !important;
+}
+.gallery-redesign .gallery-caption h3 {
+  margin: 0 0 5px !important;
+  padding-left: 50px;
+  min-height: 1.35em;
+  font-size: clamp(.98rem, 1.1vw, 1.08rem) !important;
+  line-height: 1.25 !important;
+}
+.gallery-redesign .gallery-caption h3::after {
+  width: 20px !important;
+  margin-top: 7px !important;
+}
+.gallery-redesign .gallery-caption p {
+  font-size: .80rem !important;
+  line-height: 1.43 !important;
+}
+.gallery-redesign .gallery-arrow {
+  top: 48% !important;
+  width: 46px !important;
+  height: 46px !important;
+}
+.gallery-redesign .gallery-arrow-left { left: -22px !important; }
+.gallery-redesign .gallery-arrow-right { right: -22px !important; }
+.gallery-redesign .gallery-pagination {
+  bottom: 1px !important;
+  gap: 9px !important;
+}
+.gallery-redesign .gallery-pagination span {
+  width: 8px !important;
+  height: 8px !important;
+}
+
+@media (max-width: 1180px) and (min-width: 821px) {
+  .gallery-redesign .screen-inner { width: calc(100% - 58px) !important; }
+  .gallery-redesign .gallery-heading {
+    grid-template-columns: minmax(0, 1fr) minmax(285px, .66fr);
+    column-gap: 38px;
+  }
+  .gallery-redesign .gallery-title {
+    font-size: clamp(3.2rem, 5.2vw, 4.3rem) !important;
+  }
+  .gallery-redesign .gallery-item { height: 338px !important; }
+  .gallery-redesign .gallery-media { flex-basis: 205px !important; }
+  .gallery-redesign .gallery-caption { min-height: 133px; padding-inline: 18px !important; }
+  .gallery-redesign .gallery-caption h3 { padding-left: 46px; font-size: .96rem !important; }
+  .gallery-redesign .gallery-caption p { font-size: .75rem !important; }
+}
+
+@media (max-width: 820px) {
+  #galeria.gallery-redesign {
+    min-height: auto;
+    padding: 62px 0 66px !important;
+  }
+  .gallery-redesign .screen-inner { width: calc(100% - 30px) !important; }
+  .gallery-redesign .gallery-heading {
+    display: block;
+  }
+  .gallery-redesign .gallery-heading .tag { margin-bottom: 16px !important; }
+  .gallery-redesign .gallery-title {
+    font-size: clamp(3.05rem, 15vw, 4.45rem) !important;
+    line-height: .88 !important;
+  }
+  .gallery-redesign .gallery-heart-divider {
+    width: 100% !important;
+    margin: 21px 0 16px !important;
+  }
+  .gallery-redesign .gallery-intro {
+    max-width: 100% !important;
+    padding: 0 !important;
+    border-left: 0;
+    font-size: .96rem !important;
+  }
+  .gallery-redesign .gallery-decoration-dots { right: 4px !important; }
+  .gallery-redesign .gallery-carousel { margin-top: 24px !important; padding-bottom: 38px !important; }
+  .gallery-redesign .gallery-carousel .gallery-item {
+    height: 408px !important;
+    min-height: 0 !important;
+  }
+  .gallery-redesign .gallery-media { flex-basis: 258px !important; }
+  .gallery-redesign .gallery-caption {
+    min-height: 150px;
+    padding: 25px 20px 18px !important;
+  }
+  .gallery-redesign .gallery-caption h3 {
+    padding-left: 48px;
+    font-size: 1.05rem !important;
+  }
+  .gallery-redesign .gallery-caption p { font-size: .82rem !important; }
+  .gallery-redesign .gallery-arrow { top: 45% !important; }
+  .gallery-redesign .gallery-arrow-left { left: 8px !important; }
+  .gallery-redesign .gallery-arrow-right { right: 8px !important; }
+}
+
+@media (max-width: 430px) {
+  .gallery-redesign .gallery-carousel .gallery-item { height: 390px !important; }
+  .gallery-redesign .gallery-media { flex-basis: 238px !important; }
+  .gallery-redesign .gallery-caption { min-height: 152px; }
+}
+</style>
+<style>
+/* =========================================================
+   AJUSTE FINAL · IEEE RAS + GALERÍA
+   Menos iconos, mayor claridad editorial y jerarquía limpia
+   ========================================================= */
+
+/* ---------- IEEE RAS: menos decoración, más contenido ---------- */
+#ieee.ieee-luminous-section::after { display: none !important; }
+
+.ieee-luminous-belief {
+  display: block !important;
+  max-width: 610px !important;
+  margin-top: 24px !important;
+  padding: 2px 0 3px 22px !important;
+  border-left: 3px solid #a879d5 !important;
+}
+.ieee-luminous-belief p {
+  font-size: 1.12rem !important;
+  line-height: 1.47 !important;
+}
+.ieee-luminous-belief span {
+  max-width: 570px;
+  margin-top: 8px !important;
+}
+
+.ieee-luminous-caption {
+  display: block !important;
+  width: min(88%, 650px) !important;
+  margin-top: 15px !important;
+  padding-left: 17px;
+  border-left: 2px solid #a77bd3;
+}
+.ieee-luminous-caption strong { font-size: .84rem !important; }
+.ieee-luminous-caption p { font-size: .78rem !important; }
+.ieee-luminous-branch { display: none !important; }
+
+/* Los tres aportes siguen siendo los únicos elementos con iconos. */
+.ieee-luminous-contributions {
+  gap: clamp(34px, 4.3vw, 62px) !important;
+  margin-top: clamp(42px, 4.5vw, 62px) !important;
+  padding: 0 !important;
+}
+.ieee-luminous-contribution {
+  grid-template-columns: 52px 1fr !important;
+  gap: 16px !important;
+  padding: 0 !important;
+}
+.ieee-luminous-contribution:not(:last-child)::after { display: none !important; }
+.ieee-luminous-contribution-icon {
+  width: 50px !important;
+  height: 50px !important;
+  box-shadow: none !important;
+}
+.ieee-luminous-contribution-icon svg {
+  width: 22px !important;
+  height: 22px !important;
+  stroke-width: 1.55 !important;
+}
+.ieee-luminous-contribution small { margin-top: 1px !important; }
+.ieee-luminous-contribution h3 {
+  position: relative;
+  margin-bottom: 12px !important;
+}
+.ieee-luminous-contribution h3::after {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin-top: 9px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #8063cf, #c879aa);
+}
+
+/* Trayectoria limpia: línea fija, nodos y texto sin cruces. */
+.ieee-luminous-journey {
+  min-height: 0 !important;
+  margin-top: clamp(46px, 5vw, 68px) !important;
+  padding: 0 8px 10px !important;
+  overflow: visible !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.ieee-luminous-journey::before,
+.ieee-luminous-journey::after { display: none !important; }
+.ieee-timeline-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 28px;
+  margin-bottom: 33px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(130, 99, 191, .16);
+}
+.ieee-timeline-heading span {
+  color: #7659ba;
+  font-size: .72rem;
+  font-weight: 850;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.ieee-timeline-heading p {
+  max-width: 510px;
+  color: #837b8f;
+  font-size: .82rem;
+  line-height: 1.5;
+  text-align: right;
+}
+.ieee-luminous-milestones {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 34px !important;
+  padding-top: 28px;
+}
+.ieee-luminous-milestones::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 16.66%;
+  right: 16.66%;
+  height: 1px;
+  background: linear-gradient(90deg, #8467cb, #a277cf 52%, #c57baa);
+}
+.ieee-luminous-milestone,
+.ieee-luminous-milestone:nth-child(2),
+.ieee-luminous-milestone:nth-child(3) {
+  position: relative;
+  display: block !important;
+  min-width: 0;
+  padding: 0 14px !important;
+  transform: none !important;
+  text-align: center;
+}
+.ieee-luminous-milestone::before {
+  content: "";
+  position: absolute;
+  top: -27px;
+  left: 50%;
+  width: 13px;
+  height: 13px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  background: #8a6bcc;
+  box-shadow: 0 0 0 1px rgba(126, 92, 183, .22), 0 6px 15px rgba(80, 54, 112, .12);
+  transform: translateX(-50%);
+}
+.ieee-luminous-milestone:nth-child(2)::before { background: #9d72ca; }
+.ieee-luminous-milestone:nth-child(3)::before { background: #c078aa; }
+.ieee-luminous-year-row {
+  justify-content: center !important;
+  min-height: 25px;
+}
+.ieee-luminous-year-row strong { font-size: 1.30rem !important; }
+.ieee-luminous-milestone h3 {
+  margin: 6px 0 4px !important;
+  font-size: 1.20rem !important;
+}
+.ieee-luminous-milestone p {
+  max-width: 310px !important;
+  margin-inline: auto;
+  font-size: .78rem !important;
+}
+.ieee-luminous-current { font-size: .55rem !important; }
+
+/* ---------- Galería: encabezado limpio y controles funcionales ---------- */
+#galeria.gallery-redesign::before {
+  top: -104px !important;
+  right: -9% !important;
+  width: min(37vw, 540px) !important;
+  height: 260px !important;
+  opacity: .32 !important;
+}
+.gallery-redesign .gallery-decoration-dots,
+.gallery-redesign .gallery-decoration-branch { display: none !important; }
+
+.gallery-redesign .gallery-heading {
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, .68fr) !important;
+  grid-template-areas:
+    "tag intro"
+    "title intro"
+    "divider intro" !important;
+  column-gap: clamp(54px, 7vw, 106px) !important;
+  align-items: center !important;
+}
+.gallery-redesign .gallery-intro {
+  position: relative;
+  align-self: center !important;
+  max-width: 425px !important;
+  margin: 28px 0 0 !important;
+  padding: 20px 0 20px 27px !important;
+  border-left: 2px solid rgba(130, 103, 207, .32) !important;
+  background: transparent !important;
+}
+.gallery-redesign .gallery-intro::before {
+  content: "Memorias de mi camino";
+  display: block;
+  margin-bottom: 8px;
+  color: #8466c8;
+  font-size: .66rem;
+  font-weight: 850;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+.gallery-redesign .gallery-heart-divider {
+  width: min(330px, 76%) !important;
+}
+
+/* Tarjetas sin insignias superpuestas. */
+.gallery-redesign .gallery-icon-badge { display: none !important; }
+.gallery-redesign .gallery-item {
+  height: 344px !important;
+}
+.gallery-redesign .gallery-media {
+  flex-basis: 220px !important;
+}
+.gallery-redesign .gallery-caption {
+  min-height: 124px !important;
+  padding: 20px 22px 17px !important;
+}
+.gallery-redesign .gallery-caption h3 {
+  min-height: auto !important;
+  margin: 0 0 6px !important;
+  padding-left: 0 !important;
+  font-size: clamp(1rem, 1.12vw, 1.10rem) !important;
+}
+.gallery-redesign .gallery-caption h3::after {
+  width: 22px !important;
+  margin-top: 7px !important;
+}
+.gallery-redesign .gallery-caption p {
+  font-size: .80rem !important;
+  line-height: 1.44 !important;
+}
+
+/* Sustituye los tres puntos estáticos por un contador real. */
+.gallery-redesign .gallery-carousel {
+  padding-bottom: 34px !important;
+}
+.gallery-counter {
+  position: absolute;
+  right: 2px;
+  bottom: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #776b88;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+.gallery-counter-current {
+  color: #7f61c5;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.08rem;
+  font-weight: 700;
+}
+.gallery-counter-separator { color: #c3b4d0; }
+.gallery-counter-total { color: #988da4; }
+.gallery-redesign .gallery-pagination { display: none !important; }
+
+@media (max-width: 850px) {
+  .ieee-timeline-heading {
+    display: block;
+    margin-bottom: 22px;
+  }
+  .ieee-timeline-heading p {
+    margin-top: 7px;
+    text-align: left;
+  }
+  .ieee-luminous-milestones {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+    padding: 0 0 0 28px;
+  }
+  .ieee-luminous-milestones::before {
+    top: 9px;
+    bottom: 9px;
+    left: 6px;
+    right: auto;
+    width: 1px;
+    height: auto;
+  }
+  .ieee-luminous-milestone,
+  .ieee-luminous-milestone:nth-child(2),
+  .ieee-luminous-milestone:nth-child(3) {
+    padding: 0 0 25px 10px !important;
+    text-align: left;
+  }
+  .ieee-luminous-milestone:last-child { padding-bottom: 0 !important; }
+  .ieee-luminous-milestone::before {
+    top: 4px;
+    left: -22px;
+    transform: none;
+  }
+  .ieee-luminous-year-row { justify-content: flex-start !important; }
+  .ieee-luminous-milestone p { margin-inline: 0; }
+
+  .gallery-redesign .gallery-heading {
+    grid-template-columns: 1fr !important;
+    grid-template-areas: "tag" "title" "divider" "intro" !important;
+  }
+  .gallery-redesign .gallery-intro {
+    max-width: 650px !important;
+    margin-top: 21px !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .ieee-luminous-belief { padding-left: 17px !important; }
+  .ieee-luminous-caption { width: 94% !important; }
+  .ieee-luminous-contribution {
+    grid-template-columns: 46px 1fr !important;
+  }
+  .ieee-luminous-contribution-icon {
+    width: 44px !important;
+    height: 44px !important;
+  }
+  .gallery-counter {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+}
+</style>
 <style>
 /* =========================================================
    IEEE RAS UCHILE · UNA PUERTA A LA ROBÓTICA
@@ -8850,6 +10280,326 @@ body.project-detail-open { overflow: hidden !important; }
 }
 </style>
 
+<style id="contacto-editorial-abierto-final">
+/* =========================================================
+   CONTACTO · COMPOSICIÓN EDITORIAL ABIERTA
+   Sin tarjetas blancas: jerarquía, líneas y aire visual
+   ========================================================= */
+#contacto.contact-open-section {
+  position: relative;
+  isolation: isolate;
+  min-height: calc(100vh - var(--navh));
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: clamp(72px, 6vw, 96px) 0 clamp(74px, 6.5vw, 104px) !important;
+  background:
+    radial-gradient(ellipse 42% 48% at 7% 58%, rgba(231,218,249,.54), transparent 73%),
+    radial-gradient(ellipse 42% 46% at 93% 43%, rgba(248,218,235,.48), transparent 74%),
+    linear-gradient(135deg, #fff 0%, #fdfbff 54%, #fff9fc 100%) !important;
+}
+#contacto.contact-open-section::before {
+  content: "";
+  position: absolute;
+  z-index: -3;
+  width: clamp(420px, 42vw, 690px);
+  height: clamp(470px, 48vw, 760px);
+  left: -16%;
+  top: 8%;
+  border-radius: 54% 46% 63% 37% / 45% 58% 42% 55%;
+  background: linear-gradient(145deg, rgba(232,218,250,.57), rgba(250,223,238,.35));
+  transform: rotate(-8deg);
+  opacity: .72;
+}
+#contacto.contact-open-section::after {
+  content: "";
+  position: absolute;
+  z-index: -3;
+  width: clamp(390px, 40vw, 650px);
+  height: clamp(390px, 43vw, 690px);
+  right: -18%;
+  bottom: -20%;
+  border-radius: 43% 57% 41% 59% / 57% 42% 58% 43%;
+  background: linear-gradient(145deg, rgba(226,212,248,.50), rgba(249,220,236,.48));
+  transform: rotate(13deg);
+  opacity: .64;
+}
+.contact-open-orbit {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  border: 1px solid rgba(133,98,190,.14);
+  border-radius: 50%;
+}
+.contact-open-orbit-a {
+  width: 440px;
+  height: 440px;
+  left: -210px;
+  top: 7%;
+}
+.contact-open-orbit-b {
+  width: 520px;
+  height: 520px;
+  right: -240px;
+  bottom: -24%;
+}
+.contact-open-dots {
+  position: absolute;
+  z-index: -1;
+  top: 8%;
+  left: 48%;
+  width: 126px;
+  height: 92px;
+  opacity: .34;
+  background-image: radial-gradient(circle, #9d7bd5 1.5px, transparent 1.9px);
+  background-size: 16px 16px;
+  mask-image: linear-gradient(135deg, #000 45%, transparent 100%);
+}
+.contact-open-shell {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, .94fr) minmax(520px, 1.06fr);
+  gap: clamp(66px, 8vw, 126px);
+  align-items: center;
+}
+.contact-open-copy { max-width: 650px; }
+.contact-open-tag { margin-bottom: 25px !important; }
+.contact-open-title {
+  margin: 0;
+  max-width: 660px;
+  color: #27234d;
+  font-size: clamp(4.1rem, 6.2vw, 6.75rem) !important;
+  font-weight: 500 !important;
+  line-height: .91 !important;
+  letter-spacing: -.054em !important;
+  text-wrap: balance;
+}
+.contact-open-title span {
+  display: block;
+  color: transparent;
+  background: linear-gradient(115deg, #7960ca 3%, #a36ecb 48%, #cf71a9 96%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-style: italic;
+}
+.contact-open-divider {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 16px;
+  width: min(445px, 100%);
+  margin: 28px 0 28px;
+  color: #a16fc2;
+}
+.contact-open-divider i {
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(139,103,193,.34));
+}
+.contact-open-divider i:last-child {
+  background: linear-gradient(90deg, rgba(139,103,193,.34), transparent);
+}
+.contact-open-divider svg {
+  width: 25px;
+  height: 25px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.contact-open-text {
+  display: grid;
+  gap: 20px;
+  max-width: 625px;
+}
+.contact-open-text p {
+  margin: 0;
+  color: #4d4864;
+  font-size: clamp(1rem, 1.26vw, 1.14rem);
+  line-height: 1.72;
+}
+.contact-open-text strong { color: #745db1; font-weight: 750; }
+.contact-open-closing {
+  position: relative;
+  margin: 29px 0 0;
+  padding-left: 35px;
+  color: #342f58;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.32rem;
+  font-style: italic;
+  font-weight: 600;
+}
+.contact-open-closing::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 24px;
+  height: 1px;
+  background: linear-gradient(90deg, #8567cc, #cc7dad);
+}
+.contact-open-links {
+  position: relative;
+  max-width: 690px;
+  width: 100%;
+  padding: 8px 0 0;
+}
+.contact-open-links::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: -52px;
+  right: -42px;
+  top: -54px;
+  bottom: -48px;
+  border-radius: 48% 52% 59% 41% / 41% 47% 53% 59%;
+  background: linear-gradient(145deg, rgba(238,228,252,.47), rgba(252,231,243,.38));
+  transform: rotate(-2deg);
+  opacity: .84;
+}
+.contact-open-links-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 26px;
+  padding-bottom: 19px;
+  border-bottom: 1px solid rgba(128,96,181,.28);
+}
+.contact-open-links-head span {
+  color: #6f55b4;
+  font-size: .74rem;
+  font-weight: 850;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.contact-open-links-head p {
+  max-width: 350px;
+  margin: 0;
+  color: #7a7387;
+  font-size: .78rem;
+  line-height: 1.45;
+  text-align: right;
+}
+.contact-open-link {
+  position: relative;
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) 34px;
+  align-items: center;
+  gap: 18px;
+  min-height: 103px;
+  padding: 21px 5px 20px 0;
+  border-bottom: 1px solid rgba(128,96,181,.20);
+  background: transparent;
+  transition: transform .23s ease, border-color .23s ease;
+}
+.contact-open-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, #7f62ca, #cd79ad);
+  transition: width .30s ease;
+}
+.contact-open-link:hover,
+.contact-open-link:focus-visible {
+  transform: translateX(7px);
+  outline: none;
+}
+.contact-open-link:hover::after,
+.contact-open-link:focus-visible::after { width: 100%; }
+.contact-open-number {
+  color: #a084ce;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.contact-open-link-copy { display: block; min-width: 0; }
+.contact-open-link-copy b {
+  display: block;
+  margin-bottom: 5px;
+  color: #28234e;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.48rem;
+  line-height: 1.05;
+}
+.contact-open-link-copy small {
+  display: block;
+  color: #746e80;
+  font-size: .90rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+.contact-open-arrow {
+  display: grid;
+  place-items: center;
+  color: #8464ca;
+  transition: transform .23s ease;
+}
+.contact-open-arrow svg {
+  width: 25px;
+  height: 25px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.contact-open-link:hover .contact-open-arrow,
+.contact-open-link:focus-visible .contact-open-arrow { transform: translateX(5px); }
+
+@media (max-width: 1100px) {
+  #contacto.contact-open-section { min-height: auto; }
+  .contact-open-shell {
+    grid-template-columns: 1fr;
+    gap: 54px;
+  }
+  .contact-open-copy { max-width: 770px; }
+  .contact-open-links { max-width: 780px; }
+  .contact-open-dots { left: auto; right: 6%; top: 5%; }
+}
+@media (max-width: 760px) {
+  #contacto.contact-open-section {
+    padding: 64px 0 72px !important;
+  }
+  .contact-open-shell { gap: 42px; }
+  .contact-open-title {
+    font-size: clamp(3.2rem, 15.4vw, 4.8rem) !important;
+    line-height: .94 !important;
+  }
+  .contact-open-divider { margin: 24px 0; }
+  .contact-open-links::before { left: -22px; right: -18px; top: -30px; bottom: -28px; }
+  .contact-open-links-head { display: block; }
+  .contact-open-links-head p { margin-top: 8px; text-align: left; }
+  .contact-open-link {
+    grid-template-columns: 35px minmax(0, 1fr) 27px;
+    gap: 12px;
+    min-height: 91px;
+    padding: 18px 0;
+  }
+  .contact-open-link-copy b { font-size: 1.3rem; }
+  .contact-open-link-copy small { font-size: .83rem; }
+  .contact-open-number { font-size: 1.08rem; }
+  .contact-open-dots { opacity: .22; }
+}
+</style>
+
+
+<style id="ieee-door-timeline-compatibility">
+#ieee.ieee-door-section .ieee-luminous-journey {
+  grid-column: 1 / -1;
+}
+#ieee.ieee-door-section .ieee-timeline-heading,
+#ieee.ieee-door-section .ieee-luminous-milestones,
+#ieee.ieee-door-section .ieee-luminous-milestone {
+  box-sizing: border-box;
+}
+</style>
+
 </head>
 <body>
 <div class="progress-bar" id="progressBar"></div>
@@ -8905,7 +10655,7 @@ body.project-detail-open { overflow: hidden !important; }
 <button class="btn primary" data-go="historia">Conoce mi historia</button>
 <a aria-label="Perfil de LinkedIn" href="https://www.linkedin.com/in/catalina-castro-vargas" target="_blank">in</a>
 <a aria-label="Enviar correo a Catalina" href="mailto:catalina.castro.2@ug.uchile.cl" title="Enviar correo">
-<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 5.5h18v13H3zM4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 5.5h18v13H3zM4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
 </a>
 </div>
 </div>
@@ -9182,7 +10932,6 @@ body.project-detail-open { overflow: hidden !important; }
 </div>
 </div>
 </section>
-
 <section class="screen content-screen ieee-door-section" data-title="IEEE RAS" id="ieee">
 <div class="screen-inner ieee-door-shell">
 <div class="ieee-door-hero">
@@ -9207,7 +10956,6 @@ y liderazgo.
 <strong>Todo parte cuando te atreves a hacer eso que alguna vez dudaste en intentar.</strong>
 </blockquote>
 </div>
-
 <figure class="ieee-door-figure reveal delay-1">
 <div aria-hidden="true" class="ieee-door-photo-blob"></div>
 <div aria-hidden="true" class="ieee-door-photo-halo"></div>
@@ -9228,7 +10976,6 @@ y liderazgo.
 </svg>
 </figure>
 </div>
-
 <div aria-label="Aportes en IEEE RAS UChile" class="ieee-door-contributions reveal delay-1">
 <article class="ieee-door-contribution">
 <div class="ieee-door-contribution-top">
@@ -9243,7 +10990,7 @@ y liderazgo.
 <article class="ieee-door-contribution">
 <div class="ieee-door-contribution-top">
 <span aria-hidden="true" class="ieee-door-contribution-icon">
-<svg viewbox="0 0 24 24"><rect x="4" y="6" width="16" height="12" rx="2"></rect><path d="M8 6V3h8v3M8 18v3M16 18v3M9 11h6M12 8v6"></path></svg>
+<svg viewbox="0 0 24 24"><rect height="12" rx="2" width="16" x="4" y="6"></rect><path d="M8 6V3h8v3M8 18v3M16 18v3M9 11h6M12 8v6"></path></svg>
 </span>
 <small>02 · Construir</small>
 </div>
@@ -9261,64 +11008,43 @@ y liderazgo.
 <p>Vincular estudiantes mediante talleres, encuentros y divulgación tecnológica.</p>
 </article>
 </div>
-
-<div class="ieee-door-journey reveal delay-2" aria-label="Trayectoria en IEEE RAS UChile">
-<div class="ieee-door-journey-head">
-<span>Mi recorrido en RAS</span>
-<p>De comenzar a participar a liderar la comunidad.</p>
-</div>
-<div class="ieee-door-line">
-<article class="ieee-door-milestone">
-<div class="ieee-door-year-row"><strong>2025</strong></div>
-<h3>Vicepresidenta</h3>
-<p>IEEE RAS UChile</p>
+<div aria-label="Trayectoria en IEEE RAS UChile" class="ieee-luminous-journey reveal delay-2"><div class="ieee-timeline-heading"><span>Mi recorrido en RAS</span><p>De comenzar a participar, a asumir nuevos desafíos y liderar la comunidad.</p></div>
+<div class="ieee-luminous-milestones">
+<article class="ieee-luminous-milestone">
+<div><div class="ieee-luminous-year-row"><strong>2025</strong></div><h3>Vicepresidenta</h3><p>IEEE RAS UChile</p></div>
 </article>
-<article class="ieee-door-milestone">
-<div class="ieee-door-year-row"><strong>2025</strong></div>
-<h3>Reconocimiento IEEE</h3>
-<p class="ieee-door-milestone-award">IEEE Robotics &amp; Automation Dedication Award</p>
+<article class="ieee-luminous-milestone">
+<div><div class="ieee-luminous-year-row"><strong>2025</strong></div><h3>Reconocimiento IEEE</h3><p class="ieee-luminous-award">IEEE Robotics &amp; Automation Dedication Award</p></div>
 </article>
-<article class="ieee-door-milestone current">
-<div class="ieee-door-year-row"><strong>2026</strong><span class="ieee-door-current">Actualidad</span></div>
-<h3>Presidenta (Chair)</h3>
-<p>IEEE RAS UChile</p>
+<article class="ieee-luminous-milestone">
+<div><div class="ieee-luminous-year-row"><strong>2026</strong><span class="ieee-luminous-current">Actualidad</span></div><h3>Presidenta (Chair)</h3><p>IEEE RAS UChile</p></div>
 </article>
 </div>
 </div>
 </div>
 </section>
-
 <section class="screen content-screen gallery-redesign" data-title="Galería" id="galeria">
 <div class="screen-inner">
 <div class="gallery-heading">
 <div class="tag reveal">Galería</div>
 <h2 class="gallery-title reveal">
-<span class="gallery-title-line">Momentos y</span>
-<span class="gallery-title-line grad">comunidad.</span>
+<span class="gallery-title-line">Momentos que</span>
+<span class="gallery-title-line grad">construyen comunidad.</span>
 </h2>
 <div aria-hidden="true" class="gallery-heart-divider reveal delay-1">
 <svg viewbox="0 0 24 24"><path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.65A4 4 0 0 1 19 11c0 5.65-7 10-7 10Z"></path></svg>
 </div>
-<p class="gallery-intro reveal delay-1">Experiencias que han ido formando mi camino en ingeniería.</p>
+<p class="gallery-intro reveal delay-1">Encuentros, aprendizajes y experiencias que han ido formando mi camino en ingeniería.</p>
 </div>
-<div aria-hidden="true" class="gallery-decoration-dots"></div>
-<svg aria-hidden="true" class="gallery-decoration-branch" viewbox="0 0 210 270">
-<path d="M25 255C68 212 89 163 103 106C112 69 131 38 166 16"></path>
-<path d="M70 205C54 191 47 174 46 154"></path><ellipse cx="44" cy="145" rx="7" ry="19" transform="rotate(-18 44 145)"></ellipse>
-<path d="M87 171C67 164 56 149 50 132"></path><ellipse cx="46" cy="123" rx="7" ry="19" transform="rotate(-34 46 123)"></ellipse>
-<path d="M98 139C118 133 132 120 144 103"></path><ellipse cx="149" cy="95" rx="7" ry="18" transform="rotate(39 149 95)"></ellipse>
-<path d="M105 108C89 96 83 79 83 60"></path><ellipse cx="82" cy="50" rx="7" ry="18" transform="rotate(-11 82 50)"></ellipse>
-<path d="M116 77C134 70 148 58 159 42"></path><ellipse cx="164" cy="34" rx="7" ry="18" transform="rotate(37 164 34)"></ellipse>
-<path d="M72 207C91 207 108 199 122 185"></path><ellipse cx="129" cy="179" rx="7" ry="18" transform="rotate(54 129 179)"></ellipse>
-<path d="M48 233C34 224 24 211 18 195"></path><ellipse cx="15" cy="187" rx="7" ry="18" transform="rotate(-30 15 187)"></ellipse>
-</svg>
+
+
 <div aria-label="Galería de momentos y comunidad" class="gallery-carousel reveal delay-1">
 <button aria-label="Ver fotos anteriores" class="gallery-arrow gallery-arrow-left" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M15 18l-6-6 6-6"></path></svg></button>
 <div class="gallery-grid gallery-carousel-grid" id="galleryCarousel">
 <div class="gallery-item" data-gallery-card="">
 <div class="gallery-media"><img alt="Reconocimiento por liderazgo y perseverancia" loading="lazy" src="img/premio.png"/></div>
 <div class="gallery-caption">
-<span aria-hidden="true" class="gallery-icon-badge"><svg viewbox="0 0 24 24"><circle cx="8" cy="8" r="3"></circle><circle cx="16" cy="8" r="3"></circle><path d="M2.5 20v-2a4.5 4.5 0 0 1 4.5-4.5h2A4.5 4.5 0 0 1 13.5 18v2M13 14.2a4.4 4.4 0 0 1 2-.5h2A4.5 4.5 0 0 1 21.5 18v2"></path></svg></span>
+
 <h3>Liderazgo y perseverancia</h3>
 <p>Reconocimiento por compromiso, constancia y participación en IEEE RAS.</p>
 </div>
@@ -9326,7 +11052,7 @@ y liderazgo.
 <div class="gallery-item" data-gallery-card="">
 <div class="gallery-media"><img alt="Formación en salud e IA" loading="lazy" src="img/ihealth.png"/></div>
 <div class="gallery-caption">
-<span aria-hidden="true" class="gallery-icon-badge"><svg viewbox="0 0 24 24"><path d="m3 9 9-5 9 5-9 5-9-5Z"></path><path d="M7 11.2V16c2.7 2.1 7.3 2.1 10 0v-4.8M21 9v6"></path></svg></span>
+
 <h3>Formación en salud e IA</h3>
 <p>Aprendizaje en tecnologías aplicadas a salud, inteligencia artificial y bienestar.</p>
 </div>
@@ -9334,7 +11060,7 @@ y liderazgo.
 <div class="gallery-item" data-gallery-card="">
 <div class="gallery-media"><img alt="EVIC 2025" loading="lazy" src="img/evic.png"/></div>
 <div class="gallery-caption">
-<span aria-hidden="true" class="gallery-icon-badge"><svg viewbox="0 0 24 24"><path d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1L3.2 9.4l6.1-.9L12 3Z"></path></svg></span>
+
 <h3>EVIC 2025</h3>
 <p>Formación en inteligencia computacional, redes académicas y aprendizaje técnico.</p>
 </div>
@@ -9342,7 +11068,7 @@ y liderazgo.
 <div class="gallery-item" data-gallery-card="">
 <div class="gallery-media"><img alt="Tecnología para aprender" loading="lazy" src="img/colegio.png"/></div>
 <div class="gallery-caption">
-<span aria-hidden="true" class="gallery-icon-badge"><svg viewbox="0 0 24 24"><path d="M4 5h16v14H4z"></path><path d="M8 9h8M8 13h5"></path></svg></span>
+
 <h3>Tecnología para aprender</h3>
 <p>Divulgación para acercar la robótica y la tecnología a nuevas generaciones.</p>
 </div>
@@ -9350,7 +11076,7 @@ y liderazgo.
 <div class="gallery-item" data-gallery-card="">
 <div class="gallery-media"><img alt="Impacto social" loading="lazy" src="img/colegio2.png"/></div>
 <div class="gallery-caption">
-<span aria-hidden="true" class="gallery-icon-badge"><svg viewbox="0 0 24 24"><path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.65A4 4 0 0 1 19 11c0 5.65-7 10-7 10Z"></path></svg></span>
+
 <h3>Impacto social</h3>
 <p>Ingeniería conectada con educación, comunidad y oportunidades reales.</p>
 </div>
@@ -9358,7 +11084,7 @@ y liderazgo.
 <div class="gallery-item" data-gallery-card="">
 <div class="gallery-media"><img alt="Stand IEEE RAS Universidad de Chile" loading="lazy" src="img/standuc.png"/></div>
 <div class="gallery-caption">
-<span aria-hidden="true" class="gallery-icon-badge"><svg viewbox="0 0 24 24"><path d="M7 3h10v4H7zM5 7h14v14H5z"></path><path d="M9 11h6M12 8v6"></path></svg></span>
+
 <h3>Stand IEEE RAS U. de Chile</h3>
 <p>Compartiendo robótica en actividades abiertas y experiencias de divulgación.</p>
 </div>
@@ -9366,7 +11092,7 @@ y liderazgo.
 <div class="gallery-item" data-gallery-card="">
 <div class="gallery-media"><img alt="Robótica y colaboración" loading="lazy" src="img/charlasysmic.png"/></div>
 <div class="gallery-caption">
-<span aria-hidden="true" class="gallery-icon-badge"><svg viewbox="0 0 24 24"><path d="M8 4h8M12 4v4M7 8h10a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-5a3 3 0 0 1 3-3Z"></path><circle cx="9" cy="13" r="1"></circle><circle cx="15" cy="13" r="1"></circle></svg></span>
+
 <h3>Robótica y colaboración</h3>
 <p>Colaboración interuniversitaria, redes y nuevos aprendizajes en robótica.</p>
 </div>
@@ -9374,7 +11100,7 @@ y liderazgo.
 <div class="gallery-item" data-gallery-card="">
 <div class="gallery-media"><img alt="Comunidad IEEE" loading="lazy" src="img/wieday2026.png"/></div>
 <div class="gallery-caption">
-<span aria-hidden="true" class="gallery-icon-badge"><svg viewbox="0 0 24 24"><circle cx="12" cy="8" r="3"></circle><path d="M5 21v-2a7 7 0 0 1 14 0v2"></path></svg></span>
+
 <h3>Comunidad IEEE</h3>
 <p>Espacios de tecnología, liderazgo, redes y participación IEEE.</p>
 </div>
@@ -9382,85 +11108,71 @@ y liderazgo.
 <div class="gallery-item" data-gallery-card="">
 <div class="gallery-media"><img alt="SGSMA 2026" loading="lazy" src="img/sgma.png"/></div>
 <div class="gallery-caption">
-<span aria-hidden="true" class="gallery-icon-badge"><svg viewbox="0 0 24 24"><path d="M4 18V6M10 18V10M16 18V3M22 18H2"></path></svg></span>
+
 <h3>SGSMA 2026</h3>
 <p>Vinculación técnica en energía, tecnología y comunidad IEEE.</p>
 </div>
 </div>
 </div>
 <button aria-label="Ver fotos siguientes" class="gallery-arrow gallery-arrow-right" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M9 6l6 6-6 6"></path></svg></button>
-<div aria-hidden="true" class="gallery-pagination"><span></span><span></span><span></span></div>
-</div>
+
+<div aria-label="Posición de la galería" aria-live="polite" class="gallery-counter"><span class="gallery-counter-current">01</span><span aria-hidden="true" class="gallery-counter-separator">—</span><span class="gallery-counter-total">09</span></div></div>
 </div>
 </section>
-<section class="screen content-screen contact-redesign" data-title="Contacto" id="contacto">
-<div aria-hidden="true" class="contact-dots"></div>
-<span aria-hidden="true" class="contact-branch contact-branch-right">
-<svg viewbox="0 0 130 290">
-<path d="M24 278C58 221 80 161 81 84C81 53 88 28 104 10"></path>
-<path d="M67 181C49 174 37 159 31 138C50 140 65 154 67 181Z"></path>
-<path d="M78 135C95 125 111 106 114 84C95 87 82 105 78 135Z"></path>
-<path d="M80 91C63 80 53 64 52 45C70 50 80 68 80 91Z"></path>
-<path d="M88 56C104 48 113 35 116 19C101 22 91 36 88 56Z"></path>
-<path d="M55 217C35 213 19 203 8 185C29 184 47 197 55 217Z"></path>
-<path d="M68 173C85 165 101 150 107 130C87 132 74 149 68 173Z"></path>
-</svg>
-</span>
-<span aria-hidden="true" class="contact-branch contact-branch-left">
-<svg viewbox="0 0 130 250">
-<path d="M21 239C54 192 70 139 72 76C73 48 82 25 101 8"></path>
-<path d="M60 167C42 160 31 148 27 130C44 131 57 143 60 167Z"></path>
-<path d="M70 127C86 117 98 101 101 82C84 84 74 100 70 127Z"></path>
-<path d="M71 85C57 76 48 63 48 47C62 51 71 67 71 85Z"></path>
-<path d="M49 201C33 198 18 188 9 173C27 172 43 184 49 201Z"></path>
-</svg>
-</span>
-<div class="screen-inner contact-shell">
-<div class="contact-copy">
-<div class="tag contact-tag reveal">Contacto</div>
-<h2 class="contact-title reveal">
-          Dentro de unos
-          <span class="contact-gradient">años más.</span>
-</h2>
-<div aria-hidden="true" class="contact-divider reveal delay-1">
-<svg viewbox="0 0 24 24"><path d="M12 21S4.8 16.8 4.8 10.8A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.2 3.2C19.2 16.8 12 21 12 21Z"></path></svg>
-</div>
-<div class="contact-text reveal delay-1">
-<p>
-            No sé exactamente en qué proyecto estaré dentro de unos años, pero sí tengo claro <strong>el problema al que quiero dedicar mi carrera.</strong>
-</p>
-<p>
-            Quiero aportar a un laboratorio multidisciplinario donde ingeniería y salud trabajen juntas para que una enfermedad no impida vivir una vida digna y significativa. Si compartimos ese propósito, conversemos.
-          </p>
-</div>
-</div>
-<div aria-label="Formas de contacto" class="contact-links-wrap reveal delay-2">
-<a aria-label="Enviar correo a Catalina" class="contact-card" href="mailto:catalina.castro.2@ug.uchile.cl">
-<span aria-hidden="true" class="contact-card-icon">
-<svg viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="m4 7 8 6 8-6"></path></svg>
-</span>
-<span class="contact-card-copy"><b>Email</b><span>catalina.castro.2@ug.uchile.cl</span></span>
-<span aria-hidden="true" class="contact-card-arrow"><svg viewbox="0 0 24 24"><path d="m9 6 6 6-6 6"></path></svg></span>
-</a>
-<a aria-label="Abrir perfil de LinkedIn" class="contact-card" href="https://www.linkedin.com/in/catalina-castro-vargas" rel="noopener" target="_blank">
-<span aria-hidden="true" class="contact-card-icon text-icon">in</span>
-<span class="contact-card-copy"><b>LinkedIn</b><span>Conectemos en LinkedIn</span></span>
-<span aria-hidden="true" class="contact-card-arrow"><svg viewbox="0 0 24 24"><path d="m9 6 6 6-6 6"></path></svg></span>
-</a>
-<a aria-label="Abrir portafolio en Google Drive" class="contact-card" href="https://drive.google.com/drive/folders/1I4UVtk9JRBWTctJrGvdwNJyrfj7cjeie?usp=drive_link" rel="noopener" target="_blank">
-<span aria-hidden="true" class="contact-card-icon">
-<svg viewbox="0 0 24 24"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9L12 3Z"></path></svg>
-</span>
-<span class="contact-card-copy"><b>Portafolio</b><span>Certificados, reconocimientos e informes</span></span>
-<span aria-hidden="true" class="contact-card-arrow"><svg viewbox="0 0 24 24"><path d="m9 6 6 6-6 6"></path></svg></span>
-</a>
-<a aria-label="Abrir currículum en PDF" class="contact-card" href="CV_Catalina_Castro_Vargas (4).pdf" rel="noopener" target="_blank">
-<span aria-hidden="true" class="contact-card-icon text-icon">CV</span>
-<span class="contact-card-copy"><b>Currículum</b><span>Descargar PDF</span></span>
-<span aria-hidden="true" class="contact-card-arrow"><svg viewbox="0 0 24 24"><path d="m9 6 6 6-6 6"></path></svg></span>
-</a>
-</div>
-</div>
+<section class="screen content-screen contact-open-section" data-title="Contacto" id="contacto">
+  <div aria-hidden="true" class="contact-open-orbit contact-open-orbit-a"></div>
+  <div aria-hidden="true" class="contact-open-orbit contact-open-orbit-b"></div>
+  <div aria-hidden="true" class="contact-open-dots"></div>
+  <div class="screen-inner contact-open-shell">
+    <div class="contact-open-copy">
+      <div class="tag contact-open-tag reveal">Contacto</div>
+      <h2 class="contact-open-title reveal">
+        Dentro de unos
+        <span>años más.</span>
+      </h2>
+      <div aria-hidden="true" class="contact-open-divider reveal delay-1">
+        <i></i>
+        <svg viewBox="0 0 24 24"><path d="M12 21S4.8 16.8 4.8 10.8A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.2 3.2C19.2 16.8 12 21 12 21Z"></path></svg>
+        <i></i>
+      </div>
+      <div class="contact-open-text reveal delay-1">
+        <p>No sé exactamente en qué proyecto estaré dentro de unos años, pero sí tengo claro <strong>el problema al que quiero dedicar mi carrera.</strong></p>
+        <p>Quiero aportar a un laboratorio multidisciplinario donde ingeniería y salud trabajen juntas para que una enfermedad no impida vivir una vida digna y significativa.</p>
+      </div>
+      <p class="contact-open-closing reveal delay-2">Si compartimos ese propósito, conversemos.</p>
+    </div>
+
+    <div class="contact-open-links reveal delay-2" aria-label="Formas de contacto">
+      <div class="contact-open-links-head">
+        <span>Canales de contacto</span>
+        <p>Ingeniería · robótica · inteligencia artificial aplicada a salud</p>
+      </div>
+
+      <a class="contact-open-link" href="mailto:catalina.castro.2@ug.uchile.cl" aria-label="Enviar correo a Catalina">
+        <span class="contact-open-number">01</span>
+        <span class="contact-open-link-copy"><b>Email</b><small>catalina.castro.2@ug.uchile.cl</small></span>
+        <span class="contact-open-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13M14 7l5 5-5 5"></path></svg></span>
+      </a>
+
+      <a class="contact-open-link" href="https://www.linkedin.com/in/catalina-castro-vargas" target="_blank" rel="noopener" aria-label="Abrir perfil de LinkedIn">
+        <span class="contact-open-number">02</span>
+        <span class="contact-open-link-copy"><b>LinkedIn</b><small>Conectemos y conversemos sobre proyectos</small></span>
+        <span class="contact-open-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13M14 7l5 5-5 5"></path></svg></span>
+      </a>
+
+      <a class="contact-open-link" href="https://drive.google.com/drive/folders/1I4UVtk9JRBWTctJrGvdwNJyrfj7cjeie?usp=drive_link" target="_blank" rel="noopener" aria-label="Abrir portafolio en Google Drive">
+        <span class="contact-open-number">03</span>
+        <span class="contact-open-link-copy"><b>Documentos</b><small>Certificados, reconocimientos e informes</small></span>
+        <span class="contact-open-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13M14 7l5 5-5 5"></path></svg></span>
+      </a>
+
+      <a class="contact-open-link" href="CV_Catalina_Castro_Vargas (4).pdf" target="_blank" rel="noopener" aria-label="Abrir currículum en PDF">
+        <span class="contact-open-number">04</span>
+        <span class="contact-open-link-copy"><b>Currículum</b><small>Perfil, experiencia y formación</small></span>
+        <span class="contact-open-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13M14 7l5 5-5 5"></path></svg></span>
+      </a>
+    </div>
+  </div>
 </section>
 </main>
 <script>
@@ -9582,6 +11294,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const galleryPrev = document.querySelector('.gallery-arrow-left');
   const galleryNext = document.querySelector('.gallery-arrow-right');
   const gallerySwipeArea = document.querySelector('.gallery-carousel');
+  const galleryCounterCurrent = document.querySelector('.gallery-counter-current');
+  const galleryCounterTotal = document.querySelector('.gallery-counter-total');
   let galleryIndex = 0;
   let galleryTransitionTimer;
 
@@ -9617,6 +11331,13 @@ document.addEventListener('DOMContentLoaded', () => {
       card.style.order = isVisible ? String(offset) : '';
       card.setAttribute('aria-hidden', isVisible ? 'false' : 'true');
     });
+
+    if (galleryCounterCurrent) {
+      galleryCounterCurrent.textContent = String(galleryIndex + 1).padStart(2, '0');
+    }
+    if (galleryCounterTotal) {
+      galleryCounterTotal.textContent = String(galleryCards.length).padStart(2, '0');
+    }
   }
 
   function moveGallery(step) {
@@ -9825,16 +11546,15 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', updateHeroActions, { passive: true });
 })();
 </script>
-
 <div aria-hidden="true" class="project-detail-modal" id="projectDetailModal">
-  <section aria-labelledby="projectDetailTitle" aria-modal="true" class="project-detail-dialog" role="dialog" tabindex="-1">
-    <button aria-label="Cerrar detalles del proyecto" class="project-detail-close" type="button">×</button>
-    <span class="project-detail-kicker" id="projectDetailKicker"></span>
-    <h2 class="project-detail-title" id="projectDetailTitle"></h2>
-    <p class="project-detail-lead" id="projectDetailLead"></p>
-    <div class="project-detail-grid" id="projectDetailGrid"></div>
-    <div class="project-detail-tech" id="projectDetailTech"></div>
-  </section>
+<section aria-labelledby="projectDetailTitle" aria-modal="true" class="project-detail-dialog" role="dialog" tabindex="-1">
+<button aria-label="Cerrar detalles del proyecto" class="project-detail-close" type="button">×</button>
+<span class="project-detail-kicker" id="projectDetailKicker"></span>
+<h2 class="project-detail-title" id="projectDetailTitle"></h2>
+<p class="project-detail-lead" id="projectDetailLead"></p>
+<div class="project-detail-grid" id="projectDetailGrid"></div>
+<div class="project-detail-tech" id="projectDetailTech"></div>
+</section>
 </div>
 <script>
 (() => {
@@ -9925,8 +11645,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 })();
 </script>
-
-
 <script id="proyectos-columnas-clickeables-2026-07-14">
 (() => {
   document.querySelectorAll('#proyectos .project-e-card[data-project-key]').forEach((card) => {
@@ -9952,6 +11670,5 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 })();
 </script>
-
 </body>
 </html>
