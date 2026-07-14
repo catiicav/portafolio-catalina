@@ -10280,127 +10280,169 @@ body.project-detail-open { overflow: hidden !important; }
 }
 </style>
 
-<style id="contacto-editorial-abierto-final">
+<style id="contacto-editorial-final-v2">
 /* =========================================================
-   CONTACTO · COMPOSICIÓN EDITORIAL ABIERTA
-   Sin tarjetas blancas: jerarquía, líneas y aire visual
+   CONTACTO · REDISEÑO EDITORIAL FINAL
+   Profesional, femenino, abierto y sin tarjetas blancas
    ========================================================= */
-#contacto.contact-open-section {
+#contacto.contact-signature-section {
   position: relative;
   isolation: isolate;
-  min-height: calc(100vh - var(--navh));
   display: flex;
   align-items: center;
+  min-height: calc(100vh - var(--navh));
   overflow: hidden;
-  padding: clamp(72px, 6vw, 96px) 0 clamp(74px, 6.5vw, 104px) !important;
+  padding: clamp(70px, 6vw, 96px) 0 clamp(76px, 6.5vw, 104px) !important;
   background:
-    radial-gradient(ellipse 42% 48% at 7% 58%, rgba(231,218,249,.54), transparent 73%),
-    radial-gradient(ellipse 42% 46% at 93% 43%, rgba(248,218,235,.48), transparent 74%),
-    linear-gradient(135deg, #fff 0%, #fdfbff 54%, #fff9fc 100%) !important;
+    radial-gradient(ellipse 38% 54% at 4% 58%, rgba(230,216,249,.58), transparent 72%),
+    radial-gradient(ellipse 44% 52% at 96% 50%, rgba(248,219,235,.52), transparent 74%),
+    linear-gradient(135deg, #fff 0%, #fdfbff 52%, #fff9fc 100%) !important;
 }
-#contacto.contact-open-section::before {
+#contacto.contact-signature-section::before {
   content: "";
   position: absolute;
   z-index: -3;
-  width: clamp(420px, 42vw, 690px);
-  height: clamp(470px, 48vw, 760px);
-  left: -16%;
-  top: 8%;
-  border-radius: 54% 46% 63% 37% / 45% 58% 42% 55%;
-  background: linear-gradient(145deg, rgba(232,218,250,.57), rgba(250,223,238,.35));
+  width: clamp(430px, 42vw, 700px);
+  height: clamp(520px, 55vw, 850px);
+  left: -17%;
+  top: 4%;
+  border-radius: 53% 47% 62% 38% / 46% 58% 42% 54%;
+  background: linear-gradient(145deg, rgba(232,219,250,.60), rgba(250,224,239,.34));
   transform: rotate(-8deg);
-  opacity: .72;
+  opacity: .78;
+  pointer-events: none;
 }
-#contacto.contact-open-section::after {
+#contacto.contact-signature-section::after {
   content: "";
   position: absolute;
   z-index: -3;
-  width: clamp(390px, 40vw, 650px);
-  height: clamp(390px, 43vw, 690px);
-  right: -18%;
-  bottom: -20%;
-  border-radius: 43% 57% 41% 59% / 57% 42% 58% 43%;
-  background: linear-gradient(145deg, rgba(226,212,248,.50), rgba(249,220,236,.48));
-  transform: rotate(13deg);
+  width: clamp(520px, 48vw, 790px);
+  height: clamp(520px, 50vw, 820px);
+  right: -20%;
+  bottom: -28%;
+  border-radius: 44% 56% 42% 58% / 58% 42% 58% 42%;
+  background: linear-gradient(145deg, rgba(226,212,248,.50), rgba(249,220,236,.46));
+  transform: rotate(12deg);
   opacity: .64;
+  pointer-events: none;
 }
-.contact-open-orbit {
+
+.contact-signature-orbit {
   position: absolute;
   z-index: -1;
   pointer-events: none;
-  border: 1px solid rgba(133,98,190,.14);
+  border: 1px solid rgba(132,99,188,.13);
   border-radius: 50%;
 }
-.contact-open-orbit-a {
-  width: 440px;
-  height: 440px;
-  left: -210px;
-  top: 7%;
-}
-.contact-open-orbit-b {
+.contact-signature-orbit-a {
   width: 520px;
   height: 520px;
-  right: -240px;
-  bottom: -24%;
+  left: -260px;
+  top: 3%;
 }
-.contact-open-dots {
+.contact-signature-orbit-b {
+  width: 610px;
+  height: 610px;
+  right: -310px;
+  bottom: -29%;
+}
+.contact-signature-dots {
   position: absolute;
   z-index: -1;
-  top: 8%;
-  left: 48%;
+  left: 47%;
+  top: 5%;
   width: 126px;
   height: 92px;
-  opacity: .34;
-  background-image: radial-gradient(circle, #9d7bd5 1.5px, transparent 1.9px);
+  opacity: .28;
+  background-image: radial-gradient(circle, #9c7bd4 1.6px, transparent 2px);
   background-size: 16px 16px;
-  mask-image: linear-gradient(135deg, #000 45%, transparent 100%);
+  mask-image: linear-gradient(135deg, #000 42%, transparent 100%);
 }
-.contact-open-shell {
+.contact-signature-wave {
+  position: absolute;
+  z-index: -2;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 98px;
+  opacity: .55;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 110' preserveAspectRatio='none'%3E%3Cpath d='M0 58 C250 102 438 9 686 50 C932 91 1125 22 1600 64 L1600 110 L0 110 Z' fill='%23eee4fb' fill-opacity='.46'/%3E%3Cpath d='M0 78 C260 115 470 38 720 67 C968 96 1198 49 1600 76' fill='none' stroke='%23cbaee8' stroke-opacity='.25' stroke-width='1.2'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.contact-signature-branch {
+  position: absolute;
+  z-index: -1;
+  left: -8px;
+  bottom: 1%;
+  width: clamp(100px, 10vw, 155px);
+  height: clamp(215px, 25vw, 330px);
+  color: #9271d2;
+  opacity: .56;
+  transform: rotate(-6deg);
+  pointer-events: none;
+}
+.contact-signature-branch path,
+.contact-signature-branch ellipse {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.contact-signature-branch ellipse { fill: rgba(192,160,231,.11); }
+
+.contact-signature-shell {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: minmax(0, .94fr) minmax(520px, 1.06fr);
-  gap: clamp(66px, 8vw, 126px);
+  grid-template-columns: minmax(0, .82fr) minmax(560px, 1.18fr);
+  gap: clamp(72px, 8vw, 128px);
   align-items: center;
 }
-.contact-open-copy { max-width: 650px; }
-.contact-open-tag { margin-bottom: 25px !important; }
-.contact-open-title {
+.contact-signature-copy {
+  max-width: 610px;
+  padding-left: clamp(0px, 1.4vw, 18px);
+}
+.contact-signature-tag { margin-bottom: 24px !important; }
+.contact-signature-title {
   margin: 0;
-  max-width: 660px;
-  color: #27234d;
-  font-size: clamp(4.1rem, 6.2vw, 6.75rem) !important;
+  max-width: 590px;
+  color: #28234d;
+  font-size: clamp(4rem, 5.7vw, 6.35rem) !important;
   font-weight: 500 !important;
-  line-height: .91 !important;
-  letter-spacing: -.054em !important;
+  line-height: .92 !important;
+  letter-spacing: -.052em !important;
   text-wrap: balance;
 }
-.contact-open-title span {
+.contact-signature-title span {
   display: block;
   color: transparent;
-  background: linear-gradient(115deg, #7960ca 3%, #a36ecb 48%, #cf71a9 96%);
+  background: linear-gradient(115deg, #7860ca 4%, #a16ecb 48%, #cf72aa 96%);
   -webkit-background-clip: text;
   background-clip: text;
   font-style: italic;
 }
-.contact-open-divider {
+.contact-signature-divider {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 16px;
-  width: min(445px, 100%);
+  width: min(420px, 100%);
   margin: 28px 0 28px;
-  color: #a16fc2;
+  color: #9d6ec0;
 }
-.contact-open-divider i {
+.contact-signature-divider i {
   display: block;
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(139,103,193,.34));
 }
-.contact-open-divider i:last-child {
+.contact-signature-divider i:last-child {
   background: linear-gradient(90deg, rgba(139,103,193,.34), transparent);
 }
-.contact-open-divider svg {
+.contact-signature-divider svg {
   width: 25px;
   height: 25px;
   fill: none;
@@ -10409,92 +10451,117 @@ body.project-detail-open { overflow: hidden !important; }
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-.contact-open-text {
+.contact-signature-text {
   display: grid;
-  gap: 20px;
-  max-width: 625px;
+  gap: 19px;
+  max-width: 600px;
 }
-.contact-open-text p {
+.contact-signature-text p {
   margin: 0;
   color: #4d4864;
-  font-size: clamp(1rem, 1.26vw, 1.14rem);
+  font-size: clamp(1rem, 1.18vw, 1.12rem);
   line-height: 1.72;
 }
-.contact-open-text strong { color: #745db1; font-weight: 750; }
-.contact-open-closing {
+.contact-signature-text strong {
+  color: #735db0;
+  font-weight: 750;
+}
+.contact-signature-closing {
   position: relative;
-  margin: 29px 0 0;
-  padding-left: 35px;
+  display: inline-block;
+  margin: 30px 0 0;
+  padding: 12px 28px 12px 36px;
   color: #342f58;
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 1.32rem;
+  font-size: 1.28rem;
   font-style: italic;
   font-weight: 600;
+  line-height: 1.25;
 }
-.contact-open-closing::before {
+.contact-signature-closing::before {
   content: "";
   position: absolute;
   left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #8163cb, #cc7dac);
+}
+.contact-signature-closing::after {
+  content: "✦";
+  position: absolute;
+  right: 0;
   top: 50%;
-  width: 24px;
-  height: 1px;
-  background: linear-gradient(90deg, #8567cc, #cc7dad);
+  color: #a66fc4;
+  font-size: .9rem;
+  transform: translateY(-50%);
 }
-.contact-open-links {
+
+.contact-signature-links {
   position: relative;
-  max-width: 690px;
   width: 100%;
-  padding: 8px 0 0;
+  max-width: 760px;
+  padding: 2px 0 0;
 }
-.contact-open-links::before {
+.contact-signature-links::before {
   content: "";
   position: absolute;
   z-index: -1;
-  left: -52px;
-  right: -42px;
-  top: -54px;
-  bottom: -48px;
-  border-radius: 48% 52% 59% 41% / 41% 47% 53% 59%;
-  background: linear-gradient(145deg, rgba(238,228,252,.47), rgba(252,231,243,.38));
+  inset: -66px -66px -56px -56px;
+  border-radius: 48% 52% 58% 42% / 42% 48% 52% 58%;
+  background: linear-gradient(145deg, rgba(238,228,252,.50), rgba(252,231,243,.40));
   transform: rotate(-2deg);
-  opacity: .84;
+  opacity: .80;
 }
-.contact-open-links-head {
+.contact-signature-links-head {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  gap: 26px;
-  padding-bottom: 19px;
-  border-bottom: 1px solid rgba(128,96,181,.28);
+  gap: 28px;
+  padding: 0 0 20px;
+  border-bottom: 1px solid rgba(128,96,181,.27);
 }
-.contact-open-links-head span {
-  color: #6f55b4;
+.contact-signature-links-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #6e54b3;
   font-size: .74rem;
   font-weight: 850;
   letter-spacing: .18em;
   text-transform: uppercase;
 }
-.contact-open-links-head p {
-  max-width: 350px;
+.contact-signature-links-label svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: #a476d4;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.contact-signature-links-head p {
+  max-width: 360px;
   margin: 0;
-  color: #7a7387;
+  color: #7b7488;
   font-size: .78rem;
   line-height: 1.45;
   text-align: right;
 }
-.contact-open-link {
+.contact-signature-link {
   position: relative;
   display: grid;
-  grid-template-columns: 48px minmax(0, 1fr) 34px;
+  grid-template-columns: 66px 42px minmax(0, 1fr) 34px;
   align-items: center;
-  gap: 18px;
-  min-height: 103px;
-  padding: 21px 5px 20px 0;
-  border-bottom: 1px solid rgba(128,96,181,.20);
+  gap: 17px;
+  min-height: 112px;
+  padding: 20px 4px 20px 0;
+  border-bottom: 1px solid rgba(128,96,181,.19);
   background: transparent;
-  transition: transform .23s ease, border-color .23s ease;
+  transition: transform .24s ease, border-color .24s ease;
 }
-.contact-open-link::after {
+.contact-signature-link::after {
   content: "";
   position: absolute;
   left: 0;
@@ -10502,45 +10569,79 @@ body.project-detail-open { overflow: hidden !important; }
   width: 0;
   height: 1px;
   background: linear-gradient(90deg, #7f62ca, #cd79ad);
-  transition: width .30s ease;
+  transition: width .32s ease;
 }
-.contact-open-link:hover,
-.contact-open-link:focus-visible {
+.contact-signature-link:hover,
+.contact-signature-link:focus-visible {
   transform: translateX(7px);
   outline: none;
 }
-.contact-open-link:hover::after,
-.contact-open-link:focus-visible::after { width: 100%; }
-.contact-open-number {
+.contact-signature-link:hover::after,
+.contact-signature-link:focus-visible::after { width: 100%; }
+.contact-signature-icon {
+  display: grid;
+  place-items: center;
+  width: 62px;
+  height: 62px;
+  color: #7d60c6;
+  background:
+    radial-gradient(circle at 30% 24%, rgba(255,255,255,.96), transparent 42%),
+    linear-gradient(145deg, rgba(233,221,251,.82), rgba(249,231,242,.68));
+  border: 1px solid rgba(205,190,226,.70);
+  border-radius: 50%;
+  transition: transform .24s ease, background .24s ease;
+}
+.contact-signature-link:hover .contact-signature-icon,
+.contact-signature-link:focus-visible .contact-signature-icon {
+  transform: translateY(-2px) scale(1.03);
+  background:
+    radial-gradient(circle at 30% 24%, rgba(255,255,255,1), transparent 42%),
+    linear-gradient(145deg, rgba(227,212,249,.96), rgba(249,225,241,.84));
+}
+.contact-signature-icon svg {
+  width: 29px;
+  height: 29px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.contact-signature-icon.text-icon {
+  font-size: 1.15rem;
+  font-weight: 850;
+  letter-spacing: -.02em;
+}
+.contact-signature-number {
   color: #a084ce;
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 1.25rem;
+  font-size: 1.23rem;
   font-weight: 700;
   line-height: 1;
 }
-.contact-open-link-copy { display: block; min-width: 0; }
-.contact-open-link-copy b {
+.contact-signature-link-copy { display: block; min-width: 0; }
+.contact-signature-link-copy b {
   display: block;
   margin-bottom: 5px;
   color: #28234e;
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 1.48rem;
-  line-height: 1.05;
+  font-size: 1.52rem;
+  line-height: 1.04;
 }
-.contact-open-link-copy small {
+.contact-signature-link-copy small {
   display: block;
   color: #746e80;
   font-size: .90rem;
   line-height: 1.45;
   overflow-wrap: anywhere;
 }
-.contact-open-arrow {
+.contact-signature-arrow {
   display: grid;
   place-items: center;
   color: #8464ca;
   transition: transform .23s ease;
 }
-.contact-open-arrow svg {
+.contact-signature-arrow svg {
   width: 25px;
   height: 25px;
   fill: none;
@@ -10549,42 +10650,54 @@ body.project-detail-open { overflow: hidden !important; }
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-.contact-open-link:hover .contact-open-arrow,
-.contact-open-link:focus-visible .contact-open-arrow { transform: translateX(5px); }
+.contact-signature-link:hover .contact-signature-arrow,
+.contact-signature-link:focus-visible .contact-signature-arrow { transform: translateX(5px); }
 
-@media (max-width: 1100px) {
-  #contacto.contact-open-section { min-height: auto; }
-  .contact-open-shell {
+@media (max-width: 1120px) {
+  #contacto.contact-signature-section { min-height: auto; }
+  .contact-signature-shell {
     grid-template-columns: 1fr;
-    gap: 54px;
+    gap: 56px;
   }
-  .contact-open-copy { max-width: 770px; }
-  .contact-open-links { max-width: 780px; }
-  .contact-open-dots { left: auto; right: 6%; top: 5%; }
+  .contact-signature-copy { max-width: 770px; }
+  .contact-signature-links { max-width: 790px; }
+  .contact-signature-dots { left: auto; right: 6%; top: 5%; }
+  .contact-signature-branch { opacity: .38; }
 }
 @media (max-width: 760px) {
-  #contacto.contact-open-section {
-    padding: 64px 0 72px !important;
+  #contacto.contact-signature-section {
+    padding: 62px 0 74px !important;
   }
-  .contact-open-shell { gap: 42px; }
-  .contact-open-title {
-    font-size: clamp(3.2rem, 15.4vw, 4.8rem) !important;
-    line-height: .94 !important;
+  .contact-signature-shell { gap: 42px; }
+  .contact-signature-title {
+    font-size: clamp(3.15rem, 15.2vw, 4.75rem) !important;
+    line-height: .95 !important;
   }
-  .contact-open-divider { margin: 24px 0; }
-  .contact-open-links::before { left: -22px; right: -18px; top: -30px; bottom: -28px; }
-  .contact-open-links-head { display: block; }
-  .contact-open-links-head p { margin-top: 8px; text-align: left; }
-  .contact-open-link {
-    grid-template-columns: 35px minmax(0, 1fr) 27px;
-    gap: 12px;
-    min-height: 91px;
-    padding: 18px 0;
+  .contact-signature-divider { margin: 23px 0 24px; }
+  .contact-signature-closing { margin-top: 24px; font-size: 1.18rem; }
+  .contact-signature-links::before { inset: -34px -20px -30px -20px; }
+  .contact-signature-links-head { display: block; }
+  .contact-signature-links-head p { margin-top: 8px; text-align: left; }
+  .contact-signature-link {
+    grid-template-columns: 52px 28px minmax(0, 1fr) 26px;
+    gap: 11px;
+    min-height: 96px;
+    padding: 17px 0;
   }
-  .contact-open-link-copy b { font-size: 1.3rem; }
-  .contact-open-link-copy small { font-size: .83rem; }
-  .contact-open-number { font-size: 1.08rem; }
-  .contact-open-dots { opacity: .22; }
+  .contact-signature-icon { width: 50px; height: 50px; }
+  .contact-signature-icon svg { width: 25px; height: 25px; }
+  .contact-signature-number { font-size: 1.05rem; }
+  .contact-signature-link-copy b { font-size: 1.28rem; }
+  .contact-signature-link-copy small { font-size: .82rem; }
+  .contact-signature-dots { opacity: .20; }
+  .contact-signature-branch { width: 86px; height: 190px; left: -18px; bottom: 0; opacity: .32; }
+}
+@media (max-width: 460px) {
+  .contact-signature-link {
+    grid-template-columns: 48px minmax(0, 1fr) 24px;
+  }
+  .contact-signature-number { display: none; }
+  .contact-signature-icon { width: 46px; height: 46px; }
 }
 </style>
 
@@ -11119,57 +11232,74 @@ y liderazgo.
 <div aria-label="Posición de la galería" aria-live="polite" class="gallery-counter"><span class="gallery-counter-current">01</span><span aria-hidden="true" class="gallery-counter-separator">—</span><span class="gallery-counter-total">09</span></div></div>
 </div>
 </section>
-<section class="screen content-screen contact-open-section" data-title="Contacto" id="contacto">
-  <div aria-hidden="true" class="contact-open-orbit contact-open-orbit-a"></div>
-  <div aria-hidden="true" class="contact-open-orbit contact-open-orbit-b"></div>
-  <div aria-hidden="true" class="contact-open-dots"></div>
-  <div class="screen-inner contact-open-shell">
-    <div class="contact-open-copy">
-      <div class="tag contact-open-tag reveal">Contacto</div>
-      <h2 class="contact-open-title reveal">
-        Dentro de unos
-        <span>años más.</span>
+<section class="screen content-screen contact-signature-section" data-title="Contacto" id="contacto">
+  <div aria-hidden="true" class="contact-signature-orbit contact-signature-orbit-a"></div>
+  <div aria-hidden="true" class="contact-signature-orbit contact-signature-orbit-b"></div>
+  <div aria-hidden="true" class="contact-signature-dots"></div>
+  <div aria-hidden="true" class="contact-signature-wave"></div>
+  <svg aria-hidden="true" class="contact-signature-branch" viewBox="0 0 130 300">
+    <path d="M16 290C24 240 37 196 59 150C76 114 93 77 112 22"></path>
+    <path d="M39 206C22 198 12 184 9 166C28 170 39 184 39 206Z"></path>
+    <path d="M56 164C40 153 33 137 35 120C52 127 61 145 56 164Z"></path>
+    <path d="M75 120C62 106 58 89 63 72C78 82 84 101 75 120Z"></path>
+    <path d="M91 79C86 62 90 46 103 34C110 50 104 68 91 79Z"></path>
+    <path d="M63 145C82 143 98 151 109 166C91 171 74 163 63 145Z"></path>
+  </svg>
+
+  <div class="screen-inner contact-signature-shell">
+    <div class="contact-signature-copy">
+      <div class="tag contact-signature-tag reveal">Contacto</div>
+      <h2 class="contact-signature-title reveal">
+        Dentro de
+        <span>unos años más.</span>
       </h2>
-      <div aria-hidden="true" class="contact-open-divider reveal delay-1">
+      <div aria-hidden="true" class="contact-signature-divider reveal delay-1">
         <i></i>
         <svg viewBox="0 0 24 24"><path d="M12 21S4.8 16.8 4.8 10.8A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.2 3.2C19.2 16.8 12 21 12 21Z"></path></svg>
         <i></i>
       </div>
-      <div class="contact-open-text reveal delay-1">
+      <div class="contact-signature-text reveal delay-1">
         <p>No sé exactamente en qué proyecto estaré dentro de unos años, pero sí tengo claro <strong>el problema al que quiero dedicar mi carrera.</strong></p>
         <p>Quiero aportar a un laboratorio multidisciplinario donde ingeniería y salud trabajen juntas para que una enfermedad no impida vivir una vida digna y significativa.</p>
       </div>
-      <p class="contact-open-closing reveal delay-2">Si compartimos ese propósito, conversemos.</p>
+      <p class="contact-signature-closing reveal delay-2">Si compartimos ese propósito, conversemos.</p>
     </div>
 
-    <div class="contact-open-links reveal delay-2" aria-label="Formas de contacto">
-      <div class="contact-open-links-head">
-        <span>Canales de contacto</span>
+    <div class="contact-signature-links reveal delay-2" aria-label="Formas de contacto">
+      <div class="contact-signature-links-head">
+        <span class="contact-signature-links-label">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3l1.3 4.1L17 9l-3.7 1.9L12 15l-1.3-4.1L7 9l3.7-1.9L12 3Z"></path><path d="M5 14l.8 2.4L8 17.5l-2.2 1.1L5 21l-.8-2.4L2 17.5l2.2-1.1L5 14Z"></path></svg>
+          Canales de contacto
+        </span>
         <p>Ingeniería · robótica · inteligencia artificial aplicada a salud</p>
       </div>
 
-      <a class="contact-open-link" href="mailto:catalina.castro.2@ug.uchile.cl" aria-label="Enviar correo a Catalina">
-        <span class="contact-open-number">01</span>
-        <span class="contact-open-link-copy"><b>Email</b><small>catalina.castro.2@ug.uchile.cl</small></span>
-        <span class="contact-open-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13M14 7l5 5-5 5"></path></svg></span>
+      <a class="contact-signature-link" href="mailto:catalina.castro.2@ug.uchile.cl" aria-label="Enviar correo a Catalina">
+        <span class="contact-signature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 5h18v14H3z"></path><path d="m3 7 9 7 9-7"></path></svg></span>
+        <span class="contact-signature-number">01</span>
+        <span class="contact-signature-link-copy"><b>Email</b><small>catalina.castro.2@ug.uchile.cl</small></span>
+        <span class="contact-signature-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13M14 7l5 5-5 5"></path></svg></span>
       </a>
 
-      <a class="contact-open-link" href="https://www.linkedin.com/in/catalina-castro-vargas" target="_blank" rel="noopener" aria-label="Abrir perfil de LinkedIn">
-        <span class="contact-open-number">02</span>
-        <span class="contact-open-link-copy"><b>LinkedIn</b><small>Conectemos y conversemos sobre proyectos</small></span>
-        <span class="contact-open-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13M14 7l5 5-5 5"></path></svg></span>
+      <a class="contact-signature-link" href="https://www.linkedin.com/in/catalina-castro-vargas" target="_blank" rel="noopener" aria-label="Abrir perfil de LinkedIn">
+        <span class="contact-signature-icon text-icon" aria-hidden="true">in</span>
+        <span class="contact-signature-number">02</span>
+        <span class="contact-signature-link-copy"><b>LinkedIn</b><small>Conectemos y conversemos sobre proyectos</small></span>
+        <span class="contact-signature-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13M14 7l5 5-5 5"></path></svg></span>
       </a>
 
-      <a class="contact-open-link" href="https://drive.google.com/drive/folders/1I4UVtk9JRBWTctJrGvdwNJyrfj7cjeie?usp=drive_link" target="_blank" rel="noopener" aria-label="Abrir portafolio en Google Drive">
-        <span class="contact-open-number">03</span>
-        <span class="contact-open-link-copy"><b>Documentos</b><small>Certificados, reconocimientos e informes</small></span>
-        <span class="contact-open-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13M14 7l5 5-5 5"></path></svg></span>
+      <a class="contact-signature-link" href="https://drive.google.com/drive/folders/1I4UVtk9JRBWTctJrGvdwNJyrfj7cjeie?usp=drive_link" target="_blank" rel="noopener" aria-label="Abrir documentos y reconocimientos">
+        <span class="contact-signature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"></path><path d="M14 3v5h5"></path><path d="M9 13h6M9 17h6"></path></svg></span>
+        <span class="contact-signature-number">03</span>
+        <span class="contact-signature-link-copy"><b>Documentos</b><small>Certificados, reconocimientos e informes</small></span>
+        <span class="contact-signature-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13M14 7l5 5-5 5"></path></svg></span>
       </a>
 
-      <a class="contact-open-link" href="CV_Catalina_Castro_Vargas (4).pdf" target="_blank" rel="noopener" aria-label="Abrir currículum en PDF">
-        <span class="contact-open-number">04</span>
-        <span class="contact-open-link-copy"><b>Currículum</b><small>Perfil, experiencia y formación</small></span>
-        <span class="contact-open-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13M14 7l5 5-5 5"></path></svg></span>
+      <a class="contact-signature-link" href="CV_Catalina_Castro_Vargas (4).pdf" target="_blank" rel="noopener" aria-label="Abrir currículum en PDF">
+        <span class="contact-signature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5z"></path><circle cx="12" cy="9" r="2.2"></circle><path d="M8.5 16c.7-2.1 2-3.1 3.5-3.1s2.8 1 3.5 3.1"></path></svg></span>
+        <span class="contact-signature-number">04</span>
+        <span class="contact-signature-link-copy"><b>Currículum</b><small>Perfil, experiencia y formación</small></span>
+        <span class="contact-signature-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13M14 7l5 5-5 5"></path></svg></span>
       </a>
     </div>
   </div>
