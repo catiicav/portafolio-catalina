@@ -17471,6 +17471,1734 @@ document.addEventListener("DOMContentLoaded", function () {
 }
 </style>
 
+
+<style id="research-artistic-redesign-final">
+/* ============================================================
+   INVESTIGACIÓN · REDISEÑO ARTÍSTICO FINAL
+   Scoped para no alterar las demás secciones del portafolio.
+   ============================================================ */
+
+#investigacion.research-art-v2{
+  --research-ink:#242047;
+  --research-text:#55506d;
+  --research-lav:#8267cf;
+  --research-rose:#cf73a9;
+  position:relative!important;
+  display:block!important;
+  min-height:auto!important;
+  padding:0!important;
+  overflow:hidden!important;
+  isolation:isolate;
+  background:
+    radial-gradient(circle at 5% 11%,rgba(235,225,248,.24),transparent 25rem),
+    radial-gradient(circle at 94% 54%,rgba(248,219,235,.18),transparent 27rem),
+    linear-gradient(180deg,#fffefe 0%,#fffdfd 66%,#fdfaff 100%)!important;
+}
+
+#investigacion.research-art-v2::before,
+#investigacion.research-art-v2::after{
+  display:none!important;
+  content:none!important;
+}
+
+#investigacion .research-art-v2-main{
+  position:relative;
+  z-index:3;
+  width:var(--shell);
+  margin-inline:auto;
+  padding:clamp(74px,6.3vw,102px) 0 0;
+}
+
+#investigacion .research-art-v2-hero{
+  display:grid;
+  grid-template-columns:minmax(0,1.05fr) minmax(430px,.95fr);
+  gap:clamp(42px,5vw,86px);
+  align-items:center;
+}
+
+#investigacion .research-art-v2-copy{
+  position:relative;
+  z-index:3;
+  min-width:0;
+}
+
+#investigacion .research-art-v2-copy .tag{
+  margin-bottom:24px!important;
+}
+
+#investigacion .research-art-v2-title{
+  display:grid;
+  gap:.01em;
+  max-width:820px;
+  margin:0;
+  color:var(--research-ink);
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:clamp(4.35rem,5.8vw,6.45rem);
+  font-weight:600;
+  line-height:.87;
+  letter-spacing:-.052em;
+}
+
+#investigacion .research-art-v2-title > span{
+  display:block;
+  white-space:nowrap;
+}
+
+#investigacion .research-art-v2-gradient{
+  width:max-content;
+  max-width:100%;
+  padding-right:.05em;
+  color:transparent;
+  background:linear-gradient(115deg,#755dca 0%,#9c74ce 48%,#cf73a9 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  font-style:italic;
+  font-weight:500;
+}
+
+#investigacion .research-art-v2-title-rule{
+  position:relative;
+  width:112px;
+  height:2px;
+  margin-top:32px;
+  border-radius:999px;
+  background:linear-gradient(90deg,#7d62c7,#cf72aa);
+}
+
+#investigacion .research-art-v2-title-rule::after{
+  content:"";
+  position:absolute;
+  right:-2px;
+  top:50%;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:#cf72aa;
+  transform:translateY(-50%);
+}
+
+#investigacion .research-art-v2-visual{
+  position:relative;
+  min-width:0;
+  min-height:500px;
+  margin-right:clamp(-110px,-5vw,-42px);
+  pointer-events:none;
+}
+
+#investigacion .research-art-v2-wash{
+  position:absolute;
+  border-radius:54% 46% 58% 42% / 48% 56% 44% 52%;
+}
+
+#investigacion .research-art-v2-wash-a{
+  width:min(45vw,620px);
+  height:min(38vw,525px);
+  right:0;
+  top:0;
+  opacity:.88;
+  background:
+    radial-gradient(circle at 27% 27%,rgba(255,255,255,.88),transparent 28%),
+    radial-gradient(circle at 57% 54%,rgba(133,102,205,.20),transparent 38%),
+    linear-gradient(145deg,rgba(231,220,248,.82),rgba(214,199,241,.44));
+  transform:rotate(-8deg);
+}
+
+#investigacion .research-art-v2-wash-b{
+  width:min(39vw,530px);
+  height:min(29vw,390px);
+  right:-4%;
+  bottom:4%;
+  opacity:.68;
+  background:
+    radial-gradient(circle at 42% 35%,rgba(255,255,255,.48),transparent 31%),
+    linear-gradient(145deg,rgba(250,225,239,.72),rgba(239,196,222,.42));
+  transform:rotate(9deg);
+}
+
+#investigacion .research-art-v2-wash-c{
+  width:min(24vw,310px);
+  height:min(18vw,235px);
+  right:29%;
+  top:34%;
+  opacity:.28;
+  background:rgba(151,119,213,.33);
+  filter:blur(18px);
+  transform:rotate(-18deg);
+}
+
+#investigacion .research-art-v2-dots{
+  position:absolute;
+  top:3%;
+  right:12%;
+  width:165px;
+  height:130px;
+  opacity:.29;
+  background-image:radial-gradient(circle,rgba(141,105,207,.78) 1.7px,transparent 2px);
+  background-size:17px 17px;
+}
+
+#investigacion .research-art-v2-curve{
+  position:absolute;
+  z-index:2;
+  left:2%;
+  top:14%;
+  width:105%;
+  height:72%;
+  overflow:visible;
+}
+
+#investigacion .research-art-v2-curve path{
+  fill:none;
+  stroke-linecap:round;
+}
+
+#investigacion .research-art-v2-curve-main{
+  stroke:url(#researchCurveGradientFinal);
+  stroke-width:1.7;
+}
+
+#investigacion .research-art-v2-curve-soft{
+  stroke:rgba(132,103,207,.22);
+  stroke-width:1.15;
+}
+
+#investigacion .research-art-v2-curve circle{
+  fill:#8b69ca;
+}
+
+#investigacion .research-art-v2-text{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  width:min(980px,72%);
+  margin-top:clamp(12px,1.5vw,26px);
+  padding-bottom:clamp(44px,4vw,60px);
+}
+
+#investigacion .research-art-v2-text p{
+  margin:0;
+  color:#514b69;
+  font-size:clamp(.98rem,1.03vw,1.06rem);
+  line-height:1.74;
+}
+
+#investigacion .research-art-v2-text p:first-child{
+  padding-right:clamp(30px,3.4vw,52px);
+}
+
+#investigacion .research-art-v2-text p:last-child{
+  position:relative;
+  padding-left:clamp(30px,3.4vw,52px);
+}
+
+#investigacion .research-art-v2-text p:last-child::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:3px;
+  bottom:3px;
+  width:1px;
+  background:linear-gradient(180deg,transparent,#ded3e8 16%,#ded3e8 84%,transparent);
+}
+
+/* Franja inferior */
+#investigacion .research-art-v2-purpose{
+  position:relative;
+  z-index:4;
+  padding:clamp(54px,4.7vw,72px) 0 clamp(58px,5vw,78px);
+}
+
+#investigacion .research-art-v2-purpose::before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:0;
+  background:
+    radial-gradient(circle at 6% 100%,rgba(205,188,239,.29),transparent 28rem),
+    radial-gradient(circle at 77% 4%,rgba(249,223,238,.20),transparent 25rem),
+    linear-gradient(180deg,rgba(247,243,253,.72),rgba(255,253,255,.97));
+  clip-path:polygon(
+    0 10%,8% 5%,17% 10%,27% 6%,39% 11%,51% 5%,62% 9%,75% 4%,88% 8%,100% 3%,
+    100% 100%,0 100%
+  );
+}
+
+#investigacion .research-art-v2-purpose-inner{
+  width:var(--shell);
+  margin-inline:auto;
+  display:grid;
+  grid-template-columns:minmax(215px,.95fr) minmax(0,4fr);
+  gap:0;
+  align-items:start;
+}
+
+#investigacion .research-art-v2-purpose-intro{
+  padding:6px clamp(32px,3vw,50px) 0 0;
+}
+
+#investigacion .research-art-v2-purpose-intro h3{
+  margin:0;
+  color:#8566cb;
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:clamp(2.9rem,3.3vw,3.75rem);
+  font-style:italic;
+  font-weight:500;
+  line-height:.88;
+  letter-spacing:-.035em;
+}
+
+#investigacion .research-art-v2-purpose-rule{
+  display:block;
+  width:44px;
+  height:1px;
+  margin:20px 0 17px;
+  background:linear-gradient(90deg,#7c62c7,#cc73aa);
+}
+
+#investigacion .research-art-v2-purpose-intro p{
+  max-width:225px;
+  margin:0;
+  color:#5d5772;
+  font-size:.93rem;
+  line-height:1.67;
+}
+
+#investigacion .research-art-v2-purpose-intro strong{
+  color:#6049a6;
+  font-weight:700;
+}
+
+#investigacion .research-art-v2-steps{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+}
+
+#investigacion .research-art-v2-step{
+  min-height:185px;
+  padding:17px clamp(24px,2.4vw,42px) 4px;
+  border-left:1px solid rgba(211,201,225,.82);
+}
+
+#investigacion .research-art-v2-step svg{
+  display:block;
+  width:76px;
+  height:15px;
+  margin-bottom:20px;
+  overflow:visible;
+}
+
+#investigacion .research-art-v2-step svg path{
+  fill:none;
+  stroke:#9b74d1;
+  stroke-width:1.55;
+  stroke-linecap:round;
+}
+
+#investigacion .research-art-v2-step:nth-child(even) svg path{
+  stroke:#b27abd;
+}
+
+#investigacion .research-art-v2-step h3{
+  margin:0;
+  color:#2a254f;
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:clamp(1.75rem,1.95vw,2.05rem);
+  font-weight:600;
+  line-height:1;
+}
+
+#investigacion .research-art-v2-step p{
+  max-width:220px;
+  margin:17px 0 0;
+  color:#625c75;
+  font-size:.91rem;
+  line-height:1.64;
+}
+
+@media(max-width:1180px){
+  #investigacion .research-art-v2-hero{
+    grid-template-columns:minmax(0,1.12fr) minmax(340px,.88fr);
+    gap:34px;
+  }
+
+  #investigacion .research-art-v2-title{
+    font-size:clamp(4rem,6.3vw,5.7rem);
+  }
+
+  #investigacion .research-art-v2-visual{
+    min-height:440px;
+    margin-right:-10vw;
+  }
+
+  #investigacion .research-art-v2-text{
+    width:min(900px,78%);
+  }
+
+  #investigacion .research-art-v2-purpose-inner{
+    grid-template-columns:minmax(205px,.9fr) minmax(0,3.7fr);
+  }
+
+  #investigacion .research-art-v2-step{
+    padding-inline:22px;
+  }
+}
+
+@media(max-width:900px){
+  #investigacion .research-art-v2-main{
+    padding-top:68px;
+  }
+
+  #investigacion .research-art-v2-hero{
+    grid-template-columns:1fr;
+    gap:0;
+  }
+
+  #investigacion .research-art-v2-copy{
+    z-index:3;
+  }
+
+  #investigacion .research-art-v2-visual{
+    position:absolute;
+    z-index:-1;
+    top:40px;
+    right:-210px;
+    width:520px;
+    min-height:440px;
+    margin:0;
+    opacity:.58;
+  }
+
+  #investigacion .research-art-v2-title{
+    max-width:760px;
+  }
+
+  #investigacion .research-art-v2-text{
+    width:min(850px,100%);
+    margin-top:35px;
+  }
+
+  #investigacion .research-art-v2-purpose-inner{
+    grid-template-columns:1fr;
+  }
+
+  #investigacion .research-art-v2-purpose-intro{
+    padding:0 0 32px;
+  }
+
+  #investigacion .research-art-v2-purpose-intro p{
+    max-width:330px;
+  }
+
+  #investigacion .research-art-v2-steps{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    row-gap:26px;
+  }
+}
+
+@media(max-width:640px){
+  #investigacion .research-art-v2-main{
+    padding-top:56px;
+  }
+
+  #investigacion .research-art-v2-copy .tag{
+    margin-bottom:19px!important;
+  }
+
+  #investigacion .research-art-v2-title{
+    font-size:clamp(3rem,14.5vw,4.45rem);
+    line-height:.92;
+    letter-spacing:-.043em;
+  }
+
+  #investigacion .research-art-v2-title > span{
+    white-space:normal;
+  }
+
+  #investigacion .research-art-v2-gradient{
+    width:auto;
+  }
+
+  #investigacion .research-art-v2-title-rule{
+    margin-top:25px;
+  }
+
+  #investigacion .research-art-v2-visual{
+    right:-315px;
+    top:24px;
+    width:500px;
+    opacity:.38;
+  }
+
+  #investigacion .research-art-v2-text{
+    grid-template-columns:1fr;
+    gap:18px;
+    margin-top:29px;
+    padding-bottom:38px;
+  }
+
+  #investigacion .research-art-v2-text p{
+    font-size:.94rem;
+    line-height:1.65;
+  }
+
+  #investigacion .research-art-v2-text p:first-child,
+  #investigacion .research-art-v2-text p:last-child{
+    padding:0;
+  }
+
+  #investigacion .research-art-v2-text p:last-child::before{
+    display:none;
+  }
+
+  #investigacion .research-art-v2-purpose{
+    padding-top:52px;
+  }
+
+  #investigacion .research-art-v2-purpose-intro h3{
+    font-size:3rem;
+  }
+
+  #investigacion .research-art-v2-steps{
+    grid-template-columns:1fr;
+    row-gap:0;
+  }
+
+  #investigacion .research-art-v2-step{
+    min-height:auto;
+    padding:27px 0 29px;
+    border-left:0;
+    border-top:1px solid rgba(211,201,225,.80);
+  }
+
+  #investigacion .research-art-v2-step svg{
+    margin-bottom:14px;
+  }
+
+  #investigacion .research-art-v2-step p{
+    max-width:100%;
+    margin-top:10px;
+  }
+}
+</style>
+
+
+<style id="research-artistic-compact-final">
+/* ============================================================
+   INVESTIGACIÓN · AJUSTE COMPACTO
+   Reduce ~25% la altura total sin perder la composición.
+   ============================================================ */
+
+@media (min-width: 901px) {
+  #investigacion.research-art-v2 .research-art-v2-main{
+    padding-top: clamp(52px,4.5vw,72px) !important;
+  }
+
+  #investigacion.research-art-v2 .research-art-v2-hero{
+    grid-template-columns:minmax(0,1.08fr) minmax(400px,.92fr) !important;
+    gap:clamp(34px,4.2vw,68px) !important;
+    align-items:start !important;
+  }
+
+  #investigacion.research-art-v2 .research-art-v2-copy{
+    padding-top: 2px !important;
+  }
+
+  #investigacion.research-art-v2 .research-art-v2-copy .tag{
+    margin-bottom:20px !important;
+  }
+
+  #investigacion.research-art-v2 .research-art-v2-title{
+    font-size:clamp(4rem,5.35vw,5.95rem) !important;
+    line-height:.88 !important;
+  }
+
+  #investigacion.research-art-v2 .research-art-v2-title-rule{
+    margin-top:26px !important;
+  }
+
+  #investigacion.research-art-v2 .research-art-v2-visual{
+    min-height:390px !important;
+    margin-right:clamp(-90px,-4vw,-35px) !important;
+  }
+
+  #investigacion.research-art-v2 .research-art-v2-wash-a{
+    width:min(41vw,560px) !important;
+    height:min(32vw,445px) !important;
+    top:-8px !important;
+  }
+
+  #investigacion.research-art-v2 .research-art-v2-wash-b{
+    width:min(35vw,475px) !important;
+    height:min(24vw,335px) !important;
+    bottom:0 !important;
+  }
+
+  #investigacion.research-art-v2 .research-art-v2-wash-c{
+    width:min(21vw,275px) !important;
+    height:min(15vw,205px) !important;
+  }
+
+  #investigacion.research-art-v2 .research-art-v2-dots{
+    width:145px !important;
+    height:112px !important;
+    top:1% !important;
+  }
+
+  #investigacion.research-art-v2 .research-art-v2-curve{
+    top:10% !important;
+    height:76% !important;
+  }
+
+  #investigacion.research-art-v2 .research-art-v2-text{
+    width:min(980px,76%) !important;
+    margin-top:-18px !important;
+    padding-bottom:30px !important;
+  }
+
+  #investigacion.research-art-v2 .research-art-v2-text p{
+    line-height:1.65 !important;
+  }
+
+  #investigacion.research-art-v2 .research-art-v2-purpose{
+    padding-top:42px !important;
+    padding-bottom:46px !important;
+  }
+
+  #investigacion.research-art-v2 .research-art-v2-purpose-intro{
+    padding-top:2px !important;
+  }
+
+  #investigacion.research-art-v2 .research-art-v2-purpose-intro h3{
+    font-size:clamp(2.65rem,3vw,3.35rem) !important;
+  }
+
+  #investigacion.research-art-v2 .research-art-v2-purpose-rule{
+    margin:16px 0 14px !important;
+  }
+
+  #investigacion.research-art-v2 .research-art-v2-step{
+    min-height:148px !important;
+    padding-top:10px !important;
+    padding-bottom:0 !important;
+  }
+
+  #investigacion.research-art-v2 .research-art-v2-step svg{
+    margin-bottom:15px !important;
+  }
+
+  #investigacion.research-art-v2 .research-art-v2-step h3{
+    font-size:clamp(1.62rem,1.8vw,1.9rem) !important;
+  }
+
+  #investigacion.research-art-v2 .research-art-v2-step p{
+    margin-top:12px !important;
+    line-height:1.55 !important;
+  }
+}
+
+@media (min-width: 1181px) {
+  #investigacion.research-art-v2 .research-art-v2-text{
+    transform:translateY(-6px);
+  }
+}
+
+@media (max-width: 900px) and (min-width: 641px) {
+  #investigacion.research-art-v2 .research-art-v2-main{
+    padding-top:56px !important;
+  }
+
+  #investigacion.research-art-v2 .research-art-v2-title{
+    font-size:clamp(3.7rem,8.6vw,5.2rem) !important;
+  }
+
+  #investigacion.research-art-v2 .research-art-v2-visual{
+    min-height:360px !important;
+  }
+
+  #investigacion.research-art-v2 .research-art-v2-text{
+    margin-top:24px !important;
+    padding-bottom:28px !important;
+  }
+
+  #investigacion.research-art-v2 .research-art-v2-purpose{
+    padding-top:42px !important;
+    padding-bottom:48px !important;
+  }
+
+  #investigacion.research-art-v2 .research-art-v2-step{
+    min-height:145px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  #investigacion.research-art-v2 .research-art-v2-main{
+    padding-top:46px !important;
+  }
+
+  #investigacion.research-art-v2 .research-art-v2-copy .tag{
+    margin-bottom:16px !important;
+  }
+
+  #investigacion.research-art-v2 .research-art-v2-title{
+    font-size:clamp(2.85rem,13.7vw,4.15rem) !important;
+  }
+
+  #investigacion.research-art-v2 .research-art-v2-title-rule{
+    margin-top:21px !important;
+  }
+
+  #investigacion.research-art-v2 .research-art-v2-text{
+    margin-top:24px !important;
+    padding-bottom:28px !important;
+  }
+
+  #investigacion.research-art-v2 .research-art-v2-purpose{
+    padding-top:44px !important;
+    padding-bottom:46px !important;
+  }
+
+  #investigacion.research-art-v2 .research-art-v2-purpose-intro{
+    padding-bottom:24px !important;
+  }
+
+  #investigacion.research-art-v2 .research-art-v2-purpose-intro h3{
+    font-size:2.65rem !important;
+  }
+
+  #investigacion.research-art-v2 .research-art-v2-step{
+    padding:22px 0 23px !important;
+  }
+}
+</style>
+
+
+<style id="ieee-artistico-final">
+/* IEEE RAS · rediseño artístico final */
+#ieee.ieee-door-section {
+  padding-top: clamp(68px, 5.8vw, 94px) !important;
+  padding-bottom: clamp(74px, 6.4vw, 102px) !important;
+  background:
+    radial-gradient(circle at 78% 18%, rgba(224,211,247,.24), transparent 28rem),
+    radial-gradient(circle at 92% 72%, rgba(248,218,235,.27), transparent 30rem),
+    linear-gradient(180deg,#fff 0%,#fffdfd 70%,#fff9fc 100%) !important;
+}
+#ieee.ieee-door-section::after { display:none !important; content:none !important; }
+
+#ieee .ieee-door-hero {
+  grid-template-columns: minmax(0,.91fr) minmax(520px,1.09fr) !important;
+  gap: clamp(54px,6.5vw,104px) !important;
+  align-items:center !important;
+}
+#ieee .ieee-door-copy { max-width: 625px !important; }
+#ieee .ieee-door-overline { margin-bottom: 18px !important; }
+#ieee .ieee-door-title {
+  font-size: clamp(3.9rem,5.15vw,5.85rem) !important;
+  line-height:.91 !important;
+}
+
+/* La explicación se siente editorial, no como una tabla académica. */
+#ieee .ieee-door-about {
+  grid-template-columns: 128px minmax(0,1fr) !important;
+  max-width: 610px !important;
+  gap: 22px !important;
+  padding-bottom: 20px !important;
+  border-bottom: 1px solid rgba(129,99,188,.13) !important;
+}
+#ieee .ieee-door-about p {
+  color:#625c73 !important;
+  font-size:.91rem !important;
+  line-height:1.67 !important;
+}
+
+/* La cita deja de ser una tarjeta y se integra al espacio. */
+#ieee .ieee-door-message {
+  margin-top: 24px !important;
+  padding: 9px 12px 8px 25px !important;
+  overflow: visible !important;
+  border-left: 2px solid rgba(143,103,204,.78) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+#ieee .ieee-door-message::after {
+  right:auto !important;
+  left: 24px !important;
+  top:-34px !important;
+  color:rgba(141,104,193,.075) !important;
+  font-size:6.1rem !important;
+}
+#ieee .ieee-door-message p {
+  max-width: 535px !important;
+  color:#514b66 !important;
+  font-size:.95rem !important;
+  line-height:1.66 !important;
+}
+#ieee .ieee-door-message strong {
+  max-width: 520px;
+  margin-top: 12px !important;
+  color:#8760b5 !important;
+  font-size:1.23rem !important;
+}
+
+/* Fotografía con acabado de pincel / acuarela. */
+#ieee .ieee-door-figure {
+  min-height: 515px !important;
+  overflow: visible !important;
+}
+#ieee .ieee-door-photo-blob {
+  width: 96% !important;
+  height: 88% !important;
+  top: 1% !important;
+  right: -2% !important;
+  border-radius: 0 !important;
+  background:
+    radial-gradient(ellipse 48% 28% at 18% 18%, rgba(210,195,244,.64), transparent 74%),
+    radial-gradient(ellipse 50% 30% at 76% 22%, rgba(244,205,229,.62), transparent 76%),
+    radial-gradient(ellipse 62% 26% at 48% 79%, rgba(220,206,247,.52), transparent 76%),
+    linear-gradient(145deg,rgba(229,217,249,.42),rgba(249,222,238,.31)) !important;
+  filter: blur(9px) !important;
+  transform: rotate(-3deg) !important;
+  opacity:.86 !important;
+}
+#ieee .ieee-door-photo-halo { display:none !important; }
+#ieee .ieee-door-photo-frame {
+  width:min(100%,710px) !important;
+  aspect-ratio:1.34 !important;
+  padding:0 !important;
+  overflow:visible !important;
+  background:transparent !important;
+  border:0 !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  filter:drop-shadow(0 20px 34px rgba(63,46,88,.11)) !important;
+  isolation:isolate;
+}
+#ieee .ieee-door-photo-frame::before,
+#ieee .ieee-door-photo-frame::after {
+  content:"";
+  position:absolute;
+  z-index:-1;
+  pointer-events:none;
+  opacity:.78;
+}
+#ieee .ieee-door-photo-frame::before {
+  inset:-8% -5% -10% -7%;
+  background:
+    linear-gradient(9deg,transparent 7%,rgba(208,190,242,.46) 8% 16%,transparent 17%),
+    linear-gradient(-6deg,transparent 21%,rgba(243,201,226,.48) 22% 34%,transparent 35%),
+    linear-gradient(5deg,transparent 54%,rgba(222,207,247,.52) 55% 67%,transparent 68%),
+    linear-gradient(-4deg,transparent 76%,rgba(245,213,232,.43) 77% 88%,transparent 89%);
+  transform:rotate(-4deg);
+  filter:blur(1.2px);
+}
+#ieee .ieee-door-photo-frame::after {
+  inset:-4% -4% -5% -4%;
+  background:
+    radial-gradient(circle at 2% 18%,rgba(152,119,213,.27) 0 3px,transparent 4px),
+    radial-gradient(circle at 96% 28%,rgba(198,111,164,.23) 0 4px,transparent 5px),
+    radial-gradient(circle at 8% 92%,rgba(164,134,219,.20) 0 3px,transparent 4px),
+    radial-gradient(circle at 91% 88%,rgba(202,127,176,.18) 0 3px,transparent 4px);
+}
+#ieee .ieee-door-photo-frame img {
+  display:block;
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  object-position:center 48% !important;
+  border-radius:0 !important;
+  clip-path:polygon(2% 16%,7% 10%,16% 11%,24% 5%,35% 8%,46% 3%,58% 8%,69% 4%,81% 9%,94% 7%,98% 18%,96% 29%,100% 39%,96% 49%,99% 60%,94% 71%,97% 82%,88% 89%,76% 91%,65% 97%,53% 93%,41% 98%,31% 93%,18% 96%,8% 88%,10% 77%,3% 68%,7% 56%,1% 46%,5% 35%,1% 26%);
+  -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 740'%3E%3Cg fill='black'%3E%3Cpath d='M38 128C108 79 190 88 249 51C330 0 396 43 466 25C548 4 601 58 680 34C778 4 869 54 951 101C991 152 951 198 980 249C1007 296 966 338 989 391C1011 445 966 486 982 535C995 581 940 630 883 655C807 687 741 674 677 711C603 753 539 696 472 721C393 749 335 696 264 716C189 737 122 693 72 645C29 604 68 557 36 510C4 461 50 413 25 364C-1 312 47 272 22 224C-1 183 8 153 38 128Z'/%3E%3Crect x='24' y='95' width='930' height='34' rx='17' transform='rotate(-4 24 95)'/%3E%3Crect x='38' y='620' width='900' height='38' rx='19' transform='rotate(3 38 620)'/%3E%3Cellipse cx='45' cy='270' rx='52' ry='22'/%3E%3Cellipse cx='955' cy='455' rx='48' ry='20'/%3E%3Cellipse cx='118' cy='690' rx='34' ry='15'/%3E%3Cellipse cx='902' cy='80' rx='30' ry='14'/%3E%3C/g%3E%3C/svg%3E") !important;
+  mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 740'%3E%3Cg fill='black'%3E%3Cpath d='M38 128C108 79 190 88 249 51C330 0 396 43 466 25C548 4 601 58 680 34C778 4 869 54 951 101C991 152 951 198 980 249C1007 296 966 338 989 391C1011 445 966 486 982 535C995 581 940 630 883 655C807 687 741 674 677 711C603 753 539 696 472 721C393 749 335 696 264 716C189 737 122 693 72 645C29 604 68 557 36 510C4 461 50 413 25 364C-1 312 47 272 22 224C-1 183 8 153 38 128Z'/%3E%3Crect x='24' y='95' width='930' height='34' rx='17' transform='rotate(-4 24 95)'/%3E%3Crect x='38' y='620' width='900' height='38' rx='19' transform='rotate(3 38 620)'/%3E%3Cellipse cx='45' cy='270' rx='52' ry='22'/%3E%3Cellipse cx='955' cy='455' rx='48' ry='20'/%3E%3Cellipse cx='118' cy='690' rx='34' ry='15'/%3E%3Cellipse cx='902' cy='80' rx='30' ry='14'/%3E%3C/g%3E%3C/svg%3E") !important;
+  -webkit-mask-size:100% 100% !important;
+  mask-size:100% 100% !important;
+  -webkit-mask-repeat:no-repeat !important;
+  mask-repeat:no-repeat !important;
+  filter:saturate(1.07) contrast(1.025) brightness(1.015) !important;
+}
+#ieee .ieee-door-figure figcaption {
+  width:min(82%,620px) !important;
+  margin-top:4px !important;
+  padding-left:16px !important;
+  border-left:2px solid rgba(143,101,196,.65) !important;
+}
+#ieee .ieee-door-branch {
+  right:-1% !important;
+  bottom:4% !important;
+  width:clamp(78px,7vw,105px) !important;
+  opacity:.40 !important;
+}
+
+/* Encabezado intermedio y manchas asimétricas, sin tarjetas ni números. */
+#ieee .ieee-door-values-heading {
+  margin-top:clamp(46px,5.2vw,72px);
+  text-align:center;
+}
+#ieee .ieee-door-values-heading span {
+  display:block;
+  color:#7659ba;
+  font-size:.72rem;
+  font-weight:850;
+  letter-spacing:.19em;
+  text-transform:uppercase;
+}
+#ieee .ieee-door-values-heading span::after {
+  content:"";
+  display:block;
+  width:38px;
+  height:1px;
+  margin:14px auto 10px;
+  background:linear-gradient(90deg,#8567ce,#ca79ad);
+}
+#ieee .ieee-door-values-heading p {
+  color:#948b9e;
+  font-size:.80rem;
+}
+#ieee .ieee-door-contributions {
+  display:grid !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  gap:clamp(30px,4vw,66px) !important;
+  margin-top:28px !important;
+  border:0 !important;
+  overflow:visible !important;
+}
+#ieee .ieee-door-contribution,
+#ieee .ieee-door-contribution:first-child,
+#ieee .ieee-door-contribution:last-child {
+  position:relative !important;
+  min-height:245px !important;
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
+  padding:42px 24px !important;
+  border:0 !important;
+  text-align:center !important;
+  isolation:isolate;
+}
+#ieee .ieee-door-contribution::before {
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:8% 1%;
+  border-radius:49% 51% 58% 42% / 48% 43% 57% 52%;
+  background:
+    radial-gradient(circle at 30% 25%,rgba(255,255,255,.78),transparent 34%),
+    linear-gradient(145deg,rgba(232,220,250,.66),rgba(249,228,240,.42));
+  filter:blur(.1px);
+  transform:rotate(-4deg);
+}
+#ieee .ieee-door-contribution:nth-child(2)::before {
+  inset:2% 0 10%;
+  border-radius:58% 42% 47% 53% / 42% 58% 42% 58%;
+  background:
+    radial-gradient(circle at 68% 28%,rgba(255,255,255,.74),transparent 35%),
+    linear-gradient(145deg,rgba(249,223,238,.60),rgba(235,225,251,.46));
+  transform:rotate(3deg);
+}
+#ieee .ieee-door-contribution:nth-child(3)::before {
+  inset:10% -2% 3%;
+  border-radius:43% 57% 61% 39% / 55% 42% 58% 45%;
+  background:
+    radial-gradient(circle at 28% 26%,rgba(255,255,255,.75),transparent 36%),
+    linear-gradient(145deg,rgba(230,218,249,.62),rgba(245,223,239,.46));
+  transform:rotate(-2deg);
+}
+#ieee .ieee-door-contribution-top {
+  margin-bottom:14px !important;
+}
+#ieee .ieee-door-contribution small {
+  color:#795dbd !important;
+  font-size:.68rem !important;
+  letter-spacing:.14em !important;
+}
+#ieee .ieee-door-contribution h3 {
+  max-width:280px;
+  margin:0 auto 12px !important;
+  color:#2b2752 !important;
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:clamp(1.55rem,1.8vw,1.9rem) !important;
+  font-weight:700;
+  line-height:1.08;
+}
+#ieee .ieee-door-contribution h3::after {
+  content:"";
+  display:block;
+  width:30px;
+  height:1.5px;
+  margin:13px auto 0;
+  background:linear-gradient(90deg,#8a6bd2,#ca79ad);
+}
+#ieee .ieee-door-contribution p {
+  max-width:300px !important;
+  margin-inline:auto;
+  color:#666077 !important;
+  font-size:.86rem !important;
+  line-height:1.57 !important;
+}
+
+/* Recorrido: menos vacío, línea orgánica y reconocimiento destacado. */
+#ieee .ieee-luminous-journey {
+  margin-top:clamp(44px,4.6vw,62px) !important;
+  padding-bottom:0 !important;
+}
+#ieee .ieee-timeline-heading {
+  margin-bottom:20px !important;
+  padding-bottom:13px !important;
+}
+#ieee .ieee-luminous-milestones {
+  position:relative !important;
+  min-height:165px;
+  padding-top:34px !important;
+}
+#ieee .ieee-luminous-milestones::before { display:none !important; content:none !important; }
+#ieee .ieee-journey-curve {
+  position:absolute;
+  z-index:0;
+  left:7%;
+  top:0;
+  width:86%;
+  height:66px;
+  overflow:visible;
+  pointer-events:none;
+}
+#ieee .ieee-journey-curve path {
+  fill:none;
+  stroke:url(#unused);
+  stroke:#a477cf;
+  stroke-width:1.6;
+  vector-effect:non-scaling-stroke;
+  opacity:.82;
+}
+#ieee .ieee-luminous-milestone,
+#ieee .ieee-luminous-milestone:nth-child(2),
+#ieee .ieee-luminous-milestone:nth-child(3) {
+  z-index:1;
+  padding-inline:16px !important;
+}
+#ieee .ieee-luminous-milestone::before {
+  top:-20px !important;
+  width:14px !important;
+  height:14px !important;
+}
+#ieee .ieee-luminous-milestone:nth-child(2)::before {
+  width:18px !important;
+  height:18px !important;
+  top:-22px !important;
+  background:linear-gradient(135deg,#8a68d2,#d17caf) !important;
+  box-shadow:0 0 0 8px rgba(222,204,243,.28),0 8px 20px rgba(112,75,159,.16) !important;
+}
+#ieee .ieee-luminous-milestone-award-highlight::after {
+  content:"";
+  position:absolute;
+  z-index:-1;
+  left:50%;
+  top:-1px;
+  width:170px;
+  height:94px;
+  transform:translateX(-50%);
+  background:radial-gradient(ellipse at center,rgba(245,218,235,.42),rgba(230,216,249,.20) 50%,transparent 73%);
+  pointer-events:none;
+}
+#ieee .ieee-luminous-year-row strong {
+  font-size:1.24rem !important;
+}
+#ieee .ieee-luminous-milestone:nth-child(2) .ieee-luminous-year-row strong {
+  color:#a366b1 !important;
+  font-size:.98rem !important;
+  font-family:"Manrope",sans-serif !important;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+}
+#ieee .ieee-luminous-milestone h3 {
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:1.28rem !important;
+}
+
+@media (max-width:1100px) {
+  #ieee .ieee-door-hero { grid-template-columns:1fr !important; gap:34px !important; }
+  #ieee .ieee-door-copy { max-width:760px !important; }
+  #ieee .ieee-door-figure { min-height:480px !important; }
+  #ieee .ieee-door-photo-frame { width:min(94%,760px) !important; }
+  #ieee .ieee-door-contributions { grid-template-columns:repeat(3,minmax(0,1fr)) !important; gap:18px !important; }
+  #ieee .ieee-door-contribution,
+  #ieee .ieee-door-contribution:first-child,
+  #ieee .ieee-door-contribution:last-child {
+    min-height:230px !important;
+    padding:36px 17px !important;
+    border:0 !important;
+  }
+}
+
+@media (max-width:850px) {
+  #ieee .ieee-door-contributions { grid-template-columns:1fr !important; gap:12px !important; }
+  #ieee .ieee-door-contribution,
+  #ieee .ieee-door-contribution:first-child,
+  #ieee .ieee-door-contribution:last-child {
+    width:min(100%,560px);
+    min-height:205px !important;
+    margin-inline:auto;
+    padding:34px 28px !important;
+  }
+  #ieee .ieee-door-contribution:nth-child(2) { transform:translateX(3%); }
+  #ieee .ieee-door-contribution:nth-child(3) { transform:translateX(-2%); }
+  #ieee .ieee-journey-curve { display:none !important; }
+  #ieee .ieee-luminous-milestones { min-height:0; }
+  #ieee .ieee-luminous-milestones::before {
+    display:block !important;
+    content:"" !important;
+    top:9px !important;
+    bottom:9px !important;
+    left:6px !important;
+    right:auto !important;
+    width:1px !important;
+    height:auto !important;
+    background:linear-gradient(180deg,#8467cb,#a277cf 52%,#c57baa) !important;
+  }
+  #ieee .ieee-luminous-milestone::before,
+  #ieee .ieee-luminous-milestone:nth-child(2)::before {
+    top:4px !important;
+    left:-22px !important;
+    width:13px !important;
+    height:13px !important;
+    transform:none !important;
+    box-shadow:0 0 0 1px rgba(126,92,183,.22),0 6px 15px rgba(80,54,112,.12) !important;
+  }
+  #ieee .ieee-luminous-milestone-award-highlight::after {
+    left:0;
+    top:-28px;
+    transform:none;
+  }
+}
+
+@media (max-width:760px) {
+  #ieee.ieee-door-section { padding-top:62px !important; padding-bottom:68px !important; }
+  #ieee .ieee-door-title { font-size:clamp(3rem,14vw,4.45rem) !important; }
+  #ieee .ieee-door-about { grid-template-columns:1fr !important; gap:8px !important; }
+  #ieee .ieee-door-message { padding-left:20px !important; }
+  #ieee .ieee-door-figure { min-height:340px !important; }
+  #ieee .ieee-door-photo-frame { width:108% !important; margin-left:-4% !important; aspect-ratio:1.12 !important; }
+  #ieee .ieee-door-figure figcaption { width:92% !important; }
+  #ieee .ieee-door-branch { width:64px !important; opacity:.31 !important; }
+  #ieee .ieee-door-values-heading { margin-top:40px; }
+  #ieee .ieee-door-contribution:nth-child(2),
+  #ieee .ieee-door-contribution:nth-child(3) { transform:none; }
+}
+</style>
+
+
+<style id="ieee-suave-abierto-final">
+/* Refinamiento IEEE RAS: fotografía orgánica continua + aportes abiertos */
+
+/* --- Fotografía: silueta suave, continua y sin efecto rasgado --- */
+#ieee .ieee-door-figure {
+  min-height: 505px !important;
+}
+#ieee .ieee-door-photo-blob {
+  width: 92% !important;
+  height: 82% !important;
+  top: 7% !important;
+  right: 1% !important;
+  border-radius: 48% 52% 56% 44% / 44% 48% 52% 56% !important;
+  background:
+    radial-gradient(ellipse 54% 44% at 24% 24%, rgba(222,207,247,.54), transparent 72%),
+    radial-gradient(ellipse 56% 42% at 78% 72%, rgba(247,214,232,.46), transparent 74%),
+    linear-gradient(145deg, rgba(235,225,250,.46), rgba(250,228,240,.31)) !important;
+  filter: blur(7px) !important;
+  transform: rotate(-4deg) !important;
+  opacity: .78 !important;
+}
+#ieee .ieee-door-photo-frame {
+  width: min(100%, 700px) !important;
+  aspect-ratio: 1.34 !important;
+  overflow: visible !important;
+  filter: drop-shadow(0 22px 38px rgba(62,45,87,.115)) !important;
+}
+#ieee .ieee-door-photo-frame::before {
+  inset: -4.5% -3.5% -5% -4% !important;
+  border-radius: 50% 50% 55% 45% / 45% 48% 52% 55% !important;
+  background:
+    radial-gradient(ellipse 45% 34% at 13% 25%, rgba(210,193,242,.38), transparent 76%),
+    radial-gradient(ellipse 50% 34% at 82% 20%, rgba(244,207,229,.35), transparent 76%),
+    radial-gradient(ellipse 58% 30% at 52% 91%, rgba(225,212,248,.38), transparent 78%) !important;
+  filter: blur(8px) !important;
+  transform: rotate(-3deg) !important;
+  opacity: .78 !important;
+}
+#ieee .ieee-door-photo-frame::after {
+  display: none !important;
+  content: none !important;
+}
+#ieee .ieee-door-photo-frame img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 48% !important;
+  clip-path: none !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  border-radius: 46% 54% 49% 51% / 41% 44% 56% 59% !important;
+  filter: saturate(1.06) contrast(1.02) brightness(1.015) !important;
+}
+#ieee .ieee-door-figure figcaption {
+  width: min(78%, 585px) !important;
+  margin-top: -2px !important;
+  margin-left: 8% !important;
+  padding-left: 15px !important;
+}
+#ieee .ieee-door-branch {
+  right: -1% !important;
+  bottom: 6% !important;
+  width: clamp(72px, 6vw, 94px) !important;
+  opacity: .32 !important;
+}
+
+/* --- Cita: aún más ligera --- */
+#ieee .ieee-door-about {
+  border-bottom-color: rgba(129,99,188,.10) !important;
+}
+#ieee .ieee-door-message {
+  margin-top: 20px !important;
+}
+
+/* --- Lo que construimos juntos: composición abierta, no tres óvalos --- */
+#ieee .ieee-door-values-heading {
+  margin-top: clamp(50px, 5.5vw, 78px) !important;
+}
+#ieee .ieee-door-contributions {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: clamp(46px, 5.2vw, 84px) !important;
+  margin-top: 38px !important;
+  padding: 22px 10px 28px !important;
+  overflow: visible !important;
+  isolation: isolate;
+}
+#ieee .ieee-door-contributions::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  left: 3%;
+  right: 1%;
+  top: 24%;
+  height: 58%;
+  background:
+    radial-gradient(ellipse 24% 68% at 10% 50%, rgba(229,217,249,.42), transparent 72%),
+    radial-gradient(ellipse 25% 70% at 50% 48%, rgba(248,222,237,.34), transparent 72%),
+    radial-gradient(ellipse 25% 68% at 91% 52%, rgba(227,214,248,.38), transparent 72%);
+  filter: blur(17px);
+  opacity: .74;
+  pointer-events: none;
+}
+#ieee .ieee-door-contribution,
+#ieee .ieee-door-contribution:first-child,
+#ieee .ieee-door-contribution:last-child {
+  position: relative !important;
+  min-height: 220px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  padding: 30px 18px 24px !important;
+  border: 0 !important;
+  background: transparent !important;
+  text-align: left !important;
+  isolation: isolate;
+}
+#ieee .ieee-door-contribution::before {
+  content: "" !important;
+  position: absolute !important;
+  z-index: -1 !important;
+  width: 74% !important;
+  height: 54% !important;
+  left: -8% !important;
+  top: 21% !important;
+  inset: auto !important;
+  border-radius: 58% 42% 64% 36% / 46% 56% 44% 54% !important;
+  background: linear-gradient(145deg, rgba(231,219,250,.46), rgba(248,226,239,.22)) !important;
+  filter: blur(13px) !important;
+  transform: rotate(-7deg) !important;
+  opacity: .72 !important;
+}
+#ieee .ieee-door-contribution:nth-child(2) {
+  transform: translateY(-8px) !important;
+}
+#ieee .ieee-door-contribution:nth-child(2)::before {
+  width: 79% !important;
+  height: 50% !important;
+  left: 12% !important;
+  top: 26% !important;
+  border-radius: 44% 56% 40% 60% / 58% 42% 58% 42% !important;
+  background: linear-gradient(145deg, rgba(249,222,238,.40), rgba(234,224,251,.30)) !important;
+  transform: rotate(5deg) !important;
+}
+#ieee .ieee-door-contribution:nth-child(3) {
+  transform: translateY(6px) !important;
+}
+#ieee .ieee-door-contribution:nth-child(3)::before {
+  width: 76% !important;
+  height: 56% !important;
+  left: 21% !important;
+  top: 18% !important;
+  border-radius: 52% 48% 38% 62% / 44% 60% 40% 56% !important;
+  background: linear-gradient(145deg, rgba(229,217,249,.42), rgba(247,224,238,.24)) !important;
+  transform: rotate(-4deg) !important;
+}
+#ieee .ieee-door-contribution-top {
+  margin-bottom: 15px !important;
+}
+#ieee .ieee-door-contribution small {
+  display: inline-block;
+  color: #7559b9 !important;
+  font-size: .68rem !important;
+  font-weight: 800 !important;
+  letter-spacing: .15em !important;
+}
+#ieee .ieee-door-contribution h3 {
+  max-width: 310px !important;
+  margin: 0 0 13px !important;
+  color: #29264f !important;
+  font-family: "Cormorant Garamond", Georgia, serif !important;
+  font-size: clamp(1.72rem, 2vw, 2.05rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.05 !important;
+}
+#ieee .ieee-door-contribution h3::after {
+  width: 34px !important;
+  margin: 15px 0 0 !important;
+  opacity: .78;
+}
+#ieee .ieee-door-contribution p {
+  max-width: 320px !important;
+  margin: 0 !important;
+  color: #696378 !important;
+  font-size: .88rem !important;
+  line-height: 1.62 !important;
+}
+
+/* --- Recorrido: jerarquía más fina y premio claramente especial --- */
+#ieee .ieee-luminous-journey {
+  margin-top: clamp(42px, 4vw, 58px) !important;
+}
+#ieee .ieee-luminous-milestone-award-highlight > div {
+  position: relative;
+  top: 8px;
+}
+#ieee .ieee-luminous-milestone-award-highlight::after {
+  width: 190px !important;
+  height: 110px !important;
+  top: -9px !important;
+  background:
+    radial-gradient(circle at center, rgba(255,255,255,.88) 0 8%, transparent 9%),
+    radial-gradient(ellipse at center, rgba(246,216,235,.50), rgba(230,216,249,.24) 48%, transparent 74%) !important;
+}
+#ieee .ieee-luminous-milestone:nth-child(2)::before {
+  box-shadow:
+    0 0 0 8px rgba(222,204,243,.24),
+    0 0 0 14px rgba(246,222,237,.11),
+    0 8px 20px rgba(112,75,159,.15) !important;
+}
+
+@media (max-width: 1100px) {
+  #ieee .ieee-door-photo-frame {
+    width: min(92%, 750px) !important;
+  }
+  #ieee .ieee-door-contributions {
+    gap: 26px !important;
+    padding-inline: 0 !important;
+  }
+  #ieee .ieee-door-contribution,
+  #ieee .ieee-door-contribution:first-child,
+  #ieee .ieee-door-contribution:last-child {
+    min-height: 210px !important;
+    padding: 28px 16px 22px !important;
+  }
+}
+
+@media (max-width: 850px) {
+  #ieee .ieee-door-contributions {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+    margin-top: 30px !important;
+    padding: 0 !important;
+  }
+  #ieee .ieee-door-contributions::before {
+    left: -8%;
+    right: -8%;
+    top: 6%;
+    height: 88%;
+    background:
+      radial-gradient(ellipse 66% 22% at 28% 18%, rgba(229,217,249,.38), transparent 72%),
+      radial-gradient(ellipse 68% 22% at 72% 49%, rgba(248,222,237,.31), transparent 72%),
+      radial-gradient(ellipse 66% 22% at 30% 82%, rgba(227,214,248,.34), transparent 72%);
+  }
+  #ieee .ieee-door-contribution,
+  #ieee .ieee-door-contribution:first-child,
+  #ieee .ieee-door-contribution:last-child {
+    width: min(100%, 650px) !important;
+    min-height: auto !important;
+    margin-inline: auto !important;
+    padding: 30px 22px 34px !important;
+    transform: none !important;
+  }
+  #ieee .ieee-door-contribution::before {
+    width: 58% !important;
+    height: 66% !important;
+    left: -6% !important;
+    top: 17% !important;
+  }
+  #ieee .ieee-door-contribution:nth-child(2)::before {
+    left: 24% !important;
+  }
+  #ieee .ieee-door-contribution:nth-child(3)::before {
+    left: 47% !important;
+  }
+}
+
+@media (max-width: 760px) {
+  #ieee .ieee-door-photo-frame {
+    width: 106% !important;
+    margin-left: -3% !important;
+    aspect-ratio: 1.15 !important;
+  }
+  #ieee .ieee-door-photo-frame img {
+    border-radius: 43% 57% 48% 52% / 42% 45% 55% 58% !important;
+  }
+  #ieee .ieee-door-figure figcaption {
+    width: 88% !important;
+    margin-left: 5% !important;
+    margin-top: 5px !important;
+  }
+  #ieee .ieee-door-contribution h3 {
+    font-size: 1.75rem !important;
+  }
+}
+</style>
+
+
+<style id="ieee-refinado-final-v2">
+/* ============================================================
+   IEEE RAS — refinamiento final
+   - Foto orgánica suave y claramente asimétrica
+   - Mancha lavanda artística + una flor botánica
+   - Bloque "Lo que construimos juntos" más compacto
+   - Línea de tiempo recta y limpia
+   ============================================================ */
+
+/* ---------- FOTO: forma orgánica continua, no ovalada ---------- */
+#ieee .ieee-door-figure {
+  position: relative !important;
+  min-height: 490px !important;
+  isolation: isolate !important;
+}
+
+/* La mancha grande del fondo queda apenas como atmósfera. */
+#ieee .ieee-door-photo-blob {
+  width: 88% !important;
+  height: 76% !important;
+  top: 10% !important;
+  right: 0 !important;
+  background:
+    radial-gradient(ellipse 56% 48% at 30% 30%, rgba(222,207,247,.36), transparent 73%),
+    radial-gradient(ellipse 52% 46% at 76% 70%, rgba(247,214,232,.28), transparent 74%) !important;
+  filter: blur(18px) !important;
+  opacity: .50 !important;
+  transform: rotate(-5deg) !important;
+}
+
+#ieee .ieee-door-photo-frame {
+  position: relative !important;
+  z-index: 3 !important;
+  width: min(100%, 710px) !important;
+  aspect-ratio: 1.34 !important;
+  overflow: visible !important;
+  filter: drop-shadow(0 20px 34px rgba(70,49,99,.10)) !important;
+}
+
+/* Mancha/sombra artística desplazada detrás de la foto. */
+#ieee .ieee-door-photo-frame::before {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  z-index: -2 !important;
+  inset: -2% -6% -8% 2% !important;
+  background:
+    radial-gradient(ellipse 64% 62% at 33% 38%, rgba(172,140,222,.48), transparent 72%),
+    radial-gradient(ellipse 56% 46% at 72% 70%, rgba(216,151,194,.26), transparent 74%),
+    linear-gradient(145deg, rgba(193,168,232,.38), rgba(244,210,232,.24)) !important;
+  filter: blur(12px) !important;
+  opacity: .92 !important;
+  transform: translate(24px, 25px) rotate(-4deg) !important;
+  border-radius: 0 !important;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 760' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M112 118C240 24 430 25 590 58C690 77 790 38 890 110C980 175 995 300 970 410C946 525 885 600 835 660C730 744 590 700 448 734C300 760 180 692 95 610C15 530 40 420 28 330C16 230 42 170 112 118Z'/%3E%3C/svg%3E") !important;
+  -webkit-mask-size: 100% 100% !important;
+  -webkit-mask-repeat: no-repeat !important;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 760' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M112 118C240 24 430 25 590 58C690 77 790 38 890 110C980 175 995 300 970 410C946 525 885 600 835 660C730 744 590 700 448 734C300 760 180 692 95 610C15 530 40 420 28 330C16 230 42 170 112 118Z'/%3E%3C/svg%3E") !important;
+  mask-size: 100% 100% !important;
+  mask-repeat: no-repeat !important;
+}
+
+#ieee .ieee-door-photo-frame::after {
+  display: none !important;
+  content: none !important;
+}
+
+#ieee .ieee-door-photo-frame img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 47% !important;
+  border-radius: 0 !important;
+  clip-path: none !important;
+  filter: saturate(1.06) contrast(1.02) brightness(1.01) !important;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 760' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M112 118C240 24 430 25 590 58C690 77 790 38 890 110C980 175 995 300 970 410C946 525 885 600 835 660C730 744 590 700 448 734C300 760 180 692 95 610C15 530 40 420 28 330C16 230 42 170 112 118Z'/%3E%3C/svg%3E") !important;
+  -webkit-mask-size: 100% 100% !important;
+  -webkit-mask-repeat: no-repeat !important;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 760' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M112 118C240 24 430 25 590 58C690 77 790 38 890 110C980 175 995 300 970 410C946 525 885 600 835 660C730 744 590 700 448 734C300 760 180 692 95 610C15 530 40 420 28 330C16 230 42 170 112 118Z'/%3E%3C/svg%3E") !important;
+  mask-size: 100% 100% !important;
+  mask-repeat: no-repeat !important;
+}
+
+/* Sustituye la rama flotante por una sola flor botánica integrada. */
+#ieee .ieee-door-branch {
+  display: none !important;
+}
+#ieee .ieee-door-figure::after {
+  content: "";
+  position: absolute;
+  z-index: 5;
+  right: -1.2%;
+  bottom: 4%;
+  width: clamp(105px, 9vw, 145px);
+  height: clamp(190px, 17vw, 265px);
+  pointer-events: none;
+  opacity: .62;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  filter: drop-shadow(0 8px 16px rgba(112,78,164,.06));
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 330'%3E%3Cg fill='none' stroke='%23936bd0' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M28 316C69 257 88 205 111 148C130 100 151 61 184 27'/%3E%3Cpath d='M87 210C64 205 48 190 39 170'/%3E%3Cpath d='M101 174C124 169 142 156 154 137'/%3E%3Cpath d='M123 118C105 109 94 94 91 76'/%3E%3Cpath d='M145 82C158 78 171 69 181 56'/%3E%3C/g%3E%3Cg fill='%23c5a5ea' fill-opacity='.30' stroke='%23936bd0' stroke-width='2.2'%3E%3Cellipse cx='38' cy='165' rx='11' ry='26' transform='rotate(-38 38 165)'/%3E%3Cellipse cx='160' cy='132' rx='10' ry='25' transform='rotate(42 160 132)'/%3E%3Cellipse cx='88' cy='70' rx='10' ry='24' transform='rotate(-24 88 70)'/%3E%3C/g%3E%3Cg transform='translate(184 29)'%3E%3Cellipse cx='0' cy='-18' rx='10' ry='20' fill='%23efe4fb' stroke='%23936bd0' stroke-width='2'/%3E%3Cellipse cx='17' cy='-5' rx='10' ry='20' transform='rotate(72 17 -5)' fill='%23f5e3ef' stroke='%23936bd0' stroke-width='2'/%3E%3Cellipse cx='11' cy='15' rx='10' ry='20' transform='rotate(144 11 15)' fill='%23eee3fb' stroke='%23936bd0' stroke-width='2'/%3E%3Cellipse cx='-11' cy='15' rx='10' ry='20' transform='rotate(216 -11 15)' fill='%23f7e6f1' stroke='%23936bd0' stroke-width='2'/%3E%3Cellipse cx='-17' cy='-5' rx='10' ry='20' transform='rotate(288 -17 -5)' fill='%23eee3fb' stroke='%23936bd0' stroke-width='2'/%3E%3Ccircle cx='0' cy='1' r='7' fill='%23c978aa' stroke='none'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+#ieee .ieee-door-figure figcaption {
+  width: min(76%, 570px) !important;
+  margin-top: -4px !important;
+  margin-left: 10% !important;
+}
+
+/* ---------- LO QUE CONSTRUIMOS JUNTOS: mucho más compacto ---------- */
+#ieee .ieee-door-values-heading {
+  margin-top: clamp(26px, 3vw, 42px) !important;
+}
+#ieee .ieee-door-values-heading p {
+  margin-top: 10px !important;
+}
+
+#ieee .ieee-door-contributions {
+  gap: clamp(34px, 4vw, 66px) !important;
+  margin-top: 18px !important;
+  padding: 4px 10px 4px !important;
+}
+#ieee .ieee-door-contributions::before {
+  top: 18% !important;
+  height: 66% !important;
+  opacity: .60 !important;
+  filter: blur(20px) !important;
+}
+#ieee .ieee-door-contribution,
+#ieee .ieee-door-contribution:first-child,
+#ieee .ieee-door-contribution:last-child {
+  min-height: 164px !important;
+  padding: 20px 18px 14px !important;
+}
+#ieee .ieee-door-contribution:nth-child(2) {
+  transform: translateY(-4px) !important;
+}
+#ieee .ieee-door-contribution:nth-child(3) {
+  transform: translateY(3px) !important;
+}
+#ieee .ieee-door-contribution::before {
+  width: 70% !important;
+  height: 50% !important;
+  top: 23% !important;
+  opacity: .54 !important;
+}
+#ieee .ieee-door-contribution-top {
+  margin-bottom: 10px !important;
+}
+#ieee .ieee-door-contribution h3 {
+  margin-bottom: 10px !important;
+}
+#ieee .ieee-door-contribution h3::after {
+  margin-top: 11px !important;
+}
+
+/* ---------- RECORRIDO: vuelve a una línea completamente recta ---------- */
+#ieee .ieee-luminous-journey {
+  margin-top: clamp(24px, 2.8vw, 38px) !important;
+  padding-bottom: 0 !important;
+}
+#ieee .ieee-timeline-heading {
+  margin-bottom: 22px !important;
+  padding-bottom: 13px !important;
+}
+#ieee .ieee-luminous-milestones {
+  min-height: 145px !important;
+  padding-top: 34px !important;
+}
+#ieee .ieee-journey-curve {
+  display: none !important;
+}
+#ieee .ieee-luminous-milestones::before {
+  display: block !important;
+  content: "" !important;
+  position: absolute !important;
+  z-index: 0 !important;
+  top: 24px !important;
+  left: 16.66% !important;
+  right: 16.66% !important;
+  width: auto !important;
+  height: 1px !important;
+  background: linear-gradient(90deg, #8467cb 0%, #a277cf 50%, #c57baa 100%) !important;
+}
+#ieee .ieee-luminous-milestone::before,
+#ieee .ieee-luminous-milestone:nth-child(2)::before,
+#ieee .ieee-luminous-milestone:nth-child(3)::before {
+  z-index: 2 !important;
+}
+#ieee .ieee-luminous-milestone-award-highlight > div {
+  top: 4px !important;
+}
+#ieee .ieee-luminous-milestone-award-highlight::after {
+  width: 172px !important;
+  height: 92px !important;
+  top: -5px !important;
+  opacity: .72 !important;
+}
+#ieee .ieee-luminous-year-row {
+  gap: 8px !important;
+}
+#ieee .ieee-luminous-current {
+  margin-left: 2px !important;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  #ieee .ieee-door-figure {
+    min-height: 470px !important;
+  }
+  #ieee .ieee-door-photo-frame {
+    width: min(94%, 750px) !important;
+  }
+  #ieee .ieee-door-contributions {
+    gap: 24px !important;
+  }
+  #ieee .ieee-door-contribution,
+  #ieee .ieee-door-contribution:first-child,
+  #ieee .ieee-door-contribution:last-child {
+    min-height: 158px !important;
+    padding: 18px 14px 12px !important;
+  }
+}
+
+@media (max-width: 850px) {
+  #ieee .ieee-door-values-heading {
+    margin-top: 28px !important;
+  }
+  #ieee .ieee-door-contributions {
+    margin-top: 16px !important;
+    gap: 0 !important;
+  }
+  #ieee .ieee-door-contribution,
+  #ieee .ieee-door-contribution:first-child,
+  #ieee .ieee-door-contribution:last-child {
+    min-height: auto !important;
+    padding: 24px 22px 26px !important;
+    transform: none !important;
+  }
+  #ieee .ieee-luminous-journey {
+    margin-top: 24px !important;
+  }
+  #ieee .ieee-luminous-milestones::before {
+    top: 9px !important;
+    bottom: 9px !important;
+    left: 6px !important;
+    right: auto !important;
+    width: 1px !important;
+    height: auto !important;
+    background: linear-gradient(180deg, #8467cb, #a277cf 52%, #c57baa) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  #ieee .ieee-door-figure {
+    min-height: 360px !important;
+  }
+  #ieee .ieee-door-photo-frame {
+    width: 106% !important;
+    margin-left: -3% !important;
+    aspect-ratio: 1.16 !important;
+  }
+  #ieee .ieee-door-photo-frame::before {
+    transform: translate(12px, 15px) rotate(-4deg) !important;
+    filter: blur(9px) !important;
+  }
+  #ieee .ieee-door-figure::after {
+    right: -4%;
+    bottom: 1%;
+    width: 82px;
+    height: 160px;
+    opacity: .48;
+  }
+  #ieee .ieee-door-figure figcaption {
+    width: 88% !important;
+    margin-left: 5% !important;
+    margin-top: 0 !important;
+  }
+  #ieee .ieee-door-values-heading {
+    margin-top: 22px !important;
+  }
+}
+</style>
+
+
+<style id="ieee-timeline-glow-fix">
+/* Corrección final: elimina halos y puntos de luz artificiales de la línea de tiempo. */
+#ieee .ieee-luminous-milestone-award-highlight::after {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+#ieee .ieee-luminous-milestone::before,
+#ieee .ieee-luminous-milestone:nth-child(2)::before,
+#ieee .ieee-luminous-milestone:nth-child(3)::before {
+  box-shadow: 0 0 0 1px rgba(126, 92, 183, .22) !important;
+  filter: none !important;
+}
+
+/* El reconocimiento se distingue solo por color/tamaño, sin resplandor. */
+#ieee .ieee-luminous-milestone:nth-child(2)::before {
+  width: 16px !important;
+  height: 16px !important;
+  top: -21px !important;
+  background: linear-gradient(135deg, #936ed0, #c77aaa) !important;
+}
+
+/* Mantiene la línea limpia y nítida. */
+#ieee .ieee-luminous-milestones::before {
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+@media (max-width: 850px) {
+  #ieee .ieee-luminous-milestone:nth-child(2)::before {
+    width: 13px !important;
+    height: 13px !important;
+    top: 4px !important;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="progress-bar" id="progressBar"></div>
@@ -17738,54 +19466,112 @@ document.addEventListener("DOMContentLoaded", function () {
 </article></div>
 </div>
 </section>
-<section class="screen content-screen research-section research-reference research-feminine" data-title="Investigación" id="investigacion">
-<div aria-hidden="true" class="section-transition-soft"></div>
-<div aria-hidden="true" class="research-decor">
-<span class="research-dots"></span>
-<svg class="research-branch" fill="none" viewbox="0 0 220 310">
-<path d="M106 292C112 230 112 161 103 76C100 48 102 26 109 8"></path>
-<path d="M105 224C81 209 62 188 51 163M106 181C132 163 148 140 156 115M104 137C79 120 64 98 58 75M103 94C126 79 141 59 148 38"></path>
-<path d="M51 163C34 156 23 143 19 127C36 126 49 137 51 163ZM156 115C175 108 190 94 197 76C178 75 161 91 156 115ZM58 75C41 66 31 52 30 35C49 37 61 51 58 75ZM148 38C164 31 177 18 182 3C165 3 151 17 148 38Z"></path>
-</svg>
-<span class="research-wash wash-one"></span>
-<span class="research-wash wash-two"></span>
-</div>
-<div class="screen-inner research-inner">
-<div class="tag reveal">Lo que quiero investigar</div>
-<h2 class="reveal research-reference-title">
-        ¿Cómo detectar <span class="grad">cambios tempranos</span><br/>
-        antes de que sean evidentes?
-      </h2>
-<div aria-hidden="true" class="research-heart-divider reveal delay-1">
-<span></span><span></span>
-</div>
-<div class="research-reference-copy reveal delay-1">
-<p>Me interesa explorar cómo la robótica y la inteligencia computacional pueden construir una línea base personalizada a partir de señales multimodales —como voz, movimiento, sueño, conducta y variables fisiológicas— para reconocer cambios pequeños y persistentes.</p>
-<p>Quiero investigar cómo esa información podría apoyar el seguimiento remoto, la detección oportuna y las decisiones clínicas, siempre como complemento de la evaluación profesional y con el objetivo de preservar autonomía y calidad de vida.</p>
-</div>
-<div aria-label="Proceso de investigación" class="research-route">
-<article class="research-route-card reveal delay-1">
-<h3>Observar</h3>
-<span class="research-mini-line"></span>
-<p>Reconocer el estado habitual de cada persona.</p>
-</article>
-<article class="research-route-card reveal delay-1">
-<h3>Detectar</h3>
-<span class="research-mini-line"></span>
-<p>Identificar cambios pequeños y persistentes.</p>
-</article>
-<article class="research-route-card reveal delay-2">
-<h3>Interpretar</h3>
-<span class="research-mini-line"></span>
-<p>Analizar patrones y relacionarlos con posibles cambios relevantes en el estado de la persona.</p>
-</article>
-<article class="research-route-card reveal delay-2">
-<h3>Apoyar</h3>
-<span class="research-mini-line"></span>
-<p>Entregar información que contribuya a decisiones e intervenciones oportunas.</p>
-</article>
-</div>
-</div>
+<section class="screen content-screen research-art-v2" data-title="Investigación" id="investigacion">
+  <div class="research-art-v2-main">
+    <div class="research-art-v2-hero">
+
+      <div class="research-art-v2-copy">
+        <div class="tag reveal">Lo que quiero investigar</div>
+
+        <h2 class="research-art-v2-title reveal">
+          <span>¿Cómo detectar</span>
+          <span class="research-art-v2-gradient">cambios tempranos</span>
+          <span>antes de que sean</span>
+          <span>evidentes?</span>
+        </h2>
+
+        <div aria-hidden="true" class="research-art-v2-title-rule"></div>
+      </div>
+
+      <div aria-hidden="true" class="research-art-v2-visual">
+        <span class="research-art-v2-wash research-art-v2-wash-a"></span>
+        <span class="research-art-v2-wash research-art-v2-wash-b"></span>
+        <span class="research-art-v2-wash research-art-v2-wash-c"></span>
+        <span class="research-art-v2-dots"></span>
+
+        <svg class="research-art-v2-curve" viewBox="0 0 720 390" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="researchCurveGradientFinal" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#8267cf"></stop>
+              <stop offset="55%" stop-color="#9a73cd"></stop>
+              <stop offset="100%" stop-color="#cf73a9"></stop>
+            </linearGradient>
+          </defs>
+          <path class="research-art-v2-curve-soft"
+                d="M12 273 C122 200 186 320 305 256 C402 204 432 105 538 132 C616 151 652 182 724 69"></path>
+          <path class="research-art-v2-curve-main"
+                d="M4 252 C116 176 192 298 307 236 C404 184 444 89 542 121 C620 146 651 164 724 48"></path>
+          <circle cx="423" cy="177" r="5.5"></circle>
+        </svg>
+      </div>
+
+    </div>
+
+    <div class="research-art-v2-text reveal delay-1">
+      <p>
+        Me interesa explorar cómo la robótica y la inteligencia computacional
+        pueden construir una línea base personalizada a partir de señales
+        multimodales —como voz, movimiento, sueño, conducta y variables
+        fisiológicas— para reconocer cambios pequeños y persistentes.
+      </p>
+
+      <p>
+        Quiero investigar cómo esa información podría apoyar el seguimiento
+        remoto, la detección oportuna y las decisiones clínicas, siempre como
+        complemento de la evaluación profesional y con el objetivo de preservar
+        autonomía y calidad de vida.
+      </p>
+    </div>
+  </div>
+
+  <div class="research-art-v2-purpose">
+    <div class="research-art-v2-purpose-inner">
+
+      <div class="research-art-v2-purpose-intro reveal">
+        <h3>Mi propósito</h3>
+        <span aria-hidden="true" class="research-art-v2-purpose-rule"></span>
+        <p>
+          Usar la tecnología con sentido <strong>humano</strong> para acompañar,
+          cuidar y detectar a tiempo.
+        </p>
+      </div>
+
+      <div class="research-art-v2-steps" aria-label="Proceso de investigación">
+        <article class="research-art-v2-step reveal delay-1">
+          <svg aria-hidden="true" viewBox="0 0 82 16">
+            <path d="M1 9 C14 2 24 13 39 7 C53 1 63 11 81 5"></path>
+          </svg>
+          <h3>Observar</h3>
+          <p>Reconocer el estado habitual de cada persona.</p>
+        </article>
+
+        <article class="research-art-v2-step reveal delay-1">
+          <svg aria-hidden="true" viewBox="0 0 82 16">
+            <path d="M1 9 C14 2 24 13 39 7 C53 1 63 11 81 5"></path>
+          </svg>
+          <h3>Detectar</h3>
+          <p>Identificar cambios pequeños y persistentes.</p>
+        </article>
+
+        <article class="research-art-v2-step reveal delay-2">
+          <svg aria-hidden="true" viewBox="0 0 82 16">
+            <path d="M1 9 C14 2 24 13 39 7 C53 1 63 11 81 5"></path>
+          </svg>
+          <h3>Interpretar</h3>
+          <p>Analizar patrones y relacionarlos con posibles cambios relevantes.</p>
+        </article>
+
+        <article class="research-art-v2-step reveal delay-2">
+          <svg aria-hidden="true" viewBox="0 0 82 16">
+            <path d="M1 9 C14 2 24 13 39 7 C53 1 63 11 81 5"></path>
+          </svg>
+          <h3>Apoyar</h3>
+          <p>Entregar información que contribuya a decisiones e intervenciones oportunas.</p>
+        </article>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 <section class="screen content-screen focus-blob-v3" data-title="Mi enfoque" id="camino">
@@ -17888,8 +19674,8 @@ y liderazgo.
 <span></span>
 </div>
 <div class="ieee-door-about reveal delay-1">
-<span>¿Qué es IEEE?</span>
-<p>IEEE es una organización profesional internacional que reúne a personas de ingeniería y tecnología para compartir conocimiento, formar comunidades y promover el desarrollo tecnológico. Dentro de ella, RAS es la sociedad dedicada a la robótica y la automatización.</p>
+<span>¿Qué es IEEE RAS?</span>
+<p>IEEE reúne a una comunidad internacional de ingeniería y tecnología. Dentro de ella, RAS conecta a quienes quieren explorar, aprender y construir en torno a la robótica y la automatización.</p>
 </div>
 <blockquote class="ieee-door-message reveal delay-2">
 <p>Lo que más me llevo de RAS es descubrir que no necesitas saberlo todo para entrar al mundo de la robótica. Siempre existe un comienzo, y RAS puede abrir esa puerta para aprender desde cero.</p>
@@ -17916,36 +19702,43 @@ y liderazgo.
 </svg>
 </figure>
 </div>
+<div class="ieee-door-values-heading reveal delay-1">
+<span>Lo que construimos juntos</span>
+<p>Aprender, atreverse y crecer en comunidad.</p>
+</div>
 <div aria-label="Aportes en IEEE RAS UChile" class="ieee-door-contributions reveal delay-1">
 <article class="ieee-door-contribution">
 <div class="ieee-door-contribution-top">
-<small>01 · Abrir la puerta</small>
+<small>Abrir la puerta</small>
 </div>
 <h3>Crear espacios para comenzar</h3>
-<p>Acompañar a quienes quieren acercarse a la robótica, aprender desde cero y atreverse a participar.</p>
+<p>Acercar la robótica a quienes quieren descubrirla, aprender desde cero y atreverse a participar.</p>
 </article>
 <article class="ieee-door-contribution">
 <div class="ieee-door-contribution-top">
-<small>02 · Construir</small>
+<small>Aprender haciendo</small>
 </div>
-<h3>Aprender haciendo</h3>
-<p>Impulsar iniciativas con aprendizaje técnico real.</p>
+<h3>Convertir la curiosidad en experiencia</h3>
+<p>Impulsar proyectos y actividades donde el aprendizaje ocurre construyendo.</p>
 </article>
 <article class="ieee-door-contribution">
 <div class="ieee-door-contribution-top">
-<small>03 · Conectar</small>
+<small>Crear comunidad</small>
 </div>
-<h3>Crear comunidad</h3>
-<p>Vincular estudiantes mediante talleres, encuentros y divulgación tecnológica.</p>
+<h3>Crecer junto a otros</h3>
+<p>Conectar estudiantes, compartir conocimiento y crear nuevas oportunidades.</p>
 </article>
 </div>
 <div aria-label="Trayectoria en IEEE RAS UChile" class="ieee-luminous-journey reveal delay-2"><div class="ieee-timeline-heading"><span>Mi recorrido en RAS</span><p>De comenzar a participar, a asumir nuevos desafíos y liderar la comunidad.</p></div>
 <div class="ieee-luminous-milestones">
+<svg aria-hidden="true" class="ieee-journey-curve" preserveAspectRatio="none" viewBox="0 0 1000 120">
+<path d="M20 61 C180 22 300 94 470 62 C635 31 770 21 980 55"></path>
+</svg>
 <article class="ieee-luminous-milestone">
 <div><div class="ieee-luminous-year-row"><strong>2025</strong></div><h3>Vicepresidenta</h3><p>IEEE RAS UChile</p></div>
 </article>
-<article class="ieee-luminous-milestone">
-<div><div class="ieee-luminous-year-row"><strong>2025</strong></div><h3>Reconocimiento IEEE</h3><p class="ieee-luminous-award">IEEE Robotics &amp; Automation Dedication Award</p></div>
+<article class="ieee-luminous-milestone ieee-luminous-milestone-award-highlight">
+<div><div class="ieee-luminous-year-row"><strong>Noviembre 2025</strong></div><h3>Reconocimiento IEEE</h3><p class="ieee-luminous-award">IEEE Robotics &amp; Automation Dedication Award</p></div>
 </article>
 <article class="ieee-luminous-milestone">
 <div><div class="ieee-luminous-year-row"><strong>2026</strong><span class="ieee-luminous-current">Actualidad</span></div><h3>Presidenta (Chair)</h3><p>IEEE RAS UChile</p></div>
