@@ -15919,6 +15919,301 @@ body {
 }
 </style>
 
+
+<style id="portfolio-final-polish-2026">
+/* =========================================================
+   AJUSTES FINALES DE COHERENCIA VISUAL
+   - Historia más compacta y conectada con su cierre conceptual.
+   - Proyectos abiertos, equilibrados y con filtros más útiles.
+   - Vista individual sin botón flotando en el fondo.
+   - Investigación con escala y ritmo coherentes.
+   ========================================================= */
+
+/* ---------- ESCALA GENERAL ENTRE SECCIONES ---------- */
+@media (min-width: 1051px) {
+  #historia.historia-camino .historia-editorial-title,
+  #proyectos.projects-editorial .projects-head h2,
+  #investigacion.research-feminine .research-reference-title {
+    max-width: 900px !important;
+  }
+
+  #proyectos.projects-editorial .projects-head h2 {
+    font-size: clamp(3.9rem, 5.7vw, 5.85rem) !important;
+    line-height: .94 !important;
+  }
+
+  #investigacion.research-feminine .research-reference-title {
+    font-size: clamp(3.8rem, 5.45vw, 5.65rem) !important;
+    line-height: .98 !important;
+  }
+}
+
+/* ---------- HISTORIA ---------- */
+#historia.historia-camino .historia-editorial-grid {
+  row-gap: clamp(24px, 2.4vw, 38px) !important;
+}
+
+#historia.historia-camino .historia-photo-note {
+  font-size: .90rem !important;
+  line-height: 1.55 !important;
+  color: #766b84 !important;
+}
+
+/* La tabla es el cierre de la historia, no otra sección separada. */
+#historia.historia-camino .historia-values,
+#historia.historia-redesign .historia-values,
+#historia .historia-values {
+  margin-top: -12px !important;
+  transform: translateY(-14px) !important;
+}
+
+#historia .historia-value {
+  min-height: 104px !important;
+}
+
+#historia .historia-value h3 {
+  font-size: 1.12rem !important;
+}
+
+#historia .historia-value p {
+  line-height: 1.58 !important;
+}
+
+/* ---------- PROYECTOS · CABECERA ---------- */
+#proyectos.projects-editorial {
+  padding-top: clamp(72px, 6vw, 94px) !important;
+}
+
+#proyectos .projects-head {
+  margin-bottom: 24px !important;
+}
+
+#proyectos .projects-deck {
+  max-width: 720px !important;
+  margin-top: 22px !important;
+}
+
+#proyectos .projects-filter {
+  margin-top: 28px !important;
+  margin-bottom: 46px !important;
+}
+
+/* Flores presentes, pero tratadas como textura secundaria y no protagonista. */
+#proyectos .projects-floral-art {
+  opacity: .56 !important;
+  filter: saturate(.86) !important;
+}
+
+/* ---------- PROYECTOS · VISTA TODOS ---------- */
+#proyectos .projects-editorial-grid[data-visible-count="3"] {
+  grid-template-columns: minmax(0, 1.08fr) minmax(360px, .92fr) !important;
+  column-gap: clamp(54px, 6vw, 92px) !important;
+  align-items: start !important;
+}
+
+#proyectos .projects-editorial-grid[data-visible-count="3"] .project-e-card[data-project-key="printbot"] {
+  grid-column: 1 !important;
+  grid-row: 1 / span 2 !important;
+  padding-right: 0 !important;
+  border: 0 !important;
+}
+
+#proyectos .projects-editorial-grid[data-visible-count="3"] .project-e-card[data-project-key="pulso"],
+#proyectos .projects-editorial-grid[data-visible-count="3"] .project-e-card[data-project-key="dosificador"] {
+  grid-column: 2 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  min-height: 0 !important;
+}
+
+#proyectos .projects-editorial-grid[data-visible-count="3"] .project-e-card[data-project-key="pulso"] {
+  grid-row: 1 !important;
+  padding-bottom: 38px !important;
+  border-bottom: 1px solid rgba(130, 98, 183, .18) !important;
+}
+
+#proyectos .projects-editorial-grid[data-visible-count="3"] .project-e-card[data-project-key="dosificador"] {
+  grid-row: 2 !important;
+  margin-top: 38px !important;
+}
+
+#proyectos .projects-editorial-grid[data-visible-count="3"] .project-e-card[data-project-key="pulso"] .project-details-btn,
+#proyectos .projects-editorial-grid[data-visible-count="3"] .project-e-card[data-project-key="dosificador"] .project-details-btn {
+  margin-top: 22px !important;
+}
+
+/* Información extra solo donde hace falta: vista Salud. */
+#proyectos .project-filter-extra {
+  display: none !important;
+}
+
+#proyectos .projects-editorial-grid[data-visible-count="2"] .project-filter-extra {
+  display: block !important;
+  margin-top: 27px !important;
+  padding-top: 21px !important;
+  border-top: 1px solid rgba(130, 98, 183, .16) !important;
+}
+
+#proyectos .project-filter-extra span {
+  display: block !important;
+  margin-bottom: 9px !important;
+  color: #785dbd !important;
+  font-size: .69rem !important;
+  font-weight: 800 !important;
+  letter-spacing: .14em !important;
+  text-transform: uppercase !important;
+}
+
+#proyectos .project-filter-extra p {
+  max-width: 510px !important;
+  margin: 0 !important;
+  color: #625d74 !important;
+  font-size: .94rem !important;
+  line-height: 1.62 !important;
+}
+
+/* ---------- PROYECTOS · FILTRO SALUD ---------- */
+#proyectos .projects-editorial-grid[data-visible-count="2"] {
+  align-items: start !important;
+}
+
+#proyectos .projects-editorial-grid[data-visible-count="2"] .project-e-card:not([hidden]) {
+  min-height: 390px !important;
+  justify-content: flex-start !important;
+}
+
+#proyectos .projects-editorial-grid[data-visible-count="2"] .project-details-btn {
+  margin-top: 34px !important;
+  padding-top: 0 !important;
+}
+
+/* ---------- PROYECTOS · FILTRO ROBÓTICA ---------- */
+#proyectos .projects-editorial-grid[data-visible-count="1"] .project-e-card:not([hidden]) {
+  grid-template-columns: minmax(340px, .75fr) minmax(520px, 1.25fr) !important;
+  grid-template-rows: auto auto auto !important;
+  grid-template-areas:
+    "top photo"
+    "intro photo"
+    "details photo" !important;
+  align-content: start !important;
+  align-items: start !important;
+}
+
+#proyectos .projects-editorial-grid[data-visible-count="1"] .project-e-top {
+  align-self: start !important;
+}
+
+#proyectos .projects-editorial-grid[data-visible-count="1"] .project-e-intro {
+  margin-bottom: 0 !important;
+}
+
+#proyectos .projects-editorial-grid[data-visible-count="1"] .project-details-btn {
+  align-self: start !important;
+  justify-self: start !important;
+  margin-top: 30px !important;
+}
+
+#proyectos .projects-editorial-grid[data-visible-count="1"] .project-e-photo {
+  min-height: 0 !important;
+  aspect-ratio: 16 / 10.2 !important;
+}
+
+/* Evita que el nombre se lea raro por el espaciado de la tipografía. */
+#proyectos .project-e-card[data-project-key="printbot"] .project-e-title h3 {
+  letter-spacing: -.018em !important;
+  word-spacing: .02em !important;
+}
+
+/* ---------- INVESTIGACIÓN ---------- */
+#investigacion.research-feminine {
+  padding-top: clamp(76px, 6vw, 98px) !important;
+  padding-bottom: clamp(84px, 7vw, 112px) !important;
+}
+
+#investigacion .research-reference-copy {
+  margin-top: 0 !important;
+}
+
+#investigacion .research-route {
+  margin-top: 48px !important;
+}
+
+#investigacion .research-route-card {
+  min-height: 0 !important;
+}
+
+#investigacion .research-route-card p {
+  max-width: 285px !important;
+  line-height: 1.62 !important;
+}
+
+/* ---------- TABLET / MÓVIL ---------- */
+@media (max-width: 1050px) {
+  #historia.historia-camino .historia-values,
+  #historia.historia-redesign .historia-values,
+  #historia .historia-values {
+    margin-top: 0 !important;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 860px) {
+  #proyectos .projects-editorial-grid[data-visible-count="3"],
+  #proyectos .projects-editorial-grid[data-visible-count="2"],
+  #proyectos .projects-editorial-grid[data-visible-count="1"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  #proyectos .projects-editorial-grid[data-visible-count="3"] .project-e-card[data-project-key],
+  #proyectos .projects-editorial-grid[data-visible-count="2"] .project-e-card:not([hidden]),
+  #proyectos .projects-editorial-grid[data-visible-count="1"] .project-e-card:not([hidden]) {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    display: flex !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    border-left: 0 !important;
+  }
+
+  #proyectos .projects-editorial-grid[data-visible-count="3"] .project-e-card[data-project-key="pulso"],
+  #proyectos .projects-editorial-grid[data-visible-count="3"] .project-e-card[data-project-key="dosificador"] {
+    margin-top: 42px !important;
+    padding-top: 42px !important;
+    padding-bottom: 0 !important;
+    border-top: 1px solid rgba(130, 98, 183, .18) !important;
+    border-bottom: 0 !important;
+  }
+
+  #proyectos .projects-editorial-grid[data-visible-count="2"] .project-e-card:not([hidden]) {
+    min-height: 0 !important;
+  }
+
+  #proyectos .projects-editorial-grid[data-visible-count="2"] .project-e-card:not([hidden]) + .project-e-card:not([hidden]) {
+    margin-top: 42px !important;
+    padding-top: 42px !important;
+  }
+
+  #proyectos .projects-editorial-grid[data-visible-count="1"] .project-details-btn,
+  #proyectos .projects-editorial-grid[data-visible-count="2"] .project-details-btn {
+    margin-top: 28px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  #historia.historia-camino .historia-photo-note {
+    font-size: .84rem !important;
+  }
+
+  #proyectos .project-filter-extra p {
+    font-size: .90rem !important;
+  }
+
+  #investigacion .research-route {
+    margin-top: 36px !important;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="progress-bar" id="progressBar"></div>
@@ -16155,6 +16450,10 @@ body {
 </div>
 </div>
 <p class="project-e-intro" data-label="Objetivo">Comprender cómo una variación luminosa puede convertirse en una señal eléctrica equivalente a un pulso.</p>
+<div class="project-filter-extra" aria-label="Trabajo realizado en el prototipo óptico de pulso">
+  <span>Trabajo realizado</span>
+  <p>Diseño y simulación del circuito · implementación experimental · análisis de frecuencia y amplitud.</p>
+</div>
 <div class="project-e-metrics"><div><strong>68,8 BPM</strong><span>Pulso equivalente en reposo</span></div><div><strong>10,63 Vpp</strong><span>Señal obtenida</span></div><div><strong>2,8 %</strong><span>Error de frecuencia</span></div></div>
 <div class="project-e-list project-e-list-unified"><div>
 <div><b>Mi contribución</b><p>Diseño del oscilador, simulación en LTspice, implementación experimental y comparación de frecuencia, amplitud y error.</p></div></div><div>
@@ -16169,6 +16468,10 @@ body {
 </div>
 </div>
 <p class="project-e-intro" data-label="Objetivo">Apoyar la adherencia farmacológica mediante dosificación programada, alertas y validación básica de entrega.</p>
+<div class="project-filter-extra" aria-label="Trabajo realizado en el dosificador de medicamentos">
+  <span>Trabajo realizado</span>
+  <p>Integración con Arduino Mega · reloj en tiempo real y sensores · alertas · servomotores y validación básica de entrega.</p>
+</div>
 <div class="project-e-list project-e-list-unified"><div>
 <div><b>Mi contribución</b><p>Diseño e integración del prototipo con Arduino Mega, reloj en tiempo real, pantalla, sensores, alertas y servomotores.</p></div></div><div>
 <div><b>Resultado</b><p>Dispensó la cantidad configurada en el horario programado e integró alertas y una validación básica de entrega.</p></div></div><div>
@@ -16217,7 +16520,7 @@ body {
 <article class="research-route-card reveal delay-2">
 <h3>Interpretar</h3>
 <span class="research-mini-line"></span>
-<p>Relacionarlos con posibles señales de deterioro.</p>
+<p>Analizar patrones y relacionarlos con posibles cambios relevantes en el estado de la persona.</p>
 </article>
 <article class="research-route-card reveal delay-2">
 <h3>Apoyar</h3>
