@@ -26220,6 +26220,761 @@ document.addEventListener('DOMContentLoaded', () => {
     padding-bottom: 0 !important;
   }
 }
+
+
+/* =========================================================
+   OPTIMIZACIÓN DE EXTENSIÓN · escritorio + móvil
+   Mantiene el contenido, pero reduce altura acumulada y
+   hace que las secciones de transición se recorran más rápido.
+   ========================================================= */
+
+/* Escritorio: compactación sutil (aprox. 5–8 %) sin perder aire editorial. */
+@media (min-width: 1025px) {
+  #historia.historia-camino {
+    padding-top: 72px !important;
+    padding-bottom: 80px !important;
+  }
+
+  #historia .historia-editorial-grid {
+    row-gap: 42px !important;
+  }
+
+  #proyectos.projects-editorial {
+    padding-top: 52px !important;
+    padding-bottom: 86px !important;
+  }
+
+  #proyectos .projects-head {
+    margin-bottom: 18px !important;
+  }
+
+  #proyectos .projects-filter {
+    margin-bottom: 28px !important;
+  }
+
+  #investigacion .research-art-v2-main {
+    padding-top: 72px !important;
+    padding-bottom: 52px !important;
+  }
+
+  #investigacion .research-art-v2-purpose {
+    padding-top: 50px !important;
+    padding-bottom: 66px !important;
+  }
+
+  #camino.focus-blob-v3 {
+    padding-top: 58px !important;
+    padding-bottom: 58px !important;
+  }
+
+  #camino .focus-blob-v3-areas {
+    margin-top: 34px !important;
+  }
+
+  #ieee.ieee-door-section {
+    padding-top: 72px !important;
+    padding-bottom: 76px !important;
+  }
+
+  #ieee .ieee-door-hero {
+    gap: 54px !important;
+  }
+
+  #ieee .ieee-door-values-heading {
+    margin-top: 16px !important;
+  }
+
+  #ieee .ieee-luminous-journey {
+    margin-top: 18px !important;
+  }
+
+  #galeria.gallery-redesign {
+    padding-top: 58px !important;
+    padding-bottom: 68px !important;
+  }
+
+  #galeria .gallery-carousel {
+    margin-top: 26px !important;
+  }
+
+  #contacto.contact-editorial-section {
+    padding-top: 68px !important;
+    padding-bottom: 64px !important;
+  }
+
+  #contacto .contact-editorial-shell {
+    gap: clamp(48px, 5.4vw, 82px) !important;
+  }
+}
+
+/* Tablet y móvil: la misma historia, con un ritmo vertical mucho más ágil. */
+@media (max-width: 760px) {
+  /* INICIO: conserva el impacto, pero deja aparecer antes la siguiente sección. */
+  #inicio .screen-inner {
+    padding-bottom: 44px !important;
+  }
+
+  #inicio .home-layout {
+    gap: 14px !important;
+    margin-bottom: -34px !important;
+  }
+
+  #inicio .socials {
+    margin-top: 22px !important;
+  }
+
+  /* HISTORIA: menos espacio ornamental; la foto y los principios siguen presentes. */
+  #historia.historia-camino {
+    padding-top: 50px !important;
+    padding-bottom: 54px !important;
+  }
+
+  #historia .historia-editorial-grid {
+    row-gap: 22px !important;
+  }
+
+  #historia .historia-heartline {
+    margin: 20px 0 17px !important;
+  }
+
+  #historia .historia-editorial-text {
+    gap: 14px !important;
+  }
+
+  #historia .historia-editorial-text p {
+    line-height: 1.62 !important;
+  }
+
+  #historia .historia-photo-art {
+    min-height: 365px !important;
+    margin: 6px 0 0 !important;
+    padding-top: 0 !important;
+  }
+
+  #historia .historia-photo-frame {
+    width: min(96%, 540px) !important;
+  }
+
+  #historia .historia-values {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  #historia .historia-value,
+  #historia .historia-value + .historia-value {
+    grid-template-columns: 50px minmax(0, 1fr) !important;
+    gap: 12px !important;
+    padding: 14px 0 !important;
+  }
+
+  #historia .historia-value-icon {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  #historia .historia-value-icon svg {
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  #historia .historia-value h3 {
+    margin-bottom: 4px !important;
+    font-size: 1rem !important;
+  }
+
+  #historia .historia-value p {
+    font-size: .86rem !important;
+    line-height: 1.48 !important;
+  }
+
+  /* PROYECTOS: la portada muestra solo lo esencial.
+     El detalle completo sigue disponible en “Ver proyecto completo”. */
+  #proyectos.projects-editorial {
+    padding-top: 42px !important;
+    padding-bottom: 84px !important;
+  }
+
+  #proyectos .projects-head {
+    margin-bottom: 6px !important;
+  }
+
+  #proyectos .projects-deck {
+    margin-top: 15px !important;
+    line-height: 1.56 !important;
+  }
+
+  #proyectos .projects-filter {
+    margin-bottom: 22px !important;
+  }
+
+  #proyectos .projects-editorial-grid {
+    row-gap: 30px !important;
+  }
+
+  #proyectos .project-e-card + .project-e-card {
+    padding-top: 30px !important;
+  }
+
+  #proyectos .project-title-separator-stable,
+  #proyectos .projects-editorial-grid[data-visible-count="1"] > .project-e-card:not([hidden]) > .project-title-separator-stable,
+  #proyectos .projects-editorial-grid[data-visible-count="2"] > .project-e-card:not([hidden]) > .project-title-separator-stable {
+    margin: 13px 0 17px !important;
+  }
+
+  #proyectos .project-e-intro {
+    margin: 0 0 17px !important;
+    line-height: 1.55 !important;
+  }
+
+  #proyectos .project-filter-extra {
+    margin: 0 0 16px !important;
+    padding: 14px 0 !important;
+  }
+
+  #proyectos .project-e-metrics {
+    display: none !important;
+  }
+
+  #proyectos .project-e-list {
+    margin: 0 0 16px !important;
+    border-top: 1px solid rgba(140,106,186,.17) !important;
+  }
+
+  #proyectos .project-e-list > div {
+    display: none !important;
+  }
+
+  #proyectos .project-e-list > div:first-child {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    padding: 15px 0 0 !important;
+    border-bottom: 0 !important;
+  }
+
+  #proyectos .project-e-list > div:first-child p {
+    line-height: 1.5 !important;
+  }
+
+  #proyectos .project-details-btn,
+  #proyectos .projects-editorial-grid[data-visible-count="1"] > .project-e-card:not([hidden]) > .project-details-btn,
+  #proyectos .projects-editorial-grid[data-visible-count="2"] > .project-e-card:not([hidden]) > .project-details-btn {
+    margin-top: 14px !important;
+  }
+
+  #proyectos .project-e-card .chips {
+    padding-top: 10px !important;
+  }
+
+  /* INVESTIGACIÓN: los cuatro pasos se leen como una ruta, no como cuatro mini-secciones. */
+  #investigacion .research-art-v2-main {
+    padding-top: 48px !important;
+    padding-bottom: 34px !important;
+  }
+
+  #investigacion .research-art-v2-text {
+    margin-top: 16px !important;
+    padding-bottom: 16px !important;
+    gap: 13px !important;
+  }
+
+  #investigacion .research-art-v2-purpose {
+    padding-top: 34px !important;
+    padding-bottom: 44px !important;
+  }
+
+  #investigacion .research-art-v2-purpose-intro {
+    padding-bottom: 15px !important;
+  }
+
+  #investigacion .research-art-v2-purpose-intro p {
+    margin-top: 11px !important;
+  }
+
+  #investigacion .research-art-v2-step {
+    min-height: 0 !important;
+    padding: 14px 0 15px !important;
+  }
+
+  #investigacion .research-art-v2-step svg {
+    margin-bottom: 7px !important;
+  }
+
+  #investigacion .research-art-v2-step h3 {
+    margin-bottom: 4px !important;
+  }
+
+  #investigacion .research-art-v2-step p {
+    line-height: 1.45 !important;
+  }
+
+  /* MI ENFOQUE: más visual y rápido; mantiene las tres áreas. */
+  #camino.focus-blob-v3 {
+    padding-top: 48px !important;
+    padding-bottom: 54px !important;
+  }
+
+  #camino .focus-blob-v3-title-line {
+    margin: 18px 0 !important;
+  }
+
+  #camino .focus-blob-v3-lead {
+    line-height: 1.58 !important;
+  }
+
+  #camino .focus-blob-v3-quote {
+    margin-top: 18px !important;
+    padding-top: 16px !important;
+  }
+
+  #camino .focus-blob-v3-areas {
+    margin-top: 28px !important;
+    gap: 10px !important;
+  }
+
+  #camino .focus-blob-v3-area {
+    min-height: 0 !important;
+    padding: 21px 20px !important;
+  }
+
+  #camino .focus-blob-v3-area h3 {
+    margin-bottom: 8px !important;
+  }
+
+  #camino .focus-blob-v3-area p {
+    line-height: 1.55 !important;
+  }
+
+  #camino .focus-blob-v3-line {
+    margin: 10px 0 !important;
+  }
+
+  /* IEEE RAS: mantiene liderazgo, aportes y trayectoria, reduciendo ceremonias internas. */
+  #ieee.ieee-door-section {
+    padding-top: 48px !important;
+    padding-bottom: 54px !important;
+  }
+
+  #ieee .ieee-door-hero {
+    gap: 24px !important;
+  }
+
+  #ieee .ieee-door-divider {
+    margin: 20px 0 !important;
+  }
+
+  #ieee .ieee-door-about {
+    margin-top: 0 !important;
+  }
+
+  #ieee .ieee-door-message {
+    margin-top: 18px !important;
+    padding-top: 18px !important;
+  }
+
+  #ieee .ieee-door-figure {
+    min-height: 0 !important;
+    height: 330px !important;
+  }
+
+  #ieee .ieee-door-values-heading {
+    margin-top: 14px !important;
+  }
+
+  #ieee .ieee-door-values-heading p {
+    margin-top: 4px !important;
+  }
+
+  #ieee .ieee-door-contributions {
+    margin-top: 10px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  #ieee .ieee-door-contribution {
+    min-height: 0 !important;
+    padding: 17px 0 18px !important;
+  }
+
+  #ieee .ieee-door-contribution h3 {
+    margin: 5px 0 6px !important;
+  }
+
+  #ieee .ieee-door-contribution p {
+    line-height: 1.5 !important;
+  }
+
+  #ieee .ieee-luminous-journey {
+    margin-top: 16px !important;
+  }
+
+  #ieee .ieee-timeline-heading {
+    margin-bottom: 12px !important;
+    padding-bottom: 8px !important;
+  }
+
+  #ieee .ieee-luminous-milestones {
+    padding-top: 18px !important;
+  }
+
+  /* GALERÍA: pausa visual corta, no una nueva sección pesada. */
+  #galeria.gallery-redesign {
+    padding-top: 46px !important;
+    padding-bottom: 58px !important;
+  }
+
+  #galeria .gallery-title {
+    font-size: clamp(3.25rem, 15vw, 4.55rem) !important;
+  }
+
+  #galeria .gallery-heart-divider {
+    margin: 15px 0 14px !important;
+  }
+
+  #galeria .gallery-intro {
+    margin-top: 16px !important;
+  }
+
+  #galeria .gallery-carousel {
+    margin-top: 20px !important;
+    padding-top: 4px !important;
+    padding-bottom: 42px !important;
+  }
+
+  #galeria .gallery-carousel .gallery-item {
+    min-height: 400px !important;
+  }
+
+  #galeria .gallery-media {
+    flex-basis: 248px !important;
+  }
+
+  #galeria .gallery-caption {
+    min-height: 145px !important;
+    padding: 24px 20px 20px !important;
+  }
+
+  /* CONTACTO: cierre directo y limpio. */
+  #contacto.contact-editorial-section {
+    padding-top: 46px !important;
+    padding-bottom: 22px !important;
+  }
+
+  #contacto .contact-editorial-shell {
+    gap: 28px !important;
+  }
+
+  #contacto .contact-editorial-tag {
+    margin-bottom: 17px !important;
+  }
+
+  #contacto .contact-editorial-divider {
+    margin: 20px 0 21px !important;
+  }
+
+  #contacto .contact-editorial-text {
+    gap: 14px !important;
+  }
+
+  #contacto .contact-editorial-text p {
+    line-height: 1.58 !important;
+  }
+
+  #contacto .contact-editorial-closing {
+    margin-top: 20px !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+
+  #contacto .contact-editorial-links {
+    gap: 0 !important;
+  }
+
+  #contacto .contact-editorial-link {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+  }
+}
+
+
+/* =========================================================
+   OPTIMIZACIÓN DE EXTENSIÓN · AJUSTE FINAL MÓVIL
+   ========================================================= */
+@media (max-width: 760px) {
+  /* Hero: CTA + redes en una sola fila para no gastar una pantalla extra. */
+  body #inicio .screen-inner {
+    padding-bottom: 24px !important;
+  }
+  body #inicio .socials {
+    width: 100% !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 10px !important;
+    margin-top: 20px !important;
+  }
+  body #inicio .socials .btn {
+    width: auto !important;
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+    padding: 12px 14px !important;
+    white-space: nowrap !important;
+    font-size: .88rem !important;
+  }
+  body #inicio .socials a {
+    width: 44px !important;
+    height: 44px !important;
+    flex: 0 0 44px !important;
+  }
+
+  /* Historia: imagen más editorial y principios más compactos. */
+  body #historia.historia-camino .historia-editorial-grid {
+    row-gap: 18px !important;
+  }
+  body #historia.historia-camino .historia-photo-art {
+    min-height: 360px !important;
+    height: 360px !important;
+    max-height: 360px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  body #historia.historia-camino .historia-photo-frame {
+    width: min(92%, 500px) !important;
+  }
+  body #historia.historia-camino .historia-values {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  body #historia.historia-camino .historia-value,
+  body #historia.historia-camino .historia-value + .historia-value {
+    grid-template-columns: 48px minmax(0,1fr) !important;
+    gap: 12px !important;
+    min-height: 0 !important;
+    padding: 13px 0 !important;
+  }
+  body #historia.historia-camino .historia-value-icon {
+    width: 46px !important;
+    height: 46px !important;
+  }
+  body #historia.historia-camino .historia-value h3 {
+    margin: 0 0 3px !important;
+    font-size: .98rem !important;
+  }
+  body #historia.historia-camino .historia-value p {
+    font-size: .84rem !important;
+    line-height: 1.43 !important;
+  }
+
+  /* Proyectos: menos separación entre fichas; una imagen protagonista basta. */
+  body #proyectos.projects-editorial .projects-editorial-grid {
+    row-gap: 22px !important;
+  }
+  body #proyectos.projects-editorial .project-e-card + .project-e-card,
+  body #proyectos.projects-editorial .project-e-card:nth-child(2),
+  body #proyectos.projects-editorial .project-e-card:nth-child(3) {
+    margin-top: 0 !important;
+    padding-top: 24px !important;
+  }
+  body #proyectos.projects-editorial .project-title-separator-stable,
+  body #proyectos.projects-editorial .projects-editorial-grid[data-visible-count="1"] > .project-e-card:not([hidden]) > .project-title-separator-stable,
+  body #proyectos.projects-editorial .projects-editorial-grid[data-visible-count="2"] > .project-e-card:not([hidden]) > .project-title-separator-stable {
+    margin: 12px 0 16px !important;
+  }
+  body #proyectos.projects-editorial .project-e-intro {
+    margin-bottom: 14px !important;
+    line-height: 1.5 !important;
+  }
+  body #proyectos.projects-editorial .project-e-photo {
+    max-height: 178px !important;
+    margin: 10px 0 16px !important;
+    aspect-ratio: 16 / 7.4 !important;
+  }
+  body #proyectos.projects-editorial .project-details-btn {
+    margin-top: 14px !important;
+  }
+
+  /* Investigación: los cuatro pasos pasan a una matriz 2 × 2. */
+  body #investigacion.research-art-v2 .research-art-v2-title {
+    font-size: clamp(2.7rem, 12.5vw, 3.65rem) !important;
+    line-height: .95 !important;
+  }
+  body #investigacion.research-art-v2 .research-art-v2-text {
+    gap: 11px !important;
+  }
+  body #investigacion.research-art-v2 .research-art-v2-text p {
+    line-height: 1.55 !important;
+  }
+  body #investigacion.research-art-v2 .research-art-v2-purpose-intro {
+    padding-bottom: 12px !important;
+  }
+  body #investigacion.research-art-v2 .research-art-v2-steps {
+    grid-template-columns: repeat(2, minmax(0,1fr)) !important;
+    grid-template-rows: repeat(2, auto) !important;
+    gap: 0 !important;
+    border-top: 1px solid rgba(137,103,183,.18) !important;
+  }
+  body #investigacion.research-art-v2 .research-art-v2-step {
+    min-height: 148px !important;
+    padding: 16px 12px 15px !important;
+    border-top: 0 !important;
+    border-bottom: 1px solid rgba(137,103,183,.16) !important;
+  }
+  body #investigacion.research-art-v2 .research-art-v2-step:nth-child(even) {
+    border-left: 1px solid rgba(137,103,183,.16) !important;
+  }
+  body #investigacion.research-art-v2 .research-art-v2-step svg {
+    width: 58px !important;
+    margin-bottom: 6px !important;
+  }
+  body #investigacion.research-art-v2 .research-art-v2-step h3 {
+    font-size: 1.08rem !important;
+    margin-bottom: 4px !important;
+  }
+  body #investigacion.research-art-v2 .research-art-v2-step p {
+    font-size: .82rem !important;
+    line-height: 1.38 !important;
+  }
+
+  /* Mi enfoque: tres áreas breves, legibles y visuales. */
+  body #camino.focus-blob-v3 .focus-blob-v3-areas {
+    margin-top: 22px !important;
+    gap: 8px !important;
+  }
+  body #camino.focus-blob-v3 .focus-blob-v3-area {
+    padding: 17px 18px !important;
+  }
+  body #camino.focus-blob-v3 .focus-blob-v3-area h3 {
+    font-size: 1.42rem !important;
+    line-height: 1.08 !important;
+  }
+  body #camino.focus-blob-v3 .focus-blob-v3-area p {
+    font-size: .9rem !important;
+    line-height: 1.48 !important;
+  }
+  body #camino.focus-blob-v3 .focus-blob-v3-line {
+    margin: 8px 0 !important;
+  }
+
+  /* IEEE: aportes compactos y trayectoria horizontal deslizable. */
+  body #ieee.ieee-door-section .ieee-door-contributions {
+    margin-top: 8px !important;
+  }
+  body #ieee.ieee-door-section .ieee-door-contribution {
+    min-height: 0 !important;
+    padding: 14px 0 15px !important;
+  }
+  body #ieee.ieee-door-section .ieee-door-contribution h3 {
+    margin: 4px 0 5px !important;
+    font-size: 1.14rem !important;
+  }
+  body #ieee.ieee-door-section .ieee-door-contribution p {
+    font-size: .87rem !important;
+    line-height: 1.45 !important;
+  }
+  body #ieee.ieee-door-section .ieee-luminous-journey {
+    margin-top: 14px !important;
+  }
+  body #ieee.ieee-door-section .ieee-timeline-heading {
+    margin-bottom: 8px !important;
+    padding-bottom: 6px !important;
+  }
+  body #ieee.ieee-door-section .ieee-luminous-milestones {
+    display: flex !important;
+    grid-template-columns: none !important;
+    gap: 10px !important;
+    overflow-x: auto !important;
+    padding: 10px 0 8px !important;
+    scroll-snap-type: x proximity;
+    scrollbar-width: thin;
+  }
+  body #ieee.ieee-door-section .ieee-journey-curve {
+    display: none !important;
+  }
+  body #ieee.ieee-door-section .ieee-luminous-milestone {
+    flex: 0 0 min(76vw, 245px) !important;
+    min-height: 142px !important;
+    padding: 16px !important;
+    scroll-snap-align: start;
+    border: 1px solid rgba(137,103,183,.16) !important;
+    border-radius: 18px !important;
+    background: rgba(255,255,255,.62) !important;
+  }
+}
+
+
+/* =========================================================
+   OPTIMIZACIÓN DE EXTENSIÓN · AJUSTE FINAL ESCRITORIO
+   ========================================================= */
+@media (min-width: 1025px) {
+  body #historia.historia-camino {
+    padding-top: 64px !important;
+    padding-bottom: 70px !important;
+  }
+
+  body #proyectos.projects-editorial {
+    padding-top: 48px !important;
+    padding-bottom: 74px !important;
+  }
+
+  body #investigacion.research-art-v2 .research-art-v2-main {
+    padding-top: 58px !important;
+    padding-bottom: 0 !important;
+  }
+
+  body #investigacion.research-art-v2 .research-art-v2-purpose {
+    padding-top: 34px !important;
+    padding-bottom: 38px !important;
+  }
+
+  body #camino.focus-blob-v3 {
+    padding-top: 52px !important;
+    padding-bottom: 52px !important;
+  }
+
+  body #camino.focus-blob-v3 .focus-blob-v3-areas {
+    margin-top: 0 !important;
+  }
+
+  body #ieee.ieee-door-section {
+    padding-top: 64px !important;
+    padding-bottom: 66px !important;
+  }
+
+  body #galeria.gallery-redesign {
+    padding-top: 54px !important;
+    padding-bottom: 58px !important;
+  }
+
+  body #contacto.contact-editorial-section {
+    padding-top: 60px !important;
+    padding-bottom: 56px !important;
+  }
+}
+
+
+/* =========================================================
+   CORRECCIÓN DE FLUJO · elementos visuales no se superponen
+   ========================================================= */
+@media (max-width: 760px) {
+  body #historia.historia-camino .historia-photo-art {
+    height: auto !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  body #historia.historia-camino .historia-portrait-figure {
+    width: min(90%, 500px) !important;
+    margin-inline: auto !important;
+  }
+  body #historia.historia-camino .historia-portrait-frame {
+    width: 100% !important;
+  }
+
+  body #ieee.ieee-door-section .ieee-door-figure {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+  }
+}
 </style>
 
 </body>
