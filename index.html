@@ -25580,5 +25580,287 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 </style>
 
+
+<style id="catalina-mobile-refinement-final-2026-07-15">
+
+/* =========================================================
+   MÓVIL · HEADER + INICIO
+   ========================================================= */
+@media (max-width: 760px) {
+  .topbar {
+    background: rgba(255,255,255,.985) !important;
+    backdrop-filter: blur(18px) !important;
+    -webkit-backdrop-filter: blur(18px) !important;
+    box-shadow: 0 1px 0 rgba(88,65,128,.08) !important;
+  }
+
+  /* El hero comienza inmediatamente bajo el header.
+     Se elimina el gran bloque blanco que aparecía arriba. */
+  #inicio.screen {
+    min-height: auto !important;
+    padding-top: var(--navh) !important;
+    padding-bottom: 52px !important;
+    align-items: start !important;
+  }
+
+  #inicio .screen-inner {
+    display: block !important;
+    min-height: 0 !important;
+    padding: 24px 0 0 !important;
+  }
+
+  #inicio .home-layout {
+    min-height: 0 !important;
+    gap: 30px !important;
+    align-items: start !important;
+    transform: none !important;
+  }
+
+  #inicio .home-layout > div:first-child {
+    padding-top: 0 !important;
+    transform: none !important;
+  }
+
+  #inicio .socials {
+    margin-top: 28px !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* La foto queda después del texto, pero mucho más conectada al hero. */
+  #inicio .home-visual {
+    width: 100% !important;
+    min-height: 0 !important;
+    margin: 8px auto 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+  }
+
+  #inicio .hero-visual-reference {
+    display: block !important;
+    width: min(94%, 520px) !important;
+    max-height: none !important;
+    margin: 0 auto !important;
+  }
+}
+
+
+/* =========================================================
+   FLECHAS · SIN EMOJI
+   ========================================================= */
+
+/* En Contacto se reemplaza el carácter por una flecha CSS fina. */
+.contact-editorial-link-action {
+  position: relative !important;
+  width: 24px !important;
+  height: 24px !important;
+  display: inline-block !important;
+  flex: 0 0 24px !important;
+  overflow: hidden !important;
+  color: transparent !important;
+  font-size: 0 !important;
+}
+
+.contact-editorial-link-action::before {
+  content: "" !important;
+  position: absolute !important;
+  width: 9px !important;
+  height: 9px !important;
+  top: 6px !important;
+  left: 5px !important;
+  border-top: 1.8px solid #7f61c5 !important;
+  border-right: 1.8px solid #7f61c5 !important;
+}
+
+.contact-editorial-link-action::after {
+  content: "" !important;
+  position: absolute !important;
+  width: 12px !important;
+  height: 1.8px !important;
+  top: 12px !important;
+  left: 4px !important;
+  background: #7f61c5 !important;
+  transform: rotate(-45deg) !important;
+  transform-origin: left center !important;
+  border-radius: 999px !important;
+}
+
+/* El botón principal también usa una flecha dibujada, no un símbolo Unicode. */
+#inicio .socials .btn::after {
+  content: "" !important;
+  width: 10px !important;
+  height: 10px !important;
+  margin-left: 16px !important;
+  border-top: 1.8px solid currentColor !important;
+  border-right: 1.8px solid currentColor !important;
+  transform: rotate(45deg) !important;
+  background: none !important;
+}
+
+
+/* =========================================================
+   HISTORIA · FOTO MÁS EQUILIBRADA EN MÓVIL
+   ========================================================= */
+@media (max-width: 760px) {
+  #historia.historia-camino .historia-photo-art {
+    width: 91% !important;
+    min-height: 0 !important;
+    margin: 28px auto 8px !important;
+  }
+
+  #historia.historia-camino .historia-photo-frame {
+    width: 100% !important;
+    aspect-ratio: 1.02 !important;
+  }
+
+  #historia.historia-camino .historia-photo-heart {
+    width: 52px !important;
+    height: 52px !important;
+    font-size: 1.85rem !important;
+    right: 0 !important;
+  }
+
+  #historia.historia-camino .historia-photo-note {
+    width: 92% !important;
+    margin: 18px auto 0 !important;
+  }
+}
+
+
+/* =========================================================
+   GALERÍA · MÓVIL A ANCHO COMPLETO
+   ========================================================= */
+@media (max-width: 760px) {
+  #galeria.gallery-redesign .screen-inner {
+    width: calc(100% - 32px) !important;
+  }
+
+  #galeria.gallery-redesign .gallery-heading {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    grid-template-columns: none !important;
+    grid-template-areas: none !important;
+  }
+
+  #galeria.gallery-redesign .gallery-title {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  #galeria.gallery-redesign .gallery-intro {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 26px 0 0 !important;
+    padding: 0 !important;
+    border-left: 0 !important;
+  }
+
+  #galeria.gallery-redesign .gallery-intro::before {
+    display: none !important;
+    content: none !important;
+  }
+
+  #galeria.gallery-redesign .gallery-intro-label {
+    display: block !important;
+    margin-bottom: 9px !important;
+    color: #8065c4 !important;
+    font-size: .72rem !important;
+    font-weight: 800 !important;
+    line-height: 1.35 !important;
+    letter-spacing: .15em !important;
+    text-transform: uppercase !important;
+  }
+
+  #galeria.gallery-redesign .gallery-intro p {
+    width: 100% !important;
+    max-width: none !important;
+    font-size: 1rem !important;
+    line-height: 1.62 !important;
+  }
+
+  #galeria.gallery-redesign .gallery-carousel {
+    width: 100% !important;
+    margin-top: 30px !important;
+  }
+
+  #galeria.gallery-redesign .gallery-grid,
+  #galeria.gallery-redesign .gallery-carousel .gallery-grid,
+  #galeria.gallery-redesign .gallery-carousel-grid {
+    width: 100% !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  #galeria.gallery-redesign .gallery-item {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  #galeria.gallery-redesign .gallery-media {
+    width: 100% !important;
+    flex: none !important;
+    height: auto !important;
+    aspect-ratio: 4 / 3 !important;
+  }
+
+  #galeria.gallery-redesign .gallery-caption {
+    width: 100% !important;
+    min-height: 0 !important;
+    padding: 24px 21px 22px !important;
+  }
+
+  #galeria.gallery-redesign .gallery-caption h3,
+  #galeria.gallery-redesign .gallery-caption p {
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
+
+
+/* =========================================================
+   PROYECTOS · SALUD
+   Más aire antes de "Ver proyecto completo".
+   ========================================================= */
+@media (max-width: 760px) {
+  #proyectos .projects-editorial-grid[data-visible-count="2"]
+  .project-e-card:not([hidden]) .project-details-btn {
+    margin-top: 30px !important;
+    margin-bottom: 14px !important;
+  }
+
+  #proyectos .projects-editorial-grid[data-visible-count="2"]
+  .project-filter-extra + .project-details-btn {
+    margin-top: 32px !important;
+  }
+
+  #proyectos .project-e-card[data-project-key="pulso"] .project-details-btn {
+    margin-top: 30px !important;
+  }
+}
+
+
+/* =========================================================
+   CONTACTO · JERARQUÍA MÓVIL MÁS LIVIANA
+   ========================================================= */
+@media (max-width: 760px) {
+  #contacto .contact-editorial-link-copy b {
+    font-size: clamp(1.65rem, 8vw, 2.15rem) !important;
+  }
+
+  #contacto .contact-editorial-link-copy small {
+    font-size: .94rem !important;
+    line-height: 1.45 !important;
+  }
+
+  #contacto .contact-editorial-link {
+    padding-top: 21px !important;
+    padding-bottom: 21px !important;
+  }
+}
+</style>
+
 </body>
 </html>
