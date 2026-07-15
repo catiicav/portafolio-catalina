@@ -16003,104 +16003,6 @@ main > section.screen > .screen-inner {
   }
 }
 </style>
-<style id="mobile-scroll-stability-final">
-/* =========================================================
-   ESTABILIDAD DEL DESPLAZAMIENTO MÓVIL
-   Mantiene intactas las secciones IEEE RAS y Contacto
-   del archivo de referencia.
-   ========================================================= */
-@media (max-width: 1024px) {
-  html {
-    height: auto !important;
-    min-height: 100% !important;
-    overflow-x: hidden !important;
-    overflow-y: auto !important;
-    scroll-behavior: auto !important;
-    touch-action: pan-y !important;
-    overscroll-behavior-y: auto !important;
-    -webkit-text-size-adjust: 100%;
-  }
-
-  body:not(.lightbox-open):not(.project-detail-open) {
-    position: static !important;
-    inset: auto !important;
-    width: 100% !important;
-    height: auto !important;
-    min-height: 100% !important;
-    overflow-x: hidden !important;
-    overflow-y: visible !important;
-    touch-action: pan-y !important;
-    overscroll-behavior-y: auto !important;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  main,
-  .screen,
-  .screen-inner,
-  section,
-  .projects-editorial-grid,
-  .project-e-card,
-  .research-feminine,
-  .focus-section,
-  .ieee-door-section,
-  .contact-signature-section,
-  .gallery-redesign {
-    touch-action: pan-y !important;
-  }
-
-  /* Los adornos nunca deben capturar el gesto del dedo. */
-  .projects-ornament,
-  .projects-dots,
-  .research-decor,
-  .research-branch,
-  .research-dots,
-  .research-wash,
-  .ieee-door-dots,
-  .ieee-door-botanical,
-  .contact-signature-decoration,
-  .contact-signature-dots,
-  .contact-signature-branch,
-  [class*="botanical"],
-  [class*="ornament"],
-  [class*="decoration"] {
-    pointer-events: none !important;
-    touch-action: none !important;
-  }
-
-  /* El menú cerrado deja de existir como capa táctil invisible. */
-  .mobile-menu:not(.open) {
-    display: none !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-  }
-  .mobile-menu.open {
-    visibility: visible !important;
-    pointer-events: auto !important;
-    touch-action: pan-y !important;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  /* Las tarjetas siguen siendo pulsables, pero priorizan el desplazamiento. */
-  #proyectos .project-e-card,
-  #proyectos .projects-filter,
-  #proyectos .projects-filter span,
-  #ieee a,
-  #contacto a {
-    touch-action: pan-y !important;
-  }
-
-  /* Evita que transiciones y transformaciones dificulten el gesto en iOS. */
-  .reveal {
-    transform: none !important;
-  }
-
-  /* El encabezado fijo no crea una superficie táctil fuera de su altura. */
-  .topbar {
-    touch-action: pan-y !important;
-    contain: layout paint;
-  }
-}
-</style>
 
 </head>
 <body>
@@ -16626,7 +16528,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!targetSection) return;
       const navHeight = document.querySelector('.topbar')?.offsetHeight || 0;
       const targetTop = targetSection.getBoundingClientRect().top + window.pageYOffset - navHeight - 10;
-      window.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
+      window.scrollTo({ top: Math.max(0, targetTop), behavior: window.matchMedia('(max-width: 1024px)').matches ? 'auto' : 'smooth' });
       
       if(mobileMenu.classList.contains('open')) {
         mobileToggle.setAttribute('aria-expanded', 'false');
@@ -16650,15 +16552,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // === ANIMACIONES REVEAL ===
   const revealElements = document.querySelectorAll('.reveal');
-  const revealObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
-  revealElements.forEach(el => revealObserver.observe(el));
+  if (window.matchMedia('(max-width: 1024px)').matches || !('IntersectionObserver' in window)) {
+    revealElements.forEach(el => el.classList.add('visible'));
+  } else {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+    revealElements.forEach(el => revealObserver.observe(el));
+  }
 
   // === FILTROS DE PROYECTOS ===
   const projectFilterButtons = Array.from(document.querySelectorAll('[data-project-filter]'));
@@ -17067,331 +16973,37 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 })();
 </script>
-<script id="proyectos-columnas-clickeables-2026-07-14">
-(() => {
-  document.querySelectorAll('#proyectos .project-e-card[data-project-key]').forEach((card) => {
-    const key = card.dataset.projectKey;
-    const detailButton = card.querySelector(`[data-project-detail="${key}"]`);
-    if (!detailButton) return;
-
-    card.tabIndex = 0;
-    card.setAttribute('aria-label', `Abrir información ampliada de ${card.querySelector('h3')?.textContent?.trim() || 'este proyecto'}`);
-
-    card.addEventListener('click', (event) => {
-      if (event.target.closest('button, a')) return;
-      detailButton.click();
-    });
-
-    card.addEventListener('keydown', (event) => {
-      if (event.target !== card) return;
-      if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        detailButton.click();
-      }
-    });
-  });
-})();
-</script>
 
 
 
 
-<style id="correccion-definitiva-scroll-movil-y-ritmo-historia">
+<style id="scroll-movil-depurado-final">
 /* =========================================================
-   CORRECCIÓN DEFINITIVA · MÓVIL + HISTORIA + INVESTIGACIÓN
+   SCROLL MÓVIL DEPURADO · UN SOLO CONTENEDOR DE DESPLAZAMIENTO
    ========================================================= */
 
-/* Recupera la separación amplia original entre el relato y la fila
-   Explorar · Resiliencia · Construir. */
+/* Separación editorial recuperada en Mi historia. */
 @media (min-width: 901px) {
-  #historia .historia-values,
-  #historia .story-values,
-  #historia .historia-principles,
-  #historia [class*="historia-values"] {
-    margin-top: 58px !important;
-  }
-}
-
-/* En móvil, el documento completo usa un único contenedor de scroll:
-   la ventana. Ninguna sección o tarjeta crea un scroll interno. */
-@media (max-width: 1024px) {
-  html,
-  body {
-    position: static !important;
-    width: 100% !important;
-    height: auto !important;
-    min-height: 100% !important;
-    max-height: none !important;
-    overflow-x: clip !important;
-    overflow-y: auto !important;
-    overscroll-behavior-x: none !important;
-    overscroll-behavior-y: auto !important;
-    scroll-behavior: auto !important;
-    touch-action: auto !important;
-    -webkit-overflow-scrolling: touch !important;
-  }
-
-  body {
-    inset: auto !important;
-  }
-
-  main,
-  section,
-  .screen,
-  .screen-inner,
-  .projects-editorial-grid,
-  .project-e-card,
-  .research-inner,
-  .research-reference-copy,
-  .research-route,
-  .research-route-card,
-  #ieee,
-  #ieee *:not(button):not(a):not(input),
-  #contacto,
-  #contacto *:not(button):not(a):not(input) {
-    max-height: none !important;
-    overflow-y: visible !important;
-    touch-action: pan-y pinch-zoom !important;
-    overscroll-behavior: auto !important;
-  }
-
-  /* Controles horizontales pueden desplazarse lateralmente, pero no
-     bloquean el gesto vertical de la página. */
-  #proyectos .projects-filter {
-    touch-action: pan-x pan-y pinch-zoom !important;
-    -webkit-overflow-scrolling: touch !important;
-  }
-
-  #proyectos .projects-filter span,
-  #proyectos .project-e-card,
-  #proyectos .project-e-card *,
-  .research-route-card,
-  .research-route-card *,
-  #ieee a,
-  #contacto a {
-    touch-action: pan-y pinch-zoom !important;
-  }
-
-  /* Ningún adorno debe quedar encima del contenido ni capturar el dedo. */
-  .projects-ornament,
-  .projects-dots,
-  .research-decor,
-  .research-branch,
-  .research-dots,
-  .research-wash,
-  .ieee-door-dots,
-  .ieee-door-botanical,
-  .ieee-e-dots,
-  .ieee-e-botanical,
-  .ieee-e-small-dots,
-  .contact-signature-decoration,
-  .contact-signature-dots,
-  .contact-signature-branch,
-  [class*="botanical"],
-  [class*="ornament"],
-  [class*="decoration"] {
-    pointer-events: none !important;
-    touch-action: none !important;
-  }
-
-  /* La planta y las manchas de Investigación desaparecen por completo
-     en móvil para que nada quede detrás o debajo del título. */
-  #investigacion .research-branch,
-  #investigacion .research-dots,
-  #investigacion .research-wash,
-  #investigacion .research-decor,
-  #investigacion [class*="branch"],
-  #investigacion [class*="botanical"] {
-    display: none !important;
-  }
-
-  /* El encabezado solo recibe gestos dentro de su propio contenido. */
-  .topbar {
-    touch-action: pan-y pinch-zoom !important;
-  }
-
-  .mobile-menu:not(.open) {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-  }
-
-  /* Evita capas animadas invisibles sobre el contenido. */
-  .reveal,
-  .reveal.visible {
-    transform: none !important;
-    will-change: auto !important;
-  }
-
-  /* Separación móvil proporcionada entre el relato y los valores. */
-  #historia .historia-values,
-  #historia .story-values,
-  #historia .historia-principles,
-  #historia [class*="historia-values"] {
-    margin-top: 34px !important;
-  }
-}
-</style>
-
-
-
-<style id="ajuste-final-historia-enfoque-y-movil">
-/* =========================================================
-   1. HISTORIA · RECUPERAR RESPIRACIÓN ANTES DE LOS VALORES
-   ========================================================= */
-@media (min-width: 901px) {
-  #historia.historia-camino .historia-values,
   #historia .historia-values {
-    margin-top: 92px !important;
-    transform: none !important;
+    margin-top: 94px !important;
   }
 }
-
 @media (max-width: 900px) {
-  #historia.historia-camino .historia-values,
   #historia .historia-values {
-    margin-top: 46px !important;
-    transform: none !important;
+    margin-top: 52px !important;
   }
 }
 
-/* =========================================================
-   2. MI ENFOQUE · REDISEÑO ABIERTO SIN BLOQUES BLANCOS
-   ========================================================= */
-#camino.focus-studio-section {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at 91% 28%, rgba(226,211,248,.28), transparent 28rem),
-    radial-gradient(circle at 8% 88%, rgba(248,218,234,.24), transparent 26rem),
-    linear-gradient(180deg,#fff 0%,#fffdfd 65%,#fff9fc 100%) !important;
-}
-
-#camino .focus-studio-layout {
-  display: grid !important;
-  grid-template-columns: minmax(360px,.78fr) minmax(0,1.22fr) !important;
-  gap: clamp(70px,8vw,128px) !important;
-  align-items: center !important;
-}
-
-#camino .focus-studio-intro {
-  max-width: 600px !important;
-}
-
-#camino .focus-studio-deck {
-  margin-top: 28px !important;
-  padding: 0 !important;
-  max-width: 520px !important;
-  color: #514c68 !important;
-  background: transparent !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  font-size: clamp(1rem,1.2vw,1.12rem) !important;
-  line-height: 1.72 !important;
-}
-
-#camino .focus-studio-quote {
-  margin-top: 34px !important;
-}
-
-#camino .focus-studio-layers {
-  display: grid !important;
-  gap: 0 !important;
-  background: transparent !important;
-  border-top: 1px solid rgba(137,103,183,.22) !important;
-  border-bottom: 1px solid rgba(137,103,183,.22) !important;
-}
-
-#camino .focus-studio-item,
-#camino .focus-studio-item:hover {
-  position: relative !important;
-  display: grid !important;
-  grid-template-columns: 118px minmax(0,1fr) !important;
-  gap: 28px !important;
-  align-items: center !important;
-  min-height: 176px !important;
-  padding: 28px 18px 28px 0 !important;
-  margin: 0 !important;
-  color: inherit !important;
-  background: transparent !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  transform: none !important;
-  overflow: visible !important;
-}
-
-#camino .focus-studio-item + .focus-studio-item {
-  border-top: 1px solid rgba(137,103,183,.18) !important;
-}
-
-#camino .focus-studio-action {
-  position: static !important;
-  display: flex !important;
-  align-items: center !important;
-  gap: 12px !important;
-  writing-mode: horizontal-tb !important;
-  transform: none !important;
-  color: #9a79cb !important;
-  font-family: "Cormorant Garamond", Georgia, serif !important;
-  font-size: 1.35rem !important;
-  font-style: italic !important;
-  opacity: 1 !important;
-}
-
-#camino .focus-studio-action::after {
-  content: "";
-  width: 34px;
-  height: 1px;
-  background: linear-gradient(90deg,#9a72d4,#d58ab8);
-}
-
-#camino .focus-studio-item small {
-  display: block !important;
-  margin-bottom: 8px !important;
-  color: #765fba !important;
-  font-size: .72rem !important;
-  font-weight: 800 !important;
-  letter-spacing: .15em !important;
-  text-transform: uppercase !important;
-}
-
-#camino .focus-studio-item h3 {
-  margin: 0 0 9px !important;
-  max-width: 560px !important;
-  color: #27234d !important;
-  font-family: "Cormorant Garamond", Georgia, serif !important;
-  font-size: clamp(1.65rem,2.1vw,2.15rem) !important;
-  line-height: 1.08 !important;
-}
-
-#camino .focus-studio-item p {
-  max-width: 610px !important;
-  color: #625d74 !important;
-  font-size: .96rem !important;
-  line-height: 1.64 !important;
-}
-
-#camino .focus-studio-item::before,
-#camino .focus-studio-item::after {
-  display: none !important;
-  content: none !important;
-}
-
-/* =========================================================
-   3. MÓVIL · UN SOLO SCROLL Y MENÚ FUNCIONAL
-   ========================================================= */
+/* Modelo normal de documento: el viewport desplaza y las secciones no crean scroll propio. */
 @media (max-width: 1024px) {
   html {
+    width: 100% !important;
     height: auto !important;
     min-height: 100% !important;
     overflow-x: hidden !important;
     overflow-y: auto !important;
     scroll-behavior: auto !important;
-    touch-action: manipulation !important;
+    overscroll-behavior-y: auto !important;
   }
 
   body {
@@ -17403,23 +17015,20 @@ document.addEventListener('DOMContentLoaded', () => {
     max-height: none !important;
     overflow-x: hidden !important;
     overflow-y: visible !important;
-    touch-action: pan-y !important;
+    overscroll-behavior-y: auto !important;
     -webkit-overflow-scrolling: touch !important;
   }
 
   main,
-  section,
   .screen,
+  section,
   .screen-inner {
-    position: relative;
     height: auto !important;
-    min-height: 0 !important;
     max-height: none !important;
     overflow: visible !important;
-    touch-action: pan-y !important;
   }
 
-  /* En móvil todo el contenido debe estar visible aunque falle IntersectionObserver. */
+  /* En móvil no se depende de animaciones para mostrar el contenido. */
   .reveal,
   .reveal.visible {
     opacity: 1 !important;
@@ -17428,28 +17037,27 @@ document.addEventListener('DOMContentLoaded', () => {
     transition: none !important;
   }
 
-  /* Ninguna tarjeta completa se comporta como superficie gestual especial. */
-  #proyectos .project-e-card,
-  #proyectos .project-e-card *,
-  #investigacion,
-  #investigacion *,
-  #ieee,
-  #ieee *,
-  #camino,
-  #camino * {
+  /* Solo la galería declara intención gestual; el resto usa el comportamiento nativo. */
+  .gallery-carousel {
     touch-action: pan-y !important;
   }
 
-  /* Los filtros se mantienen utilizables, pero no crean un scroll interno vertical. */
-  #proyectos .projects-filter {
+  .projects-filter {
     overflow-x: auto !important;
     overflow-y: hidden !important;
-    touch-action: pan-x pan-y !important;
-    overscroll-behavior: contain auto !important;
     -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none;
+  }
+  .projects-filter::-webkit-scrollbar {
+    display: none;
   }
 
-  /* Adornos completamente fuera de la capa táctil. */
+  /* Las tarjetas dejan de comportarse como botones gigantes. */
+  #proyectos .project-e-card {
+    cursor: default !important;
+  }
+
+  /* Adornos fuera de la capa táctil. */
   .section-transition-soft,
   .projects-ornament,
   .projects-dots,
@@ -17466,7 +17074,7 @@ document.addEventListener('DOMContentLoaded', () => {
     pointer-events: none !important;
   }
 
-  /* Investigación: sin planta detrás del título en móvil. */
+  /* Investigación: sin planta ni ornamentos detrás del título. */
   #investigacion .research-decor,
   #investigacion .research-branch,
   #investigacion .research-dots,
@@ -17476,14 +17084,13 @@ document.addEventListener('DOMContentLoaded', () => {
     display: none !important;
   }
 
-  /* Menú móvil */
+  /* Menú móvil: una sola capa y un solo estado. */
   .mobile-toggle {
-    position: relative !important;
-    z-index: 110 !important;
     display: grid !important;
     place-items: center !important;
+    position: relative !important;
+    z-index: 110 !important;
     pointer-events: auto !important;
-    touch-action: manipulation !important;
   }
 
   .mobile-menu {
@@ -17498,105 +17105,39 @@ document.addEventListener('DOMContentLoaded', () => {
     visibility: visible !important;
     opacity: 1 !important;
     pointer-events: auto !important;
-    touch-action: pan-y !important;
-  }
-
-  /* Mi enfoque en móvil: lectura lineal y abierta */
-  #camino .focus-studio-layout {
-    grid-template-columns: 1fr !important;
-    gap: 42px !important;
-  }
-
-  #camino .focus-studio-layers {
-    border-top: 1px solid rgba(137,103,183,.22) !important;
-  }
-
-  #camino .focus-studio-item,
-  #camino .focus-studio-item:hover {
-    grid-template-columns: 1fr !important;
-    gap: 10px !important;
-    min-height: 0 !important;
-    padding: 25px 0 !important;
-  }
-
-  #camino .focus-studio-action {
-    font-size: 1.16rem !important;
-  }
-
-  #camino .focus-studio-item h3 {
-    font-size: 1.72rem !important;
+    overflow-y: auto !important;
+    max-height: calc(100dvh - var(--navh)) !important;
   }
 }
-</style>
 
-<script id="menu-movil-y-scroll-simple-final">
+/* El bloqueo del body existe únicamente mientras un modal está realmente abierto. */
+body.lightbox-open,
+body.project-detail-open {
+  overflow: hidden !important;
+}
+</style><script id="saneamiento-estados-scroll-final">
 (() => {
-  const init = () => {
-    const oldToggle = document.getElementById('mobileToggle');
-    const menu = document.getElementById('mobileMenu');
-    if (!oldToggle || !menu) return;
+  const cleanStaleLocks = () => {
+    const lightboxOpen = !!document.querySelector('.gallery-lightbox.open');
+    const projectOpen = !!document.querySelector('.project-detail-modal.open');
 
-    /* Reemplazar el botón elimina listeners duplicados que abrían y cerraban al mismo tiempo. */
-    const toggle = oldToggle.cloneNode(true);
-    oldToggle.replaceWith(toggle);
+    if (!lightboxOpen) document.body.classList.remove('lightbox-open');
+    if (!projectOpen) document.body.classList.remove('project-detail-open');
 
-    const setOpen = (open) => {
-      menu.classList.toggle('open', open);
-      menu.setAttribute('aria-hidden', String(!open));
-      toggle.setAttribute('aria-expanded', String(open));
-      toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
-    };
-
-    toggle.addEventListener('click', (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      setOpen(!menu.classList.contains('open'));
-    });
-
-    menu.querySelectorAll('[data-go]').forEach((button) => {
-      button.addEventListener('click', () => {
-        const id = button.dataset.go;
-        setOpen(false);
-        requestAnimationFrame(() => {
-          document.getElementById(id)?.scrollIntoView({ behavior: 'auto', block: 'start' });
-        });
-      });
-    });
-
-    document.addEventListener('click', (event) => {
-      if (!menu.classList.contains('open')) return;
-      if (menu.contains(event.target) || toggle.contains(event.target)) return;
-      setOpen(false);
-    });
-
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 1024) setOpen(false);
-    }, { passive: true });
-
-    /* Limpieza única, sin observers ni listeners en cada toque. */
-    document.documentElement.style.removeProperty('overflow');
-    document.documentElement.style.removeProperty('height');
-    document.body.style.removeProperty('overflow');
-    document.body.style.removeProperty('height');
-    document.body.style.removeProperty('position');
-    document.body.style.removeProperty('top');
-    document.body.style.removeProperty('width');
-
-    if (!document.querySelector('.gallery-lightbox.open')) {
-      document.body.classList.remove('lightbox-open');
-    }
-    if (!document.querySelector('.project-detail-modal.open')) {
-      document.body.classList.remove('project-detail-open');
+    if (!lightboxOpen && !projectOpen) {
+      document.body.style.removeProperty('overflow');
+      document.body.style.removeProperty('position');
+      document.body.style.removeProperty('top');
+      document.body.style.removeProperty('width');
+      document.documentElement.style.removeProperty('overflow');
     }
   };
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init, { once: true });
-  } else {
-    init();
-  }
+  window.addEventListener('pageshow', cleanStaleLocks, { passive: true });
+  window.addEventListener('orientationchange', cleanStaleLocks, { passive: true });
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) cleanStaleLocks();
+  });
 })();
-</script>
-
-</body>
+</script></body>
 </html>
