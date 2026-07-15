@@ -16357,6 +16357,1118 @@ body {
   }
 }
 
+
+/* module: mi-enfoque-editorial-sin-iconos-final */
+#camino.focus-editorial-v2 {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: auto !important;
+  padding-top: clamp(86px, 7vw, 112px) !important;
+  padding-bottom: clamp(92px, 8vw, 126px) !important;
+  background:
+    radial-gradient(circle at 9% 16%, rgba(231,219,249,.42), transparent 25rem),
+    radial-gradient(circle at 89% 78%, rgba(248,217,235,.34), transparent 30rem),
+    linear-gradient(180deg,#fff 0%,#fefcff 58%,#fffafd 100%) !important;
+}
+#camino.focus-editorial-v2::before {
+  content:"";
+  position:absolute;
+  z-index:-3;
+  right:-9%;
+  top:5%;
+  width:min(48vw,720px);
+  height:88%;
+  border-radius:53% 47% 42% 58% / 44% 56% 44% 56%;
+  background:linear-gradient(145deg,rgba(229,216,250,.58),rgba(250,224,239,.38));
+  opacity:.58;
+  transform:rotate(-6deg);
+}
+#camino.focus-editorial-v2::after {
+  content:"";
+  position:absolute;
+  z-index:-4;
+  left:-13%;
+  bottom:-24%;
+  width:560px;
+  height:420px;
+  border-radius:60% 40% 55% 45% / 47% 58% 42% 53%;
+  background:linear-gradient(135deg,rgba(235,221,250,.48),rgba(250,221,237,.30));
+  transform:rotate(10deg);
+}
+#camino .focus-editorial-shell { position:relative; z-index:2; }
+#camino .focus-editorial-layout {
+  display:grid;
+  grid-template-columns:minmax(0,.88fr) minmax(540px,1.12fr);
+  gap:clamp(64px,7.5vw,118px);
+  align-items:center;
+}
+#camino .focus-editorial-intro { max-width:620px; }
+#camino .focus-editorial-intro .tag { margin-bottom:22px; }
+#camino .focus-editorial-intro h2 {
+  max-width:650px;
+  margin:0;
+  font-size:clamp(4rem,5.9vw,6.35rem);
+  line-height:.91;
+  letter-spacing:-.055em;
+  text-wrap:balance;
+}
+#camino .focus-editorial-lead {
+  max-width:590px;
+  margin-top:34px;
+  color:#4d4965;
+  font-size:clamp(1.02rem,1.35vw,1.18rem);
+  line-height:1.72;
+}
+#camino .focus-editorial-lead strong,
+#camino .focus-editorial-note strong { color:#8b63cb; }
+#camino .focus-editorial-heartline {
+  display:flex;
+  align-items:center;
+  gap:16px;
+  width:210px;
+  margin:28px 0 25px;
+  color:#bd75bd;
+}
+#camino .focus-editorial-heartline span { flex:1; height:1px; background:linear-gradient(90deg,transparent,#c7a6dc); }
+#camino .focus-editorial-heartline span:last-child { background:linear-gradient(90deg,#c7a6dc,transparent); }
+#camino .focus-editorial-heartline b { font-size:1.8rem; font-weight:400; line-height:1; }
+#camino .focus-editorial-note {
+  max-width:575px;
+  color:#625d76;
+  font-size:1rem;
+  line-height:1.7;
+}
+#camino .focus-editorial-quote {
+  position:relative;
+  max-width:510px;
+  margin:34px 0 0;
+  padding:0 0 0 27px;
+  color:#6e6481;
+  border-left:2px solid rgba(142,102,202,.42);
+  background:transparent;
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:1.35rem;
+  font-style:italic;
+  line-height:1.55;
+}
+#camino .focus-editorial-quote em { color:#b268af; }
+#camino .focus-editorial-path {
+  position:relative;
+  display:grid;
+  gap:0;
+  padding:6px 0;
+}
+#camino .focus-editorial-path::before {
+  content:"";
+  position:absolute;
+  left:41px;
+  top:54px;
+  bottom:54px;
+  width:1px;
+  background:linear-gradient(180deg,rgba(139,101,201,.14),rgba(139,101,201,.42),rgba(197,120,178,.28));
+}
+#camino .focus-editorial-step {
+  position:relative;
+  display:grid;
+  grid-template-columns:84px minmax(0,1fr);
+  gap:30px;
+  align-items:start;
+  padding:35px 0 38px;
+  border-bottom:1px solid rgba(141,106,186,.16);
+  background:transparent;
+}
+#camino .focus-editorial-step:first-child { padding-top:8px; }
+#camino .focus-editorial-step:last-child { border-bottom:0; padding-bottom:8px; }
+#camino .focus-editorial-number {
+  position:relative;
+  z-index:2;
+  display:grid;
+  place-items:center;
+  width:82px;
+  height:82px;
+  color:#8c65cf;
+  background:rgba(248,243,253,.82);
+  border:1px solid rgba(148,112,204,.22);
+  border-radius:50%;
+  box-shadow:0 14px 35px rgba(78,56,108,.06);
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:1.75rem;
+  font-weight:700;
+}
+#camino .focus-editorial-step-copy { padding-top:5px; max-width:560px; }
+#camino .focus-editorial-step small {
+  display:block;
+  margin-bottom:8px;
+  color:#8063c5;
+  font-size:.72rem;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+#camino .focus-editorial-step h3 {
+  margin:0;
+  color:#262249;
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:clamp(1.75rem,2.3vw,2.35rem);
+  font-weight:700;
+  line-height:1.04;
+  letter-spacing:-.025em;
+}
+#camino .focus-editorial-line {
+  display:block;
+  width:32px;
+  height:2px;
+  margin:15px 0 13px;
+  background:linear-gradient(90deg,#8a66d0,#d17db1);
+}
+#camino .focus-editorial-step p {
+  margin:0;
+  color:#615b74;
+  font-size:.98rem;
+  line-height:1.68;
+}
+#camino .focus-editorial-dots {
+  position:absolute;
+  right:15%;
+  top:1%;
+  width:145px;
+  height:110px;
+  opacity:.42;
+  background-image:radial-gradient(circle,#9b7ad6 2px,transparent 2.4px);
+  background-size:19px 19px;
+}
+#camino .focus-editorial-branch {
+  position:absolute;
+  z-index:-1;
+  right:-2%;
+  top:7%;
+  width:210px;
+  height:500px;
+  color:#9e79d6;
+  opacity:.52;
+  overflow:visible;
+}
+#camino .focus-editorial-branch path,
+#camino .focus-editorial-branch ellipse {
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.7;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+#camino .focus-editorial-branch ellipse { fill:rgba(195,166,232,.11); }
+@media (max-width:1050px) {
+  #camino .focus-editorial-layout { grid-template-columns:1fr; gap:52px; }
+  #camino .focus-editorial-intro { max-width:760px; }
+  #camino .focus-editorial-path { max-width:760px; }
+  #camino .focus-editorial-branch { right:-8%; opacity:.32; }
+}
+@media (max-width:760px) {
+  #camino.focus-editorial-v2 { padding-top:62px !important; padding-bottom:72px !important; }
+  #camino.focus-editorial-v2::before { right:-55%; width:120vw; opacity:.38; }
+  #camino .focus-editorial-intro h2 { font-size:clamp(3.15rem,14.5vw,4.7rem); line-height:.94; }
+  #camino .focus-editorial-lead { margin-top:25px; font-size:1rem; }
+  #camino .focus-editorial-heartline { margin:24px 0 22px; width:170px; }
+  #camino .focus-editorial-note { font-size:.95rem; }
+  #camino .focus-editorial-quote { margin-top:28px; font-size:1.18rem; }
+  #camino .focus-editorial-path { gap:0; }
+  #camino .focus-editorial-path::before { left:29px; top:50px; bottom:50px; }
+  #camino .focus-editorial-step { grid-template-columns:60px minmax(0,1fr); gap:18px; padding:28px 0 30px; }
+  #camino .focus-editorial-number { width:58px; height:58px; font-size:1.35rem; }
+  #camino .focus-editorial-step-copy { padding-top:0; }
+  #camino .focus-editorial-step h3 { font-size:1.7rem; }
+  #camino .focus-editorial-step p { font-size:.93rem; line-height:1.62; }
+  #camino .focus-editorial-dots { right:-5%; top:2%; width:95px; height:80px; background-size:16px 16px; }
+  #camino .focus-editorial-branch { display:none; }
+}
+</style>
+
+
+<style id="final-enfoque-mobile-filter-fixes">
+/* Refinamiento final de Mi enfoque */
+@media (min-width: 901px) {
+  #enfoque .focus-flower,
+  #enfoque .enfoque-flower,
+  #enfoque .decorative-flower {
+    right: -3.5rem !important;
+    transform: scale(.76) !important;
+    transform-origin: right center !important;
+    opacity: .30 !important;
+    pointer-events: none !important;
+  }
+
+  #enfoque .focus-dots,
+  #enfoque .enfoque-dots,
+  #enfoque .decorative-dots {
+    display: none !important;
+  }
+
+  #enfoque .focus-number,
+  #enfoque .enfoque-number,
+  #enfoque [class*="number-circle"] {
+    transform: scale(.86);
+  }
+}
+
+/* Evita que cualquier decoración interfiera con el contenido */
+#enfoque svg,
+#enfoque .focus-flower,
+#enfoque .enfoque-flower,
+#enfoque .decorative-flower {
+  pointer-events: none;
+}
+
+/* Filtro móvil robusto: solo se muestra la categoría activa */
+@media (max-width: 900px) {
+  body[data-project-filter="robotica"] [data-project-category]:not([data-project-category~="robotica"]),
+  body[data-project-filter="salud"] [data-project-category]:not([data-project-category~="salud"]) {
+    display: none !important;
+  }
+
+  body[data-project-filter="todos"] [data-project-category],
+  body:not([data-project-filter]) [data-project-category] {
+    display: block;
+  }
+}
+</style>
+<script id="final-project-filter-fix">
+document.addEventListener("DOMContentLoaded", function () {
+  const normalize = (s) => (s || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim();
+
+  const projectSection =
+    document.querySelector("#proyectos") ||
+    document.querySelector('[id*="proyect"]');
+
+  if (!projectSection) return;
+
+  const buttons = Array.from(projectSection.querySelectorAll("button, [role='button'], a"))
+    .filter(el => ["todos", "robotica", "salud"].includes(normalize(el.textContent)));
+
+  if (!buttons.length) return;
+
+  /* Detecta las tres piezas principales por su contenido y les asigna categoría explícita. */
+  const candidates = Array.from(projectSection.querySelectorAll(
+    "article, .project, .project-card, .project-item, .proyecto, .proyecto-card, .project-featured, .project-detail"
+  ));
+
+  function bestContainerFor(text) {
+    const nodes = Array.from(projectSection.querySelectorAll("h1,h2,h3,h4,h5"));
+    const heading = nodes.find(n => normalize(n.textContent).includes(normalize(text)));
+    if (!heading) return null;
+    return heading.closest("article, .project, .project-card, .project-item, .proyecto, .proyecto-card, .project-featured, .project-detail")
+      || heading.parentElement;
+  }
+
+  const robotics = bestContainerFor("RAS 3D PrintBot");
+  const pulse = bestContainerFor("Prototipo óptico de pulso");
+  const dispenser = bestContainerFor("Dosificador de medicamentos");
+
+  if (robotics) robotics.setAttribute("data-project-category", "robotica");
+  if (pulse) pulse.setAttribute("data-project-category", "salud");
+  if (dispenser) dispenser.setAttribute("data-project-category", "salud");
+
+  const projects = [robotics, pulse, dispenser].filter(Boolean);
+
+  function applyFilter(filter) {
+    document.body.dataset.projectFilter = filter;
+
+    projects.forEach(project => {
+      const cats = (project.getAttribute("data-project-category") || "").split(/\s+/);
+      const show = filter === "todos" || cats.includes(filter);
+      project.hidden = !show;
+      project.style.setProperty("display", show ? "" : "none", show ? "" : "important");
+    });
+
+    buttons.forEach(btn => {
+      const active = normalize(btn.textContent) === filter;
+      btn.classList.toggle("active", active);
+      btn.classList.toggle("is-active", active);
+      btn.setAttribute("aria-pressed", active ? "true" : "false");
+    });
+  }
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", function (event) {
+      const filter = normalize(btn.textContent);
+      if (!["todos", "robotica", "salud"].includes(filter)) return;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      applyFilter(filter);
+    }, true);
+  });
+
+  applyFilter("todos");
+});
+</script>
+
+
+<style id="mi-enfoque-manchas-asimetricas-v3">
+/* =========================================================
+   MI ENFOQUE — composición editorial con manchas asimétricas
+   ========================================================= */
+
+#camino.focus-blob-v3 {
+  position: relative;
+  isolation: isolate;
+  min-height: auto !important;
+  overflow: hidden !important;
+  padding-top: clamp(78px, 6.4vw, 104px) !important;
+  padding-bottom: clamp(84px, 7vw, 112px) !important;
+  background:
+    radial-gradient(circle at 8% 78%, rgba(240, 222, 249, .22), transparent 28rem),
+    radial-gradient(circle at 93% 84%, rgba(248, 221, 236, .22), transparent 27rem),
+    linear-gradient(180deg, #fffefe 0%, #fffdfd 66%, #fffafd 100%) !important;
+}
+
+#camino.focus-blob-v3::before {
+  content: "";
+  position: absolute;
+  z-index: -3;
+  left: -15%;
+  top: -8%;
+  width: min(58vw, 900px);
+  height: 112%;
+  border-radius: 43% 57% 52% 48% / 37% 48% 52% 63%;
+  background:
+    radial-gradient(circle at 40% 28%, rgba(239, 229, 251, .72), transparent 47%),
+    linear-gradient(145deg, rgba(245, 236, 252, .72), rgba(251, 234, 244, .38));
+  transform: rotate(-7deg);
+  opacity: .88;
+  pointer-events: none;
+}
+
+#camino.focus-blob-v3::after {
+  content: "";
+  position: absolute;
+  z-index: -4;
+  right: -14%;
+  bottom: -22%;
+  width: min(42vw, 640px);
+  aspect-ratio: 1.05;
+  border-radius: 60% 40% 45% 55% / 44% 61% 39% 56%;
+  background: linear-gradient(145deg, rgba(232, 217, 250, .36), rgba(250, 221, 237, .38));
+  transform: rotate(9deg);
+  pointer-events: none;
+}
+
+#camino .focus-blob-v3-shell {
+  position: relative;
+  z-index: 2;
+}
+
+#camino .focus-blob-v3-layout {
+  display: grid;
+  grid-template-columns: minmax(350px, .82fr) minmax(560px, 1.18fr);
+  gap: clamp(66px, 7.6vw, 124px);
+  align-items: center;
+}
+
+#camino .focus-blob-v3-intro {
+  position: relative;
+  z-index: 3;
+  max-width: 590px;
+}
+
+#camino .focus-blob-v3-intro .tag {
+  margin-bottom: 28px;
+}
+
+#camino .focus-blob-v3-intro h2 {
+  max-width: 590px;
+  margin: 0;
+  color: #262249;
+  font-size: clamp(4.15rem, 5.75vw, 6.15rem);
+  line-height: .88;
+  letter-spacing: -.055em;
+}
+
+#camino .focus-blob-v3-title-line {
+  display: block;
+  width: 38px;
+  height: 2px;
+  margin: 31px 0 26px;
+  background: linear-gradient(90deg, #8867d1, #cc79b1);
+}
+
+#camino .focus-blob-v3-lead {
+  max-width: 520px;
+  margin: 0;
+  color: #4e4968;
+  font-size: clamp(1.02rem, 1.28vw, 1.15rem);
+  line-height: 1.78;
+}
+
+#camino .focus-blob-v3-quote {
+  position: relative;
+  max-width: 500px;
+  margin: 56px 0 0;
+  padding: 0 0 0 46px;
+  color: #5d5375;
+  background: transparent;
+  border: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.35rem, 1.85vw, 1.68rem);
+  font-style: italic;
+  line-height: 1.36;
+}
+
+#camino .focus-blob-v3-quote::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 2px;
+  height: calc(100% - 10px);
+  background: linear-gradient(180deg, #9a76d7, #d486b9);
+}
+
+#camino .focus-blob-v3-quote em {
+  color: #b568ad;
+  font-style: italic;
+}
+
+#camino .focus-blob-v3-areas {
+  position: relative;
+  display: grid;
+  gap: clamp(15px, 1.8vw, 26px);
+  min-width: 0;
+}
+
+#camino .focus-blob-v3-area {
+  position: relative;
+  min-height: 190px;
+  display: flex;
+  align-items: center;
+  padding: 31px clamp(36px, 4.3vw, 68px) 32px clamp(94px, 8vw, 132px);
+  overflow: visible;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+/* Las “tarjetas” pasan a ser manchas orgánicas, distintas entre sí. */
+#camino .focus-blob-v3-area::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 4px 0;
+  background:
+    radial-gradient(circle at 24% 20%, rgba(244, 237, 253, .90), transparent 44%),
+    linear-gradient(135deg, rgba(239, 230, 250, .68), rgba(255, 247, 252, .68));
+  opacity: .80;
+  pointer-events: none;
+}
+
+#camino .focus-blob-v3-robotica::before {
+  left: 2%;
+  right: 3%;
+  border-radius: 58% 42% 54% 46% / 45% 60% 40% 55%;
+  transform: rotate(-1.6deg);
+}
+
+#camino .focus-blob-v3-ia::before {
+  left: 4%;
+  right: 0;
+  border-radius: 44% 56% 62% 38% / 56% 43% 57% 44%;
+  background:
+    radial-gradient(circle at 74% 30%, rgba(248, 232, 244, .66), transparent 46%),
+    linear-gradient(138deg, rgba(241, 232, 251, .72), rgba(255, 249, 252, .62));
+  transform: rotate(1.1deg);
+}
+
+#camino .focus-blob-v3-proposito::before {
+  left: 0;
+  right: 5%;
+  border-radius: 53% 47% 41% 59% / 42% 57% 43% 58%;
+  background:
+    radial-gradient(circle at 25% 70%, rgba(231, 219, 249, .62), transparent 44%),
+    linear-gradient(135deg, rgba(244, 233, 251, .72), rgba(253, 239, 247, .58));
+  transform: rotate(-.8deg);
+}
+
+#camino .focus-blob-v3-marker {
+  position: absolute;
+  z-index: 2;
+  left: 26px;
+  top: 50%;
+  width: 62px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(144, 105, 204, .18), #8b67cf);
+  transform: translateY(-50%);
+}
+
+#camino .focus-blob-v3-marker::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: 50%;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #8a65cf;
+  box-shadow: 0 0 0 5px rgba(138,101,207,.08);
+  transform: translate(50%, -50%);
+}
+
+#camino .focus-blob-v3-copy {
+  position: relative;
+  z-index: 3;
+  max-width: 650px;
+}
+
+#camino .focus-blob-v3-copy small {
+  display: block;
+  margin-bottom: 10px;
+  color: #7d60c1;
+  font-size: .74rem;
+  font-weight: 800;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+}
+
+#camino .focus-blob-v3-copy h3 {
+  margin: 0;
+  color: #252148;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.85rem, 2.35vw, 2.48rem);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -.026em;
+}
+
+#camino .focus-blob-v3-line {
+  display: block;
+  width: 34px;
+  height: 2px;
+  margin: 16px 0 14px;
+  background: linear-gradient(90deg, #8764cf, #d17db2);
+}
+
+#camino .focus-blob-v3-copy p {
+  max-width: 610px;
+  margin: 0;
+  color: #5a546e;
+  font-size: .98rem;
+  line-height: 1.66;
+}
+
+#camino .focus-blob-v3-dots {
+  position: absolute;
+  z-index: 0;
+  right: 1%;
+  top: 3%;
+  width: 120px;
+  height: 105px;
+  opacity: .24;
+  background-image: radial-gradient(circle, #9a79d5 1.8px, transparent 2.2px);
+  background-size: 18px 18px;
+  pointer-events: none;
+}
+
+#camino .focus-blob-v3-branch {
+  position: absolute;
+  z-index: 0;
+  right: -4.5%;
+  bottom: -8%;
+  width: 180px;
+  height: 440px;
+  color: #9a76d4;
+  opacity: .28;
+  pointer-events: none;
+}
+
+#camino .focus-blob-v3-branch path,
+#camino .focus-blob-v3-branch ellipse {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.55;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+#camino .focus-blob-v3-branch ellipse {
+  fill: rgba(188,155,228,.08);
+}
+
+/* Tablet */
+@media (max-width: 1080px) {
+  #camino .focus-blob-v3-layout {
+    grid-template-columns: 1fr;
+    gap: 54px;
+  }
+
+  #camino .focus-blob-v3-intro {
+    max-width: 760px;
+  }
+
+  #camino .focus-blob-v3-intro h2,
+  #camino .focus-blob-v3-lead {
+    max-width: 700px;
+  }
+
+  #camino .focus-blob-v3-areas {
+    width: min(100%, 820px);
+    margin-left: auto;
+  }
+
+  #camino.focus-blob-v3::before {
+    width: 95vw;
+    height: 56%;
+    left: -30%;
+  }
+}
+
+/* Móvil: un solo scroll general, sin alturas fijas ni overflow interno */
+@media (max-width: 760px) {
+  #camino.focus-blob-v3 {
+    overflow: hidden !important;
+    padding-top: 62px !important;
+    padding-bottom: 72px !important;
+  }
+
+  #camino.focus-blob-v3::before {
+    left: -68%;
+    top: -5%;
+    width: 150vw;
+    height: 52%;
+    opacity: .62;
+  }
+
+  #camino.focus-blob-v3::after {
+    right: -60%;
+    bottom: -10%;
+    width: 120vw;
+    opacity: .42;
+  }
+
+  #camino .focus-blob-v3-layout {
+    display: block;
+  }
+
+  #camino .focus-blob-v3-intro {
+    max-width: 100%;
+  }
+
+  #camino .focus-blob-v3-intro .tag {
+    margin-bottom: 22px;
+  }
+
+  #camino .focus-blob-v3-intro h2 {
+    font-size: clamp(3.25rem, 15vw, 4.7rem);
+    line-height: .91;
+  }
+
+  #camino .focus-blob-v3-title-line {
+    margin: 25px 0 21px;
+  }
+
+  #camino .focus-blob-v3-lead {
+    font-size: .98rem;
+    line-height: 1.68;
+  }
+
+  #camino .focus-blob-v3-quote {
+    margin-top: 34px;
+    padding-left: 28px;
+    font-size: 1.22rem;
+  }
+
+  #camino .focus-blob-v3-areas {
+    width: 100%;
+    margin-top: 48px;
+    gap: 17px;
+  }
+
+  #camino .focus-blob-v3-area {
+    min-height: 0;
+    padding: 30px 22px 31px 56px;
+  }
+
+  #camino .focus-blob-v3-area::before {
+    inset: 0 -8px;
+    opacity: .78;
+  }
+
+  #camino .focus-blob-v3-robotica::before {
+    border-radius: 58% 42% 52% 48% / 30% 58% 42% 70%;
+  }
+
+  #camino .focus-blob-v3-ia::before {
+    border-radius: 44% 56% 60% 40% / 61% 37% 63% 39%;
+  }
+
+  #camino .focus-blob-v3-proposito::before {
+    border-radius: 60% 40% 43% 57% / 45% 66% 34% 55%;
+  }
+
+  #camino .focus-blob-v3-marker {
+    left: 10px;
+    width: 28px;
+  }
+
+  #camino .focus-blob-v3-marker::after {
+    width: 10px;
+    height: 10px;
+  }
+
+  #camino .focus-blob-v3-copy small {
+    font-size: .67rem;
+    letter-spacing: .14em;
+  }
+
+  #camino .focus-blob-v3-copy h3 {
+    font-size: 1.72rem;
+    line-height: 1.05;
+  }
+
+  #camino .focus-blob-v3-copy p {
+    font-size: .92rem;
+    line-height: 1.6;
+  }
+
+  #camino .focus-blob-v3-dots {
+    right: -8%;
+    top: 1%;
+    width: 82px;
+    height: 72px;
+    opacity: .18;
+    background-size: 15px 15px;
+  }
+
+  #camino .focus-blob-v3-branch {
+    display: none;
+  }
+}
+</style>
+
+
+<style id="mi-enfoque-manchas-compactas-final">
+/* =========================================================
+   AJUSTE FINAL — Mi enfoque más compacto en escritorio
+   ========================================================= */
+
+@media (min-width: 1081px) {
+  #camino.focus-blob-v3 {
+    padding-top: clamp(62px, 4.8vw, 78px) !important;
+    padding-bottom: clamp(68px, 5vw, 84px) !important;
+  }
+
+  #camino .focus-blob-v3-layout {
+    grid-template-columns: minmax(340px, .80fr) minmax(560px, 1.20fr) !important;
+    gap: clamp(54px, 6vw, 92px) !important;
+    align-items: start !important;
+  }
+
+  #camino .focus-blob-v3-intro {
+    padding-top: 30px !important;
+  }
+
+  #camino .focus-blob-v3-intro .tag {
+    margin-bottom: 24px !important;
+  }
+
+  #camino .focus-blob-v3-intro h2 {
+    font-size: clamp(3.9rem, 5.15vw, 5.55rem) !important;
+    line-height: .90 !important;
+  }
+
+  #camino .focus-blob-v3-title-line {
+    margin: 25px 0 21px !important;
+  }
+
+  #camino .focus-blob-v3-lead {
+    max-width: 500px !important;
+    font-size: 1.02rem !important;
+    line-height: 1.68 !important;
+  }
+
+  #camino .focus-blob-v3-quote {
+    max-width: 470px !important;
+    margin-top: 40px !important;
+    font-size: 1.42rem !important;
+    line-height: 1.28 !important;
+  }
+
+  #camino .focus-blob-v3-areas {
+    gap: 8px !important;
+    padding-top: 0 !important;
+  }
+
+  #camino .focus-blob-v3-area {
+    min-height: 156px !important;
+    padding-top: 23px !important;
+    padding-bottom: 23px !important;
+    padding-left: clamp(86px, 7vw, 112px) !important;
+    padding-right: clamp(30px, 3.6vw, 54px) !important;
+  }
+
+  #camino .focus-blob-v3-area::before {
+    inset: 5px 0 !important;
+  }
+
+  #camino .focus-blob-v3-copy small {
+    margin-bottom: 7px !important;
+    font-size: .69rem !important;
+  }
+
+  #camino .focus-blob-v3-copy h3 {
+    font-size: clamp(1.62rem, 1.9vw, 2.06rem) !important;
+    line-height: 1.03 !important;
+  }
+
+  #camino .focus-blob-v3-line {
+    width: 30px !important;
+    margin: 11px 0 10px !important;
+  }
+
+  #camino .focus-blob-v3-copy p {
+    font-size: .91rem !important;
+    line-height: 1.55 !important;
+  }
+
+  #camino .focus-blob-v3-marker {
+    left: 20px !important;
+    width: 54px !important;
+  }
+
+  #camino .focus-blob-v3-marker::after {
+    width: 11px !important;
+    height: 11px !important;
+  }
+
+  /* La ilustración deja de competir con la tercera mancha */
+  #camino .focus-blob-v3-branch {
+    right: -5.5% !important;
+    bottom: -15% !important;
+    width: 150px !important;
+    height: 360px !important;
+    opacity: .20 !important;
+  }
+
+  #camino .focus-blob-v3-dots {
+    right: 0 !important;
+    top: 2% !important;
+    opacity: .18 !important;
+  }
+
+  /* Reduce ligeramente las masas de fondo para que la sección respire más */
+  #camino.focus-blob-v3::before {
+    width: min(54vw, 820px) !important;
+    height: 104% !important;
+    left: -14% !important;
+    top: -6% !important;
+  }
+
+  #camino.focus-blob-v3::after {
+    right: -17% !important;
+    bottom: -26% !important;
+    width: min(38vw, 560px) !important;
+    opacity: .74 !important;
+  }
+}
+
+/* Escritorios medianos: evita que la tercera mancha quede cortada */
+@media (min-width: 1081px) and (max-height: 850px) {
+  #camino.focus-blob-v3 {
+    padding-top: 54px !important;
+    padding-bottom: 58px !important;
+  }
+
+  #camino .focus-blob-v3-intro {
+    padding-top: 18px !important;
+  }
+
+  #camino .focus-blob-v3-intro h2 {
+    font-size: clamp(3.55rem, 4.7vw, 4.95rem) !important;
+  }
+
+  #camino .focus-blob-v3-lead {
+    line-height: 1.58 !important;
+  }
+
+  #camino .focus-blob-v3-quote {
+    margin-top: 30px !important;
+  }
+
+  #camino .focus-blob-v3-area {
+    min-height: 142px !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+
+  #camino .focus-blob-v3-areas {
+    gap: 4px !important;
+  }
+}
+</style>
+
+
+<style id="mi-enfoque-refinado-final">
+/* =========================================================
+   MI ENFOQUE — refinamiento visual final
+   ========================================================= */
+
+@media (min-width: 1081px) {
+  /* 1) Título en dos líneas intencionales */
+  #camino .focus-blob-v3-intro h2 {
+    max-width: 560px !important;
+  }
+
+  #camino .focus-blob-v3-intro h2 .grad {
+    display: block !important;
+    width: max-content;
+    max-width: 100%;
+    margin-top: .04em;
+    padding-right: .05em;
+  }
+
+  /* 2) Equilibra verticalmente la columna izquierda */
+  #camino .focus-blob-v3-layout {
+    align-items: center !important;
+  }
+
+  #camino .focus-blob-v3-intro {
+    padding-top: 14px !important;
+    transform: translateY(10px);
+  }
+
+  #camino .focus-blob-v3-quote {
+    margin-top: 36px !important;
+  }
+
+  /* 3) Manchas más orgánicas y diferentes entre sí */
+  #camino .focus-blob-v3-robotica::before {
+    left: -1% !important;
+    right: 5% !important;
+    top: 4px !important;
+    bottom: 5px !important;
+    border-radius: 64% 36% 58% 42% / 44% 62% 38% 56% !important;
+    transform: rotate(-2.2deg) !important;
+  }
+
+  #camino .focus-blob-v3-ia::before {
+    left: 5% !important;
+    right: -1% !important;
+    top: 3px !important;
+    bottom: 4px !important;
+    border-radius: 42% 58% 66% 34% / 58% 38% 62% 42% !important;
+    transform: rotate(1.7deg) !important;
+  }
+
+  #camino .focus-blob-v3-proposito::before {
+    left: 1% !important;
+    right: 10% !important;
+    top: 5px !important;
+    bottom: 4px !important;
+    border-radius: 59% 41% 43% 57% / 39% 63% 37% 61% !important;
+    transform: rotate(-1.5deg) !important;
+  }
+
+  /* 4) Conectores mucho más sutiles */
+  #camino .focus-blob-v3-marker {
+    left: 28px !important;
+    width: 42px !important;
+    height: .75px !important;
+    opacity: .62 !important;
+    background: linear-gradient(
+      90deg,
+      rgba(145, 108, 202, .08),
+      rgba(132, 94, 199, .62)
+    ) !important;
+  }
+
+  #camino .focus-blob-v3-marker::after {
+    width: 8px !important;
+    height: 8px !important;
+    background: rgba(126, 86, 200, .78) !important;
+    box-shadow: 0 0 0 4px rgba(138, 101, 207, .055) !important;
+  }
+
+  /* 5) Más aire para los títulos largos */
+  #camino .focus-blob-v3-area {
+    padding-left: clamp(84px, 6.8vw, 106px) !important;
+    padding-right: clamp(22px, 2.7vw, 42px) !important;
+  }
+
+  #camino .focus-blob-v3-copy {
+    max-width: 700px !important;
+  }
+
+  #camino .focus-blob-v3-copy h3 {
+    max-width: 680px !important;
+    font-size: clamp(1.56rem, 1.82vw, 1.98rem) !important;
+    line-height: 1.035 !important;
+  }
+
+  #camino .focus-blob-v3-copy p {
+    max-width: 650px !important;
+  }
+
+  /* 6) Planta como decoración ambiental, casi fuera del lienzo */
+  #camino .focus-blob-v3-branch {
+    right: -8.5% !important;
+    bottom: -22% !important;
+    width: 138px !important;
+    height: 330px !important;
+    opacity: .13 !important;
+  }
+
+  /* Los puntos también pasan a segundo plano */
+  #camino .focus-blob-v3-dots {
+    right: -1.5% !important;
+    opacity: .11 !important;
+  }
+}
+
+/* Alturas de escritorio más pequeñas */
+@media (min-width: 1081px) and (max-height: 850px) {
+  #camino .focus-blob-v3-intro {
+    transform: translateY(2px);
+  }
+
+  #camino .focus-blob-v3-intro h2 {
+    max-width: 525px !important;
+  }
+
+  #camino .focus-blob-v3-area {
+    min-height: 138px !important;
+  }
+
+  #camino .focus-blob-v3-copy h3 {
+    font-size: clamp(1.48rem, 1.72vw, 1.88rem) !important;
+  }
+
+  #camino .focus-blob-v3-quote {
+    margin-top: 28px !important;
+  }
+}
+
+/* Móvil: conserva el título en una composición natural sin forzar desbordes */
+@media (max-width: 760px) {
+  #camino .focus-blob-v3-intro h2 .grad {
+    display: block;
+    width: max-content;
+    max-width: 100%;
+  }
+
+  #camino .focus-blob-v3-marker {
+    width: 22px !important;
+    opacity: .48 !important;
+  }
+
+  #camino .focus-blob-v3-marker::after {
+    width: 7px !important;
+    height: 7px !important;
+    box-shadow: 0 0 0 3px rgba(138,101,207,.05) !important;
+  }
+}
 </style>
 
 </head>
@@ -16675,48 +17787,90 @@ body {
 </div>
 </div>
 </section>
-<section class="screen content-screen focus-studio-section" data-title="Mi enfoque" id="camino">
-<div aria-hidden="true" class="section-transition-soft"></div>
-<div class="screen-inner focus-studio-inner">
-<div class="focus-studio-layout">
-<header class="focus-studio-intro">
-<div class="tag reveal">Por qué este camino</div>
-<h2 class="reveal">Del código a la <span class="grad">vida real.</span></h2>
-<p class="focus-studio-deck reveal delay-1">Estas áreas se complementan en mi forma de entender la ingeniería: construir sistemas, interpretar información y orientar ese trabajo hacia necesidades humanas concretas.</p>
-<div class="focus-studio-quote reveal delay-2">
-<span aria-hidden="true"></span>
-<p>Tecnología que observa, interpreta y actúa con <em>propósito.</em></p>
-</div>
-</header>
-<div aria-label="Áreas que orientan mi trabajo" class="focus-studio-layers reveal delay-1">
-<article class="focus-studio-item focus-studio-robotics">
-<span class="focus-studio-action">Construir</span>
-<div>
-<small>Robótica</small>
-<h3>Convertir ideas en sistemas que actúan</h3>
-<p>Integra código, electrónica, sensores y control para crear sistemas capaces de moverse, interactuar y responder en el mundo real.</p>
-</div>
-</article>
-<article class="focus-studio-item focus-studio-intelligence">
-<span class="focus-studio-action">Interpretar</span>
-<div>
-<small>Inteligencia computacional</small>
-<h3>Encontrar patrones que no siempre son visibles</h3>
-<p>Me interesa por sus aplicaciones en medicina, como imágenes médicas, señales biomédicas, detección temprana y monitoreo remoto.</p>
-</div>
-</article>
-<article class="focus-studio-item focus-studio-purpose">
-<span class="focus-studio-action">Orientar</span>
-<div>
-<small>Propósito</small>
-<h3>Usar la tecnología para disminuir una carga real</h3>
-<p>Quiero que mi trabajo ayude a las personas, especialmente a quienes enfrentan una enfermedad con menos apoyo y mayores barreras.</p>
-</div>
-</article>
-</div>
-</div>
-</div>
+
+<section class="screen content-screen focus-blob-v3" data-title="Mi enfoque" id="camino">
+  <div aria-hidden="true" class="focus-blob-v3-transition"></div>
+
+  <div class="screen-inner focus-blob-v3-shell">
+    <div aria-hidden="true" class="focus-blob-v3-dots"></div>
+
+    <svg aria-hidden="true" class="focus-blob-v3-branch" viewBox="0 0 210 520">
+      <path d="M32 500C70 439 91 376 101 305C111 229 132 154 178 54"></path>
+      <path d="M92 366C67 354 49 334 38 308"></path>
+      <path d="M103 302C132 289 153 266 166 235"></path>
+      <path d="M115 231C91 213 76 188 71 157"></path>
+      <path d="M140 140C163 127 179 107 188 82"></path>
+      <ellipse cx="34" cy="296" rx="11" ry="27" transform="rotate(-30 34 296)"></ellipse>
+      <ellipse cx="171" cy="221" rx="11" ry="29" transform="rotate(33 171 221)"></ellipse>
+      <ellipse cx="67" cy="145" rx="10" ry="26" transform="rotate(-19 67 145)"></ellipse>
+      <ellipse cx="191" cy="68" rx="9" ry="24" transform="rotate(27 191 68)"></ellipse>
+    </svg>
+
+    <div class="focus-blob-v3-layout">
+      <header class="focus-blob-v3-intro">
+        <div class="tag reveal">Por qué este camino</div>
+
+        <h2 class="reveal">
+          Del código a la <span class="grad">vida real.</span>
+        </h2>
+
+        <span aria-hidden="true" class="focus-blob-v3-title-line"></span>
+
+        <p class="focus-blob-v3-lead reveal delay-1">
+          Estas áreas se complementan en mi forma de entender la ingeniería:
+          construir sistemas, interpretar información y orientar ese trabajo
+          hacia necesidades humanas concretas.
+        </p>
+
+        <blockquote class="focus-blob-v3-quote reveal delay-2">
+          Tecnología que observa, interpreta y actúa con <em>propósito.</em>
+        </blockquote>
+      </header>
+
+      <div aria-label="Áreas que orientan mi trabajo" class="focus-blob-v3-areas">
+        <article class="focus-blob-v3-area focus-blob-v3-robotica reveal delay-1">
+          <span aria-hidden="true" class="focus-blob-v3-marker"></span>
+          <div class="focus-blob-v3-copy">
+            <small>Robótica</small>
+            <h3>Convertir ideas en sistemas que actúan</h3>
+            <span aria-hidden="true" class="focus-blob-v3-line"></span>
+            <p>
+              Integrar código, electrónica, sensores y control para crear sistemas
+              capaces de moverse, interactuar y responder en el mundo real.
+            </p>
+          </div>
+        </article>
+
+        <article class="focus-blob-v3-area focus-blob-v3-ia reveal delay-1">
+          <span aria-hidden="true" class="focus-blob-v3-marker"></span>
+          <div class="focus-blob-v3-copy">
+            <small>Inteligencia computacional</small>
+            <h3>Encontrar patrones que no siempre son visibles</h3>
+            <span aria-hidden="true" class="focus-blob-v3-line"></span>
+            <p>
+              Me interesa por sus aplicaciones en medicina, como imágenes médicas,
+              señales biomédicas, detección temprana y monitoreo remoto.
+            </p>
+          </div>
+        </article>
+
+        <article class="focus-blob-v3-area focus-blob-v3-proposito reveal delay-2">
+          <span aria-hidden="true" class="focus-blob-v3-marker"></span>
+          <div class="focus-blob-v3-copy">
+            <small>Propósito</small>
+            <h3>Usar la tecnología para disminuir una carga real</h3>
+            <span aria-hidden="true" class="focus-blob-v3-line"></span>
+            <p>
+              Quiero que mi trabajo ayude a las personas, especialmente a quienes
+              enfrentan una enfermedad con menos apoyo y mayores barreras.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
 </section>
+
 <section class="screen content-screen ieee-door-section" data-title="IEEE RAS" id="ieee">
 <div aria-hidden="true" class="section-transition-soft"></div>
 <div class="screen-inner ieee-door-shell">
