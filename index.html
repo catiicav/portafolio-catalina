@@ -14672,6 +14672,89 @@ main > section.screen > .screen-inner {
   font-size: 17px !important;
   line-height: 1.55 !important;
 }
+
+
+/* =========================================================
+   SCROLL NATIVO DEFINITIVO · WEB + MÓVIL
+   ========================================================= */
+
+/*
+  IMPORTANTE:
+  overflow-x:hidden junto a overflow-y:visible hace que "visible"
+  se compute como "auto". Al aplicarlo simultáneamente a html y body,
+  pueden aparecer dos superficies de desplazamiento.
+
+  overflow-x:clip corta únicamente el desborde horizontal sin convertir
+  html/body en contenedores de scroll.
+*/
+html,
+body {
+  height: auto !important;
+  min-height: 100% !important;
+  max-height: none !important;
+  overflow-x: clip !important;
+  overflow-y: visible !important;
+  overscroll-behavior-y: auto !important;
+}
+
+html {
+  scroll-behavior: smooth !important;
+  scrollbar-gutter: auto !important;
+}
+
+body {
+  position: static !important;
+  inset: auto !important;
+  width: 100% !important;
+}
+
+/* En móvil se evita el scroll programático suave. */
+@media (max-width: 1024px) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  /* El header sticky permanece dentro del único flujo desplazable. */
+  .topbar {
+    position: sticky !important;
+    top: 0 !important;
+  }
+
+  /* Ninguna sección crea su propio scroll vertical. */
+  main,
+  section,
+  .screen,
+  .screen-inner {
+    height: auto !important;
+    max-height: none !important;
+    overflow-y: visible !important;
+  }
+}
+
+/* En escritorio el header sigue fijo como en el diseño original. */
+@media (min-width: 1025px) {
+  .topbar {
+    position: fixed !important;
+    inset: 0 0 auto !important;
+  }
+}
+
+/* Solo los modales abiertos bloquean el fondo en escritorio. */
+@media (min-width: 1025px) {
+  body.lightbox-open,
+  body.project-detail-open {
+    overflow: hidden !important;
+  }
+}
+
+/* En móvil nunca se bloquea el documento por un modal. */
+@media (max-width: 1024px) {
+  body.lightbox-open,
+  body.project-detail-open {
+    overflow-y: visible !important;
+    overflow-x: clip !important;
+  }
+}
 </style></head>
 <body>
 <div class="progress-bar" id="progressBar"></div>
@@ -15182,8 +15265,8 @@ y liderazgo.
   const updateProgress = () => {
     progressFrame = 0;
     if (!progressBar || window.matchMedia('(max-width: 1024px)').matches) return;
-    const root = document.documentElement;
-    const winScroll = root.scrollTop || document.body.scrollTop;
+    const root = document.scrollingElement || document.documentElement;
+    const winScroll = root.scrollTop;
     const height = root.scrollHeight - root.clientHeight;
     progressBar.style.width = height > 0 ? `${(winScroll / height) * 100}%` : '0%';
   };
@@ -15674,6 +15757,31 @@ y liderazgo.
 
   window.addEventListener('load', clearStalePageLocks, { once: true, passive: true });
   window.addEventListener('pageshow', clearStalePageLocks, { passive: true });
+})();
+
+
+;(() => {
+  const restoreNativeScroll = () => {
+    const lightboxOpen = Boolean(document.querySelector('.gallery-lightbox.open'));
+    const projectOpen = Boolean(document.querySelector('.project-detail-modal.open'));
+
+    if (!lightboxOpen) document.body.classList.remove('lightbox-open');
+    if (!projectOpen) document.body.classList.remove('project-detail-open');
+
+    if (!lightboxOpen && !projectOpen) {
+      ['overflow', 'overflow-x', 'overflow-y', 'position', 'top', 'width', 'height']
+        .forEach(property => document.body.style.removeProperty(property));
+
+      ['overflow', 'overflow-x', 'overflow-y', 'height']
+        .forEach(property => document.documentElement.style.removeProperty(property));
+    }
+  };
+
+  window.addEventListener('pageshow', restoreNativeScroll, { passive: true });
+  window.addEventListener('orientationchange', restoreNativeScroll, { passive: true });
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) restoreNativeScroll();
+  });
 })();
 </script></body>
 </html>
