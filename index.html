@@ -26040,5 +26040,187 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 </style>
 
+
+<style id="catalina-mobile-correcciones-definitivas-2026-07-15">
+
+/* =========================================================
+   INICIO · continuidad visual y foto mejor integrada
+   ========================================================= */
+@media (max-width: 760px) {
+  #inicio.screen {
+    padding-top: var(--navh) !important;
+    margin-top: 0 !important;
+    background:
+      radial-gradient(circle at 76% 43%, rgba(242, 215, 237, .52), transparent 34%),
+      radial-gradient(circle at 45% 74%, rgba(224, 214, 250, .46), transparent 38%),
+      linear-gradient(180deg, #fff 0%, #fff 2%, #fbf8ff 16%, #fff8fc 100%) !important;
+  }
+
+  #inicio .screen-inner {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  #inicio .home-layout {
+    margin-top: -76px !important;
+    margin-bottom: -26px !important;
+    gap: 18px !important;
+  }
+
+  /* El botón nunca pierde el degradado en estados táctiles. */
+  #inicio .socials .btn,
+  #inicio .socials .btn:hover,
+  #inicio .socials .btn:focus,
+  #inicio .socials .btn:active,
+  #inicio .socials .btn:visited {
+    color: #fff !important;
+    background: linear-gradient(100deg, #7657dc 0%, #bd68ba 100%) !important;
+    box-shadow: 0 14px 30px rgba(119, 86, 196, .16) !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  /* Foto más pequeña y más conectada a redes/botón. */
+  #inicio .home-visual {
+    width: 100% !important;
+    margin: -18px auto 0 !important;
+  }
+
+  #inicio .hero-visual-reference {
+    width: min(82%, 430px) !important;
+    margin: 0 auto !important;
+  }
+}
+
+
+/* =========================================================
+   PROYECTOS · ROBÓTICA MÓVIL
+   La línea va SIEMPRE entre título y OBJETIVO.
+   La foto se oculta en la vista individual para evitar la franja lateral.
+   ========================================================= */
+@media (max-width: 760px) {
+  #proyectos .projects-editorial-grid[data-visible-count="1"]
+  > .project-e-card[data-project-key="printbot"]:not([hidden]) {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-areas: none !important;
+    grid-template-columns: none !important;
+    grid-template-rows: none !important;
+    overflow: visible !important;
+  }
+
+  #proyectos .projects-editorial-grid[data-visible-count="1"]
+  > .project-e-card[data-project-key="printbot"]:not([hidden])
+  > .project-e-top {
+    order: 1 !important;
+    grid-area: auto !important;
+  }
+
+  #proyectos .projects-editorial-grid[data-visible-count="1"]
+  > .project-e-card[data-project-key="printbot"]:not([hidden])
+  > .project-title-separator-stable {
+    order: 2 !important;
+    grid-area: auto !important;
+    position: static !important;
+    display: block !important;
+    width: 31px !important;
+    min-width: 31px !important;
+    max-width: 31px !important;
+    height: 2px !important;
+    min-height: 2px !important;
+    max-height: 2px !important;
+    flex: none !important;
+    margin: 18px 0 24px !important;
+  }
+
+  #proyectos .projects-editorial-grid[data-visible-count="1"]
+  > .project-e-card[data-project-key="printbot"]:not([hidden])
+  > .project-e-intro {
+    order: 3 !important;
+    grid-area: auto !important;
+  }
+
+  #proyectos .projects-editorial-grid[data-visible-count="1"]
+  > .project-e-card[data-project-key="printbot"]:not([hidden])
+  > .project-filter-extra {
+    order: 4 !important;
+    grid-area: auto !important;
+  }
+
+  #proyectos .projects-editorial-grid[data-visible-count="1"]
+  > .project-e-card[data-project-key="printbot"]:not([hidden])
+  > .project-e-list {
+    order: 5 !important;
+    grid-area: auto !important;
+  }
+
+  #proyectos .projects-editorial-grid[data-visible-count="1"]
+  > .project-e-card[data-project-key="printbot"]:not([hidden])
+  > .project-details-btn {
+    order: 6 !important;
+    grid-area: auto !important;
+    margin-top: 28px !important;
+  }
+
+  #proyectos .projects-editorial-grid[data-visible-count="1"]
+  > .project-e-card[data-project-key="printbot"]:not([hidden])
+  > .chips {
+    order: 7 !important;
+    grid-area: auto !important;
+  }
+
+  /* Quita la pequeña franja de imagen que se veía al costado. */
+  #proyectos .projects-editorial-grid[data-visible-count="1"]
+  > .project-e-card[data-project-key="printbot"]:not([hidden])
+  > .project-e-photo {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    position: static !important;
+    width: 0 !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+}
+
+
+/* =========================================================
+   CONTACTO · cierre real de la página
+   ========================================================= */
+@media (max-width: 760px) {
+  #contacto,
+  #contacto.contact-editorial-section,
+  #contacto.screen {
+    min-height: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+    padding-bottom: 32px !important;
+    margin-bottom: 0 !important;
+    overflow: hidden !important;
+  }
+
+  #contacto .contact-editorial-shell,
+  #contacto .contact-editorial-links {
+    min-height: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  #contacto::before,
+  #contacto::after {
+    max-height: 100% !important;
+    bottom: 0 !important;
+  }
+
+  body {
+    padding-bottom: 0 !important;
+  }
+}
+</style>
+
 </body>
 </html>
