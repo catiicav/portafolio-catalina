@@ -25862,5 +25862,183 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 </style>
 
+
+<style id="catalina-mobile-ajustes-puntuales-2026-07-15">
+
+/* =========================================================
+   1) INICIO · eliminar el gran vacío bajo el header
+   ========================================================= */
+@media (max-width: 760px) {
+  #inicio.screen {
+    padding-top: var(--navh) !important;
+    padding-bottom: 34px !important;
+  }
+
+  #inicio .screen-inner {
+    padding-top: 0 !important;
+  }
+
+  #inicio .home-layout {
+    margin-top: -58px !important;
+    margin-bottom: -18px !important;
+  }
+
+  #inicio .home-layout > div:first-child {
+    margin-top: 0 !important;
+  }
+}
+
+
+/* =========================================================
+   2) CONTACTO · flechas limpias con SVG, no caracteres/emoji
+   ========================================================= */
+.contact-editorial-link-action {
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px !important;
+  flex: 0 0 24px !important;
+  color: transparent !important;
+  font-size: 0 !important;
+  background: none !important;
+  overflow: visible !important;
+}
+
+.contact-editorial-link-action::before {
+  content: "" !important;
+  display: block !important;
+  position: static !important;
+  width: 20px !important;
+  height: 20px !important;
+  margin: 2px !important;
+  border: 0 !important;
+  background: #7b5bc4 !important;
+  -webkit-mask:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 17L17 7M9 7h8v8' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    center / contain no-repeat !important;
+  mask:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 17L17 7M9 7h8v8' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    center / contain no-repeat !important;
+}
+
+.contact-editorial-link-action::after {
+  display: none !important;
+  content: none !important;
+}
+
+
+/* =========================================================
+   3) GALERÍA · "Ver todas" sin flecha
+   ========================================================= */
+#galeria .gallery-view-all::after {
+  display: none !important;
+  content: none !important;
+}
+
+#galeria .gallery-view-all {
+  gap: 0 !important;
+}
+
+
+/* =========================================================
+   4) PROYECTOS · la línea siempre va justo después del título
+   también en la vista móvil de una sola categoría
+   ========================================================= */
+@media (max-width: 760px) {
+  #proyectos .projects-editorial-grid[data-visible-count="1"]
+  > .project-e-card:not([hidden]),
+  #proyectos .projects-editorial-grid[data-visible-count="2"]
+  > .project-e-card:not([hidden]) {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  #proyectos .projects-editorial-grid[data-visible-count="1"]
+  > .project-e-card:not([hidden]) > .project-e-top,
+  #proyectos .projects-editorial-grid[data-visible-count="2"]
+  > .project-e-card:not([hidden]) > .project-e-top {
+    order: 1 !important;
+  }
+
+  #proyectos .projects-editorial-grid[data-visible-count="1"]
+  > .project-e-card:not([hidden]) > .project-title-separator-stable,
+  #proyectos .projects-editorial-grid[data-visible-count="2"]
+  > .project-e-card:not([hidden]) > .project-title-separator-stable {
+    order: 2 !important;
+    margin: 18px 0 24px !important;
+  }
+
+  #proyectos .projects-editorial-grid[data-visible-count="1"]
+  > .project-e-card:not([hidden]) > .project-e-intro,
+  #proyectos .projects-editorial-grid[data-visible-count="2"]
+  > .project-e-card:not([hidden]) > .project-e-intro {
+    order: 3 !important;
+  }
+
+  #proyectos .projects-editorial-grid[data-visible-count="1"]
+  > .project-e-card:not([hidden]) > .project-filter-extra,
+  #proyectos .projects-editorial-grid[data-visible-count="2"]
+  > .project-e-card:not([hidden]) > .project-filter-extra {
+    order: 4 !important;
+  }
+
+  #proyectos .projects-editorial-grid[data-visible-count="1"]
+  > .project-e-card:not([hidden]) > .project-e-list,
+  #proyectos .projects-editorial-grid[data-visible-count="2"]
+  > .project-e-card:not([hidden]) > .project-e-list {
+    order: 5 !important;
+  }
+
+  #proyectos .projects-editorial-grid[data-visible-count="1"]
+  > .project-e-card:not([hidden]) > .project-e-photo,
+  #proyectos .projects-editorial-grid[data-visible-count="2"]
+  > .project-e-card:not([hidden]) > .project-e-photo {
+    order: 6 !important;
+  }
+
+  #proyectos .projects-editorial-grid[data-visible-count="1"]
+  > .project-e-card:not([hidden]) > .project-details-btn,
+  #proyectos .projects-editorial-grid[data-visible-count="2"]
+  > .project-e-card:not([hidden]) > .project-details-btn {
+    order: 7 !important;
+  }
+
+  #proyectos .projects-editorial-grid[data-visible-count="1"]
+  > .project-e-card:not([hidden]) > .chips,
+  #proyectos .projects-editorial-grid[data-visible-count="2"]
+  > .project-e-card:not([hidden]) > .chips {
+    order: 8 !important;
+  }
+}
+
+
+/* =========================================================
+   5) CONTACTO · eliminar vacío inferior
+   ========================================================= */
+@media (max-width: 760px) {
+  #contacto.contact-editorial-section {
+    display: block !important;
+    min-height: 0 !important;
+    height: auto !important;
+    padding-top: 56px !important;
+    padding-bottom: 26px !important;
+  }
+
+  #contacto .contact-editorial-shell {
+    min-height: 0 !important;
+    height: auto !important;
+    margin-bottom: 0 !important;
+  }
+
+  #contacto .contact-editorial-links {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  #contacto .contact-editorial-link:last-child {
+    margin-bottom: 0 !important;
+  }
+}
+</style>
+
 </body>
 </html>
