@@ -16212,6 +16212,151 @@ body {
     margin-top: 36px !important;
   }
 }
+
+
+/* =========================================================
+   FIX DEFINITIVO MÓVIL · BOTÓN + SCROLL NATIVO + MODALES
+   ========================================================= */
+@media (max-width: 1024px) {
+  /* 1) Un único scroll vertical: el documento. */
+  html,
+  body {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 100% !important;
+    max-height: none !important;
+    overflow-x: clip !important;
+    overflow-y: visible !important;
+    position: static !important;
+    overscroll-behavior-y: auto !important;
+    -webkit-overflow-scrolling: auto !important;
+  }
+
+  main,
+  main > section,
+  section.screen,
+  .screen,
+  .screen-inner,
+  .home-layout,
+  .historia-editorial-grid,
+  .projects-editorial-grid,
+  .research-inner,
+  .focus-layout,
+  .ieee-e-layout,
+  .gallery-carousel,
+  .contact-shell {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow-y: visible !important;
+    overscroll-behavior: auto !important;
+    touch-action: pan-y !important;
+  }
+
+  /* No convertir overflow-x hidden en un contenedor vertical independiente. */
+  main > section,
+  section.screen,
+  .screen,
+  .screen-inner {
+    overflow-x: clip !important;
+  }
+
+  /* 2) El CTA principal conserva siempre su gradiente y contraste. */
+  #inicio .socials .btn.primary,
+  #inicio button.btn.primary[data-go="historia"] {
+    color: #fff !important;
+    -webkit-text-fill-color: #fff !important;
+    background: linear-gradient(135deg, #7456c5 0%, #9964ca 52%, #bd70b0 100%) !important;
+    border-color: transparent !important;
+    opacity: 1 !important;
+    filter: none !important;
+    mix-blend-mode: normal !important;
+    box-shadow: 0 14px 30px rgba(108,73,173,.22) !important;
+  }
+
+  #inicio .socials .btn.primary:active,
+  #inicio .socials .btn.primary:focus,
+  #inicio .socials .btn.primary:hover {
+    color: #fff !important;
+    -webkit-text-fill-color: #fff !important;
+    background: linear-gradient(135deg, #7456c5 0%, #9964ca 52%, #bd70b0 100%) !important;
+  }
+
+  /* 3) El modal ocupa todo el viewport y ES el único contenedor desplazable
+        mientras está abierto. El panel interior nunca crea su propio scroll. */
+  .project-detail-modal {
+    position: fixed !important;
+    inset: 0 !important;
+    display: none !important;
+    place-items: start center !important;
+    width: 100% !important;
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    padding: max(10px, env(safe-area-inset-top)) 10px max(18px, env(safe-area-inset-bottom)) !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior-y: contain !important;
+    touch-action: pan-y !important;
+  }
+
+  .project-detail-modal.open {
+    display: block !important;
+  }
+
+  .project-detail-dialog {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 680px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin: 0 auto !important;
+    padding: 25px 20px calc(34px + env(safe-area-inset-bottom)) !important;
+    overflow: visible !important;
+    overscroll-behavior: auto !important;
+    border-radius: 24px !important;
+  }
+
+  .project-detail-close {
+    position: sticky !important;
+    top: 10px !important;
+    z-index: 20 !important;
+  }
+
+  .project-detail-grid,
+  .project-detail-block,
+  .project-detail-tech {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  /* El body no se congela al abrir/cerrar el modal en iOS. */
+  body.project-detail-open,
+  body.lightbox-open {
+    position: static !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow-y: visible !important;
+    overflow-x: clip !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-detail-dialog {
+    padding-inline: 18px !important;
+  }
+  .project-detail-title {
+    font-size: clamp(2.25rem, 11.5vw, 3.2rem) !important;
+    line-height: .98 !important;
+  }
+  .project-detail-lead {
+    font-size: .98rem !important;
+    line-height: 1.62 !important;
+  }
+}
+
 </style>
 
 </head>
@@ -17317,5 +17462,35 @@ y liderazgo.
     if (!document.hidden) restoreNativeScroll();
   });
 })();
-</script></body>
+</script>
+<script>
+(() => {
+  const isMobile = () => window.matchMedia('(max-width: 1024px)').matches;
+  const modal = document.getElementById('projectDetailModal');
+  if (!modal) return;
+
+  const restoreDocumentScroll = () => {
+    if (!isMobile()) return;
+    document.body.classList.remove('project-detail-open');
+    ['overflow','overflow-x','overflow-y','position','top','left','right','width','height','max-height']
+      .forEach(p => document.body.style.removeProperty(p));
+    ['overflow','overflow-x','overflow-y','height','max-height']
+      .forEach(p => document.documentElement.style.removeProperty(p));
+  };
+
+  const observer = new MutationObserver(() => {
+    if (modal.classList.contains('open')) {
+      restoreDocumentScroll();
+      modal.scrollTop = 0;
+    } else {
+      restoreDocumentScroll();
+    }
+  });
+  observer.observe(modal, { attributes: true, attributeFilter: ['class'] });
+
+  window.addEventListener('pageshow', restoreDocumentScroll, { passive: true });
+  window.addEventListener('orientationchange', restoreDocumentScroll, { passive: true });
+})();
+</script>
+</body>
 </html>
