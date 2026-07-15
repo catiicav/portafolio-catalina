@@ -23267,8 +23267,7 @@ y liderazgo.
 <i></i>
 </div>
 <div class="contact-editorial-text reveal delay-1">
-<p>No sé exactamente qué proyecto estaré desarrollando dentro de unos años, pero sí tengo claro <strong>el propósito al que quiero dedicar mi carrera.</strong></p>
-<p>Quiero contribuir a crear tecnología que ayude a las personas a vivir con mayor autonomía, bienestar y calidad de vida, trabajando en espacios donde ingeniería y salud puedan encontrarse.</p>
+<p>Quiero dedicar mi carrera a crear tecnología que una ingeniería y salud para <strong>mejorar la vida de las personas.</strong></p>
 </div>
 <p class="contact-editorial-closing reveal delay-2">Si compartimos ese propósito, conversemos.</p>
 </div>
@@ -26975,6 +26974,114 @@ document.addEventListener('DOMContentLoaded', () => {
     max-height: none !important;
   }
 }
+
+
+/* =========================================================
+   AJUSTES FINALES MÓVIL · historia, trayectoria y contacto
+   ========================================================= */
+@media (max-width: 760px) {
+  /* Un poco más de respiración entre el relato y la fotografía. */
+  body #historia.historia-camino .historia-photo-art {
+    margin-top: 16px !important;
+  }
+
+  /* Trayectoria IEEE: línea de tiempo vertical, compacta y legible. */
+  body #ieee.ieee-door-section .ieee-luminous-milestones {
+    position: relative !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    padding: 8px 0 0 30px !important;
+    scroll-snap-type: none !important;
+    scrollbar-width: none !important;
+  }
+  body #ieee.ieee-door-section .ieee-luminous-milestones::-webkit-scrollbar {
+    display: none !important;
+  }
+  body #ieee.ieee-door-section .ieee-luminous-milestones::before {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    left: 7px !important;
+    top: 14px !important;
+    bottom: 13px !important;
+    width: 1px !important;
+    height: auto !important;
+    background: linear-gradient(180deg, #8767cc, #a476cb 52%, #c47aa9) !important;
+    opacity: .55 !important;
+  }
+  body #ieee.ieee-door-section .ieee-luminous-milestone,
+  body #ieee.ieee-door-section .ieee-luminous-milestone:nth-child(2),
+  body #ieee.ieee-door-section .ieee-luminous-milestone:nth-child(3) {
+    position: relative !important;
+    flex: none !important;
+    width: auto !important;
+    min-height: 0 !important;
+    padding: 7px 0 18px 14px !important;
+    text-align: left !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    scroll-snap-align: none !important;
+  }
+  body #ieee.ieee-door-section .ieee-luminous-milestone:last-child {
+    padding-bottom: 2px !important;
+  }
+  body #ieee.ieee-door-section .ieee-luminous-milestone::before,
+  body #ieee.ieee-door-section .ieee-luminous-milestone:nth-child(2)::before,
+  body #ieee.ieee-door-section .ieee-luminous-milestone:nth-child(3)::before {
+    content: "" !important;
+    position: absolute !important;
+    left: -29px !important;
+    top: 12px !important;
+    width: 11px !important;
+    height: 11px !important;
+    border: 3px solid #fff !important;
+    border-radius: 50% !important;
+    transform: none !important;
+    background: #916bc9 !important;
+    box-shadow: 0 0 0 1px rgba(126,92,183,.22), 0 5px 12px rgba(80,54,112,.10) !important;
+  }
+  body #ieee.ieee-door-section .ieee-luminous-milestone:nth-child(2)::before {
+    background: #b06eaf !important;
+  }
+  body #ieee.ieee-door-section .ieee-luminous-milestone:nth-child(3)::before {
+    background: #c078aa !important;
+  }
+  body #ieee.ieee-door-section .ieee-luminous-milestone-award-highlight::after {
+    display: none !important;
+    content: none !important;
+  }
+  body #ieee.ieee-door-section .ieee-luminous-year-row {
+    justify-content: flex-start !important;
+    min-height: 0 !important;
+  }
+  body #ieee.ieee-door-section .ieee-luminous-year-row strong {
+    font-size: 1.04rem !important;
+  }
+  body #ieee.ieee-door-section .ieee-luminous-milestone h3 {
+    margin: 3px 0 2px !important;
+    font-size: 1.14rem !important;
+  }
+  body #ieee.ieee-door-section .ieee-luminous-milestone p {
+    max-width: none !important;
+    margin: 0 !important;
+    font-size: .78rem !important;
+    line-height: 1.4 !important;
+  }
+
+  /* El cierre ya no vuelve a explicar todo el portafolio. */
+  body #contacto.contact-editorial-section .contact-editorial-text {
+    gap: 0 !important;
+  }
+  body #contacto.contact-editorial-section .contact-editorial-closing {
+    margin-top: 24px !important;
+  }
+}
+
 </style>
 
 </body>
