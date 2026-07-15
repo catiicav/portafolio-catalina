@@ -17093,62 +17093,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 </script>
 
-<script id="mobile-scroll-recovery-final">
-(() => {
-  const unlockPage = () => {
-    const lightboxOpen = document.querySelector('.gallery-lightbox.open');
-    const projectModalOpen = document.querySelector('.project-detail-modal.open');
 
-    if (!lightboxOpen) document.body.classList.remove('lightbox-open');
-    if (!projectModalOpen) document.body.classList.remove('project-detail-open');
-
-    if (!lightboxOpen && !projectModalOpen) {
-      document.documentElement.style.removeProperty('overflow');
-      document.documentElement.style.removeProperty('height');
-      document.body.style.removeProperty('overflow');
-      document.body.style.removeProperty('height');
-      document.body.style.removeProperty('position');
-      document.body.style.removeProperty('top');
-      document.body.style.removeProperty('width');
-    }
-  };
-
-  const closeInvisibleMenu = () => {
-    const toggle = document.getElementById('mobileToggle');
-    const menu = document.getElementById('mobileMenu');
-    if (!toggle || !menu) return;
-    if (!menu.classList.contains('open')) {
-      toggle.setAttribute('aria-expanded', 'false');
-      menu.setAttribute('aria-hidden', 'true');
-    }
-  };
-
-  document.addEventListener('DOMContentLoaded', () => {
-    unlockPage();
-    closeInvisibleMenu();
-  });
-
-  window.addEventListener('pageshow', unlockPage, { passive: true });
-  window.addEventListener('orientationchange', () => setTimeout(unlockPage, 180), { passive: true });
-  window.addEventListener('resize', () => {
-    window.clearTimeout(window.__scrollUnlockTimer);
-    window.__scrollUnlockTimer = window.setTimeout(() => {
-      unlockPage();
-      closeInvisibleMenu();
-    }, 120);
-  }, { passive: true });
-
-  document.addEventListener('click', (event) => {
-    const menu = document.getElementById('mobileMenu');
-    const toggle = document.getElementById('mobileToggle');
-    if (!menu || !toggle || !menu.classList.contains('open')) return;
-    if (menu.contains(event.target) || toggle.contains(event.target)) return;
-    menu.classList.remove('open');
-    menu.setAttribute('aria-hidden', 'true');
-    toggle.setAttribute('aria-expanded', 'false');
-  });
-})();
-</script>
 
 
 <style id="correccion-definitiva-scroll-movil-y-ritmo-historia">
@@ -17288,70 +17233,368 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 }
 </style>
-<script id="desbloqueo-scroll-movil-continuo">
+
+
+
+<style id="ajuste-final-historia-enfoque-y-movil">
+/* =========================================================
+   1. HISTORIA · RECUPERAR RESPIRACIÓN ANTES DE LOS VALORES
+   ========================================================= */
+@media (min-width: 901px) {
+  #historia.historia-camino .historia-values,
+  #historia .historia-values {
+    margin-top: 92px !important;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 900px) {
+  #historia.historia-camino .historia-values,
+  #historia .historia-values {
+    margin-top: 46px !important;
+    transform: none !important;
+  }
+}
+
+/* =========================================================
+   2. MI ENFOQUE · REDISEÑO ABIERTO SIN BLOQUES BLANCOS
+   ========================================================= */
+#camino.focus-studio-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 91% 28%, rgba(226,211,248,.28), transparent 28rem),
+    radial-gradient(circle at 8% 88%, rgba(248,218,234,.24), transparent 26rem),
+    linear-gradient(180deg,#fff 0%,#fffdfd 65%,#fff9fc 100%) !important;
+}
+
+#camino .focus-studio-layout {
+  display: grid !important;
+  grid-template-columns: minmax(360px,.78fr) minmax(0,1.22fr) !important;
+  gap: clamp(70px,8vw,128px) !important;
+  align-items: center !important;
+}
+
+#camino .focus-studio-intro {
+  max-width: 600px !important;
+}
+
+#camino .focus-studio-deck {
+  margin-top: 28px !important;
+  padding: 0 !important;
+  max-width: 520px !important;
+  color: #514c68 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  font-size: clamp(1rem,1.2vw,1.12rem) !important;
+  line-height: 1.72 !important;
+}
+
+#camino .focus-studio-quote {
+  margin-top: 34px !important;
+}
+
+#camino .focus-studio-layers {
+  display: grid !important;
+  gap: 0 !important;
+  background: transparent !important;
+  border-top: 1px solid rgba(137,103,183,.22) !important;
+  border-bottom: 1px solid rgba(137,103,183,.22) !important;
+}
+
+#camino .focus-studio-item,
+#camino .focus-studio-item:hover {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: 118px minmax(0,1fr) !important;
+  gap: 28px !important;
+  align-items: center !important;
+  min-height: 176px !important;
+  padding: 28px 18px 28px 0 !important;
+  margin: 0 !important;
+  color: inherit !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+  overflow: visible !important;
+}
+
+#camino .focus-studio-item + .focus-studio-item {
+  border-top: 1px solid rgba(137,103,183,.18) !important;
+}
+
+#camino .focus-studio-action {
+  position: static !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  writing-mode: horizontal-tb !important;
+  transform: none !important;
+  color: #9a79cb !important;
+  font-family: "Cormorant Garamond", Georgia, serif !important;
+  font-size: 1.35rem !important;
+  font-style: italic !important;
+  opacity: 1 !important;
+}
+
+#camino .focus-studio-action::after {
+  content: "";
+  width: 34px;
+  height: 1px;
+  background: linear-gradient(90deg,#9a72d4,#d58ab8);
+}
+
+#camino .focus-studio-item small {
+  display: block !important;
+  margin-bottom: 8px !important;
+  color: #765fba !important;
+  font-size: .72rem !important;
+  font-weight: 800 !important;
+  letter-spacing: .15em !important;
+  text-transform: uppercase !important;
+}
+
+#camino .focus-studio-item h3 {
+  margin: 0 0 9px !important;
+  max-width: 560px !important;
+  color: #27234d !important;
+  font-family: "Cormorant Garamond", Georgia, serif !important;
+  font-size: clamp(1.65rem,2.1vw,2.15rem) !important;
+  line-height: 1.08 !important;
+}
+
+#camino .focus-studio-item p {
+  max-width: 610px !important;
+  color: #625d74 !important;
+  font-size: .96rem !important;
+  line-height: 1.64 !important;
+}
+
+#camino .focus-studio-item::before,
+#camino .focus-studio-item::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* =========================================================
+   3. MÓVIL · UN SOLO SCROLL Y MENÚ FUNCIONAL
+   ========================================================= */
+@media (max-width: 1024px) {
+  html {
+    height: auto !important;
+    min-height: 100% !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    scroll-behavior: auto !important;
+    touch-action: manipulation !important;
+  }
+
+  body {
+    position: static !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 100% !important;
+    max-height: none !important;
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+    touch-action: pan-y !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  main,
+  section,
+  .screen,
+  .screen-inner {
+    position: relative;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+    touch-action: pan-y !important;
+  }
+
+  /* En móvil todo el contenido debe estar visible aunque falle IntersectionObserver. */
+  .reveal,
+  .reveal.visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  /* Ninguna tarjeta completa se comporta como superficie gestual especial. */
+  #proyectos .project-e-card,
+  #proyectos .project-e-card *,
+  #investigacion,
+  #investigacion *,
+  #ieee,
+  #ieee *,
+  #camino,
+  #camino * {
+    touch-action: pan-y !important;
+  }
+
+  /* Los filtros se mantienen utilizables, pero no crean un scroll interno vertical. */
+  #proyectos .projects-filter {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    touch-action: pan-x pan-y !important;
+    overscroll-behavior: contain auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  /* Adornos completamente fuera de la capa táctil. */
+  .section-transition-soft,
+  .projects-ornament,
+  .projects-dots,
+  .research-decor,
+  .research-branch,
+  .research-dots,
+  .research-wash,
+  .ieee-door-photo-blob,
+  .ieee-door-photo-halo,
+  .ieee-door-branch,
+  [class*="botanical"],
+  [class*="ornament"],
+  [class*="decoration"] {
+    pointer-events: none !important;
+  }
+
+  /* Investigación: sin planta detrás del título en móvil. */
+  #investigacion .research-decor,
+  #investigacion .research-branch,
+  #investigacion .research-dots,
+  #investigacion .research-wash,
+  #investigacion [class*="branch"],
+  #investigacion [class*="botanical"] {
+    display: none !important;
+  }
+
+  /* Menú móvil */
+  .mobile-toggle {
+    position: relative !important;
+    z-index: 110 !important;
+    display: grid !important;
+    place-items: center !important;
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+  }
+
+  .mobile-menu {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  .mobile-menu.open {
+    display: grid !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    touch-action: pan-y !important;
+  }
+
+  /* Mi enfoque en móvil: lectura lineal y abierta */
+  #camino .focus-studio-layout {
+    grid-template-columns: 1fr !important;
+    gap: 42px !important;
+  }
+
+  #camino .focus-studio-layers {
+    border-top: 1px solid rgba(137,103,183,.22) !important;
+  }
+
+  #camino .focus-studio-item,
+  #camino .focus-studio-item:hover {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    min-height: 0 !important;
+    padding: 25px 0 !important;
+  }
+
+  #camino .focus-studio-action {
+    font-size: 1.16rem !important;
+  }
+
+  #camino .focus-studio-item h3 {
+    font-size: 1.72rem !important;
+  }
+}
+</style>
+
+<script id="menu-movil-y-scroll-simple-final">
 (() => {
-  const isMobile = () => window.matchMedia('(max-width: 1024px)').matches;
+  const init = () => {
+    const oldToggle = document.getElementById('mobileToggle');
+    const menu = document.getElementById('mobileMenu');
+    if (!oldToggle || !menu) return;
 
-  const modalIsVisible = (selector) => {
-    const element = document.querySelector(selector);
-    return Boolean(element && element.classList.contains('open'));
-  };
+    /* Reemplazar el botón elimina listeners duplicados que abrían y cerraban al mismo tiempo. */
+    const toggle = oldToggle.cloneNode(true);
+    oldToggle.replaceWith(toggle);
 
-  const releaseScroll = () => {
-    if (!isMobile()) return;
+    const setOpen = (open) => {
+      menu.classList.toggle('open', open);
+      menu.setAttribute('aria-hidden', String(!open));
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    };
 
-    const galleryOpen = modalIsVisible('.gallery-lightbox');
-    const projectOpen = modalIsVisible('.project-detail-modal');
-    if (galleryOpen || projectOpen) return;
+    toggle.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      setOpen(!menu.classList.contains('open'));
+    });
 
+    menu.querySelectorAll('[data-go]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const id = button.dataset.go;
+        setOpen(false);
+        requestAnimationFrame(() => {
+          document.getElementById(id)?.scrollIntoView({ behavior: 'auto', block: 'start' });
+        });
+      });
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!menu.classList.contains('open')) return;
+      if (menu.contains(event.target) || toggle.contains(event.target)) return;
+      setOpen(false);
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 1024) setOpen(false);
+    }, { passive: true });
+
+    /* Limpieza única, sin observers ni listeners en cada toque. */
     document.documentElement.style.removeProperty('overflow');
     document.documentElement.style.removeProperty('height');
-    document.documentElement.style.removeProperty('position');
     document.body.style.removeProperty('overflow');
     document.body.style.removeProperty('height');
-    document.body.style.removeProperty('max-height');
     document.body.style.removeProperty('position');
     document.body.style.removeProperty('top');
-    document.body.style.removeProperty('left');
-    document.body.style.removeProperty('right');
     document.body.style.removeProperty('width');
-    document.body.classList.remove('lightbox-open', 'project-detail-open');
-  };
 
-  /* Si una clase de bloqueo queda pegada por una transición o cierre,
-     se elimina inmediatamente cuando no hay un modal realmente abierto. */
-  const observer = new MutationObserver(releaseScroll);
-
-  const initialize = () => {
-    releaseScroll();
-    observer.observe(document.body, {
-      attributes: true,
-      attributeFilter: ['class', 'style'],
-      subtree: false
-    });
-
-    document.querySelectorAll('.gallery-lightbox, .project-detail-modal').forEach((modal) => {
-      observer.observe(modal, {
-        attributes: true,
-        attributeFilter: ['class', 'aria-hidden']
-      });
-    });
-
-    /* Las tarjetas dejan de comportarse como un botón gigante en móvil.
-       El enlace “Ver proyecto completo” sigue funcionando normalmente. */
-    if (isMobile()) {
-      document.querySelectorAll('#proyectos .project-e-card').forEach((card) => {
-        card.removeAttribute('tabindex');
-        card.removeAttribute('role');
-      });
+    if (!document.querySelector('.gallery-lightbox.open')) {
+      document.body.classList.remove('lightbox-open');
+    }
+    if (!document.querySelector('.project-detail-modal.open')) {
+      document.body.classList.remove('project-detail-open');
     }
   };
 
-  document.addEventListener('DOMContentLoaded', initialize, { once: true });
-  window.addEventListener('pageshow', releaseScroll, { passive: true });
-  window.addEventListener('orientationchange', () => setTimeout(releaseScroll, 100), { passive: true });
-  window.addEventListener('resize', releaseScroll, { passive: true });
-  document.addEventListener('touchstart', releaseScroll, { passive: true, capture: true });
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init, { once: true });
+  } else {
+    init();
+  }
 })();
 </script>
 
