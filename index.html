@@ -14606,6 +14606,72 @@ main > section.screen > .screen-inner {
     white-space: normal !important;
   }
 }
+
+
+/* =========================================================
+   HISTORIA · RECUPERAR SEPARACIÓN AMPLIA ANTES DE LA TABLA
+   ========================================================= */
+@media (min-width: 1051px) {
+  #historia.historia-camino .historia-values,
+  #historia.historia-redesign .historia-values,
+  #historia .historia-values {
+    margin-top: 142px !important;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 1050px) {
+  #historia .historia-values {
+    margin-top: 78px !important;
+  }
+}
+
+@media (max-width: 700px) {
+  #historia .historia-values {
+    margin-top: 56px !important;
+  }
+}
+
+
+/* =========================================================
+   AJUSTE FINAL · MI HISTORIA
+   ========================================================= */
+
+/* Punto medio entre continuidad y respiración antes de la tabla. */
+@media (min-width: 1051px) {
+  #historia.historia-camino .historia-values,
+  #historia.historia-redesign .historia-values,
+  #historia .historia-values {
+    margin-top: 105px !important;
+  }
+}
+
+/* En tablet y móvil se conserva una separación proporcional. */
+@media (min-width: 701px) and (max-width: 1050px) {
+  #historia .historia-values {
+    margin-top: 70px !important;
+  }
+}
+
+@media (max-width: 700px) {
+  #historia .historia-values {
+    margin-top: 52px !important;
+  }
+}
+
+/* Barra superior totalmente opaca en escritorio para evitar ver texto por debajo. */
+@media (min-width: 1025px) {
+  .topbar {
+    background: #ffffff !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+}
+
+/* Un poco más de presencia para las descripciones de la tabla, sin agrandarlas demasiado. */
+#historia .historia-value p {
+  font-size: 17px !important;
+  line-height: 1.55 !important;
+}
 </style></head>
 <body>
 <div class="progress-bar" id="progressBar"></div>
@@ -14691,7 +14757,7 @@ main > section.screen > .screen-inner {
 <div class="historia-narrative-pair">
 <article>
 <span class="historia-narrative-label">Encontrar un propósito</span>
-<p>Los proyectos, las personas y las experiencias me ayudaron a descubrir la ingeniería a la que quiero dedicarme: <span class="historia-highlight">una que ayude y genere un cambio directo en la vida de las personas</span>.</p>
+<p>Los proyectos, las personas y las experiencias me ayudaron a descubrir la ingeniería a la que quiero dedicarme: una que ayude y genere <span class="historia-highlight">un cambio directo en la vida de las personas</span>.</p>
 </article>
 <article>
 <span class="historia-narrative-label">Avanzar con claridad</span>
