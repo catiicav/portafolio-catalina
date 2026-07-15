@@ -10,44 +10,9 @@
 <meta content="Robótica e inteligencia computacional aplicadas a salud, telemedicina, bienestar y accesibilidad." property="og:description"/>
 <meta content="website" property="og:type"/>
 <meta content="es_CL" property="og:locale"/>
-
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <style id="portfolio-styles">/* module: legacy-1 */
 :root {
   --ink: #302b59;
@@ -971,7 +936,7 @@ img { display: block; max-width: 100%; height: auto; }
 .gallery-carousel {
   position: relative;
   width: 100%;
-  touch-action: pan-y;
+
   user-select: none;
 }
 .gallery-grid,
@@ -14306,27 +14271,28 @@ main > section.screen > .screen-inner {
   }
 }
 
-/* module: restauracion-visual-y-scroll-movil-estable */
+
+
+/* module: ios-scroll-native-final */
 @media (max-width: 1024px) {
-  html {
-    width: 100% !important;
-    min-height: 100% !important;
+  /*
+   * Safari desplaza el viewport de forma nativa.
+   * No se crea un segundo contenedor vertical en html o body.
+   */
+  html,
+  body {
     height: auto !important;
-    overflow-x: hidden !important;
-    overflow-y: auto !important;
+    min-height: 100% !important;
+    max-height: none !important;
+    overflow-y: visible !important;
     scroll-behavior: auto !important;
+    overscroll-behavior-y: auto !important;
   }
 
   body {
     position: static !important;
     inset: auto !important;
     width: 100% !important;
-    min-height: 100% !important;
-    height: auto !important;
-    max-height: none !important;
-    overflow-x: hidden !important;
-    overflow-y: visible !important;
-    -webkit-overflow-scrolling: touch !important;
   }
 
   main,
@@ -14336,6 +14302,27 @@ main > section.screen > .screen-inner {
     max-height: none !important;
   }
 
+  /*
+   * En iOS una cabecera sticky y opaca requiere muchos menos repintados
+   * que una cabecera fixed con desenfoque del contenido que pasa por debajo.
+   */
+  .topbar {
+    position: sticky !important;
+    top: 0 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(255, 255, 255, .985) !important;
+  }
+
+  .mobile-menu,
+  .gallery-lightbox,
+  .project-detail-modal,
+  .project-detail-dialog {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* El contenido móvil nunca depende de IntersectionObserver para aparecer. */
   .reveal,
   .reveal.visible {
     opacity: 1 !important;
@@ -14344,21 +14331,7 @@ main > section.screen > .screen-inner {
     transition: none !important;
   }
 
-  #proyectos,
-  #proyectos *,
-  #investigacion,
-  #investigacion *,
-  #camino,
-  #camino *,
-  #ieee,
-  #ieee * {
-    touch-action: auto !important;
-  }
-
-  .gallery-carousel {
-    touch-action: pan-y !important;
-  }
-
+  /* Los filtros dejan de ser un área horizontal que compite con el gesto vertical. */
   #proyectos .projects-filter {
     display: flex !important;
     flex-wrap: wrap !important;
@@ -14366,6 +14339,14 @@ main > section.screen > .screen-inner {
     white-space: normal !important;
   }
 
+  /* Todos los gestos quedan bajo el manejo nativo del navegador. */
+  .gallery-carousel {
+    touch-action: auto !important;
+    user-select: auto !important;
+    -webkit-user-select: auto !important;
+  }
+
+  /* Los adornos quedan fuera de la capa táctil. */
   .section-transition-soft,
   .gallery-transition,
   .projects-ornament,
@@ -14383,6 +14364,7 @@ main > section.screen > .screen-inner {
     pointer-events: none !important;
   }
 
+  /* Sin planta ni superposiciones detrás del título de Investigación. */
   #investigacion .research-decor,
   #investigacion .research-branch,
   #investigacion .research-dots,
@@ -14392,6 +14374,7 @@ main > section.screen > .screen-inner {
     display: none !important;
   }
 
+  /* El menú cerrado no deja una capa invisible sobre la página. */
   .mobile-menu:not(.open) {
     display: none !important;
     visibility: hidden !important;
@@ -14406,15 +14389,50 @@ main > section.screen > .screen-inner {
     pointer-events: auto !important;
   }
 
-  .mobile-toggle {
-    pointer-events: auto !important;
-  }
-
   .progress-bar {
     display: none !important;
   }
+
+  /*
+   * Después de un toque, iOS puede mantener estados hover.
+   * Se evitan transformaciones y transiciones costosas en superficies grandes.
+   */
+  .card,
+  .project-e-card,
+  .focus-studio-item,
+  .gallery-item,
+  .contact-card,
+  .contact-signature-link,
+  img {
+    transition: none !important;
+  }
+
+  .card:hover,
+  .project-e-card:hover,
+  .focus-studio-item:hover,
+  .gallery-item:hover,
+  .contact-card:hover,
+  .contact-signature-link:hover {
+    transform: none !important;
+  }
+
+  /*
+   * Los modales fixed ya cubren el viewport.
+   * En móvil no se bloquea body porque ese bloqueo puede quedar persistente
+   * al volver desde la caché de Safari.
+   */
+  body.lightbox-open,
+  body.project-detail-open {
+    overflow: visible !important;
+  }
+
+  .gallery-lightbox,
+  .project-detail-modal {
+    overscroll-behavior: contain !important;
+  }
 }
 
+/* Separación editorial aprobada en Historia. */
 @media (min-width: 901px) {
   #historia .historia-values {
     margin-top: 92px !important;
@@ -14427,10 +14445,14 @@ main > section.screen > .screen-inner {
   }
 }
 
-body.lightbox-open,
-body.project-detail-open {
-  overflow: hidden !important;
-}</style></head>
+/* En escritorio los modales sí bloquean el fondo. */
+@media (min-width: 1025px) {
+  body.lightbox-open,
+  body.project-detail-open {
+    overflow: hidden !important;
+  }
+}
+</style></head>
 <body>
 <div class="progress-bar" id="progressBar"></div>
 <div aria-hidden="true" class="aurora"><span></span><span></span></div>
@@ -14923,8 +14945,6 @@ y liderazgo.
 </div>
 </section>
 </main>
-
-
 <div aria-hidden="true" class="project-detail-modal" id="projectDetailModal">
 <section aria-labelledby="projectDetailTitle" aria-modal="true" class="project-detail-dialog" role="dialog" tabindex="-1">
 <button aria-label="Cerrar detalles del proyecto" class="project-detail-close" type="button">×</button>
@@ -14935,7 +14955,6 @@ y liderazgo.
 <div class="project-detail-tech" id="projectDetailTech"></div>
 </section>
 </div>
-
 <script id="portfolio-app">document.addEventListener('DOMContentLoaded', () => {
   // === BARRA DE PROGRESO ===
   const progressBar = document.getElementById('progressBar');
@@ -15155,47 +15174,6 @@ y liderazgo.
     renderGallery();
   }
 
-  let swipeStartX = null;
-  let swipeStartY = null;
-  let swipeStartTime = 0;
-
-  function resetSwipe() {
-    swipeStartX = null;
-    swipeStartY = null;
-    swipeStartTime = 0;
-  }
-
-  function startSwipe(event) {
-    if (!event.touches || event.touches.length !== 1) return;
-    const touch = event.touches[0];
-    swipeStartX = touch.clientX;
-    swipeStartY = touch.clientY;
-    swipeStartTime = Date.now();
-  }
-
-  function endSwipe(event, onLeft, onRight) {
-    if (swipeStartX === null || swipeStartY === null) return;
-    if (!event.changedTouches || event.changedTouches.length === 0) return;
-
-    const touch = event.changedTouches[0];
-    const diffX = touch.clientX - swipeStartX;
-    const diffY = touch.clientY - swipeStartY;
-    const elapsed = Date.now() - swipeStartTime;
-    const minSwipeDistance = 45;
-    const maxSwipeTime = 900;
-    const isHorizontalSwipe = Math.abs(diffX) > minSwipeDistance && Math.abs(diffX) > Math.abs(diffY) * 1.25;
-
-    if (isHorizontalSwipe && elapsed < maxSwipeTime) {
-      diffX < 0 ? onLeft() : onRight();
-    }
-    resetSwipe();
-  }
-
-  if (gallerySwipeArea) {
-    gallerySwipeArea.addEventListener('touchstart', startSwipe, { passive: true });
-    gallerySwipeArea.addEventListener('touchend', (event) => endSwipe(event, () => moveGallery(1), () => moveGallery(-1)), { passive: true });
-    gallerySwipeArea.addEventListener('touchcancel', resetSwipe, { passive: true });
-  }
 
   // Visor grande
   let lightbox = null;
@@ -15255,9 +15233,6 @@ y liderazgo.
       if (event.target === lightbox) closeLightbox();
     });
 
-    lightbox.addEventListener('touchstart', startSwipe, { passive: true });
-    lightbox.addEventListener('touchend', (event) => endSwipe(event, () => moveLightbox(1), () => moveLightbox(-1)), { passive: true });
-    lightbox.addEventListener('touchcancel', resetSwipe, { passive: true });
   }
 
   function updateLightbox() {
@@ -15279,7 +15254,7 @@ y liderazgo.
     lightboxIndex = normalizeGalleryIndex(index);
     updateLightbox();
 
-    document.body.classList.add('lightbox-open');
+    if (!window.matchMedia('(max-width: 1024px)').matches) document.body.classList.add('lightbox-open');
     lightbox.classList.add('open');
     lightbox.setAttribute('aria-hidden', 'false');
     lightbox.querySelector('.gallery-lightbox-close').focus();
@@ -15327,9 +15302,15 @@ y liderazgo.
 ;
 
 (() => {
+  if (window.matchMedia('(max-width: 1024px)').matches) {
+    document.body.classList.add('hero-actions-visible');
+    return;
+  }
+
   const updateHeroActions = () => {
     document.body.classList.toggle('hero-actions-visible', window.scrollY >= 42);
   };
+
   updateHeroActions();
   window.addEventListener('scroll', updateHeroActions, { passive: true });
 })();
@@ -15401,7 +15382,7 @@ y liderazgo.
     tech.innerHTML = item.tech.map((name) => `<span>${name}</span>`).join('');
     modal.classList.add('open');
     modal.setAttribute('aria-hidden', 'false');
-    document.body.classList.add('project-detail-open');
+    if (!window.matchMedia('(max-width: 1024px)').matches) document.body.classList.add('project-detail-open');
     dialog.focus();
   }
 
