@@ -17150,5 +17150,210 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 </script>
 
+
+<style id="correccion-definitiva-scroll-movil-y-ritmo-historia">
+/* =========================================================
+   CORRECCIÓN DEFINITIVA · MÓVIL + HISTORIA + INVESTIGACIÓN
+   ========================================================= */
+
+/* Recupera la separación amplia original entre el relato y la fila
+   Explorar · Resiliencia · Construir. */
+@media (min-width: 901px) {
+  #historia .historia-values,
+  #historia .story-values,
+  #historia .historia-principles,
+  #historia [class*="historia-values"] {
+    margin-top: 58px !important;
+  }
+}
+
+/* En móvil, el documento completo usa un único contenedor de scroll:
+   la ventana. Ninguna sección o tarjeta crea un scroll interno. */
+@media (max-width: 1024px) {
+  html,
+  body {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 100% !important;
+    max-height: none !important;
+    overflow-x: clip !important;
+    overflow-y: auto !important;
+    overscroll-behavior-x: none !important;
+    overscroll-behavior-y: auto !important;
+    scroll-behavior: auto !important;
+    touch-action: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  body {
+    inset: auto !important;
+  }
+
+  main,
+  section,
+  .screen,
+  .screen-inner,
+  .projects-editorial-grid,
+  .project-e-card,
+  .research-inner,
+  .research-reference-copy,
+  .research-route,
+  .research-route-card,
+  #ieee,
+  #ieee *:not(button):not(a):not(input),
+  #contacto,
+  #contacto *:not(button):not(a):not(input) {
+    max-height: none !important;
+    overflow-y: visible !important;
+    touch-action: pan-y pinch-zoom !important;
+    overscroll-behavior: auto !important;
+  }
+
+  /* Controles horizontales pueden desplazarse lateralmente, pero no
+     bloquean el gesto vertical de la página. */
+  #proyectos .projects-filter {
+    touch-action: pan-x pan-y pinch-zoom !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  #proyectos .projects-filter span,
+  #proyectos .project-e-card,
+  #proyectos .project-e-card *,
+  .research-route-card,
+  .research-route-card *,
+  #ieee a,
+  #contacto a {
+    touch-action: pan-y pinch-zoom !important;
+  }
+
+  /* Ningún adorno debe quedar encima del contenido ni capturar el dedo. */
+  .projects-ornament,
+  .projects-dots,
+  .research-decor,
+  .research-branch,
+  .research-dots,
+  .research-wash,
+  .ieee-door-dots,
+  .ieee-door-botanical,
+  .ieee-e-dots,
+  .ieee-e-botanical,
+  .ieee-e-small-dots,
+  .contact-signature-decoration,
+  .contact-signature-dots,
+  .contact-signature-branch,
+  [class*="botanical"],
+  [class*="ornament"],
+  [class*="decoration"] {
+    pointer-events: none !important;
+    touch-action: none !important;
+  }
+
+  /* La planta y las manchas de Investigación desaparecen por completo
+     en móvil para que nada quede detrás o debajo del título. */
+  #investigacion .research-branch,
+  #investigacion .research-dots,
+  #investigacion .research-wash,
+  #investigacion .research-decor,
+  #investigacion [class*="branch"],
+  #investigacion [class*="botanical"] {
+    display: none !important;
+  }
+
+  /* El encabezado solo recibe gestos dentro de su propio contenido. */
+  .topbar {
+    touch-action: pan-y pinch-zoom !important;
+  }
+
+  .mobile-menu:not(.open) {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  /* Evita capas animadas invisibles sobre el contenido. */
+  .reveal,
+  .reveal.visible {
+    transform: none !important;
+    will-change: auto !important;
+  }
+
+  /* Separación móvil proporcionada entre el relato y los valores. */
+  #historia .historia-values,
+  #historia .story-values,
+  #historia .historia-principles,
+  #historia [class*="historia-values"] {
+    margin-top: 34px !important;
+  }
+}
+</style>
+<script id="desbloqueo-scroll-movil-continuo">
+(() => {
+  const isMobile = () => window.matchMedia('(max-width: 1024px)').matches;
+
+  const modalIsVisible = (selector) => {
+    const element = document.querySelector(selector);
+    return Boolean(element && element.classList.contains('open'));
+  };
+
+  const releaseScroll = () => {
+    if (!isMobile()) return;
+
+    const galleryOpen = modalIsVisible('.gallery-lightbox');
+    const projectOpen = modalIsVisible('.project-detail-modal');
+    if (galleryOpen || projectOpen) return;
+
+    document.documentElement.style.removeProperty('overflow');
+    document.documentElement.style.removeProperty('height');
+    document.documentElement.style.removeProperty('position');
+    document.body.style.removeProperty('overflow');
+    document.body.style.removeProperty('height');
+    document.body.style.removeProperty('max-height');
+    document.body.style.removeProperty('position');
+    document.body.style.removeProperty('top');
+    document.body.style.removeProperty('left');
+    document.body.style.removeProperty('right');
+    document.body.style.removeProperty('width');
+    document.body.classList.remove('lightbox-open', 'project-detail-open');
+  };
+
+  /* Si una clase de bloqueo queda pegada por una transición o cierre,
+     se elimina inmediatamente cuando no hay un modal realmente abierto. */
+  const observer = new MutationObserver(releaseScroll);
+
+  const initialize = () => {
+    releaseScroll();
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ['class', 'style'],
+      subtree: false
+    });
+
+    document.querySelectorAll('.gallery-lightbox, .project-detail-modal').forEach((modal) => {
+      observer.observe(modal, {
+        attributes: true,
+        attributeFilter: ['class', 'aria-hidden']
+      });
+    });
+
+    /* Las tarjetas dejan de comportarse como un botón gigante en móvil.
+       El enlace “Ver proyecto completo” sigue funcionando normalmente. */
+    if (isMobile()) {
+      document.querySelectorAll('#proyectos .project-e-card').forEach((card) => {
+        card.removeAttribute('tabindex');
+        card.removeAttribute('role');
+      });
+    }
+  };
+
+  document.addEventListener('DOMContentLoaded', initialize, { once: true });
+  window.addEventListener('pageshow', releaseScroll, { passive: true });
+  window.addEventListener('orientationchange', () => setTimeout(releaseScroll, 100), { passive: true });
+  window.addEventListener('resize', releaseScroll, { passive: true });
+  document.addEventListener('touchstart', releaseScroll, { passive: true, capture: true });
+})();
+</script>
+
 </body>
 </html>
