@@ -6,7 +6,7 @@
   #inicio.screen{
     padding-top:var(--navh)!important;
     background:
-      radial-gradient(circle at 78% 38%,ragba(242,215,237,.50),transparent 34%),
+      radial-gradient(circle at 78% 38%,rgba(242,215,237,.50),transparent 34%),
       radial-gradient(circle at 42% 72%,rgba(224,214,250,.44),transparent 39%),
       linear-gradient(180deg,#fdfaff 0%,#fcf8ff 30%,#fff7fc 100%)!important;
   }
@@ -4809,6 +4809,34 @@ html body #galeria #galleryCarousel{
   touch-action:pan-y!important;
   -webkit-user-select:none!important;
   user-select:none!important;
+}
+
+/* FIX FINAL · iPad/tablet en orientación vertical
+   La topbar es sticky y ya ocupa espacio en el flujo; se elimina el offset duplicado del hero. */
+@media (min-width:761px) and (max-width:1024px) and (orientation:portrait){
+  html body #inicio.screen{
+    padding-top:0!important;
+    min-height:auto!important;
+  }
+  html body #inicio .screen-inner{
+    padding-top:clamp(24px,4vw,38px)!important;
+    padding-bottom:54px!important;
+    min-height:0!important;
+  }
+  html body #inicio .home-layout{
+    min-height:0!important;
+    transform:none!important;
+    align-items:start!important;
+    gap:28px!important;
+  }
+  html body #inicio .home-layout>div:first-child{
+    margin-top:0!important;
+    padding-top:0!important;
+    transform:none!important;
+  }
+  html body #inicio .tag{
+    margin-top:0!important;
+  }
 }
 </style>
 
