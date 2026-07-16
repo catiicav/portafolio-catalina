@@ -6,7 +6,7 @@
   #inicio.screen{
     padding-top:var(--navh)!important;
     background:
-      radial-gradient(circle at 78% 38%,rgba(242,215,237,.50),transparent 34%),
+      radial-gradient(circle at 78% 38%,ragba(242,215,237,.50),transparent 34%),
       radial-gradient(circle at 42% 72%,rgba(224,214,250,.44),transparent 39%),
       linear-gradient(180deg,#fdfaff 0%,#fcf8ff 30%,#fff7fc 100%)!important;
   }
@@ -2942,6 +2942,116 @@ html body #investigacion.research-art-v2 .research-question-text{
   }
   html body #investigacion.research-art-v2 .research-question-label{
     margin-bottom:8px!important;
+  }
+}
+</style>
+
+
+<style id="responsive-home-contact-final-fix-v12">
+/* ============================================================
+   V12 · Corrección final de Inicio móvil + Contacto en tablet
+   ============================================================ */
+
+/* TABLET / IPAD VERTICAL: Contacto debe terminar con su contenido,
+   no completar artificialmente la altura de la pantalla. */
+@media (min-width:761px) and (max-width:1024px){
+  html body #contacto#contacto.contact-editorial-section,
+  html body #contacto#contacto.screen{
+    display:block!important;
+    min-height:0!important;
+    height:auto!important;
+    max-height:none!important;
+    padding-top:56px!important;
+    padding-bottom:34px!important;
+    margin-bottom:0!important;
+    align-items:initial!important;
+    overflow:hidden!important;
+  }
+
+  html body #contacto .contact-editorial-shell{
+    min-height:0!important;
+    height:auto!important;
+    max-height:none!important;
+    padding-bottom:0!important;
+    margin-bottom:0!important;
+    align-items:start!important;
+  }
+
+  html body #contacto .contact-editorial-links{
+    min-height:0!important;
+    height:auto!important;
+    max-height:none!important;
+    padding-bottom:0!important;
+    margin-bottom:0!important;
+  }
+
+  html body #contacto .contact-editorial-link:last-child{
+    margin-bottom:0!important;
+  }
+}
+
+/* MÓVIL: mostrar la composición completa del hero sin recorte lateral
+   ni corte inferior provocado por dimensiones heredadas. */
+@media (max-width:760px){
+  html body #inicio#inicio.screen{
+    display:block!important;
+    min-height:0!important;
+    height:auto!important;
+    max-height:none!important;
+    overflow:hidden!important;
+    padding-bottom:22px!important;
+  }
+
+  html body #inicio .screen-inner{
+    min-height:0!important;
+    height:auto!important;
+    max-height:none!important;
+    overflow:visible!important;
+    padding-bottom:0!important;
+  }
+
+  html body #inicio .home-layout{
+    min-height:0!important;
+    height:auto!important;
+    max-height:none!important;
+    margin-bottom:0!important;
+    gap:18px!important;
+  }
+
+  html body #inicio .home-visual{
+    position:relative!important;
+    display:block!important;
+    width:100%!important;
+    min-height:0!important;
+    height:auto!important;
+    max-height:none!important;
+    margin:8px auto 0!important;
+    padding:0!important;
+    overflow:visible!important;
+    transform:none!important;
+  }
+
+  html body #inicio .hero-visual-reference{
+    position:static!important;
+    display:block!important;
+    width:100%!important;
+    max-width:520px!important;
+    min-width:0!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    margin:0 auto!important;
+    transform:none!important;
+    object-fit:contain!important;
+    object-position:center center!important;
+  }
+}
+
+/* Teléfonos angostos: un poco menos de ancho para que nunca roce el viewport. */
+@media (max-width:430px){
+  html body #inicio .hero-visual-reference{
+    width:96%!important;
+    max-width:430px!important;
   }
 }
 </style>
