@@ -3974,51 +3974,97 @@ html body #investigacion.research-art-v2 .research-question-text{
 </style>
 
 
-<style id="mobile-historia-final-polish">
+<style id="mobile-historia-position-polish-final">
 /* ============================================================
-   PULIDO FINAL · HISTORIA MÓVIL
-   - Cita ligeramente más hacia dentro
-   - Menos espacio rosado antes de Proyectos
+   HISTORIA MÓVIL · AJUSTE FINAL DE POSICIÓN
+   - Título con margen lateral correcto
+   - Más aire entre texto y retrato
+   - Cita más alta para evitar conflicto con Safari móvil
    ============================================================ */
 
 @media (max-width: 760px) {
 
-  /* Mover la cita un poco hacia la izquierda */
+  /* 1. Título: recuperar una retícula limpia sin perder presencia */
   html body #historia#historia.historia-camino
-  .historia-photo-note {
-    right: 26px !important;
+  .historia-editorial-title {
+    width: auto !important;
+    max-width: calc(100% - 44px) !important;
+    margin-left: 22px !important;
+    margin-right: 22px !important;
   }
 
-  /* Reducir el espacio inferior de la composición fotográfica */
+  html body #historia#historia.historia-camino
+  .historia-editorial-copy .tag {
+    margin-left: 22px !important;
+    margin-right: 22px !important;
+  }
+
+  html body #historia#historia.historia-camino
+  .historia-heartline {
+    margin-left: 22px !important;
+  }
+
+  /* 2. Foto: bajarla para que no invada el cierre del relato */
   html body #historia#historia.historia-camino
   .historia-photo-art {
-    padding-bottom: 18px !important;
+    margin-top: 34px !important;
+    padding-bottom: 64px !important;
   }
 
-  /* Compactar el cierre de la sección Historia */
+  html body #historia#historia.historia-camino
+  .historia-portrait-figure {
+    transform: none !important;
+  }
+
+  /* 3. Cita: subirla y llevarla un poco más hacia dentro */
+  html body #historia#historia.historia-camino
+  .historia-photo-note {
+    right: 24px !important;
+    bottom: 34px !important;
+    width: min(246px, 70%) !important;
+  }
+
+  /* 4. Mantener el cierre compacto hacia proyectos */
   html body #historia#historia.historia-camino {
-    padding-bottom: 22px !important;
+    padding-bottom: 34px !important;
   }
 
-  /* Acercar sutilmente Proyectos sin eliminar la transición */
   html body #proyectos#proyectos.projects-editorial {
-    padding-top: 34px !important;
+    padding-top: 42px !important;
   }
 }
 
 @media (max-width: 390px) {
 
   html body #historia#historia.historia-camino
+  .historia-editorial-title {
+    max-width: calc(100% - 36px) !important;
+    margin-left: 18px !important;
+    margin-right: 18px !important;
+  }
+
+  html body #historia#historia.historia-camino
+  .historia-editorial-copy .tag {
+    margin-left: 18px !important;
+    margin-right: 18px !important;
+  }
+
+  html body #historia#historia.historia-camino
+  .historia-heartline {
+    margin-left: 18px !important;
+  }
+
+  html body #historia#historia.historia-camino
+  .historia-photo-art {
+    margin-top: 30px !important;
+    padding-bottom: 58px !important;
+  }
+
+  html body #historia#historia.historia-camino
   .historia-photo-note {
-    right: 20px !important;
-  }
-
-  html body #historia#historia.historia-camino {
-    padding-bottom: 18px !important;
-  }
-
-  html body #proyectos#proyectos.projects-editorial {
-    padding-top: 30px !important;
+    right: 18px !important;
+    bottom: 30px !important;
+    width: min(230px, 72%) !important;
   }
 }
 </style>
