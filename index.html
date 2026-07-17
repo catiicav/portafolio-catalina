@@ -7253,4 +7253,406 @@ html body #galeria #galleryCarousel{
 })();
 </script>
 
+
+<style id="gallery-lightbox-mobile-final-fix">
+/* ============================================================
+   GALERÍA · LIGHTBOX MÓVIL
+   - La X queda siempre visible y por encima del header.
+   - El contenido del modal tiene su propio scroll.
+   - Se habilita navegación deslizando horizontalmente.
+   ============================================================ */
+
+@media (max-width: 1024px) {
+
+  html.gallery-modal-lock,
+  body.gallery-modal-lock {
+    overflow: hidden !important;
+    overscroll-behavior: none !important;
+  }
+
+  body.gallery-modal-lock {
+    position: fixed !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+  }
+
+  html body .gallery-lightbox {
+    position: fixed !important;
+    inset: 0 !important;
+
+    z-index: 12000 !important;
+
+    width: 100% !important;
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+
+    padding:
+      max(10px, env(safe-area-inset-top))
+      10px
+      max(10px, env(safe-area-inset-bottom)) !important;
+
+    overflow: hidden !important;
+
+    background: rgba(38, 29, 54, .86) !important;
+
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+
+    overscroll-behavior: contain !important;
+  }
+
+  html body .gallery-lightbox.open {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  html body .gallery-lightbox-panel {
+    position: relative !important;
+
+    width: 100% !important;
+    max-width: 760px !important;
+
+    max-height: calc(
+      100dvh
+      - max(20px, env(safe-area-inset-top))
+      - max(20px, env(safe-area-inset-bottom))
+    ) !important;
+
+    margin: 0 auto !important;
+
+    padding: 58px 12px 16px !important;
+
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+
+    border-radius: 24px !important;
+
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior: contain !important;
+
+    touch-action: pan-y !important;
+  }
+
+  /* La X queda fija respecto de la pantalla, no del contenido desplazable. */
+  html body .gallery-lightbox-close {
+    position: fixed !important;
+
+    top: max(14px, calc(env(safe-area-inset-top) + 8px)) !important;
+    right: 16px !important;
+
+    z-index: 12030 !important;
+
+    display: grid !important;
+    place-items: center !important;
+
+    width: 48px !important;
+    height: 48px !important;
+
+    margin: 0 !important;
+
+    color: #67509f !important;
+    background: rgba(255, 255, 255, .98) !important;
+
+    border: 1px solid rgba(209, 196, 226, .96) !important;
+    border-radius: 50% !important;
+
+    box-shadow:
+      0 10px 28px
+      rgba(35, 24, 53, .20) !important;
+
+    transform: none !important;
+  }
+
+  html body .gallery-lightbox-close svg {
+    width: 22px !important;
+    height: 22px !important;
+    stroke-width: 2.35 !important;
+  }
+
+  /* Zona cómoda para el gesto horizontal sin bloquear el scroll vertical. */
+  html body .gallery-lightbox-image-wrap,
+  html body .gallery-lightbox-image {
+    touch-action: pan-y !important;
+    -webkit-user-select: none !important;
+    user-select: none !important;
+    -webkit-user-drag: none !important;
+  }
+
+  html body .gallery-lightbox-prev,
+  html body .gallery-lightbox-next {
+    z-index: 8 !important;
+  }
+}
+
+@media (max-width: 480px) {
+
+  html body .gallery-lightbox-panel {
+    padding-top: 56px !important;
+    border-radius: 21px !important;
+  }
+
+  html body .gallery-lightbox-close {
+    right: 13px !important;
+    width: 46px !important;
+    height: 46px !important;
+  }
+}
+</style>
+
+<script id="gallery-lightbox-mobile-swipe-close-final">
+(() => {
+  'use strict';
+
+  const MOBILE_QUERY = '(max-width: 1024px)';
+
+  let lockedScrollY = 0;
+  let pageLocked = false;
+  let observedLightbox = null;
+  let lightboxObserver = null;
+
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchTracking = false;
+
+  const getLightbox = () =>
+    document.querySelector('.gallery-lightbox');
+
+  const isMobile = () =>
+    window.matchMedia(MOBILE_QUERY).matches;
+
+  const isOpen = lightbox =>
+    Boolean(lightbox?.classList.contains('open'));
+
+  function lockPage() {
+    if (!isMobile() || pageLocked) return;
+
+    lockedScrollY = window.scrollY || window.pageYOffset || 0;
+    pageLocked = true;
+
+    document.documentElement.classList.add('gallery-modal-lock');
+    document.body.classList.add('gallery-modal-lock');
+
+    document.body.style.setProperty(
+      'top',
+      `-${lockedScrollY}px`,
+      'important'
+    );
+  }
+
+  function unlockPage() {
+    if (!pageLocked) {
+      document.documentElement.classList.remove('gallery-modal-lock');
+      document.body.classList.remove('gallery-modal-lock');
+      document.body.style.removeProperty('top');
+      return;
+    }
+
+    pageLocked = false;
+
+    document.documentElement.classList.remove('gallery-modal-lock');
+    document.body.classList.remove('gallery-modal-lock');
+    document.body.style.removeProperty('top');
+
+    window.scrollTo(0, lockedScrollY);
+  }
+
+  function syncLightboxState(lightbox = getLightbox()) {
+    if (isOpen(lightbox)) {
+      lockPage();
+
+      const panel = lightbox.querySelector('.gallery-lightbox-panel');
+      if (panel) panel.scrollTop = 0;
+
+      requestAnimationFrame(() => {
+        lightbox
+          .querySelector('.gallery-lightbox-close')
+          ?.focus({ preventScroll: true });
+      });
+    } else {
+      unlockPage();
+    }
+  }
+
+  function bindLightbox(lightbox) {
+    if (!lightbox || lightbox === observedLightbox) return;
+
+    if (lightboxObserver) {
+      lightboxObserver.disconnect();
+    }
+
+    observedLightbox = lightbox;
+
+    lightboxObserver = new MutationObserver(() => {
+      syncLightboxState(lightbox);
+    });
+
+    lightboxObserver.observe(lightbox, {
+      attributes: true,
+      attributeFilter: ['class', 'aria-hidden']
+    });
+
+    syncLightboxState(lightbox);
+  }
+
+  /* El lightbox original se crea de manera dinámica al abrir una foto. */
+  const bodyObserver = new MutationObserver(() => {
+    const lightbox = getLightbox();
+    if (lightbox) bindLightbox(lightbox);
+  });
+
+  function startObservers() {
+    if (!document.body) return;
+
+    bodyObserver.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+
+    const existing = getLightbox();
+    if (existing) bindLightbox(existing);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener(
+      'DOMContentLoaded',
+      startObservers,
+      { once: true }
+    );
+  } else {
+    startObservers();
+  }
+
+  /*
+   * Cierre de respaldo.
+   * Aunque otro listener del sitio falle, tocar la X siempre cierra.
+   */
+  document.addEventListener(
+    'click',
+    event => {
+      const closeButton =
+        event.target.closest('.gallery-lightbox-close');
+
+      if (!closeButton) return;
+
+      const lightbox =
+        closeButton.closest('.gallery-lightbox');
+
+      if (!lightbox) return;
+
+      requestAnimationFrame(() => {
+        if (lightbox.classList.contains('open')) {
+          lightbox.classList.remove('open');
+          lightbox.setAttribute('aria-hidden', 'true');
+          document.body.classList.remove('lightbox-open');
+        }
+
+        unlockPage();
+      });
+    },
+    true
+  );
+
+  /*
+   * Swipe dentro de la foto ampliada.
+   * Izquierda  -> siguiente fotografía.
+   * Derecha    -> fotografía anterior.
+   * El gesto vertical sigue funcionando para desplazar el modal.
+   */
+  document.addEventListener(
+    'touchstart',
+    event => {
+      if (!isMobile()) return;
+
+      const lightbox =
+        event.target.closest('.gallery-lightbox.open');
+
+      const swipeZone =
+        event.target.closest(
+          '.gallery-lightbox-image-wrap, .gallery-lightbox-image'
+        );
+
+      if (
+        !lightbox ||
+        !swipeZone ||
+        event.touches.length !== 1
+      ) {
+        touchTracking = false;
+        return;
+      }
+
+      const touch = event.touches[0];
+
+      touchStartX = touch.clientX;
+      touchStartY = touch.clientY;
+      touchTracking = true;
+    },
+    { passive: true }
+  );
+
+  document.addEventListener(
+    'touchend',
+    event => {
+      if (
+        !touchTracking ||
+        !isMobile() ||
+        event.changedTouches.length !== 1
+      ) {
+        touchTracking = false;
+        return;
+      }
+
+      touchTracking = false;
+
+      const lightbox = getLightbox();
+      if (!isOpen(lightbox)) return;
+
+      const touch = event.changedTouches[0];
+
+      const dx = touch.clientX - touchStartX;
+      const dy = touch.clientY - touchStartY;
+
+      const horizontalSwipe =
+        Math.abs(dx) >= 42 &&
+        Math.abs(dx) > Math.abs(dy) * 1.15;
+
+      if (!horizontalSwipe) return;
+
+      const button =
+        dx < 0
+          ? lightbox.querySelector('.gallery-lightbox-next')
+          : lightbox.querySelector('.gallery-lightbox-prev');
+
+      button?.click();
+    },
+    { passive: true }
+  );
+
+  /* También permite cerrar tocando el fondo oscuro exterior. */
+  document.addEventListener(
+    'click',
+    event => {
+      const lightbox =
+        event.target.closest('.gallery-lightbox.open');
+
+      if (!lightbox || event.target !== lightbox) return;
+
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('lightbox-open');
+
+      unlockPage();
+    },
+    true
+  );
+
+  window.addEventListener(
+    'pageshow',
+    () => syncLightboxState(),
+    { passive: true }
+  );
+})();
+</script>
+
 </body> </html> 
