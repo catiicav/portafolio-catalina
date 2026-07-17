@@ -8074,142 +8074,294 @@ html body #galeria #galleryCarousel{
 </script>
 
 
-<style id="mobile-home-photo-after-scroll-final">
+<style id="mobile-home-final-five-pass-polish">
 /* ============================================================
-   INICIO MÓVIL · FOTO AL DESLIZAR
-   El primer pantallazo queda dedicado al mensaje y CTA.
-   La foto aparece completa al continuar el scroll.
+   INICIO MÓVIL · REFINAMIENTO FINAL EN 5 PASADAS
+   1. Ritmo vertical
+   2. Proporción de la composición fotográfica
+   3. Jerarquía del CTA
+   4. Aparición de la foto al hacer scroll
+   5. Transición hacia "Mi historia"
    ============================================================ */
 
 @media (max-width: 760px) {
 
-  /* El bloque editorial ocupa al menos el primer viewport útil */
-  html body #inicio .home-layout > div:first-child {
-    min-height: calc(100svh - var(--navh) - 18px) !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
+  /* ==========================================================
+     PASADA 1 · RITMO VERTICAL
+     Compactar el salto entre acciones y fotografía.
+     ========================================================== */
+
+  html body #inicio .home-layout {
+    gap: 0 !important;
   }
 
-  /* Evita que la foto asome cortada en el primer pantallazo */
+  html body #inicio .socials {
+    margin-top: 22px !important;
+  }
+
   html body #inicio .home-layout > div:last-child {
-    margin-top: 10px !important;
+    margin-top: 18px !important;
   }
 
   html body #inicio .home-visual {
-    min-height: 430px !important;
-    padding-top: 18px !important;
-    padding-bottom: 18px !important;
+    width: 100% !important;
+    max-width: 390px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
   }
 
-  /* Fondo de la foto un poco más contenido */
+
+  /* ==========================================================
+     PASADA 2 · PROPORCIONES
+     Mantener el retrato protagonista y hacer más delicada la
+     gran forma lavanda que lo rodea.
+     ========================================================== */
+
   html body #inicio .home-visual::before {
-    inset: 11% 13% 14% 13% !important;
+    inset: 13% 13% 14% 13% !important;
+
+    border-radius:
+      42% 58% 57% 43% /
+      46% 43% 57% 54% !important;
+
+    background:
+      radial-gradient(
+        circle at 28% 24%,
+        rgba(255, 255, 255, .78),
+        transparent 36%
+      ),
+      linear-gradient(
+        145deg,
+        rgba(230, 219, 249, .68),
+        rgba(206, 194, 242, .40) 56%,
+        rgba(248, 224, 239, .46)
+      ) !important;
+
+    box-shadow:
+      0 22px 52px
+      rgba(98, 76, 138, .065) !important;
+
     opacity: .78 !important;
-    transform: rotate(-6deg) !important;
+    transform: rotate(-5deg) !important;
   }
 
   html body #inicio .home-visual::after {
-    left: 10% !important;
-    bottom: 14% !important;
-    width: 76px !important;
-    height: 76px !important;
-    opacity: .72 !important;
+    width: 72px !important;
+    height: 72px !important;
+
+    left: 9% !important;
+    bottom: 13% !important;
+
+    opacity: .52 !important;
   }
 
   html body #inicio .hero-visual-reference {
-    width: min(100%, 344px) !important;
+    width: min(100%, 346px) !important;
+    margin-inline: auto !important;
+
+    filter:
+      saturate(1.035)
+      contrast(1.025)
+      brightness(1.015) !important;
   }
 
-  /* CTA un poco más refinado */
+
+  /* ==========================================================
+     PASADA 3 · CTA
+     Más refinado y menos pesado que el bloque de título.
+     ========================================================== */
+
   html body #inicio .socials .btn {
     height: 50px !important;
     min-height: 50px !important;
-    box-shadow: 0 10px 24px rgba(130, 92, 193, .16) !important;
+
+    padding-inline: 18px !important;
+
+    box-shadow:
+      0 10px 24px
+      rgba(126, 88, 188, .16) !important;
+
+    font-size: .93rem !important;
   }
 
-  /* Transición suave después de la foto */
+  html body #inicio .socials .btn::after {
+    font-size: 1.12rem !important;
+  }
+
+  html body #inicio .socials a {
+    box-shadow:
+      0 7px 19px
+      rgba(72, 52, 102, .045) !important;
+  }
+
+
+  /* ==========================================================
+     PASADA 4 · APARICIÓN AL DESLIZAR
+     La composición queda en el flujo, pero solo entra visualmente
+     cuando el usuario comienza a bajar.
+     ========================================================== */
+
+  html body #inicio .home-visual.photo-scroll-reveal {
+    opacity: 0 !important;
+
+    transform:
+      translateY(38px)
+      scale(.985) !important;
+
+    filter: blur(1.5px) !important;
+
+    transition:
+      opacity .72s cubic-bezier(.22, .72, .22, 1),
+      transform .86s cubic-bezier(.22, .72, .22, 1),
+      filter .72s ease !important;
+
+    will-change:
+      opacity,
+      transform !important;
+  }
+
+  html body #inicio .home-visual.photo-scroll-reveal.is-visible {
+    opacity: 1 !important;
+
+    transform:
+      translateY(0)
+      scale(1) !important;
+
+    filter: none !important;
+  }
+
+
+  /* ==========================================================
+     PASADA 5 · TRANSICIÓN A HISTORIA
+     La foto cierra el inicio sin una zona muerta demasiado grande.
+     ========================================================== */
+
+  html body #inicio .screen-inner {
+    padding-bottom: 4px !important;
+  }
+
   html body #historia,
   html body #historia.historia-redesign,
   html body #historia.historia-camino {
-    padding-top: 46px !important;
+    padding-top: 28px !important;
   }
 
-  /* Animación solo cuando JS la activa */
-  html.hero-photo-reveal-ready body #inicio .home-visual {
-    opacity: 0 !important;
-    transform: translateY(34px) scale(.985) !important;
-    transition:
-      opacity .72s ease,
-      transform .82s cubic-bezier(.2,.7,.2,1) !important;
-  }
-
-  html.hero-photo-reveal-ready body #inicio .home-visual.is-visible {
-    opacity: 1 !important;
-    transform: translateY(0) scale(1) !important;
+  html body #historia .section-transition-soft,
+  html body #historia.historia-redesign .section-transition-soft,
+  html body #historia.historia-camino .section-transition-soft {
+    height: 36px !important;
   }
 }
 
-@media (max-width: 390px) {
-  html body #inicio .home-layout > div:first-child {
-    min-height: calc(100svh - var(--navh) - 10px) !important;
-  }
 
-  html body #inicio .home-visual {
-    min-height: 405px !important;
+/* Teléfonos pequeños */
+@media (max-width: 390px) {
+
+  html body #inicio .home-layout > div:last-child {
+    margin-top: 14px !important;
   }
 
   html body #inicio .hero-visual-reference {
     width: min(100%, 326px) !important;
   }
+
+  html body #inicio .socials .btn {
+    height: 48px !important;
+    min-height: 48px !important;
+    font-size: .88rem !important;
+  }
 }
 
+
+/* Accesibilidad: sin animación cuando el usuario lo solicita */
 @media (prefers-reduced-motion: reduce) {
-  html.hero-photo-reveal-ready body #inicio .home-visual,
-  html.hero-photo-reveal-ready body #inicio .home-visual.is-visible {
+  html body #inicio .home-visual.photo-scroll-reveal {
     opacity: 1 !important;
     transform: none !important;
+    filter: none !important;
     transition: none !important;
   }
 }
 </style>
 
-<script id="mobile-home-photo-reveal-script">
-(() => {
-  const init = () => {
-    if (!window.matchMedia("(max-width: 760px)").matches) return;
+<noscript>
+<style>
+@media (max-width: 760px) {
+  #inicio .home-visual.photo-scroll-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
+</style>
+</noscript>
 
-    const photo = document.querySelector("#inicio .home-visual");
+<script id="mobile-home-photo-scroll-reveal">
+(() => {
+  'use strict';
+
+  const setup = () => {
+    const photo = document.querySelector('#inicio .home-visual');
     if (!photo) return;
 
-    document.documentElement.classList.add("hero-photo-reveal-ready");
+    photo.classList.add('photo-scroll-reveal');
 
-    if (!("IntersectionObserver" in window)) {
-      photo.classList.add("is-visible");
+    if (
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+      !('IntersectionObserver' in window)
+    ) {
+      photo.classList.add('is-visible');
       return;
     }
 
+    const reveal = () => {
+      photo.classList.add('is-visible');
+    };
+
+    /*
+      La foto no se revela por un pequeño "peek" al final del primer
+      pantallazo. Entra cuando una parte significativa de la composición
+      alcanza aproximadamente el 75% superior de la ventana.
+    */
     const observer = new IntersectionObserver(
       entries => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) return;
-          photo.classList.add("is-visible");
-          observer.disconnect();
-        });
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            reveal();
+            observer.unobserve(photo);
+            break;
+          }
+        }
       },
       {
-        threshold: 0.18,
-        rootMargin: "0px 0px -8% 0px"
+        threshold: 0.12,
+        rootMargin: '0px 0px -25% 0px'
       }
     );
 
     observer.observe(photo);
+
+    /*
+      Respaldo para Safari/iOS cuando se restaura una pestaña ya desplazada.
+    */
+    const checkInitialPosition = () => {
+      const rect = photo.getBoundingClientRect();
+      const triggerLine = window.innerHeight * 0.74;
+
+      if (rect.top <= triggerLine) {
+        reveal();
+        observer.unobserve(photo);
+      }
+    };
+
+    requestAnimationFrame(checkInitialPosition);
+    window.addEventListener('pageshow', checkInitialPosition, { once: true });
   };
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init, { once: true });
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setup, { once: true });
   } else {
-    init();
+    setup();
   }
 })();
 </script>
