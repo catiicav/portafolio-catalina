@@ -5059,283 +5059,80 @@ html body #investigacion.research-art-v2 .research-question-text{
 </style>
 
 
-<style id="gallery-contact-mobile-polish-final">
+<style id="hero-mobile-photo-integration-final">
 /* ============================================================
-   GALERÍA + CONTACTO · REFINAMIENTO MÓVIL FINAL
-   Mantiene escritorio intacto.
+   INICIO MÓVIL · FOTO MÁS INTEGRADA AL HERO
+   - La foto sube y se conecta mejor con los CTA.
+   - Se reduce el vacío antes de "Mi historia".
+   - La foto comienza a insinuarse antes en el primer scroll.
    ============================================================ */
 
 @media (max-width: 760px) {
 
-  /* ==========================================================
-     GALERÍA
-     ========================================================== */
-
-  html body #galeria#galeria.gallery-redesign {
-    padding-top: 54px !important;
-    padding-bottom: 64px !important;
-  }
-
-  /* Título un poco más contenido para ganar ritmo vertical */
-  html body #galeria .gallery-title {
-    font-size: clamp(3rem, 13.7vw, 4.05rem) !important;
-    line-height: .88 !important;
-  }
-
-  html body #galeria .gallery-heart-divider.gallery-flower-divider {
-    width: min(290px, 76%) !important;
-    margin-top: 17px !important;
-  }
-
-  html body #galeria .gallery-carousel {
+  /* Compactar ligeramente el cierre del bloque de texto */
+  html body #inicio#inicio .socials {
     margin-top: 24px !important;
-    padding-bottom: 38px !important;
+    margin-bottom: 0 !important;
   }
 
-  /*
-   * Reducir la altura visual de la fotografía principal
-   * aproximadamente un 8–10 % para equilibrar mejor foto y texto.
-   */
-  html body #galeria .gallery-item,
-  html body #galeria .gallery-item.gallery-active,
-  html body #galeria .gallery-item.gallery-featured,
-  html body #galeria .gallery-item.gallery-side,
-  html body #galeria .gallery-item:hover {
-    grid-template-rows: clamp(255px, 64vw, 326px) auto !important;
-    height: auto !important;
-    min-height: 0 !important;
-  }
-
-  html body #galeria .gallery-item::before {
-    height: clamp(255px, 64vw, 326px) !important;
-  }
-
-  html body #galeria .gallery-media,
-  html body #galeria .gallery-active .gallery-media {
-    min-height: 0 !important;
-  }
-
-  /* Texto inferior algo más compacto */
-  html body #galeria .gallery-caption {
-    padding: 18px 20px 25px !important;
-  }
-
-  html body #galeria .gallery-caption-kicker {
-    margin-bottom: 10px !important;
-  }
-
-  html body #galeria .gallery-caption h3 {
-    font-size: clamp(1.48rem, 6.6vw, 1.72rem) !important;
-    line-height: 1.06 !important;
-  }
-
-  html body #galeria .gallery-caption p {
-    margin-top: 13px !important;
-    font-size: .84rem !important;
-    line-height: 1.48 !important;
-  }
-
-  /* Flechas centradas en la nueva altura de imagen */
-  html body #galeria .gallery-arrow {
-    top: clamp(128px, 32vw, 163px) !important;
-    width: 42px !important;
-    height: 42px !important;
-  }
-
-  /*
-   * Ver todas y contador con más margen interior:
-   * dejan de sentirse pegados a los extremos.
-   */
-  html body #galeria .gallery-view-all {
-    left: 14px !important;
-    right: auto !important;
-    bottom: 1px !important;
-  }
-
-  html body #galeria .gallery-counter {
-    left: auto !important;
-    right: 14px !important;
-    bottom: 2px !important;
-  }
-
-
-  /* ==========================================================
-     CONTACTO
-     ========================================================== */
-
-  html body #contacto#contacto.contact-editorial-section {
-    padding-top: 50px !important;
-    padding-bottom: 28px !important;
-  }
-
-  html body #contacto .contact-editorial-shell {
-    gap: 28px !important;
-  }
-
-  /* Título mantiene protagonismo pero no consume tanta pantalla */
-  html body #contacto .contact-editorial-title {
-    font-size: clamp(2.95rem, 13.4vw, 4rem) !important;
-    line-height: .94 !important;
-  }
-
-  html body #contacto .contact-editorial-divider {
-    width: min(320px, 90%) !important;
-    margin: 21px 0 24px !important;
-  }
-
-  /* Texto más compacto sin perder legibilidad */
-  html body #contacto .contact-editorial-text {
+  /* Acercar la imagen al CTA */
+  html body #inicio#inicio .home-layout {
     gap: 12px !important;
-    max-width: 100% !important;
   }
 
-  html body #contacto .contact-editorial-text p {
-    font-size: .94rem !important;
-    line-height: 1.61 !important;
+  html body #inicio#inicio .home-visual {
+    margin-top: -34px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
   }
 
-  html body #contacto .contact-research-invite {
-    margin-top: 3px !important;
+  /* Mantener buen tamaño, pero hacer que aparezca antes */
+  html body #inicio#inicio .hero-visual-reference {
+    width: min(100%, 392px) !important;
+    transform: translateY(-8px) !important;
   }
 
-  /*
-   * Cierre colaborativo:
-   * más unido visualmente y con la estrella más cerca.
-   */
-  html body #contacto .contact-editorial-closing {
-    position: relative !important;
-    width: calc(100% - 18px) !important;
-    max-width: 100% !important;
-
-    margin-top: 21px !important;
-    padding:
-      12px
-      34px
-      12px
-      18px !important;
-
-    font-size: 1.08rem !important;
-    line-height: 1.35 !important;
+  /* Reducir el espacio vacío al final del hero */
+  html body #inicio#inicio .screen-inner {
+    padding-bottom: 20px !important;
   }
 
-  html body #contacto .contact-editorial-closing::after {
-    right: 7px !important;
-    top: 50% !important;
-
-    font-size: .78rem !important;
-
-    transform: translateY(-50%) !important;
+  html body #inicio#inicio {
+    padding-bottom: 0 !important;
   }
 
-  /* Links de contacto: títulos menos dominantes */
-  html body #contacto .contact-editorial-links {
-    margin-top: 0 !important;
+  /* Acercar la siguiente sección sin que se pegue */
+  html body #historia#historia.historia-camino,
+  html body #historia#historia.historia-redesign,
+  html body #historia#historia {
+    padding-top: 40px !important;
   }
 
-  html body #contacto .contact-editorial-link {
-    padding-top: 16px !important;
-    padding-bottom: 17px !important;
-  }
-
-  html body #contacto .contact-editorial-link:first-child {
-    padding-top: 8px !important;
-  }
-
-  html body #contacto .contact-editorial-link-row {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) 26px !important;
-    gap: 14px !important;
-    align-items: center !important;
-  }
-
-  html body #contacto .contact-editorial-link-copy b {
-    margin-bottom: 4px !important;
-
-    font-size: clamp(1.38rem, 6.4vw, 1.78rem) !important;
-    line-height: 1 !important;
-  }
-
-  html body #contacto .contact-editorial-link-copy small {
-    font-size: .86rem !important;
-    line-height: 1.42 !important;
-  }
-
-  /*
-   * Flechas con posición uniforme respecto del título
-   * y menor peso visual.
-   */
-  html body #contacto .contact-editorial-link-action {
-    align-self: center !important;
-
-    width: 22px !important;
-    height: 22px !important;
-    min-width: 22px !important;
-    flex-basis: 22px !important;
-  }
-
-  html body #contacto .contact-editorial-link-action::before {
-    width: 18px !important;
-    height: 18px !important;
-    margin: 2px !important;
+  /* La transición se mantiene visible pero más compacta */
+  html body #historia .section-transition-soft {
+    height: 54px !important;
   }
 }
 
-
-/* ============================================================
-   TELÉFONOS MUY ANGOSTOS
-   ============================================================ */
-
 @media (max-width: 390px) {
 
-  html body #galeria .gallery-title {
-    font-size: clamp(2.82rem, 13.4vw, 3.65rem) !important;
+  html body #inicio#inicio .home-visual {
+    margin-top: -28px !important;
   }
 
-  html body #galeria .gallery-item,
-  html body #galeria .gallery-item.gallery-active,
-  html body #galeria .gallery-item.gallery-featured,
-  html body #galeria .gallery-item.gallery-side,
-  html body #galeria .gallery-item:hover {
-    grid-template-rows: clamp(238px, 65vw, 295px) auto !important;
+  html body #inicio#inicio .hero-visual-reference {
+    width: min(100%, 365px) !important;
+    transform: translateY(-6px) !important;
   }
 
-  html body #galeria .gallery-item::before {
-    height: clamp(238px, 65vw, 295px) !important;
+  html body #inicio#inicio .screen-inner {
+    padding-bottom: 16px !important;
   }
 
-  html body #galeria .gallery-arrow {
-    top: clamp(119px, 32.5vw, 148px) !important;
-  }
-
-  html body #galeria .gallery-view-all {
-    left: 10px !important;
-  }
-
-  html body #galeria .gallery-counter {
-    right: 10px !important;
-  }
-
-  html body #contacto .contact-editorial-title {
-    font-size: clamp(2.78rem, 13.2vw, 3.55rem) !important;
-  }
-
-  html body #contacto .contact-editorial-text p {
-    font-size: .91rem !important;
-  }
-
-  html body #contacto .contact-editorial-closing {
-    width: calc(100% - 10px) !important;
-    padding-left: 16px !important;
-    padding-right: 29px !important;
-    font-size: 1.02rem !important;
-  }
-
-  html body #contacto .contact-editorial-link-copy b {
-    font-size: clamp(1.32rem, 6.2vw, 1.62rem) !important;
-  }
-
-  html body #contacto .contact-editorial-link-copy small {
-    font-size: .82rem !important;
+  html body #historia#historia.historia-camino,
+  html body #historia#historia.historia-redesign,
+  html body #historia#historia {
+    padding-top: 36px !important;
   }
 }
 </style>
