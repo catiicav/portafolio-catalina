@@ -6479,4 +6479,340 @@ html body #galeria #galleryCarousel{
   }, true);
 })();
 </script>
+
+<style id="project-modal-mobile-final-fix">
+/* ============================================================
+   MODAL DE PROYECTOS · CORRECCIÓN MÓVIL DEFINITIVA
+   - X siempre visible
+   - Modal por encima del header
+   - Scroll dentro del modal
+   - Página del fondo bloqueada
+   ============================================================ */
+
+@media (max-width: 1024px) {
+
+  html.project-modal-lock,
+  body.project-modal-lock {
+    overflow: hidden !important;
+    overscroll-behavior: none !important;
+  }
+
+  body.project-modal-lock {
+    position: fixed !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+  }
+
+  html body .project-detail-modal {
+    position: fixed !important;
+    inset: 0 !important;
+
+    z-index: 10000 !important;
+
+    display: none !important;
+
+    width: 100% !important;
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+
+    padding:
+      max(12px, env(safe-area-inset-top))
+      10px
+      max(12px, env(safe-area-inset-bottom)) !important;
+
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+
+    background: rgba(39, 31, 57, .68) !important;
+
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior: contain !important;
+
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  html body .project-detail-modal.open {
+    display: block !important;
+  }
+
+  html body .project-detail-dialog {
+    position: relative !important;
+
+    display: block !important;
+
+    width: 100% !important;
+    max-width: 680px !important;
+
+    min-height: calc(
+      100dvh
+      - max(24px, env(safe-area-inset-top))
+      - max(24px, env(safe-area-inset-bottom))
+    ) !important;
+
+    max-height: none !important;
+
+    margin: 0 auto !important;
+
+    padding:
+      72px
+      21px
+      38px !important;
+
+    overflow: visible !important;
+
+    border-radius: 25px !important;
+
+    background:
+      radial-gradient(
+        circle at 96% 3%,
+        rgba(229, 216, 248, .56),
+        transparent 16rem
+      ),
+      radial-gradient(
+        circle at 4% 96%,
+        rgba(248, 220, 236, .44),
+        transparent 17rem
+      ),
+      #ffffff !important;
+
+    box-shadow:
+      0 28px 80px
+      rgba(24, 17, 37, .30) !important;
+  }
+
+  /* X FIJA: siempre disponible mientras se lee el proyecto */
+  html body .project-detail-close {
+    position: fixed !important;
+
+    top: max(16px, calc(env(safe-area-inset-top) + 8px)) !important;
+    right: 18px !important;
+
+    z-index: 10020 !important;
+
+    float: none !important;
+
+    display: grid !important;
+    place-items: center !important;
+
+    width: 48px !important;
+    height: 48px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: #6f54ae !important;
+
+    background: rgba(255, 255, 255, .98) !important;
+
+    border:
+      1px solid
+      rgba(205, 190, 225, .96) !important;
+
+    border-radius: 50% !important;
+
+    box-shadow:
+      0 10px 28px
+      rgba(49, 34, 72, .18) !important;
+
+    font-size: 1.7rem !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+
+    cursor: pointer !important;
+  }
+
+  html body .project-detail-close::before {
+    content: "" !important;
+
+    position: absolute !important;
+    inset: -7px !important;
+
+    border-radius: 50% !important;
+  }
+
+  html body .project-detail-title {
+    padding-right: 28px !important;
+
+    font-size:
+      clamp(2.55rem, 12vw, 3.75rem) !important;
+
+    line-height: .96 !important;
+  }
+
+  html body .project-detail-lead {
+    margin-top: 20px !important;
+
+    font-size: .98rem !important;
+    line-height: 1.68 !important;
+  }
+
+  html body .project-detail-grid {
+    grid-template-columns: 1fr !important;
+
+    margin-top: 28px !important;
+  }
+
+  html body .project-detail-block,
+  html body .project-detail-block:nth-child(2n) {
+    padding: 22px 0 0 !important;
+
+    border-left: 0 !important;
+  }
+
+  html body .project-detail-block + .project-detail-block {
+    margin-top: 20px !important;
+    padding-top: 22px !important;
+
+    border-top:
+      1px solid
+      rgba(142, 109, 187, .16) !important;
+  }
+
+  html body .project-detail-block h4 {
+    margin-bottom: 9px !important;
+
+    font-size: .94rem !important;
+  }
+
+  html body .project-detail-block p {
+    font-size: .91rem !important;
+    line-height: 1.66 !important;
+  }
+
+  html body .project-detail-tech {
+    margin-top: 30px !important;
+    padding-top: 22px !important;
+  }
+}
+</style>
+
+<script id="project-modal-mobile-final-script">
+(function () {
+  const modal = document.getElementById("projectDetailModal");
+  if (!modal) return;
+
+  const closeButton = modal.querySelector(".project-detail-close");
+
+  let lockedScrollY = 0;
+
+  function isOpen() {
+    return modal.classList.contains("open");
+  }
+
+  function lockPage() {
+    if (!window.matchMedia("(max-width: 1024px)").matches) return;
+
+    lockedScrollY = window.scrollY || window.pageYOffset || 0;
+
+    document.documentElement.classList.add("project-modal-lock");
+    document.body.classList.add("project-modal-lock");
+
+    document.body.style.setProperty(
+      "top",
+      `-${lockedScrollY}px`,
+      "important"
+    );
+  }
+
+  function unlockPage() {
+    const wasLocked =
+      document.body.classList.contains("project-modal-lock");
+
+    document.documentElement.classList.remove("project-modal-lock");
+    document.body.classList.remove("project-modal-lock");
+
+    document.body.style.removeProperty("top");
+
+    if (wasLocked) {
+      window.scrollTo(0, lockedScrollY);
+    }
+  }
+
+  function syncModalState() {
+    if (isOpen()) {
+      lockPage();
+
+      /* El modal siempre empieza desde arriba */
+      modal.scrollTop = 0;
+
+      requestAnimationFrame(() => {
+        closeButton?.focus({ preventScroll: true });
+      });
+    } else {
+      unlockPage();
+    }
+  }
+
+  /* Observa la clase que ya maneja el código original */
+  const observer = new MutationObserver(syncModalState);
+
+  observer.observe(modal, {
+    attributes: true,
+    attributeFilter: ["class"]
+  });
+
+  /*
+   * Cierre de respaldo:
+   * aunque el listener original falle por cualquier conflicto,
+   * esta X siempre podrá cerrar el modal.
+   */
+  closeButton?.addEventListener(
+    "click",
+    function () {
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+
+      document.body.classList.remove("project-detail-open");
+
+      unlockPage();
+    },
+    true
+  );
+
+  /* Cerrar tocando el fondo oscuro */
+  modal.addEventListener(
+    "click",
+    function (event) {
+      if (event.target !== modal) return;
+
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+
+      document.body.classList.remove("project-detail-open");
+
+      unlockPage();
+    },
+    true
+  );
+
+  /* Escape sigue funcionando con teclado */
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && isOpen()) {
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+
+      document.body.classList.remove("project-detail-open");
+
+      unlockPage();
+    }
+  });
+
+  window.addEventListener("pageshow", function () {
+    if (!isOpen()) unlockPage();
+  });
+
+  window.addEventListener("orientationchange", function () {
+    if (isOpen()) {
+      requestAnimationFrame(() => {
+        modal.scrollTop = 0;
+      });
+    }
+  });
+
+  syncModalState();
+})();
+</script>
+
 </body> </html> 
