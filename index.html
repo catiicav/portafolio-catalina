@@ -3976,82 +3976,49 @@ html body #investigacion.research-art-v2 .research-question-text{
 
 <style id="mobile-historia-final-polish">
 /* ============================================================
-   HISTORIA MÓVIL · AJUSTE FINAL DE RETÍCULA Y COMPOSICIÓN
+   PULIDO FINAL · HISTORIA MÓVIL
+   - Cita ligeramente más hacia dentro
+   - Menos espacio rosado antes de Proyectos
    ============================================================ */
 
 @media (max-width: 760px) {
 
-  /* 1. Alinear el título con la retícula visual de la sección */
-  html body #historia#historia.historia-camino
-  .historia-editorial-title {
-    box-sizing: border-box !important;
-    width: 100% !important;
-    padding-left: 24px !important;
-    padding-right: 16px !important;
-  }
-
-  /* La etiqueta mantiene una alineación algo más exterior */
-  html body #historia#historia.historia-camino
-  .historia-editorial-copy .tag {
-    margin-left: 24px !important;
-  }
-
-  /* El divisor sigue el mismo eje que el título */
-  html body #historia#historia.historia-camino
-  .historia-heartline {
-    margin-left: 24px !important;
-  }
-
-  /* 2. Separar claramente el relato de la fotografía */
-  html body #historia#historia.historia-camino
-  .historia-photo-art {
-    margin-top: 38px !important;
-  }
-
-  html body #historia#historia.historia-camino
-  .historia-portrait-figure {
-    transform: translateY(0) !important;
-  }
-
-  /* 3. Llevar la cita un poco hacia dentro y reducirla levemente */
+  /* Mover la cita un poco hacia la izquierda */
   html body #historia#historia.historia-camino
   .historia-photo-note {
     right: 26px !important;
-    width: min(242px, 69%) !important;
-    padding: 12px 14px 13px 16px !important;
   }
 
+  /* Reducir el espacio inferior de la composición fotográfica */
   html body #historia#historia.historia-camino
-  .historia-photo-note p {
-    font-size: .93rem !important;
-    line-height: 1.28 !important;
+  .historia-photo-art {
+    padding-bottom: 18px !important;
+  }
+
+  /* Compactar el cierre de la sección Historia */
+  html body #historia#historia.historia-camino {
+    padding-bottom: 22px !important;
+  }
+
+  /* Acercar sutilmente Proyectos sin eliminar la transición */
+  html body #proyectos#proyectos.projects-editorial {
+    padding-top: 34px !important;
   }
 }
 
 @media (max-width: 390px) {
 
   html body #historia#historia.historia-camino
-  .historia-editorial-title {
-    padding-left: 20px !important;
-    padding-right: 14px !important;
-  }
-
-  html body #historia#historia.historia-camino
-  .historia-editorial-copy .tag,
-  html body #historia#historia.historia-camino
-  .historia-heartline {
-    margin-left: 20px !important;
-  }
-
-  html body #historia#historia.historia-camino
-  .historia-photo-art {
-    margin-top: 34px !important;
-  }
-
-  html body #historia#historia.historia-camino
   .historia-photo-note {
-    right: 18px !important;
-    width: min(228px, 70%) !important;
+    right: 20px !important;
+  }
+
+  html body #historia#historia.historia-camino {
+    padding-bottom: 18px !important;
+  }
+
+  html body #proyectos#proyectos.projects-editorial {
+    padding-top: 30px !important;
   }
 }
 </style>
