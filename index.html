@@ -5059,80 +5059,55 @@ html body #investigacion.research-art-v2 .research-question-text{
 </style>
 
 
-<style id="hero-mobile-photo-integration-final">
+<style id="hero-mobile-bottom-spacing-final">
 /* ============================================================
-   INICIO MÓVIL · FOTO MÁS INTEGRADA AL HERO
-   - La foto sube y se conecta mejor con los CTA.
-   - Se reduce el vacío antes de "Mi historia".
-   - La foto comienza a insinuarse antes en el primer scroll.
+   INICIO MÓVIL · AJUSTE FINAL DE ESPACIO INFERIOR
+   Reduce el vacío entre la foto del hero y "Mi historia".
    ============================================================ */
 
 @media (max-width: 760px) {
 
-  /* Compactar ligeramente el cierre del bloque de texto */
-  html body #inicio#inicio .socials {
-    margin-top: 24px !important;
+  /* Hero más compacto por abajo */
+  html body #inicio,
+  html body #inicio.screen {
+    padding-bottom: 0 !important;
+  }
+
+  html body #inicio .screen-inner {
+    padding-bottom: 12px !important;
+  }
+
+  /* La foto mantiene su tamaño y posición actual */
+  html body #inicio .home-visual {
     margin-bottom: 0 !important;
-  }
-
-  /* Acercar la imagen al CTA */
-  html body #inicio#inicio .home-layout {
-    gap: 12px !important;
-  }
-
-  html body #inicio#inicio .home-visual {
-    margin-top: -34px !important;
-    padding-top: 0 !important;
     padding-bottom: 0 !important;
   }
 
-  /* Mantener buen tamaño, pero hacer que aparezca antes */
-  html body #inicio#inicio .hero-visual-reference {
-    width: min(100%, 392px) !important;
-    transform: translateY(-8px) !important;
+  /* Acercar la siguiente sección sin pegarla demasiado */
+  html body #historia,
+  html body #historia.historia-redesign,
+  html body #historia.historia-camino {
+    padding-top: 42px !important;
   }
 
-  /* Reducir el espacio vacío al final del hero */
-  html body #inicio#inicio .screen-inner {
-    padding-bottom: 20px !important;
-  }
-
-  html body #inicio#inicio {
-    padding-bottom: 0 !important;
-  }
-
-  /* Acercar la siguiente sección sin que se pegue */
-  html body #historia#historia.historia-camino,
-  html body #historia#historia.historia-redesign,
-  html body #historia#historia {
-    padding-top: 40px !important;
-  }
-
-  /* La transición se mantiene visible pero más compacta */
-  html body #historia .section-transition-soft {
-    height: 54px !important;
+  /* Reducir la altura visual de la transición entre ambas secciones */
+  html body #historia .section-transition-soft,
+  html body #historia.historia-redesign .section-transition-soft,
+  html body #historia.historia-camino .section-transition-soft {
+    height: 48px !important;
   }
 }
 
 @media (max-width: 390px) {
 
-  html body #inicio#inicio .home-visual {
-    margin-top: -28px !important;
+  html body #inicio .screen-inner {
+    padding-bottom: 8px !important;
   }
 
-  html body #inicio#inicio .hero-visual-reference {
-    width: min(100%, 365px) !important;
-    transform: translateY(-6px) !important;
-  }
-
-  html body #inicio#inicio .screen-inner {
-    padding-bottom: 16px !important;
-  }
-
-  html body #historia#historia.historia-camino,
-  html body #historia#historia.historia-redesign,
-  html body #historia#historia {
-    padding-top: 36px !important;
+  html body #historia,
+  html body #historia.historia-redesign,
+  html body #historia.historia-camino {
+    padding-top: 38px !important;
   }
 }
 </style>
