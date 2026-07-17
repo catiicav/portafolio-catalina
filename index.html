@@ -9273,4 +9273,107 @@ html body #historia#historia.historia-camino .historia-photo-note span{
   }
 }
 </style>
+
+<style id="inicio-historia-pulido-final-v2">
+/* ============================================================
+   PULIDO FINAL · INICIO + HISTORIA
+   Ajustes de alineación, presencia y continuidad editorial.
+   ============================================================ */
+
+/* INICIO · la frase de cierre queda deliberadamente alineada y legible. */
+html body #inicio#inicio .hero-journey-line{
+  margin-left:0!important;
+  padding-left:0!important;
+  transform:none!important;
+  max-width:565px!important;
+  color:#6f687c!important;
+  font-size:clamp(.99rem,1.08vw,1.07rem)!important;
+  line-height:1.52!important;
+  opacity:1!important;
+}
+
+@media (min-width:1025px){
+  /* El retrato recupera 4–5 % de presencia y se acerca al eje central. */
+  html body #inicio#inicio .home-visual{
+    max-width:700px!important;
+    transform:translate(-30px,-10px)!important;
+  }
+  html body #inicio#inicio .hero-visual-reference{
+    width:min(100%,665px)!important;
+    max-height:640px!important;
+    filter:saturate(1.10) contrast(1.04) brightness(1.015)!important;
+  }
+}
+
+/* HISTORIA · continuidad entre relato y valores, sin volver a superponer. */
+@media (min-width:1051px){
+  /* Acerca el bloque de valores unos 30 px al relato. */
+  html body #historia#historia.historia-camino .historia-values,
+  html body #historia#historia.historia-redesign .historia-values{
+    margin-top:32px!important;
+    margin-bottom:-30px!important;
+    transform:translateY(-30px)!important;
+  }
+
+  /* La mancha empieza algo antes, pero sigue siendo atmosférica. */
+  html body #historia#historia.historia-camino .historia-values::before{
+    inset:-15px -2.5% -8px!important;
+    opacity:.64!important;
+  }
+
+  /* La anotación vuelve a pertenecer claramente al retrato y gana margen derecho. */
+  html body #historia#historia.historia-camino .historia-photo-note{
+    right:-3%!important;
+    bottom:18px!important;
+    width:min(288px,69%)!important;
+  }
+
+  /* Desvanecimiento mínimo: solo en los últimos píxeles del recorte. */
+  html body #historia#historia.historia-camino .historia-portrait-image{
+    -webkit-mask-image:linear-gradient(to bottom,
+      #000 0 calc(100% - 30px),
+      rgba(0,0,0,.98) calc(100% - 20px),
+      rgba(0,0,0,.70) calc(100% - 8px),
+      transparent 100%)!important;
+    mask-image:linear-gradient(to bottom,
+      #000 0 calc(100% - 30px),
+      rgba(0,0,0,.98) calc(100% - 20px),
+      rgba(0,0,0,.70) calc(100% - 8px),
+      transparent 100%)!important;
+  }
+
+  /* Asimetría editorial casi imperceptible. */
+  html body #historia#historia.historia-camino .historia-value:nth-child(1){
+    transform:translateY(0)!important;
+  }
+  html body #historia#historia.historia-camino .historia-value:nth-child(2){
+    transform:translateY(-5px)!important;
+  }
+  html body #historia#historia.historia-camino .historia-value:nth-child(3){
+    transform:translateY(-2px)!important;
+  }
+}
+
+/* Tablet: conserva aire suficiente y mejora la alineación del cierre del hero. */
+@media (min-width:761px) and (max-width:1050px){
+  html body #inicio#inicio .hero-journey-line{
+    margin-left:0!important;
+    color:#6f687c!important;
+    font-size:1.02rem!important;
+  }
+  html body #historia#historia.historia-camino .historia-photo-note{
+    right:3%!important;
+  }
+}
+
+/* Móvil: solo corrige la alineación; no altera la composición ya optimizada. */
+@media (max-width:760px){
+  html body #inicio#inicio .hero-journey-line{
+    margin-left:0!important;
+    padding-left:0!important;
+    transform:none!important;
+  }
+}
+</style>
+
 </body> </html> 
